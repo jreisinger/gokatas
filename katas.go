@@ -1,5 +1,3 @@
-// Package gokatas contains programming katas for memorizing and perfecting
-// your Go movements.
 package gokatas
 
 import (
@@ -30,6 +28,7 @@ type kata struct {
 	doneOn time.Time
 }
 
+// statistics represents statistics about a kata you've done.
 type statistics struct {
 	name       string
 	count      int
