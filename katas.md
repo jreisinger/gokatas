@@ -1,62 +1,61 @@
 * 2022-04-23: clock2
-* 2022-04-22: parsejson, pingpong, py/searchf
+* 2022-04-22: parsejson, pingpong
 * 2022-04-21: dup2, dup3, gof/builder
 * 2022-04-20: dactest, echosrv, fetchall
 * 2022-04-14: clock2, netcat1, rot13, search, reisinge.net/notes/pointers
 * 2022-04-13: areader, shop3, sortbooks, clock2, netcat1
-* 2022-04-12: parsejson, pingpong, py/searchf
+* 2022-04-12: parsejson, pingpong
 * 2022-04-11: dup2, dup3
 * 2022-04-07: dactest, echosrv, fetchall
-* 2022-04-06: compress, sqrt, py/poker, sh/args
+* 2022-04-06: compress, sqrt
 * 2022-04-05: fibchan, fibfunc, fibspin
 * 2022-04-04: bytecounter, tcpscanner
 * 2022-04-01: rot13, search, reisinge.net/notes/pointers
 * 2022-03-31: shop3, sortbooks, areader
-* 2022-03-30: parsejson, pingpong, py/searchf
+* 2022-03-30: parsejson, pingpong
 * 2022-03-29: dup2, dup3, reisinge.net/note/slices, generics, gof/builder
 * 2022-03-28: timer, pkg.go.dev/net/http
 * 2022-03-25: dactest, echosrv, fetchall
-* 2022-03-24: compress, sqrt, py/poker, sh/args
+* 2022-03-24: compress, sqrt
 * 2022-03-23: fibchan, fibfunc, fibspin
 * 2022-03-22: bytecounter, tcpscanner
 * 2022-03-21: areader, rot13, search, reisinge.net/notes/pointers
-* 2022-03-18: shop3, sortbooks, py/searchf
+* 2022-03-18: shop3, sortbooks
 * 2022-03-17: parsejson, pingpong
 * 2022-03-16: dup2, dup3, reisinge.net/note/slices, reisinge.net/notes/slices, generics, gof/builder
 * 2022-03-15: pkg.go.dev/net/http, dactest, echosrv, fetchall, timer
-* 2022-03-14: sqrt, py/poker, sh/args, compress
+* 2022-03-14: sqrt, compress
 * 2022-03-12: fibchan, fibfunc, fibspin
 * 2022-03-10: bytecounter, tcpscanner
 * 2022-03-09: areader, rot13, search, reisinge.net/notes/pointers
 * 2022-03-08: shop3, sortbooks, pkg.go.dev/net/http
 * 2022-03-07: parsejson, pingpong
-* 2022-03-04: sqrt, py/poker, sh/args
+* 2022-03-04: sqrt
 * 2022-03-03: fibchan, fibfunc, fibspin
 * 2022-02-25: bytecounter, tcpscanner
 * 2022-02-24: areader, rot13, search, reisinge.net/notes/pointers
 * 2022-02-23: shop3, sortbooks, pkg.go.dev/net/http
 * 2022-02-22: parsejson, pingpong, switch
-* 2022-02-21: fibchan, fibfunc, fibspin, sqrt, py/poker, sh/args
-* 2022-02-17: dup2, dup3, py/dup2, reisinge.net/notes/slices
+* 2022-02-21: fibchan, fibfunc, fibspin, sqrt
+* 2022-02-17: dup2, dup3, reisinge.net/notes/slices
 * 2022-02-16: fetchall, tictactoe, timer
-* 2022-02-15: compress, dactest, echosrv, py/searchf
+* 2022-02-15: compress, dactest, echosrv
 * 2022-02-14: bytecounter, tcpscanner
 * 2022-02-11: areader, rot13, reisinge.net/notes/pointers, search
 * 2022-02-10: shop3, sortbooks, pkg.go.dev/net/http
 * 2022-02-09: parsejson, pingpong, switch
-* 2022-02-08: py/poker, sh/args, sqrt, fibchan, fibfunc, fibspin
-* 2022-02-07: dup2, py/dup2, dup3, reisinge.net/notes/slices
+* 2022-02-08: sqrt, fibchan, fibfunc, fibspin
+* 2022-02-07: dup2, dup3, reisinge.net/notes/slices
 * 2022-02-04: fetchall, tictactoe, timer
-* 2022-02-03: compress, dactest, echosrv, py/searchf
-* 2022-02-02: bytecounter, tcpscanner, py/searchf
-* 2022-02-01: rot13, py/searchf
+* 2022-02-03: compress, dactest, echosrv
+* 2022-02-02: bytecounter, tcpscanner
+* 2022-02-01: rot13
 * 2022-01-31: reisinge.net/notes/pointers, areader
 * 2022-01-28: shop3, pkg.go.dev/net/http, sortbooks
 * 2022-01-27: switch, parsejson, pingpong
-* 2022-01-26: sqrt, fibchan, fibfunc, fibspin, py/poker, sh/args
-* 2022-01-25: reisinge.net/notes/slices, dup2, py/dup2, dup3
-* 2022-01-24: fetchall, tictactoe, timer, py/dup2
-* 2022-01-22: py/searchf
+* 2022-01-26: sqrt, fibchan, fibfunc, fibspin
+* 2022-01-25: reisinge.net/notes/slices, dup2, dup3
+* 2022-01-24: fetchall, tictactoe, timer
 * 2022-01-21: compress, dactest, echosrv
 * 2022-01-20: bytecounter, tcpscanner, pkg.go.dev/net/http
 * 2022-01-19: search, areader, rot13
