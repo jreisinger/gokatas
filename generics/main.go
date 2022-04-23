@@ -1,4 +1,4 @@
-// Generics shows the basics of generics. Based on go.dev/doc/tutorial/generics
+// Generics shows the basics of generics. Based on go.dev/doc/tutorial/generics.
 package main
 
 import "fmt"
