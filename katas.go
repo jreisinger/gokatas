@@ -10,10 +10,12 @@ import (
 	"time"
 )
 
+const KatasFile = "katas.md"
+
 // PrintStats prints table with statistics about katas you've done.
-func PrintStats(katasFile string, showAllKatas, sortByCount bool) error {
+func PrintStats(showAllKatas, sortByCount bool) error {
 	var katas []kata
-	katas, err := parseFile(katasFile)
+	katas, err := parseFile(KatasFile)
 	if err != nil {
 		return err
 	}
