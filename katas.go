@@ -10,63 +10,76 @@ import (
 	"time"
 )
 
+// KatasFile is a MarkDown file to track katas you've done. It looks like this:
+// 	* 2022-04-23: areader
+// 	* 2022-04-21: bytecounter, clock2
 const KatasFile = "katas.md"
 
-// PrintStats prints table with statistics about katas you've done.
-func PrintStats(showAllKatas, sortByCount bool) error {
-	var katas []kata
-	katas, err := parseFile(KatasFile)
+// Kata represents a programming kata.
+type Kata struct {
+	Name       string
+	Count      int
+	LastDoneOn time.Time
+}
+
+// Get gets katas from the KatasFile.
+func Get() ([]Kata, error) {
+	f, err := os.Open(KatasFile)
 	if err != nil {
-		return err
+		return nil, err
 	}
-	stats := getStats(katas)
-	printStats(stats, &showAllKatas, &sortByCount)
-	return nil
-}
 
-// kata represents a programming kata.
-type kata struct {
-	name   string
-	doneOn time.Time
-}
+	// Regexes
+	kataLineRE := regexp.MustCompile(`^\*\s*([0-9]{4}\-[0-9]{2}\-[0-9]{2}):\s*(.+)$`)
+	comaRE := regexp.MustCompile(`\s*,\s*`)
 
-// statistics represents statistics about a kata you've done.
-type statistics struct {
-	name       string
-	count      int
-	lastDoneOn time.Time
-}
+	katas := make(map[string]Kata) // name to Kata
 
-type customSort struct {
-	s    []statistics
-	less func(x, y statistics) bool
-}
+	s := bufio.NewScanner(f)
+	for s.Scan() {
+		lineParts := kataLineRE.FindStringSubmatch(s.Text())
+		if lineParts == nil {
+			continue
+		}
 
-func (x customSort) Len() int           { return len(x.s) }
-func (x customSort) Less(i, j int) bool { return x.less(x.s[i], x.s[j]) }
-func (x customSort) Swap(i, j int)      { x.s[i], x.s[j] = x.s[j], x.s[i] }
+		date, katasStr := lineParts[1], lineParts[2]
+		doneOn, err := time.Parse("2006-01-02", date)
+		if err != nil {
+			return nil, err
+		}
 
-// sortStats first sorts by how recently the kata was done then by kata name.
-func sortStats(stats []statistics, countSort *bool) {
-	sort.Sort(customSort{stats, func(x, y statistics) bool {
-		if *countSort {
-			if x.count != y.count {
-				return x.count < y.count
+		for _, name := range comaRE.Split(katasStr, -1) {
+			if name == "" {
+				continue
 			}
-		} else {
-			if x.lastDoneOn != y.lastDoneOn {
-				return y.lastDoneOn.After(x.lastDoneOn)
+			if kata, ok := katas[name]; ok {
+				kata.Count++
+				if doneOn.After(kata.LastDoneOn) {
+					kata.LastDoneOn = doneOn
+				}
+				katas[name] = kata
+			} else {
+				kata.Name = name
+				kata.Count = 1
+				kata.LastDoneOn = doneOn
+				katas[name] = kata
 			}
 		}
-		if x.name != y.name {
-			return x.name < y.name
-		}
-		return false
-	}})
+	}
+	if s.Err() != nil {
+		return nil, s.Err()
+	}
+
+	var ks []Kata
+	for name := range katas {
+		ks = append(ks, katas[name])
+	}
+
+	return ks, nil
 }
 
-// printStats prints table with statistics about katas you've done.
-func printStats(stats []statistics, showAll, countSort *bool) {
+// Print prints table with statistics about katas.
+func Print(katas []Kata, showAll, sortByCount bool) {
 	const format = "%-49v\t%17v\t%10v\n"
 
 	// Print header.
@@ -77,16 +90,16 @@ func printStats(stats []statistics, showAll, countSort *bool) {
 	// Print lines.
 	var katasCount int
 	var totalCount int
-	sortStats(stats, countSort)
-	for _, s := range stats {
-		if !show(s, 14, showAll) {
+	sortKatas(katas, &sortByCount)
+	for _, k := range katas {
+		if !show(k, 14, &showAll) {
 			continue
 		}
 
 		katasCount++
-		totalCount += s.count
+		totalCount += k.Count
 
-		fmt.Fprintf(tw, format, s.name, formatLastDoneOn(s.lastDoneOn), s.count)
+		fmt.Fprintf(tw, format, k.Name, formatLastDoneOn(k.LastDoneOn), k.Count)
 	}
 	tw.Flush() // calculate column widths and print table
 
@@ -95,14 +108,43 @@ func printStats(stats []statistics, showAll, countSort *bool) {
 	fmt.Printf("%-49d %30d\n", katasCount, totalCount)
 }
 
-// show decides when to show a kata statistics.
-func show(s statistics, lastDoneDaysAgo float64, showAll *bool) bool {
+type customSort struct {
+	katas []Kata
+	less  func(x, y Kata) bool
+}
+
+func (x customSort) Len() int           { return len(x.katas) }
+func (x customSort) Less(i, j int) bool { return x.less(x.katas[i], x.katas[j]) }
+func (x customSort) Swap(i, j int)      { x.katas[i], x.katas[j] = x.katas[j], x.katas[i] }
+
+// sortKatas first sorts by how recently the kata was done then by kata name.
+func sortKatas(katas []Kata, countSort *bool) {
+	sort.Sort(customSort{katas, func(x, y Kata) bool {
+		if *countSort {
+			if x.Count != y.Count {
+				return x.Count < y.Count
+			}
+		} else {
+			if x.LastDoneOn != y.LastDoneOn {
+				return y.LastDoneOn.After(x.LastDoneOn)
+			}
+		}
+		if x.Name != y.Name {
+			return x.Name < y.Name
+		}
+		return false
+	}})
+}
+
+// show decides when to show a kata.
+func show(k Kata, lastDoneDaysAgo float64, showAll *bool) bool {
 	if *showAll {
 		return true
 	}
-	return time.Since(s.lastDoneOn).Hours() < 24*lastDoneDaysAgo
+	return time.Since(k.LastDoneOn).Hours() < 24*lastDoneDaysAgo
 }
 
+// formatLastDoneOn formats the time.
 func formatLastDoneOn(lastDoneOn time.Time) string {
 	daysAgo := int(time.Since(lastDoneOn).Hours() / 24)
 	weekday := lastDoneOn.Weekday().String()[:3]
@@ -117,65 +159,4 @@ func formatLastDoneOn(lastDoneOn time.Time) string {
 		s = fmt.Sprintf("%d %s ago (%s)", daysAgo, w, weekday)
 	}
 	return s
-}
-
-// getStats creates statistics about katas you've done.
-func getStats(katas []kata) []statistics {
-	count := make(map[string]int)
-	lastDoneOn := make(map[string]time.Time)
-	for _, k := range katas {
-		if _, ok := lastDoneOn[k.name]; !ok {
-			count[k.name] = 1
-			lastDoneOn[k.name] = k.doneOn
-			continue
-		}
-		count[k.name]++
-		if k.doneOn.After(lastDoneOn[k.name]) {
-			lastDoneOn[k.name] = k.doneOn
-		}
-	}
-	var stats []statistics
-	for name := range count {
-		stats = append(stats, statistics{name, count[name], lastDoneOn[name]})
-	}
-	return stats
-}
-
-// parseFile extracts katas from a file.
-func parseFile(filename string) ([]kata, error) {
-	var katas []kata
-
-	f, err := os.Open(filename)
-	if err != nil {
-		return katas, err
-	}
-
-	// Regexes
-	kataLineRE := regexp.MustCompile(`^\*\s*([0-9]{4}\-[0-9]{2}\-[0-9]{2}):\s*(.+)$`)
-	comaRE := regexp.MustCompile(`\s*,\s*`)
-
-	s := bufio.NewScanner(f)
-	for s.Scan() {
-		lineParts := kataLineRE.FindStringSubmatch(s.Text())
-		if lineParts == nil {
-			continue
-		}
-		date, katasStr := lineParts[1], lineParts[2]
-
-		for _, name := range comaRE.Split(katasStr, -1) {
-			if name == "" {
-				continue
-			}
-			doneOn, err := time.Parse("2006-01-02", date)
-			if err != nil {
-				return katas, err
-			}
-			katas = append(katas, kata{name, doneOn})
-		}
-	}
-	if s.Err() != nil {
-		return katas, s.Err()
-	}
-
-	return katas, nil
 }
