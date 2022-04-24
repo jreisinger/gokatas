@@ -11,8 +11,8 @@ import (
 )
 
 // KatasFile is a MarkDown file to track katas you've done. It looks like this:
-// 	* 2022-04-23: areader
-// 	* 2022-04-21: bytecounter, clock2
+// 	* 2022-04-25: bytecounter, clock2
+// 	* 2022-04-22: areader
 const KatasFile = "katas.md"
 
 // Kata represents a programming kata.
