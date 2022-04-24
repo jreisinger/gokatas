@@ -1,3 +1,4 @@
+// Print statistics about katas you've done.
 package main
 
 import (
