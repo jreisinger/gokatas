@@ -15,11 +15,41 @@ import (
 // 	* 2022-04-21: bytecounter, clock2
 const KatasFile = "katas.md"
 
+const (
+	Unknown Difficulty = iota
+	Low
+	Medium
+	High
+)
+
+// Difficulty says how hard the Kata is.
+type Difficulty int16
+
+func (d Difficulty) String() string {
+	switch d {
+	case 1:
+		return "low"
+	case 2:
+		return "medium"
+	case 3:
+		return "high"
+	}
+	return "unknown"
+}
+
 // Kata represents a programming kata.
 type Kata struct {
-	Name       string
-	Count      int
+	Name  string
+	Count int
+	Difficulty
 	LastDoneOn time.Time
+}
+
+// Katas groups katas by difficulty.
+var Katas map[Difficulty][]string = map[Difficulty][]string{
+	Low:    {"areader", "bytecounter", "netcat1"},
+	Medium: {"shop3", "sortbooks", "rot13", "search", "dac", "echo", "dup2", "dup3", "parsejson", "pingpong"},
+	High:   {"tcpscanner", "fetchall", "clock2"},
 }
 
 // Get gets katas from the KatasFile.
@@ -60,6 +90,7 @@ func Get() ([]Kata, error) {
 				katas[name] = kata
 			} else {
 				kata.Name = name
+				kata.Difficulty = getDifficulty(name)
 				kata.Count = 1
 				kata.LastDoneOn = doneOn
 				katas[name] = kata
@@ -78,14 +109,36 @@ func Get() ([]Kata, error) {
 	return ks, nil
 }
 
-// Print prints table with statistics about katas.
+// getDifficulty returns the difficulty of a kata.
+func getDifficulty(kataName string) Difficulty {
+	switch {
+	case foundIn(Katas[Low], kataName):
+		return Low
+	case foundIn(Katas[Medium], kataName):
+		return Medium
+	case foundIn(Katas[High], kataName):
+		return High
+	}
+	return Unknown
+}
+
+func foundIn(ss []string, s string) bool {
+	for _, e := range ss {
+		if e == s {
+			return true
+		}
+	}
+	return false
+}
+
+// Print prints table with statistics about katas
 func Print(katas []Kata, showAll, sortByCount bool) {
-	const format = "%-49v\t%17v\t%10v\n"
+	const format = "%-37v\t%1v\t%17v\t%10v\n"
 
 	// Print header.
 	tw := new(tabwriter.Writer).Init(os.Stdout, 0, 8, 2, ' ', 0)
-	fmt.Fprintf(tw, format, "Kata", "Last done", "Count")
-	fmt.Fprintf(tw, format, "----", "---------", "-----")
+	fmt.Fprintf(tw, format, "Kata", "Difficulty", "Last done", "Count")
+	fmt.Fprintf(tw, format, "----", "----------", "---------", "-----")
 
 	// Print lines.
 	var katasCount int
@@ -99,7 +152,7 @@ func Print(katas []Kata, showAll, sortByCount bool) {
 		katasCount++
 		totalCount += k.Count
 
-		fmt.Fprintf(tw, format, k.Name, formatLastDoneOn(k.LastDoneOn), k.Count)
+		fmt.Fprintf(tw, format, k.Name, k.Difficulty.String(), formatLastDoneOn(k.LastDoneOn), k.Count)
 	}
 	tw.Flush() // calculate column widths and print table
 
