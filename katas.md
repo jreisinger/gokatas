@@ -1,3 +1,4 @@
+* 2022-04-25: areader, shop3
 * 2022-04-23: clock2
 * 2022-04-22: parsejson, pingpong
 * 2022-04-21: dup2, dup3
