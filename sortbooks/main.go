@@ -29,10 +29,18 @@ type Book struct {
 	Year    int // when published
 }
 
+// START
+
 type Authors []string
 
 func (a Authors) String() string {
 	return strings.Join(a, ", ")
+}
+
+var books = []*Book{
+	{"The Lord of the Rings", Authors{"Tolkien"}, 1954},
+	{"The Phoenix Project", Authors{"Kim", "Behr", "Spafford"}, 2013},
+	{"The Go Programming Language", Authors{"Kernighan", "Donovan"}, 2015},
 }
 
 type byYear []*Book
@@ -41,11 +49,7 @@ func (x byYear) Len() int           { return len(x) }
 func (x byYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
 func (x byYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
 
-var books = []*Book{
-	{"The Lord of the Rings", Authors{"Tolkien"}, 1954},
-	{"The Project Phoenix", Authors{"Kim", "Behr", "Spafford"}, 2013},
-	{"The Go Programming Language", Authors{"Kernighan", "Donovan"}, 2015},
-}
+// STOP
 
 func main() {
 	sort.Sort(sort.Reverse(byYear(books)))
