@@ -33,7 +33,7 @@ func TestLinearsearch(t *testing.T) {
 	for _, tp := range testpairs {
 		idx := Linear(tp.list, tp.item)
 		if idx != tp.idx {
-			t.Fatalf("Got index %d but wanted %d.", idx, tp.idx)
+			t.Fatalf("Got index %d but wanted %d. Searched %d in %v.", idx, tp.idx, tp.item, tp.list)
 		}
 	}
 }
@@ -42,7 +42,7 @@ func TestBinarysearch(t *testing.T) {
 	for _, tp := range testpairs {
 		idx := Binary(tp.list, tp.item)
 		if idx != tp.idx {
-			t.Fatalf("Got index %d but wanted %d.", idx, tp.idx)
+			t.Fatalf("Got index %d but wanted %d. Searched %d in %v.", idx, tp.idx, tp.item, tp.list)
 		}
 	}
 }
