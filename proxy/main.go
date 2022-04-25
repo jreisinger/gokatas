@@ -14,12 +14,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for {
+	for { // accept loop
 		conn, err := listener.Accept()
 		if err != nil {
 			log.Print(err) // e.g., connection aborted
 			continue
 		}
+		// don't put any code here
 		go proxy(conn)
 	}
 }
@@ -32,8 +33,8 @@ func proxy(conn net.Conn) {
 		log.Print(err)
 		return
 	}
-	defer upstream.Close() // to release file descriptor
+	defer upstream.Close() // to release precious file descriptor
 
-	go io.Copy(upstream, conn) // here it's ok not to track goroutine
+	go io.Copy(upstream, conn) // in this case it's ok not to track goroutine
 	io.Copy(conn, upstream)
 }
