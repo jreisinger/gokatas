@@ -22,11 +22,11 @@ func rot13(b byte) byte {
 }
 
 type Rot13 struct {
-	Code io.Reader
+	R io.Reader
 }
 
 func (r Rot13) Read(p []byte) (int, error) {
-	n, err := r.Code.Read(p) // remove Code to get stack overflow error :-)
+	n, err := r.R.Read(p) // remove R to get stack overflow error :-)
 	for i := 0; i < n; i++ {
 		p[i] = rot13(p[i])
 	}

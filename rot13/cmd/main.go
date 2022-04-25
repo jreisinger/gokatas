@@ -1,3 +1,4 @@
+// Decode message encoded with rot13 cipher.
 package main
 
 import (
@@ -9,6 +10,6 @@ import (
 )
 
 func main() {
-	r := rot13.Rot13{Code: strings.NewReader("Lbh penpxrq gur pbqr!\n")}
+	r := rot13.Rot13{strings.NewReader("Lbh penpxrq gur pbqr!\n")}
 	io.Copy(os.Stdout, &r)
 }

@@ -1,4 +1,4 @@
-* 2022-04-25: areader, shop4, sortbooks, proxy
+* 2022-04-25: areader, shop4, sortbooks, proxy, netcat1, rot13
 * 2022-04-23: clock2
 * 2022-04-22: parsejson, pingpong
 * 2022-04-21: dup2, dup3
