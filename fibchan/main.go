@@ -1,6 +1,6 @@
 // Fibchan implements a function that returns a channel generating Fibonacci
-// sequence (rosettacode.org/wiki/Fibonacci_sequence). Then it prints first 46
-// numbers from the sequence.
+// sequence. Then it prints first 46 numbers from the sequence. Adapted from
+// rosettacode.org/wiki/Fibonacci_sequence#Go.
 package main
 
 import "fmt"
