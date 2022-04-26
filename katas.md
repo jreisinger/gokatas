@@ -1,4 +1,4 @@
-* 2022-04-26: sqrt, compress
+* 2022-04-26: sqrt, compress, fibchan, fibfunc
 * 2022-04-25: areader, shop4, sortbooks, proxy, netcat1, rot13, search, reisinge.net/notes/go/pointers
 * 2022-04-23: clock2
 * 2022-04-22: parsejson, pingpong
