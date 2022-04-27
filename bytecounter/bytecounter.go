@@ -1,5 +1,5 @@
 // Package bytecounter is an implementation of io.Writer that counts bytes.
-// Adapted from https://github.com/adonovan/gopl.io/blob/master/ch7/bytecounter
+// Adapted from github.com/adonovan/gopl.io/blob/master/ch7/bytecounter.
 package bytecounter
 
 type Bytecounter int
