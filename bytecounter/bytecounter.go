@@ -5,6 +5,6 @@ package bytecounter
 type Bytecounter int
 
 func (c *Bytecounter) Write(p []byte) (int, error) {
-	*c += Bytecounter(len(p)) // convert int to bytecounter
+	*c += Bytecounter(len(p)) // convert int to Bytecounter
 	return len(p), nil
 }
