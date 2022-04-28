@@ -17,7 +17,7 @@
 * 2022-04-01: rot13, search, reisinge.net/notes/go/pointers
 * 2022-03-31: shop4, sortbooks, areader
 * 2022-03-30: parsejson, pingpong
-* 2022-03-29: dup2, dup3, reisinge.net/note/slices, generics
+* 2022-03-29: dup2, dup3, reisinge.net/notes/go/slices, generics
 * 2022-03-28: timer, pkg.go.dev/net/http
 * 2022-03-25: dac, echo, fetchall
 * 2022-03-24: compress, sqrt
@@ -26,7 +26,7 @@
 * 2022-03-21: areader, rot13, search, reisinge.net/notes/go/pointers
 * 2022-03-18: shop4, sortbooks
 * 2022-03-17: parsejson, pingpong
-* 2022-03-16: dup2, dup3, reisinge.net/note/slices, reisinge.net/notes/slices, generics
+* 2022-03-16: dup2, dup3, reisinge.net/notes/go/slices, reisinge.net/notes/go/slices, generics
 * 2022-03-15: pkg.go.dev/net/http, dac, echo, fetchall, timer
 * 2022-03-14: sqrt, compress
 * 2022-03-12: fibchan, fibfunc, fibspin
@@ -41,7 +41,7 @@
 * 2022-02-23: shop4, sortbooks, pkg.go.dev/net/http
 * 2022-02-22: parsejson, pingpong, switch
 * 2022-02-21: fibchan, fibfunc, fibspin, sqrt
-* 2022-02-17: dup2, dup3, reisinge.net/notes/slices
+* 2022-02-17: dup2, dup3, reisinge.net/notes/go/slices
 * 2022-02-16: fetchall, tictactoe, timer
 * 2022-02-15: compress, dac, echo
 * 2022-02-14: bytecounter, tcpscanner
@@ -49,7 +49,7 @@
 * 2022-02-10: shop4, sortbooks, pkg.go.dev/net/http
 * 2022-02-09: parsejson, pingpong, switch
 * 2022-02-08: sqrt, fibchan, fibfunc, fibspin
-* 2022-02-07: dup2, dup3, reisinge.net/notes/slices
+* 2022-02-07: dup2, dup3, reisinge.net/notes/go/slices
 * 2022-02-04: fetchall, tictactoe, timer
 * 2022-02-03: compress, dac, echo
 * 2022-02-02: bytecounter, tcpscanner
@@ -58,162 +58,162 @@
 * 2022-01-28: shop4, pkg.go.dev/net/http, sortbooks
 * 2022-01-27: switch, parsejson, pingpong
 * 2022-01-26: sqrt, fibchan, fibfunc, fibspin
-* 2022-01-25: reisinge.net/notes/slices, dup2, dup3
+* 2022-01-25: reisinge.net/notes/go/slices, dup2, dup3
 * 2022-01-24: fetchall, tictactoe, timer
 * 2022-01-21: compress, dac, echo
 * 2022-01-20: bytecounter, tcpscanner, pkg.go.dev/net/http
 * 2022-01-19: search, areader, rot13
 * 2022-01-18: sortbooks, reisinge.net/notes/go/pointers
-* 2022-01-17: parsejson, pingpong, reisinge.net/notes/http-servers, shop4
+* 2022-01-17: parsejson, pingpong, reisinge.net/notes/go/http-servers, shop4
 * 2022-01-14: switch, fibchan, fibfunc, fibspin
 * 2022-01-13: dup2, dup3, sqrt
-* 2022-01-12: compress, dac, reisinge.net/notes/slices, echo, fetchall, timer, tictactoe
+* 2022-01-12: compress, dac, reisinge.net/notes/go/slices, echo, fetchall, timer, tictactoe
 * 2022-01-11: tcpscanner, pkg.go.dev/net/http, bytecounter
 * 2022-01-10: areader, rot13, search
 * 2022-01-06: shop4, sortbooks, reisinge.net/notes/go/pointers
-* 2022-01-05: parsejson, pingpong, reisinge.net/notes/http-servers
+* 2022-01-05: parsejson, pingpong, reisinge.net/notes/go/http-servers
 * 2021-12-23: parsejson, pingpong
 * 2021-12-22: fibchan, fibfunc, fibspin
 * 2021-12-21: dup2, dup3, sqrt, switch
-* 2021-12-20: bytecounter, compress, dac, reisinge.net/notes/slices, echo, fetchall, timer, tictactoe
+* 2021-12-20: bytecounter, compress, dac, reisinge.net/notes/go/slices, echo, fetchall, timer, tictactoe
 * 2021-12-16: search, tcpscanner, pkg.go.dev/net/http
 * 2021-12-15: areader, rot13
 * 2021-12-14: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-12-13: parsejson, pingpong
 * 2021-12-09: fibchan, fibfunc, fibspin
 * 2021-12-08: dup2, dup3, sqrt, switch
-* 2021-12-06: tictactoe, bytecounter, dac, echo, fetchall, compress, timer, reisinge.net/notes/slices
-* 2021-12-03: search, tcpscanner, reisinge.net/notes/http-servers
+* 2021-12-06: tictactoe, bytecounter, dac, echo, fetchall, compress, timer, reisinge.net/notes/go/slices
+* 2021-12-03: search, tcpscanner, reisinge.net/notes/go/http-servers
 * 2021-12-02: areader, rot13
 * 2021-12-01: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-11-30: fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-11-26: sqrt, switch, dup2, dup3
-* 2021-11-25: timer, reisinge.net/notes/slices, compress
+* 2021-11-25: timer, reisinge.net/notes/go/slices, compress
 * 2021-11-24: bytecounter, dac, echo, fetchall
-* 2021-11-23: search, tcpscanner, tictactoe, reisinge.net/notes/http-servers
+* 2021-11-23: search, tcpscanner, tictactoe, reisinge.net/notes/go/http-servers
 * 2021-11-22: areader, rot13
 * 2021-11-19: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-11-18: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-11-16: compress, sqrt, switch
-* 2021-11-15: timer, reisinge.net/notes/slices
+* 2021-11-15: timer, reisinge.net/notes/go/slices
 * 2021-11-12: bytecounter, dac, echo, fetchall
-* 2021-11-11: search, tcpscanner, tictactoe, reisinge.net/notes/http-servers
+* 2021-11-11: search, tcpscanner, tictactoe, reisinge.net/notes/go/http-servers
 * 2021-11-10: areader, rot13
 * 2021-11-09: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-11-08: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-11-05: sqrt, switch, compress
-* 2021-11-04: bytecounter, dac, echo, fetchall, timer, reisinge.net/notes/slices
-* 2021-11-03: search, reisinge.net/notes/http-servers, tictactoe, tcpscanner
+* 2021-11-04: bytecounter, dac, echo, fetchall, timer, reisinge.net/notes/go/slices
+* 2021-11-03: search, reisinge.net/notes/go/http-servers, tictactoe, tcpscanner
 * 2021-11-02: rot13, areader
 * 2021-10-27: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-10-26: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
-* 2021-10-25: bytecounter, dac, echo, fetchall, timer, sqrt, switch, reisinge.net/notes/slices
+* 2021-10-25: bytecounter, dac, echo, fetchall, timer, sqrt, switch, reisinge.net/notes/go/slices
 * 2021-10-23: tcpscanner
-* 2021-10-22: reisinge.net/notes/http-servers, tictactoe, search
+* 2021-10-22: reisinge.net/notes/go/http-servers, tictactoe, search
 * 2021-10-21: areader, rot13
 * 2021-10-20: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-10-19: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
-* 2021-10-18: bytecounter, dac, echo, fetchall, timer, reisinge.net/notes/slices, sqrt, switch
+* 2021-10-18: bytecounter, dac, echo, fetchall, timer, reisinge.net/notes/go/slices, sqrt, switch
 * 2021-10-15: search, tcpscanner
-* 2021-10-14: reisinge.net/notes/http-servers, tictactoe, golang.org/doc/gowalk/markov
+* 2021-10-14: reisinge.net/notes/go/http-servers, tictactoe, golang.org/doc/gowalk/markov
 * 2021-10-13: shop4, sortbooks, reisinge.net/notes/go/pointers, areader, rot13
 * 2021-10-12: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
-* 2021-10-11: timer, bytecounter, dac, echo, fetchall, reisinge.net/notes/slices, sqrt, switch
+* 2021-10-11: timer, bytecounter, dac, echo, fetchall, reisinge.net/notes/go/slices, sqrt, switch
 * 2021-10-07: search, tcpscanner
-* 2021-10-06: rot13, reisinge.net/notes/http-servers, tictactoe
+* 2021-10-06: rot13, reisinge.net/notes/go/http-servers, tictactoe
 * 2021-10-05: parsejson, pingpong, shop4, sortbooks, reisinge.net/notes/go/pointers, areader
 * 2021-10-04: compress, dup2, dup3, fibchan, fibfunc, fibspin
 * 2021-10-01: switch
-* 2021-09-30: reisinge.net/notes/slices, bytecounter, dac, echo, fetchall, sqrt
+* 2021-09-30: reisinge.net/notes/go/slices, bytecounter, dac, echo, fetchall, sqrt
 * 2021-09-29: Learning Go, search, tcpscanner, timer
-* 2021-09-28: reisinge.net/notes/design/basics, reisinge.net/notes/http-servers, tictactoe
+* 2021-09-28: reisinge.net/notes/design/basics, reisinge.net/notes/go/http-servers, tictactoe
 * 2021-09-27: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, reisinge.net/notes/go/pointers, areader, rot13, pingpong, shop4, sortbooks, compress
 * 2021-09-21: bytecounter, dac, echo, fetchall, sqrt, switch
-* 2021-09-20: Cloud Native Go, search, tcpscanner, timer, reisinge.net/notes/slices
+* 2021-09-20: Cloud Native Go, search, tcpscanner, timer, reisinge.net/notes/go/slices
 * 2021-09-18: compress
-* 2021-09-17: pingpong, shop4, reisinge.net/notes/http-servers, sortbooks, tictactoe, reisinge.net/notes/design/basics
+* 2021-09-17: pingpong, shop4, reisinge.net/notes/go/http-servers, sortbooks, tictactoe, reisinge.net/notes/design/basics
 * 2021-09-16: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, areader, rot13, reisinge.net/notes/go/pointers
 * 2021-09-14: sqrt, switch, bytecounter, dac, echo, fetchall
-* 2021-09-13: Cloud Native Go, search, tcpscanner, timer, reisinge.net/notes/slices
+* 2021-09-13: Cloud Native Go, search, tcpscanner, timer, reisinge.net/notes/go/slices
 * 2021-09-10: pingpong, shop4, sortbooks, tictactoe
 * 2021-09-09: parsejson, reisinge.net/notes/go/pointers, areader, rot13
 * 2021-09-08: fibchan, fibfunc, fibspin, dup2, dup3
 * 2021-09-07: bytecounter, dac, echo, fetchall
-* 2021-09-06: tcpscanner, timer, search, reisinge.net/notes/slices, sqrt, switch, Cloud Native Go
+* 2021-09-06: tcpscanner, timer, search, reisinge.net/notes/go/slices, sqrt, switch, Cloud Native Go
 * 2021-09-04: tictactoe, pingpong, shop4, sortbooks
 * 2021-09-03: areader, rot13, echo, fetchall, fibchan, fibfunc, fibspin, parsejson, reisinge.net/notes/go/pointers
 * 2021-09-02: Cloud Native Go, bytecounter, dac
-* 2021-08-28: reisinge.net/notes/slices, search, sqrt, switch
+* 2021-08-28: reisinge.net/notes/go/slices, search, sqrt, switch
 * 2021-08-27: sortbooks, tcpscanner, timer
 * 2021-08-26: pingpong, shop4
 * 2021-08-25: echo, fetchall, fibchan, fibfunc, fibspin, parsejson, tictactoe, reisinge.net/notes/go/pointers
 * 2021-08-24: bytecounter, dac, dup2, dup3, areader, rot13
 * 2021-08-23: Cloud Native Go
 * 2021-08-20: search, sqrt, switch
-* 2021-08-19: pingpong, shop1, shop2, shop4, reisinge.net/notes/slices, sortbooks, tcpscanner, timer
+* 2021-08-19: pingpong, shop1, shop2, shop4, reisinge.net/notes/go/slices, sortbooks, tcpscanner, timer
 * 2021-08-18: echo, fetch, fetchall, fibspin, fibchan, parsejson, fibfunc, tictactoe, reisinge.net/notes/go/pointers
 * 2021-08-17: bytecounter, dac, areader, rot13, dup1, dup2, dup3
 * 2021-08-16: Cloud Native Go
 * 2021-08-13: Cloud Native Go, search, sqrt, switch
-* 2021-08-12: pingpong, timer, reisinge.net/notes/slices, shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-08-12: pingpong, timer, reisinge.net/notes/go/slices, shop1, shop2, shop4, sortbooks, tcpscanner
 * 2021-08-11: dup1, dup2, dup3, echo, fetch, fetchall, reisinge.net/notes/go/pointers, tictactoe, fibfunc, fibchan, fibspin, parsejson
 * 2021-08-10: bytecounter, dac, areader, rot13
 * 2021-08-07: switch, search, sqrt
 * 2021-08-06: Cloud Native Go
 * 2021-08-05: shop1, shop2, shop4, sortbooks, tcpscanner
-* 2021-08-04: fibchan, fibspin, parsejson, pingpong, timer, reisinge.net/notes/slices
+* 2021-08-04: fibchan, fibspin, parsejson, pingpong, timer, reisinge.net/notes/go/slices
 * 2021-08-03: dup1, dup2, dup3, echo, fetch, fetchall, reisinge.net/notes/go/pointers, fibfunc
 * 2021-08-02: areader, rot13, bytecounter, dac
 * 2021-07-30: sqrt, search
 * 2021-07-29: switch
 * 2021-07-28: Cloud Native Go
 * 2021-07-27: shop1, shop2, shop4, sortbooks, tcpscanner
-* 2021-07-26: fibchan, fibspin, parsejson, pingpong, timer, reisinge.net/notes/slices
+* 2021-07-26: fibchan, fibspin, parsejson, pingpong, timer, reisinge.net/notes/go/slices
 * 2021-07-23: fibfunc
 * 2021-07-22: reisinge.net/notes/go/pointers
 * 2021-07-21: echo, fetch, fetchall
 * 2021-07-20: bytecounter, dac, dup1, dup2, dup3
 * 2021-07-19: areader, search, rot13
 * 2021-07-02: sortbooks, tcpscanner, Cloud Native Go, switch, sqrt
-* 2021-07-01: shop1, shop2, shop4, reisinge.net/notes/slices
+* 2021-07-01: shop1, shop2, shop4, reisinge.net/notes/go/slices
 * 2021-06-29: fibchan, fibspin, parsejson, pingpong, timer
 * 2021-06-28: reisinge.net/notes/go/pointers, echo, fetch, fibfunc, fetchall
 * 2021-06-26: bytecounter, dac, dup1, dup2, dup3
 * 2021-06-25: rot13, search
 * 2021-06-24: Cloud Native Go, switch, sqrt, areader
-* 2021-06-21: reisinge.net/notes/slices, sortbooks, tcpscanner
+* 2021-06-21: reisinge.net/notes/go/slices, sortbooks, tcpscanner
 * 2021-06-17: shop1, shop2, shop4
 * 2021-06-16: pingpong
 * 2021-06-15: echo, fetch, fetchall, parsejson, timer, fibchan, fibspin
 * 2021-06-14: search, bytecounter, reisinge.net/notes/go/pointers, fibfunc, dac, dup1, dup2, dup3
 * 2021-06-12: Cloud Native Go, sqrt, switch, areader, rot13
-* 2021-06-11: reisinge.net/notes/slices, pingpong, shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-06-11: reisinge.net/notes/go/slices, pingpong, shop1, shop2, shop4, sortbooks, tcpscanner
 * 2021-06-10: fibchan, fibspin
 * 2021-06-09: dac, dup1, dup2, dup3, parsejson, timer, echo, fetch, fetchall
 * 2021-06-07: search, bytecounter, reisinge.net/notes/go/pointers, fibfunc
 * 2021-06-05: pingpong, Cloud Native Go, switch, sqrt, areader, rot13, shop1, shop2, shop4, sortbooks, tcpscanner
-* 2021-06-04: reisinge.net/notes/slices
+* 2021-06-04: reisinge.net/notes/go/slices
 * 2021-06-03: fibchan, fibspin
 * 2021-06-02: echo, fetch, fetchall
 * 2021-06-01: dac, dup1, dup2, dup3, parsejson, timer
 * 2021-05-31: reisinge.net/notes/go/pointers, fibfunc, search, bytecounter
 * 2021-05-29: rot13, shop1, shop2, shop4, sortbooks, tcpscanner
-* 2021-05-28: reisinge.net/notes/slices, echo, Cloud Native Go, fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
+* 2021-05-28: reisinge.net/notes/go/slices, echo, Cloud Native Go, fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
 * 2021-05-25: dac, dup1, dup2, dup3, parsejson, timer
 * 2021-05-24: reisinge.net/notes/go/pointers, fibfunc, search, bytecounter
 * 2021-05-21: shop1, shop2, shop4, rot13, sortbooks, tcpscanner
 * 2021-05-20: fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
-* 2021-05-19: reisinge.net/notes/slices, echo, Cloud Native Go
+* 2021-05-19: reisinge.net/notes/go/slices, echo, Cloud Native Go
 * 2021-05-18: dac, dup1, dup2, dup3, timer, parsejson
 * 2021-05-17: reisinge.net/notes/go/pointers, search, bytecounter, fibfunc
 * 2021-05-14: shop1, shop2, shop4, rot13, sortbooks, tcpscanner
 * 2021-05-13: fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
-* 2021-05-12: reisinge.net/notes/slices, echo, Cloud Native Go
+* 2021-05-12: reisinge.net/notes/go/slices, echo, Cloud Native Go
 * 2021-05-11: fibfunc, dac, dup1, dup2, dup3, parsejson, timer
 * 2021-05-10: search, bytecounter, reisinge.net/notes/go/pointers
 * 2021-05-07: shop1, shop2, shop4, sortbooks, tcpscanner, rot13
 * 2021-05-06: sqrt, switch, fetch, fetchall, fibchan, fibspin, pingpong, areader
-* 2021-05-05: Cloud Native Go, reisinge.net/notes/slices, echo
+* 2021-05-05: Cloud Native Go, reisinge.net/notes/go/slices, echo
 * 2021-05-04: fibfunc, dac, dup1, dup2, dup3, parsejson, timer
 * 2021-05-03: search, bytecounter, reisinge.net/notes/go/pointers
 * 2021-04-30: shop1, shop2, shop4, sortbooks, tcpscanner, rot13
