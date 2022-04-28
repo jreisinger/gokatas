@@ -2,7 +2,6 @@
 // workers that will do the scanning by connecting to ports. Then send them
 // port numbers to try to connect to. Collect the results, 0 means couldn't
 // connect, and print them. Adapted from the "Black Hat Go" book.
-//	go run tcpscanner/main.go scanme.nmap.org
 package main
 
 import (
@@ -13,7 +12,7 @@ import (
 
 const host = "scanme.nmap.org"
 
-func scanner(ports, results chan int) {
+func worker(ports, results chan int) {
 	for port := range ports {
 		addr := fmt.Sprintf("%s:%d", host, port)
 		conn, err := net.Dial("tcp", addr)
@@ -31,13 +30,9 @@ func main() {
 	results := make(chan int)
 
 	for i := 0; i < 100; i++ {
-		go scanner(ports, results)
+		go worker(ports, results)
 	}
 
-	// Send ports to scan in a separate goroutine to avoid deadlock. The
-	// results gathering loop below has to start. Otherwise the program
-	// would get stuck after sending 100 ports to scan. An alternative
-	// solution would be to use a buffered channel.
 	go func() {
 		for i := 1; i <= 1024; i++ {
 			ports <- i
@@ -46,8 +41,6 @@ func main() {
 
 	var openports []int
 
-	// You can't range over results channel here because the loop would not
-	// finish until the channel gets closed.
 	for i := 1; i <= 1024; i++ {
 		port := <-results
 		if port != 0 {
