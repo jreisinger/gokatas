@@ -1,4 +1,4 @@
-* 2022-04-29: timer, switch, pkg.go.dev/net/http
+* 2022-04-29: timer, switch, pkg.go.dev/net/http, word
 * 2022-04-28: tcpscanner, generics, reisinge.net/notes/go/slices
 * 2022-04-27: countgo, bytecounter, fibspin, enum
 * 2022-04-26: sqrt, compress, fibchan, fibfunc
