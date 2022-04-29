@@ -18,7 +18,7 @@ func main() {
 
 func pointerTypes(ch chan string) {
 	defer close(ch)
-	ptypes := []string{"slice", "map", "function", "channel", "interface"}
+	ptypes := []string{"slices", "maps", "functions", "channels", "interfaces"}
 	var i int
 	t := time.NewTimer(time.Second * 5)
 	for {
