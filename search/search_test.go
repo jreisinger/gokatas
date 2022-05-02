@@ -4,17 +4,13 @@ import (
 	"testing"
 )
 
-// Tests
+var list = []int{1, 2, 2, 4, 5, 5, 7, 8, 9, 9}
 
-type testpair struct {
+var tests = []struct {
 	list []int
 	item int
 	idx  int
-}
-
-var list = []int{1, 2, 2, 4, 5, 5, 7, 8, 9, 9}
-
-var testpairs = []testpair{
+}{
 	{list, -1, -1},
 	{list, 0, -1},
 	{list, 1, 0},
@@ -30,24 +26,20 @@ var testpairs = []testpair{
 }
 
 func TestLinearsearch(t *testing.T) {
-	for _, tp := range testpairs {
-		idx := Linear(tp.list, tp.item)
-		if idx != tp.idx {
-			t.Fatalf("Got index %d but wanted %d. Searched %d in %v.", idx, tp.idx, tp.item, tp.list)
+	for _, test := range tests {
+		if idx := Linear(test.list, test.item); idx != test.idx {
+			t.Errorf("Linear(%v, %d) = %d, want %d", test.list, test.item, idx, test.idx)
 		}
 	}
 }
 
 func TestBinarysearch(t *testing.T) {
-	for _, tp := range testpairs {
-		idx := Binary(tp.list, tp.item)
-		if idx != tp.idx {
-			t.Fatalf("Got index %d but wanted %d. Searched %d in %v.", idx, tp.idx, tp.item, tp.list)
+	for _, test := range tests {
+		if idx := Binary(test.list, test.item); idx != test.idx {
+			t.Errorf("Binary(%v, %d) = %d, want %d", test.list, test.item, idx, test.idx)
 		}
 	}
 }
-
-// Benchmarks (https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go)
 
 func genList(n int) []int {
 	var list []int
@@ -57,44 +49,22 @@ func genList(n int) []int {
 	return list
 }
 
-var (
-	list10   = genList(10)
-	list100  = genList(100)
-	list1000 = genList(1000)
-)
-
-func BenchmarkLinearsearch10(b *testing.B) {
+func benchmarkLinear(b *testing.B, size int) {
+	list = genList(size)
 	for i := 0; i < b.N; i++ {
-		Linear(list10, 9)
+		Linear(list, size-1)
 	}
 }
+func BenchmarkLinear10(b *testing.B)   { benchmarkLinear(b, 10) }
+func BenchmarkLinear100(b *testing.B)  { benchmarkLinear(b, 100) }
+func BenchmarkLinear1000(b *testing.B) { benchmarkLinear(b, 1000) }
 
-func BenchmarkLinearsearch100(b *testing.B) {
+func benchmarkBinary(b *testing.B, size int) {
+	list = genList(size)
 	for i := 0; i < b.N; i++ {
-		Linear(list100, 99)
+		Binary(list, size-1)
 	}
 }
-
-func BenchmarkLinearsearch1000(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Linear(list1000, 999)
-	}
-}
-
-func BenchmarkBinarysearch10(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Binary(list10, 9)
-	}
-}
-
-func BenchmarkBinarysearch100(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Binary(list100, 99)
-	}
-}
-
-func BenchmarkBinarysearch1000(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Binary(list1000, 999)
-	}
-}
+func BenchmarkBinary10(b *testing.B)   { benchmarkBinary(b, 10) }
+func BenchmarkBinary100(b *testing.B)  { benchmarkBinary(b, 100) }
+func BenchmarkBinary1000(b *testing.B) { benchmarkBinary(b, 1000) }
