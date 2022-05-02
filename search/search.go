@@ -1,5 +1,5 @@
 // Package search implements linear and binary search algorithms.
-// 	go test -bench=. search/*	# run both tests and benchmarks
+// 	go test -bench=. search/*	# run tests and all benchmarks
 // See reisinge.net/notes/cs/big-o-notation for more.
 package search
 

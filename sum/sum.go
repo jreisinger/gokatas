@@ -1,5 +1,6 @@
 // Package sum sums a list of integers using loop and divide-and-conquer
 // technique. See reisinge.net/notes/cs/divide-and-conquer for more.
+//	go test sum/*
 package sum
 
 func Loop(list []int) int {
