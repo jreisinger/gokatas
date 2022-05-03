@@ -1,3 +1,4 @@
+* 2022-05-03: dup2, dup3, parsejson
 * 2022-05-02: sum, echo, fetchall
 * 2022-04-29: timer, switch, pkg.go.dev/net/http, word
 * 2022-04-28: tcpscanner, generics, reisinge.net/notes/go/slices

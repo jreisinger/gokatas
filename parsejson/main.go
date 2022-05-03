@@ -8,7 +8,8 @@ import (
 	"strings"
 )
 
-var files = `[
+var filesystem = `
+[
     {
         "path": "/etc",
         "is_dir": true
@@ -17,20 +18,22 @@ var files = `[
         "path": "/etc/hosts",
         "is_dir": false
     }
-]`
+]
+`
 
 func main() {
-	r := strings.NewReader(files)
+	r := strings.NewReader(filesystem)
 
 	var fs []struct {
 		Path  string
 		IsDir bool `json:"is_dir"`
 	}
+
 	if err := json.NewDecoder(r).Decode(&fs); err != nil {
 		log.Fatal(err)
 	}
 
 	for _, f := range fs {
-		fmt.Printf("%-10s %t\n", f.Path, f.IsDir)
+		fmt.Printf("%-10s\t%t\n", f.Path, f.IsDir)
 	}
 }
