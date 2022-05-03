@@ -1,5 +1,26 @@
+# Go katas
+
 Katas (形) are practiced in martial arts as a way to memorize and perfect the
 movements being executed. Let's try the same with code: [go doc][1].
+
+The approach is pretty low-tech. It's a list of packages that you should be
+rewriting from scratch or at least partially. There's a command to visualize
+your progress:
+
+```
+> go run cmd/katas.go
+Kata                                                       Last done       Count
+----                                                       ---------       -----
+areader                                            11 days ago (Fri)           1
+bytecounter                                         8 days ago (Mon)           1
+clock2                                              8 days ago (Mon)           1
+----                                                                       -----
+3                                                                              3
+```
+
+It's important to practice regularly, to create a habit. Start by taking baby
+steps, e.g. 15 minutes a day. After some time it will require much less will
+power, it will become natural for you. 🥋
 
 ## Initial setup
 
