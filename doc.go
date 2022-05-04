@@ -9,9 +9,9 @@ movements. Katas are simple, practical and well written Go programs.
     code -a katas.md     # write down katas you've done
 
 katas.md format:
-* yyyy-mm-dd: areader
+\* yyyy-mm-dd: areader
 
 katas.md format for multiple katas completed in one day:
-* yyyy-mm-dd: clock2, areader, netcat1
+\* yyyy-mm-dd: clock2, areader, netcat1
 */
 package gokatas
