@@ -23,15 +23,15 @@ func main() {
 			log.Print(err) // e.g., connection aborted
 			continue
 		}
-		// HandleConn(conn) // handle one connection at a time
-		go HandleConn(conn) // handle connections concurrently
+		// handleConn(conn) // handle one connection at a time
+		go handleConn(conn) // handle connections concurrently
 	}
 }
 
-func HandleConn(c net.Conn) {
-	defer c.Close()
+func handleConn(conn net.Conn) {
+	defer conn.Close()
 	for {
-		_, err := io.WriteString(c, time.Now().Format("15:04:05\n"))
+		_, err := io.WriteString(conn, time.Now().Format("15:04:05\n"))
 		if err != nil {
 			return // e.g., client disconnected
 		}
