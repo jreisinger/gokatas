@@ -9,13 +9,13 @@ at least partially. There's a command to visualize your progress:
 
 ```
 > go run cmd/katas.go
-Kata                                                       Last done       Count
-----                                                       ---------       -----
-areader                                            11 days ago (Fri)           1
-bytecounter                                         8 days ago (Mon)           1
-clock2                                              8 days ago (Mon)           1
-----                                                                       -----
-3                                                                              3
+Kata                                   Last done       Count
+----                                   ---------       -----
+areader                        11 days ago (Fri)           1
+bytecounter                     8 days ago (Mon)           1
+clock2                          8 days ago (Mon)           1
+----                                                   -----
+3                                                          3
 ```
 
 It's important to practice regularly, to create a habit. Start by taking baby
