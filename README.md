@@ -21,7 +21,7 @@ clock2                          8 days ago (Mon)           1
 
 It's important to practice regularly, to create a habit. Start by taking baby
 steps, e.g. 15 minutes a day. After some time it will require much less will
-power, it will become natural for you. 🥋
+power, it will become natural for you.
 
 ## Initial setup
 
