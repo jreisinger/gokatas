@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
-	r := rot13.Rot13{strings.NewReader("Lbh penpxrq gur pbqr!\n")}
-	io.Copy(os.Stdout, &r)
+	code := strings.NewReader("Lbh penpxrq gur pbqr!\n")
+	rr := rot13.Rot13{Code: code}
+	io.Copy(os.Stdout, rr)
 }
