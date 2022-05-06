@@ -1,7 +1,7 @@
 /*
 Package counter implements an integer counter that can only be incremented.
 
-Encapsulation (information hiding) if a key aspect of OOP. It prevents clients
+Encapsulation (information hiding) is a key aspect of OOP. It prevents clients
 from accessing variables or methods of an object. Benefits:
  1) Clients need to understand fewer statements.
  2) Clients don't depend on things that might change.
