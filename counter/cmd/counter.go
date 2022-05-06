@@ -1,3 +1,4 @@
+// Counter creates an integer counter, increments it and prints it.
 package main
 
 import (
