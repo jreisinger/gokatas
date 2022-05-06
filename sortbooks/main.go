@@ -29,8 +29,6 @@ type book struct {
 	Year    int // when published
 }
 
-// START
-
 type authors []string
 
 func (a authors) String() string {
@@ -48,8 +46,6 @@ type ByYear []*book
 func (x ByYear) Len() int           { return len(x) }
 func (x ByYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
 func (x ByYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
-
-// STOP
 
 func main() {
 	sort.Sort(sort.Reverse(ByYear(books)))
