@@ -23,40 +23,40 @@ import (
 	"text/tabwriter"
 )
 
-type Book struct {
+type book struct {
 	Title   string
-	Authors Authors
+	Authors authors
 	Year    int // when published
 }
 
 // START
 
-type Authors []string
+type authors []string
 
-func (a Authors) String() string {
+func (a authors) String() string {
 	return strings.Join(a, ", ")
 }
 
-var books = []*Book{
-	{"The Lord of the Rings", Authors{"Tolkien"}, 1954},
-	{"The Phoenix Project", Authors{"Kim", "Behr", "Spafford"}, 2013},
-	{"The Go Programming Language", Authors{"Kernighan", "Donovan"}, 2015},
+var books = []*book{
+	{"The Lord of the Rings", authors{"Tolkien"}, 1954},
+	{"The Phoenix Project", authors{"Kim", "Behr", "Spafford"}, 2013},
+	{"The Go Programming Language", authors{"Kernighan", "Donovan"}, 2015},
 }
 
-type byYear []*Book
+type ByYear []*book
 
-func (x byYear) Len() int           { return len(x) }
-func (x byYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
-func (x byYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
+func (x ByYear) Len() int           { return len(x) }
+func (x ByYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
+func (x ByYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
 
 // STOP
 
 func main() {
-	sort.Sort(sort.Reverse(byYear(books)))
+	sort.Sort(sort.Reverse(ByYear(books)))
 	printBooks(books)
 }
 
-func printBooks(books []*Book) {
+func printBooks(books []*book) {
 	const format = "%v\t%v\t%v\n"
 	tw := new(tabwriter.Writer).Init(os.Stdout, 0, 8, 2, ' ', 0)
 	fmt.Fprintf(tw, format, "Title", "Authors", "Year")
