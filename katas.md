@@ -1,4 +1,4 @@
-* 2022-05-06: search, shop4, sortbooks
+* 2022-05-06: search, shop4, sortbooks, counter
 * 2022-05-05: proxy, rot13, reisinge.net/notes/go/pointers
 * 2022-05-04: clock2, areader, netcat1
 * 2022-05-03: dup2, dup3, parsejson, pingpong
