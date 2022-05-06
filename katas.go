@@ -78,7 +78,8 @@ func Get() ([]Kata, error) {
 	return ks, nil
 }
 
-// Print prints table with statistics about katas.
+// Print prints table with statistics about katas. By default only katas last
+// done within two weeks are shown and they are sorted by when last done.
 func Print(katas []Kata, showAll, sortByCount bool) {
 	const format = "%-49v\t%17v\t%10v\n"
 
