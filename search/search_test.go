@@ -4,31 +4,28 @@ import (
 	"testing"
 )
 
-var list = []int{1, 2, 2, 4, 5, 5, 7, 8, 9, 9}
+var list = []int{1, 2, 2, 3, 4, 5, 7, 8, 9}
 
 var tests = []struct {
 	list []int
 	item int
 	idx  int
 }{
+	{[]int{}, 0, -1},
+	{[]int{}, -1, -1},
 	{list, -1, -1},
 	{list, 0, -1},
 	{list, 1, 0},
 	{list, 2, 1},
-	{list, 3, -1},
-	{list, 4, 3},
-	{list, 5, 4},
 	{list, 6, -1},
-	{list, 7, 6},
-	{list, 8, 7},
-	{list, 9, 8},
 	{list, 10, -1},
 }
 
 func TestLinearsearch(t *testing.T) {
 	for _, test := range tests {
 		if idx := Linear(test.list, test.item); idx != test.idx {
-			t.Errorf("Linear(%v, %d) = %d, want %d", test.list, test.item, idx, test.idx)
+			t.Errorf("Linear(%v, %d) = %d, want %d",
+				test.list, test.item, idx, test.idx)
 		}
 	}
 }
@@ -36,7 +33,8 @@ func TestLinearsearch(t *testing.T) {
 func TestBinarysearch(t *testing.T) {
 	for _, test := range tests {
 		if idx := Binary(test.list, test.item); idx != test.idx {
-			t.Errorf("Binary(%v, %d) = %d, want %d", test.list, test.item, idx, test.idx)
+			t.Errorf("Binary(%v, %d) = %d, want %d",
+				test.list, test.item, idx, test.idx)
 		}
 	}
 }
