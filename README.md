@@ -26,7 +26,7 @@ power, it will become natural for you.
 
 ## Initial setup
 
-1) [Install](https://go.dev/doc/install) Go or run inside a container: `docker
+1) [Install Go](https://go.dev/doc/install) or run inside a container: `docker
 run --rm -it golang /bin/bash`.
 
 2) Clone the repo:
