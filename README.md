@@ -10,7 +10,7 @@ from scratch or at least partially. There's a command to visualize your
 progress:
 
 ```
-> go run cmd/katas.go
+$ go run cmd/katas.go
 Kata                         Last done       Count
 ----                         ---------       -----
 areader              11 days ago (Fri)           1
