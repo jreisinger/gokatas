@@ -1,6 +1,8 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/jreisinger/gokatas.svg)](https://pkg.go.dev/github.com/jreisinger/gokatas)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jreisinger/gokatas)](https://goreportcard.com/report/github.com/jreisinger/gokatas)
 
+> Practice yourself, for heaven's sake, in little things; and thence proceed to greater. -- EPICTETUS (Discourses IV.i)
+
 # Go katas
 
 Katas (形) are practiced in martial arts as a way to memorize and perfect the
