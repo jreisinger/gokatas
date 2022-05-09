@@ -1,6 +1,6 @@
-// Package builder shows the builder design pattern. It's useful for creating a
-// complex object step by step. Based on "GoF design patterns that still make
-// sense in Go" (bit.ly/37BaClv).
+// Package builder builds *http.Request objects using the builder design
+// pattern. The pattern is useful for creating complex objects step by step.
+// Based on "GoF design patterns that still make sense in Go" (bit.ly/37BaClv).
 package builder
 
 import (
