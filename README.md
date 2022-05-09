@@ -37,6 +37,5 @@ run --rm -it golang /bin/bash`.
 
 ```
 cd gokatas
-> katas.md # if you are not me :-)
 go doc
 ```
