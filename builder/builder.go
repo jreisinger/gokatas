@@ -1,7 +1,6 @@
-// Package builder shows the builder pattern. It's good when creating a complex
-// object so that you don't end up with a single function call receiving dozens
-// of parameters. Based on "GoF design patterns that still make sense in Go"
-// (bit.ly/37BaClv).
+// Package builder shows the builder design pattern. It's useful for creating a
+// complex object step by step. Based on "GoF design patterns that still make
+// sense in Go" (bit.ly/37BaClv).
 package builder
 
 import (
@@ -10,8 +9,10 @@ import (
 	"net/http"
 )
 
-func NewHTTPRequest(url string) HTTPRequest {
-	return &request{
+// NewBuilder creates a builder given a URL. We don't leak the actual builder
+// and thus don't have to worry about null/empty values.
+func NewBuilder(url string) HTTPBuilder {
+	return &builder{
 		ctx:     context.Background(),
 		url:     url,
 		method:  http.MethodGet,
@@ -21,15 +22,17 @@ func NewHTTPRequest(url string) HTTPRequest {
 	}
 }
 
-type HTTPRequest interface {
-	Method(method string) HTTPRequest
-	AddHeader(name, value string) HTTPRequest
-	Body(r io.Reader) HTTPRequest
-	Close(close bool) HTTPRequest
+// HTTPBuilder defines the fields we want to set on this builder, you could
+// add/remove fields here.
+type HTTPBuilder interface {
+	Method(method string) HTTPBuilder
+	AddHeader(name, value string) HTTPBuilder
+	Body(r io.Reader) HTTPBuilder
+	Close(close bool) HTTPBuilder
 	Build() (*http.Request, error)
 }
 
-type request struct {
+type builder struct {
 	ctx     context.Context
 	url     string
 	method  string
@@ -38,37 +41,37 @@ type request struct {
 	close   bool
 }
 
-func (req *request) Method(method string) HTTPRequest {
-	req.method = method
-	return req
+func (b *builder) Method(method string) HTTPBuilder {
+	b.method = method
+	return b
 }
-func (req *request) AddHeader(name, value string) HTTPRequest {
-	values, found := req.headers[name]
+func (b *builder) AddHeader(name, value string) HTTPBuilder {
+	values, found := b.headers[name]
 	if !found {
 		values = make([]string, 0, 10)
 	}
-	req.headers[name] = append(values, value)
-	return req
+	b.headers[name] = append(values, value)
+	return b
 }
-func (req *request) Body(r io.Reader) HTTPRequest {
-	req.body = r
-	return req
+func (b *builder) Body(r io.Reader) HTTPBuilder {
+	b.body = r
+	return b
 }
-func (req *request) Close(close bool) HTTPRequest {
-	req.close = close
-	return req
+func (b *builder) Close(close bool) HTTPBuilder {
+	b.close = close
+	return b
 }
 
-func (req *request) Build() (*http.Request, error) {
-	r, err := http.NewRequestWithContext(req.ctx, req.method, req.url, req.body)
+func (b *builder) Build() (*http.Request, error) {
+	r, err := http.NewRequestWithContext(b.ctx, b.method, b.url, b.body)
 	if err != nil {
 		return nil, err
 	}
-	for key, values := range req.headers {
+	for key, values := range b.headers {
 		for _, value := range values {
 			r.Header.Add(key, value)
 		}
 	}
-	r.Close = req.close
+	r.Close = b.close
 	return r, nil
 }
