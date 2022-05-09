@@ -1,3 +1,4 @@
+// Areader reads and prints three bytes from Areader.
 package main
 
 import (
