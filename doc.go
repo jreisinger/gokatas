@@ -1,6 +1,6 @@
 /*
 Package gokatas contains programming katas for memorizing and perfecting your Go
-movements. Katas are small, practical and well written Go programs.
+movements. Katas are brief, practical and well written Go programs.
 
     go run cmd/katas.go  # what kata should I practice today, let's say areader
     go doc -all areader  # what's the idea and design of the kata
