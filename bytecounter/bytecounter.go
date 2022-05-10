@@ -2,9 +2,9 @@
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch7/bytecounter.
 package bytecounter
 
-type Bytecounter int
+type ByteCounter int
 
-func (c *Bytecounter) Write(p []byte) (int, error) {
-	*c += Bytecounter(len(p)) // convert int to Bytecounter
+func (c *ByteCounter) Write(p []byte) (int, error) {
+	*c += ByteCounter(len(p)) // convert int to Bytecounter
 	return len(p), nil
 }

@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var c bytecounter.Bytecounter
+	var c bytecounter.ByteCounter
 	c.Write([]byte("hello"))
 	c = 0 // reset the counter
 	fmt.Fprint(&c, "world")
