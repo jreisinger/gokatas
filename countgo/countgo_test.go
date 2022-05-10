@@ -10,9 +10,8 @@ func TestFilesOnDisk(t *testing.T) {
 	t.Parallel()
 	fsys := os.DirFS("testdata")
 	want := 4
-	got := Files(fsys)
-	if want != got {
-		t.Errorf("want %d, got %d", want, got)
+	if got := Files(fsys); got != want {
+		t.Errorf("got %d, want %d", got, want)
 	}
 }
 
@@ -25,8 +24,7 @@ func TestFilesInMemory(t *testing.T) {
 		"subfolder2/file.go":    {},
 	}
 	want := 4
-	got := Files(fsys)
-	if want != got {
-		t.Errorf("want %d, got %d", want, got)
+	if got := Files(fsys); got != want {
+		t.Errorf("got %d, want %d", got, want)
 	}
 }
