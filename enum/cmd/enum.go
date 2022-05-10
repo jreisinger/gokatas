@@ -1,4 +1,4 @@
-// Show how to use enumerated type.
+// Enum shows how to use enumerated type.
 package main
 
 import (
@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	var d enum.Direction = enum.North
+	d := enum.North
 	fmt.Print(d)
 	switch d {
 	case enum.North:
