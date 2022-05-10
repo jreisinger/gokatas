@@ -1,3 +1,4 @@
+* 2022-05-10: bytecounter, countgo, enum, fibspin
 * 2022-05-09: compress, fibchan, fibfunc, sqrt, builder
 * 2022-05-06: search, shop4, sortbooks, counter, geometry
 * 2022-05-05: proxy, rot13, reisinge.net/notes/go/pointers
