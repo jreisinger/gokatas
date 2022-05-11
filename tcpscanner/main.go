@@ -1,7 +1,7 @@
-// Tcpscanner reports open TCP ports on a host. First create a pool of 100
-// workers that will do the scanning by connecting to ports. Then send them
-// port numbers to try to connect to. Collect the results, 0 means couldn't
-// connect, and print them. Adapted from the "Black Hat Go" book.
+// Tcpscanner reports open TCP ports on a host. First create a pool of n workers
+// that will do the scanning by connecting to ports. Then send them port numbers
+// to try to connect to. Collect the results, 0 means couldn't connect, and
+// print them. Adapted from the "Black Hat Go" book.
 package main
 
 import (
@@ -10,7 +10,12 @@ import (
 	"sort"
 )
 
-const host = "scanme.nmap.org"
+const (
+	host     = "scanme.nmap.org"
+	minPort  = 1
+	maxPort  = 1024
+	nWorkers = 100
+)
 
 func worker(ports, results chan int) {
 	for port := range ports {
@@ -29,19 +34,19 @@ func main() {
 	ports := make(chan int)
 	results := make(chan int)
 
-	for i := 0; i < 100; i++ {
+	for i := 0; i < nWorkers; i++ {
 		go worker(ports, results)
 	}
 
 	go func() {
-		for i := 1; i <= 1024; i++ {
+		for i := minPort; i <= maxPort; i++ {
 			ports <- i
 		}
 	}()
 
 	var openports []int
 
-	for i := 1; i <= 1024; i++ {
+	for i := minPort; i <= maxPort; i++ {
 		port := <-results
 		if port != 0 {
 			openports = append(openports, port)
