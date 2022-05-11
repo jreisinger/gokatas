@@ -1,15 +1,15 @@
-// Show the basics of generics. Based on go.dev/doc/tutorial/generics.
+// Generics shows the basics of generics. Based on go.dev/doc/tutorial/generics.
 package main
 
 import "fmt"
 
-// Number is called a type constraint.
+// Number is a user-defined type constraint.
 type Number interface {
 	int64 | float64
 }
 
-// Sum sums the values of m. It supports both ints and floats. K and V are
-// called type parameters. The "comparable" constraint is predeclared in Go.
+// Sum sums the values of m. It supports both int64s and float64s. K and V are
+// called type parameters. The comparable type constraint is predeclared in Go.
 func Sum[K comparable, V Number](m map[K]V) V {
 	var s V
 	for _, v := range m {
