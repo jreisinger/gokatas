@@ -127,7 +127,7 @@ func sortKatas(katas []Kata, countSort *bool) {
 			}
 		} else {
 			if x.LastDoneOn != y.LastDoneOn {
-				return y.LastDoneOn.After(x.LastDoneOn)
+				return x.LastDoneOn.After(y.LastDoneOn)
 			}
 		}
 		if x.Name != y.Name {
