@@ -1,3 +1,4 @@
+* 2022-05-13: sum, fetchall, echo
 * 2022-05-11: generics, tcpscanner, reisinge.net/notes/go/slices
 * 2022-05-10: bytecounter, countgo, enum, fibspin
 * 2022-05-09: compress, fibchan, fibfunc, sqrt, builder
