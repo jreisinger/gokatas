@@ -8,18 +8,16 @@ import (
 	"strings"
 )
 
-var filesystem = `
-[
-    {
-        "path": "/etc",
-        "is_dir": true
-    },
-    {
-        "path": "/etc/hosts",
-        "is_dir": false
-    }
-]
-`
+var filesystem = `[
+	{
+		"path": "/etc",
+		"is_dir": true
+	},
+	{
+		"path": "/etc/hosts",
+		"is_dir": false
+	}
+]`
 
 func main() {
 	r := strings.NewReader(filesystem)
@@ -30,9 +28,11 @@ func main() {
 	}
 
 	if err := json.NewDecoder(r).Decode(&fs); err != nil {
-		log.Fatal(err)
+		log.Fatalf("decoding JSON: %v", err)
 	}
 
+	fmt.Printf("%-10v\t%v\n", "Path", "Dir")
+	fmt.Printf("%-10v\t%v\n", "----", "---")
 	for _, f := range fs {
 		fmt.Printf("%-10s\t%t\n", f.Path, f.IsDir)
 	}
