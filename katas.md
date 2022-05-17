@@ -1,3 +1,4 @@
+* 2022-05-17: areader, clock2, netcat1
 * 2022-05-16: dup2, dup3, parsejson, pingpong
 * 2022-05-13: sum, fetchall, echo
 * 2022-05-11: generics, tcpscanner, reisinge.net/notes/go/slices
