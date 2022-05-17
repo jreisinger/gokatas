@@ -31,7 +31,8 @@ power, it will become natural for you.
 1) [Install Go](https://go.dev/doc/install) or run inside a container: `docker
 run --rm -it golang /bin/bash`.
 
-2) [Fork](https://github.com/jreisinger/gokatas/fork) and then clone the repo: `git clone git@github.com:<you>/gokatas.git` or `git clone https://github.com/<you>/gokatas.git`.
+2) [Fork](https://github.com/jreisinger/gokatas/fork) and then clone the repo:
+`git clone git@github.com:<you>/gokatas.git`.
 
 3) Start practicing:
 
