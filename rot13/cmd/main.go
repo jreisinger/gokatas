@@ -11,6 +11,6 @@ import (
 
 func main() {
 	code := strings.NewReader("Lbh penpxrq gur pbqr!\n")
-	rr := rot13.Rot13{Code: code}
+	rr := rot13.Rot13{code}
 	io.Copy(os.Stdout, rr)
 }
