@@ -1,3 +1,4 @@
+* 2022-05-20: search, shop4, sortbooks
 * 2022-05-19: sqrt, counter, geometry
 * 2022-05-18: proxy, rot13, reisinge.net/notes/go/pointers
 * 2022-05-17: areader, clock2, netcat1
