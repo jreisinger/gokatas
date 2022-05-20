@@ -1,18 +1,5 @@
-// Sortbooks sorts a collection of books. To sort a collection of elements you
-// need to define a type for this collection. This type needs to have the
-// methods that satisfy the sort.Interface interface type.
-//
-// It's not necessary to use a pointer to book. However when swapping many
-// elements it might be faster this way since pointer is always only a machine
-// word in size (usually 32 or 64 bits).
-//
-// 	b := book{"The Go Programming Language", "Kernighan, Donovan", 2015}
-// 	p := &b
-// 	format := "type: %10T, size: %2d bytes\n"
-// 	fmt.Printf(format, b, unsafe.Sizeof(b)) // type:  main.book, size: 40 bytes
-// 	fmt.Printf(format, p, unsafe.Sizeof(p)) // type: *main.book, size:  8 bytes
-//
-// Based on github.com/adonovan/gopl.io/blob/master/ch7/sorting/.
+// Sortbooks sorts a collection of books. Based on
+// github.com/adonovan/gopl.io/blob/master/ch7/sorting/.
 package main
 
 import (
@@ -35,12 +22,18 @@ func (a authors) String() string {
 	return strings.Join(a, ", ")
 }
 
+// It's not necessary to use a pointer to book. However when swapping many
+// elements it might be faster this way since pointer is always only a machine
+// word in size (usually 32 or 64 bits). See reisinge.net/notes/go/pointers.
 var books = []*book{
 	{"The Lord of the Rings", authors{"Tolkien"}, 1954},
 	{"The Phoenix Project", authors{"Kim", "Behr", "Spafford"}, 2013},
 	{"The Go Programming Language", authors{"Kernighan", "Donovan"}, 2015},
 }
 
+// To sort a collection of elements you need to define a type for this
+// collection. This type needs to have the methods that satisfy the
+// sort.Interface interface type.
 type ByYear []*book
 
 func (x ByYear) Len() int           { return len(x) }
