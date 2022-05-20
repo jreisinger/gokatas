@@ -14,7 +14,7 @@ func Linear(list []int, item int) int {
 	return -1
 }
 
-// Binary returns the smallest index of item from a sorted list or -1 if not
+// Binary returns the smallest index of item from a *sorted* list or -1 if not
 // found. Binary search is an O(log n) algorithm.
 func Binary(list []int, item int) int {
 	low := 0
