@@ -1,7 +1,6 @@
 // Shop4 is a web shop selling shoes and socks. It registers the /list and
-// /price endpoints by calling the convenience function http.HandleFunc and
-// thus using the DefaultServeMux. Adapted from
-// github.com/adonovan/gopl.io/tree/master/ch7/http4.
+// /price endpoints by calling the convenience function http.HandleFunc.
+// Adapted from github.com/adonovan/gopl.io/tree/master/ch7/http4.
 package main
 
 import (
