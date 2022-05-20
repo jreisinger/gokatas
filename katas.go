@@ -93,7 +93,7 @@ func Print(katas []Kata, showAll, sortByCount bool) {
 	var totalCount int
 	sortKatas(katas, &sortByCount)
 	for _, k := range katas {
-		if !show(k, 14, &showAll) {
+		if !show(k, 24*15, &showAll) {
 			continue
 		}
 
@@ -138,11 +138,12 @@ func sortKatas(katas []Kata, countSort *bool) {
 }
 
 // show decides when to show a kata.
-func show(k Kata, lastDoneDaysAgo float64, showAll *bool) bool {
+func show(k Kata, lastDoneHoursAgo float64, showAll *bool) bool {
 	if *showAll {
 		return true
 	}
-	return time.Since(k.LastDoneOn).Hours() < 24*lastDoneDaysAgo
+	deadline := time.Now().Add(-time.Hour * time.Duration(lastDoneHoursAgo))
+	return k.LastDoneOn.After(deadline)
 }
 
 // formatLastDoneOn formats the time.
