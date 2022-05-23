@@ -22,6 +22,10 @@ clock2                8 days ago (Mon)           1
 3                                                3
 ```
 
+Go katas should be useful for folks trying to learn to program in Go and/or for
+those who don't get to program every day but still want to keep their skills
+fresh (e.g. sysadmins, devops or security people).
+
 It's important to practice regularly, to create a habit. Start by taking baby
 steps, e.g. 15 minutes a day. After some time it will require much less will
 power, it will become natural for you.
