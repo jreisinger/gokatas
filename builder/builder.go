@@ -10,7 +10,7 @@ import (
 )
 
 // NewBuilder creates a builder given a URL. We don't leak the actual builder
-// and thus don't have to worry about null/empty values.
+// (information hiding) and thus don't have to worry about null/empty values.
 func NewBuilder(url string) HTTPBuilder {
 	return &builder{
 		ctx:     context.Background(),
