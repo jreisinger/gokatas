@@ -1,3 +1,4 @@
+* 2022-05-25: generics, reisinge.net/notes/go/slices, tcpscanner
 * 2022-05-24: bytecounter, countgo, enum, fibspin
 * 2022-05-23: builder, compress, fibchan, fibfunc
 * 2022-05-20: search, shop4, sortbooks

@@ -9,7 +9,8 @@ type Number interface {
 }
 
 // Sum sums the values of m. It supports both int64s and float64s. K and V are
-// called type parameters. The comparable type constraint is predeclared in Go.
+// called type parameters (m is the ordinary function parameter). The comparable
+// type constraint is predeclared in Go.
 func Sum[K comparable, V Number](m map[K]V) V {
 	var s V
 	for _, v := range m {
