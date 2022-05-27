@@ -1,3 +1,4 @@
+* 2022-05-27: dup2, dup3, parsejson, pingpong
 * 2022-05-26: echo, fetchall, sum
 * 2022-05-25: generics, reisinge.net/notes/go/slices, tcpscanner
 * 2022-05-24: bytecounter, countgo, enum, fibspin
