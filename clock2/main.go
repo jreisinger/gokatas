@@ -15,20 +15,18 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("listening at %s", addr)
-
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
 			log.Print(err) // e.g., connection aborted
 			continue
 		}
-		// handleConn(conn) // handle one connection at a time
-		go handleConn(conn) // handle connections concurrently
+		// handle(conn) // handle one connection at a time
+		go handle(conn) // handle connections concurrently
 	}
 }
 
-func handleConn(conn net.Conn) {
+func handle(conn net.Conn) {
 	defer conn.Close()
 	for {
 		_, err := io.WriteString(conn, time.Now().Format("15:04:05\n"))
