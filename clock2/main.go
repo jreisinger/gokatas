@@ -10,11 +10,11 @@ import (
 )
 
 func main() {
-	addr := net.JoinHostPort("localhost", "1362")
-	listener, err := net.Listen("tcp", addr)
+	listener, err := net.Listen("tcp", "localhost:1362")
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
