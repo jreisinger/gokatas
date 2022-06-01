@@ -10,5 +10,5 @@ import (
 func main() {
 	c := new(counter.Counter)
 	c.Inc()
-	fmt.Println(c.Get())
+	fmt.Println(c.N())
 }

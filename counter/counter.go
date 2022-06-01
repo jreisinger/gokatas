@@ -8,10 +8,11 @@ from accessing variables or methods of an object. Benefits:
  2) Clients don't depend on things that might change.
  3) Clients can't mess with variables directly.
 
-Adapted from the GoPL (gopl.io) ch. 6.6 Encapsulation.
+Adapted from the gopl.io ch. 6.6 Encapsulation.
 */
 package counter
 
-type Counter struct{ n int } // counter encapsulates its field(s)
-func (c *Counter) Get() int  { return c.n } // getter
+type Counter struct{ n int } // Counter encapsulates its field
+func (c *Counter) N() int    { return c.n } // getter
 func (c *Counter) Inc()      { c.n++ }      // setter
+func (c *Counter) Reset()    { c.n = 0 }
