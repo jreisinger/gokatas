@@ -1,5 +1,5 @@
 // Package geometry defines simple types for plane geometry. Adapted from the
-// GoPL (gopl.io) ch6.1 Method declarations.
+// gopl.io ch. 6.1 Method declarations.
 package geometry
 
 import "math"

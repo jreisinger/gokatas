@@ -13,6 +13,6 @@ func main() {
 	q := geometry.Point{5, 4}
 	fmt.Println(p.Distance(q)) // 5
 
-	perim := geometry.Path{p, {5, 1}, q, {1, 1}}
+	perim := geometry.Path{{1, 1}, {5, 1}, {5, 4}, {1, 1}}
 	fmt.Println(perim.Distance()) // 12
 }
