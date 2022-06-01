@@ -1,3 +1,4 @@
+* 2022-06-01: counter, geometry, sqrt
 * 2022-05-31: proxy, rot13, reisinge.net/notes/go/pointers
 * 2022-05-30: areader, clock2, netcat1
 * 2022-05-27: dup2, dup3, parsejson, pingpong
