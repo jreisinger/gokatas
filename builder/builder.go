@@ -1,6 +1,7 @@
 // Package builder builds *http.Request objects using the builder design
-// pattern. The pattern is useful for creating complex objects step by step.
-// Based on "GoF design patterns that still make sense in Go" (bit.ly/37BaClv).
+// pattern. The pattern is useful for creating complex objects step by step so
+// you don't end up with a single function with dozens of parameters. Based on
+// "GoF design patterns that still make sense in Go" (bit.ly/37BaClv).
 package builder
 
 import (
@@ -9,12 +10,13 @@ import (
 	"net/http"
 )
 
-// NewBuilder creates a builder given a URL. We don't leak the actual builder
-// (information hiding) and thus don't have to worry about null/empty values.
+// NewBuilder creates a HTTPBuilder given a URL. We don't leak the actual
+// builder to achieve information hiding. Also we set some sane defaults and
+// don't have to worry about null/empty values.
 func NewBuilder(url string) HTTPBuilder {
 	return &builder{
-		ctx:     context.Background(),
 		url:     url,
+		ctx:     context.Background(),
 		method:  http.MethodGet,
 		headers: map[string][]string{},
 		body:    nil,
