@@ -1,4 +1,4 @@
-* 2022-06-09: echo, fetchall
+* 2022-06-09: echo, fetchall, sum
 * 2022-06-03: builder, compress, fibchan, fibfunc
 * 2022-06-02: search, shop4, sortbooks
 * 2022-06-01: counter, geometry, sqrt
