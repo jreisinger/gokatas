@@ -81,7 +81,7 @@ func Get() ([]Kata, error) {
 // Print prints table with statistics about katas. By default only katas last
 // done within two weeks are shown and they are sorted by when last done.
 func Print(katas []Kata, showAll, sortByCount bool) {
-	const format = "%-49v\t%17v\t%10v\n"
+	const format = "%v\t%v\t%5v\n"
 
 	// Print header.
 	tw := new(tabwriter.Writer).Init(os.Stdout, 0, 8, 2, ' ', 0)
@@ -102,11 +102,11 @@ func Print(katas []Kata, showAll, sortByCount bool) {
 
 		fmt.Fprintf(tw, format, k.Name, formatLastDoneOn(k.LastDoneOn), k.Count)
 	}
-	tw.Flush() // calculate column widths and print table
-
 	// Print footer.
-	fmt.Printf("%-49s %30s\n", "----", "-----")
-	fmt.Printf("%-49d %30d\n", katasCount, totalCount)
+	fmt.Fprintf(tw, format, "----", "", "-----")
+	fmt.Fprintf(tw, format, katasCount, "", totalCount)
+
+	tw.Flush() // calculate column widths and print table
 }
 
 type customSort struct {
