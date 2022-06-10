@@ -1,3 +1,4 @@
+* 2022-06-10: dup2, dup3, parsejson, pingpong
 * 2022-06-09: echo, fetchall, sum
 * 2022-06-03: builder, compress, fibchan, fibfunc
 * 2022-06-02: search, shop4, sortbooks
