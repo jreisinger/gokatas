@@ -4,7 +4,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
+	"os"
 	"strings"
 )
 
@@ -30,7 +30,7 @@ func main() {
 	r := strings.NewReader(filesystem)
 	decoder := json.NewDecoder(r)
 	if err := decoder.Decode(&fs); err != nil {
-		log.Fatalf("decoding JSON: %v", err)
+		fmt.Fprintf(os.Stderr, "parsejson: %v\n", err)
 	}
 
 	for _, f := range fs {
