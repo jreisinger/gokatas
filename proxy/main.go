@@ -20,7 +20,7 @@ func main() {
 			log.Print(err)
 			continue
 		}
-		// don't put any code here!
+		// Don't put any code here!
 		go proxy(conn)
 	}
 }
