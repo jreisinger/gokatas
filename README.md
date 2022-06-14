@@ -5,11 +5,7 @@
 
 # Go katas
 
-Katas (形) are practiced in martial arts as a way to memorize and perfect the
-movements being executed. Let's try the same with code. The approach is pretty
-low-tech. It's a list of packages and commands that you should be rewriting
-from scratch or at least partially. There's a command to visualize your
-progress:
+Katas (形) are practiced in martial arts as a way to memorize and perfect the movements being executed. Let's try the same with code. The approach is pretty low-tech. It's a [list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of packages and commands that you should be rewriting from scratch or at least partially. There's a command to visualize your progress:
 
 ```
 $ go run cmd/katas.go
