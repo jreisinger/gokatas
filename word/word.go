@@ -1,4 +1,5 @@
-// Package word provides utilities for word games. Taken from GoPL 11. Testing.
+// Package word provides utilities for word games. Adapted from the gopl.io ch.
+// 11 Testing.
 package word
 
 import (
