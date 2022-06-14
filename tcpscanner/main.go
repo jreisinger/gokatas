@@ -22,6 +22,8 @@ func worker(ports, results chan int) {
 		addr := fmt.Sprintf("%s:%d", host, port)
 		conn, err := net.Dial("tcp", addr)
 		if err != nil {
+			// Port closed (syn->, <-rst) or
+			// filtered (syn->, timeout).
 			results <- 0
 			continue
 		}
