@@ -30,7 +30,7 @@ func Get() ([]Kata, error) {
 	}
 
 	// Regexes
-	kataLineRE := regexp.MustCompile(`^\*\s*([0-9]{4}\-[0-9]{2}\-[0-9]{2}):\s*(.+)$`)
+	kataLineRE := regexp.MustCompile(`^\s*\*\s*([0-9]{4}\-[0-9]{2}\-[0-9]{2}):\s*(.+)$`)
 	comaRE := regexp.MustCompile(`\s*,\s*`)
 
 	katas := make(map[string]Kata) // name to Kata

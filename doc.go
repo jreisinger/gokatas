@@ -2,10 +2,11 @@
 Package gokatas contains programming katas for memorizing and perfecting your Go
 movements. Katas are brief, practical and well written Go programs.
 
-    go run cmd/katas.go  # what kata should I practice today, let's say areader
-    go doc -all areader  # what's the idea and design of the kata
-    code areader         # let's practice: delete and try to write it back
-    go run areader/cmd/* # check it's working; or git diff
-    code -a katas.md     # write down katas you've done; go doc KatasFile
+Here's a typical practice cycle:
+
+    go run cmd/katas.go -a # what kata should I practice today; e.g. areader
+    go doc -all areader    # what's the kata about
+    code areader           # understand, delete and try to write it back
+    code -a katas.md       # go doc KatasFile
 */
 package gokatas
