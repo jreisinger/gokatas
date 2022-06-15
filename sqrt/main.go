@@ -3,9 +3,7 @@
 // tour.golang.org/flowcontrol/8.
 package sqrt
 
-import (
-	"math"
-)
+import "math"
 
 const delta = 1e-15
 
