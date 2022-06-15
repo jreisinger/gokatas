@@ -1,4 +1,4 @@
-// Counter creates an integer counter, increments it and prints it.
+// Counter creates an integer counter, increments it, prints it and resets it.
 package main
 
 import (
@@ -11,4 +11,5 @@ func main() {
 	c := new(counter.Counter)
 	c.Inc()
 	fmt.Println(c.N())
+	c.Reset()
 }
