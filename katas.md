@@ -1,3 +1,4 @@
+* 2022-06-17: fibchan, fibfunc
 * 2022-06-16: search, shop4, sortbooks
 * 2022-06-15: counter, geometry, sqrt
 * 2022-06-14: proxy, rot13, reisinge.net/notes/go/pointers
