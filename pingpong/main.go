@@ -1,7 +1,8 @@
 // Pingpong shows how (un-buffered) channels are used for communication and
 // synchronization between goroutines. When pinger or ponger attempts to send a
 // message on the channel, it will wait (block) until printer is ready to
-// receive the message. Note that "ping" and "pong" are alternating.
+// receive the message. Note that "ping" and "pong" are alternating. This is
+// because channels act as first-in-first-out queues (https://go.dev/ref/spec).
 package main
 
 import (
