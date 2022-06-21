@@ -28,8 +28,7 @@ func main() {
 	}
 
 	r := strings.NewReader(filesystem)
-	decoder := json.NewDecoder(r)
-	if err := decoder.Decode(&fs); err != nil {
+	if err := json.NewDecoder(r).Decode(&fs); err != nil {
 		fmt.Fprintf(os.Stderr, "parsejson: %v\n", err)
 	}
 
