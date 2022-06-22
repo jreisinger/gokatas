@@ -1,5 +1,10 @@
 // Log handles logging correctly. When it's not possible to write logs for some
-// reason the whole program will not stop.
+// reason the whole program will not block.
+//
+// Start 10 goroutines each of which will be writing logs to a device. Simulate
+// a device problem (e.g. disk or network issue) by pressing Ctrl-C. Press
+// Ctrl-C again to "fix" the problem. Ctrl-\ will terminate the program (with a
+// core dump).
 package main
 
 import (
@@ -16,12 +21,11 @@ type device struct {
 }
 
 func (d *device) Write(p []byte) (int, error) {
-	for d.problem { // simulate a problem, e.g. disk or network issue
+	for d.problem {
 		time.Sleep(time.Second)
 	}
 
-	fmt.Print(string(p))
-	return len(p), nil
+	return fmt.Print(string(p))
 }
 
 func main() {
@@ -36,7 +40,7 @@ func main() {
 		go func(id int) {
 			for {
 				l.Println(fmt.Sprintf("%d: log data", id))
-				time.Sleep(100 * time.Millisecond)
+				time.Sleep(10 * time.Millisecond)
 			}
 		}(i)
 	}

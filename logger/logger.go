@@ -21,7 +21,7 @@ func New(w io.Writer, cap int) *Logger {
 	l.wg.Add(1)
 	go func() {
 		for v := range l.ch {
-			fmt.Fprintf(w, v)
+			fmt.Fprint(w, v)
 		}
 		l.wg.Done()
 	}()
@@ -38,6 +38,6 @@ func (l *Logger) Println(s string) {
 	select {
 	case l.ch <- s + "\n":
 	default:
-		fmt.Println("Not logging")
+		fmt.Println("not logging")
 	}
 }
