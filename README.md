@@ -24,7 +24,7 @@ It's important to practice regularly, to create a habit. Start by taking baby st
 
 ## Initial setup
 
-1) [Install Go](https://go.dev/doc/install) or run inside a container: `docker run --rm -it golang /bin/bash`.
+1) [Install Go](https://go.dev/doc/install).
 
 2) [Fork](https://github.com/jreisinger/gokatas/fork) and then clone the repo: `git clone git@github.com:<you>/gokatas.git`.
 
