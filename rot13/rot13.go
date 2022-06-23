@@ -1,16 +1,14 @@
-// Package rot13 implements an io.Reader that reads from an io.Reader, modifying
-// the stream by applying the rot13 cipher.
-//
-// rot13 is a simple sibstitution cipher that rotates all alphabetical
-// characters by 13 places. It's decoded by the same algorithm.
-//
-// Adapted from tour.golang.org/methods/23.
+// Package rot13 implements an io.Reader that reads from an io.Reader,
+// modifying the stream by applying the rot13 cipher. Adapted from
+// tour.golang.org/methods/23.
 package rot13
 
 import (
 	"io"
 )
 
+// rot13 is a simple sibstitution cipher that rotates all alphabetical
+// characters by 13 places. It's decoded by the same algorithm.
 func rot13(b byte) byte {
 	var a, z byte
 	switch {
