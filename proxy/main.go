@@ -20,7 +20,9 @@ func main() {
 			log.Print(err)
 			continue
 		}
-		// Don't put any code here!
+		// Don't put any blocking code here! Because it could block your
+		// accept loop and thus the whole server :-/. E.g., a client
+		// could open a connection and not send anything.
 		go proxy(conn)
 	}
 }
