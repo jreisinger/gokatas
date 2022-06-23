@@ -1,3 +1,4 @@
+* 2022-06-23: proxy, rot13, reisinge.net/notes/go/pointers
 * 2022-06-22: areader, clock2, netcat1, logger
 * 2022-06-21: dup2, dup3, parsejson, pingpong, logger
 * 2022-06-20: echo, fetchall, sum
