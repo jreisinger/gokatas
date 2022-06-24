@@ -7,6 +7,7 @@ import "math"
 type Point struct{ X, Y float64 }
 
 func (p Point) Distance(q Point) float64 {
+	// the length of the hypotenuse [prepona] of a right triangle
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
 }
 
