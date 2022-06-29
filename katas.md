@@ -1,3 +1,4 @@
+* 2022-06-29: echo, fetchall, sum
 * 2022-06-28: fibchan, fibfunc
 * 2022-06-27: search, shop4, sortbooks
 * 2022-06-24: counter, geometry, sqrt
