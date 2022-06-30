@@ -2,8 +2,8 @@
 // named input files. It reads in entire file at once ("slurp" mode). Adapted
 // from github.com/adonovan/gopl.io/tree/master/ch1/dup3.
 //
-// os.ReadFile (dup3) and bufio.Scanner (dup2) use the Read and Write methods of
-// *os.File under covers.
+// os.ReadFile (dup3) and bufio.Scanner (dup2) use the Read and Write methods
+// of *os.File under covers.
 package main
 
 import (
