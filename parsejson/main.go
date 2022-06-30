@@ -30,6 +30,7 @@ func main() {
 	r := strings.NewReader(filesystem)
 	if err := json.NewDecoder(r).Decode(&fs); err != nil {
 		fmt.Fprintf(os.Stderr, "parsejson: %v\n", err)
+		os.Exit(1)
 	}
 
 	for _, f := range fs {
