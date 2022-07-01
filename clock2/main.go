@@ -21,8 +21,8 @@ func main() {
 			log.Print(err) // e.g., connection aborted
 			continue
 		}
-		// handle(conn) // handle one connection at a time
-		go handle(conn) // handle connections concurrently
+		// handle(conn) // handle only one connection at a time
+		go handle(conn)
 	}
 }
 
