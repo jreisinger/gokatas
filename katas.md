@@ -1,3 +1,4 @@
+* 2022-07-01: areader, clock2, netcat1
 * 2022-06-30: dup2, dup3, parsejson, pingpong
 * 2022-06-29: echo, fetchall, sum
 * 2022-06-28: fibchan, fibfunc
