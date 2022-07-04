@@ -20,9 +20,7 @@ func main() {
 			log.Print(err)
 			continue
 		}
-		// Don't put any blocking code here! Because it could block your
-		// accept loop and thus the whole server :-/. E.g., a client
-		// could open a connection and not send anything.
+		// NOTE: don't put any blocking code here!
 		go proxy(conn)
 	}
 }
@@ -30,7 +28,7 @@ func main() {
 func proxy(conn net.Conn) {
 	defer conn.Close() // to release precious file descriptor
 
-	upstream, err := net.Dial("tcp", "google.com:80")
+	upstream, err := net.Dial("tcp", "google.com:http")
 	if err != nil {
 		log.Print(err)
 		return
