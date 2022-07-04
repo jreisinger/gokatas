@@ -22,12 +22,12 @@ func rot13(b byte) byte {
 	return (b-a+13)%(z-a+1) + a
 }
 
-type Rot13 struct {
+type Decoder struct {
 	Code io.Reader
 }
 
-func (r Rot13) Read(p []byte) (int, error) {
-	n, err := r.Code.Read(p) // remove Code to get stack overflow error :-)
+func (d Decoder) Read(p []byte) (int, error) {
+	n, err := d.Code.Read(p) // remove Code to get stack overflow error :-)
 	for i := 0; i < n; i++ {
 		p[i] = rot13(p[i])
 	}
