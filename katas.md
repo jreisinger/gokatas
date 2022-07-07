@@ -1,3 +1,4 @@
+* 2022-07-07: search, sqrt
 * 2022-07-06: counter, geometry
 * 2022-07-04: proxy, rot13, reisinge.net/notes/go/pointers
 * 2022-07-01: areader, clock2, netcat1
