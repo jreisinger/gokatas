@@ -6,7 +6,7 @@ Here's a typical practice cycle:
 
     go run cmd/katas.go -a # what kata should I practice today; e.g. areader
     go doc -all areader    # what's the kata about
-    code areader           # understand, delete and try to write it back
-    code -a katas.md       # go doc KatasFile
+    vi areader             # understand, delete and try to write the code back
+    vi katas.md            # write down katas you've done (go doc KatasFile)
 */
 package gokatas
