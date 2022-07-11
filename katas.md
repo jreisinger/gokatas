@@ -1,3 +1,4 @@
+* 2022-07-11: shop4, sortbooks
 * 2022-07-07: search, sqrt
 * 2022-07-06: counter, geometry
 * 2022-07-04: proxy, rot13, reisinge.net/notes/go/pointers

@@ -34,14 +34,14 @@ var books = []*book{
 // To sort a collection of elements you need to define a type for this
 // collection. This type needs to have the methods that satisfy the
 // sort.Interface interface type.
-type ByYear []*book
+type byYear []*book
 
-func (x ByYear) Len() int           { return len(x) }
-func (x ByYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
-func (x ByYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
+func (x byYear) Len() int           { return len(x) }
+func (x byYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
+func (x byYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
 
 func main() {
-	sort.Sort(sort.Reverse(ByYear(books)))
+	sort.Sort(sort.Reverse(byYear(books)))
 	printBooks(books)
 }
 
