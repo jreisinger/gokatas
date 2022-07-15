@@ -10,6 +10,6 @@ import (
 func main() {
 	var r areader.Areader
 	p := make([]byte, 3)
-	r.Read(p) // NOTE: ignoring error
+	r.Read(p) // NOTE: ignoring potential error
 	fmt.Println(string(p))
 }
