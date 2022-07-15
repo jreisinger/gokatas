@@ -17,11 +17,10 @@ func main() {
 
 	for {
 		conn, err := listener.Accept()
-		if err != nil {
-			log.Print(err) // e.g., connection aborted
+		if err != nil { // e.g., connection aborted
+			log.Print(err)
 			continue
 		}
-		// handle(conn) // handle only one connection at a time
 		go handle(conn)
 	}
 }
@@ -30,8 +29,8 @@ func handle(conn net.Conn) {
 	defer conn.Close()
 	for {
 		_, err := io.WriteString(conn, time.Now().Format("15:04:05\n"))
-		if err != nil {
-			return // e.g., client disconnected
+		if err != nil { // e.g., client disconnected
+			return
 		}
 		time.Sleep(time.Second)
 	}
