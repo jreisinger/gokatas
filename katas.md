@@ -1,3 +1,4 @@
+* 2022-07-15: autoescape
 * 2022-07-14: dup2, dup3
 * 2022-07-13: echo, fetchall, sum
 * 2022-07-12: fibchan, fibfunc
