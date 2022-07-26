@@ -20,7 +20,10 @@ clock2                8 days ago (Mon)           1
 
 ## Why
 
-Go katas should be useful for folks trying to learn to program in Go and/or for those who don't get to program every day but still want to keep their skills fresh (e.g. sysadmins, devops or security people). Go katas can also be used as a copy/paste reference.
+Go katas is meant to be useful for folks trying to learn to program in Go and/or
+for those who don't get to program every day but still want to keep their skills
+fresh (e.g. sysadmins, devops or security people). Go katas can also be used as
+a copy/paste reference.
 
 ## How
 
