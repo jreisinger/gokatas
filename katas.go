@@ -123,7 +123,7 @@ func sortKatas(katas []Kata, countSort *bool) {
 	sort.Sort(customSort{katas, func(x, y Kata) bool {
 		if *countSort {
 			if x.Count != y.Count {
-				return x.Count < y.Count
+				return x.Count > y.Count
 			}
 		} else {
 			if x.LastDoneOn != y.LastDoneOn {
