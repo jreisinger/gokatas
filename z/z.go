@@ -32,7 +32,8 @@ func run(f factory) {
 			in <- f.make(s.Text())
 		}
 		if s.Err() != nil {
-			fmt.Fprintf(os.Stderr, "z: reading from STDIN: %v", s.Err())
+			fmt.Fprintf(os.Stderr,
+				"z: reading from STDIN: %v", s.Err())
 		}
 		close(in)
 		wg.Done()
@@ -60,6 +61,9 @@ func run(f factory) {
 		t.print()
 	}
 }
+
+// type myFactory struct{}
+// type myTask struct{}
 
 func main() {
 	// run(&myFactory{})
