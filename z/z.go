@@ -1,7 +1,7 @@
 // Z takes lines from STDIN, makes them into tasks that get processed and
 // printed. To use it implement a factory and a task. Then call run() on your
-// factory. Is uses concurrency to run fast and interfaces and composition to be
-// generic and simple. See https://youtu.be/woCg2zaIVzQ for more.
+// factory. Is uses concurrency to run fast and interfaces and composition to
+// be generic and simple. See https://youtu.be/woCg2zaIVzQ for more.
 package main
 
 import (
