@@ -1,3 +1,4 @@
+* 2022-07-27: z
 * 2022-07-15: autoescape, areader, clock2, netcat1
 * 2022-07-14: dup2, dup3
 * 2022-07-13: echo, fetchall, sum
