@@ -1,6 +1,7 @@
 // Fetchall concurrently fetches URLs supplied as CLI arguments and reports
-// their times and sizes. Adapted from
-// github.com/adonovan/gopl.io/tree/master/ch1/fetchall.
+// their times and sizes.
+//
+// Adapted from github.com/adonovan/gopl.io/tree/master/ch1/fetchall.
 package main
 
 import (
