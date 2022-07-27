@@ -6,7 +6,7 @@ package main
 
 import (
 	"bufio"
-	"log"
+	"fmt"
 	"os"
 	"sync"
 )
@@ -32,7 +32,7 @@ func run(f factory) {
 			in <- f.make(s.Text())
 		}
 		if s.Err() != nil {
-			log.Fatalf("z: reading STDIN: %v", s.Err())
+			fmt.Fprintf(os.Stderr, "z: reading from STDIN: %v", s.Err())
 		}
 		close(in)
 		wg.Done()
