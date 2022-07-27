@@ -3,17 +3,17 @@
 //	go test sum/*
 package sum
 
-func Loop(list []int) int {
+func Loop(s []int) int {
 	var sum int
-	for _, n := range list {
+	for _, n := range s {
 		sum += n
 	}
 	return sum
 }
 
-func DaC(list []int) int {
-	if len(list) == 0 {
+func DaC(s []int) int {
+	if len(s) == 0 {
 		return 0
 	}
-	return list[0] + DaC(list[1:])
+	return s[0] + DaC(s[1:])
 }
