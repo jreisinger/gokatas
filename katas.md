@@ -1,3 +1,4 @@
+* 2022-07-28: word2
 * 2022-07-27: z, z, echo, fetchall, sum
 * 2022-07-15: autoescape, areader, clock2, netcat1
 * 2022-07-14: dup2, dup3
@@ -48,7 +49,7 @@
 * 2022-05-04: clock2, areader, netcat1
 * 2022-05-03: dup2, dup3, parsejson, pingpong
 * 2022-05-02: sum, echo, fetchall
-* 2022-04-29: timer, switch, pkg.go.dev/net/http, word
+* 2022-04-29: timer, switch, pkg.go.dev/net/http, word2
 * 2022-04-28: tcpscanner, generics, reisinge.net/notes/go/slices
 * 2022-04-27: countgo, bytecounter, fibspin, enum
 * 2022-04-26: sqrt, compress, fibchan, fibfunc
