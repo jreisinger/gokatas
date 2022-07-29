@@ -1,6 +1,6 @@
-// Autoescape show how to suppress html/template auto-escaping behavior for
+// Autoescape shows how to suppress html/template auto-escaping behavior for
 // fields that contain trusted HTML data (the same can be done for trusted
-// JavaScript, CSS and URLs). Taken from gopl.io ch4.6.
+// JavaScript, CSS and URLs). Taken from gopl.io ch4.6 Text and HTML templates.
 package main
 
 import (
