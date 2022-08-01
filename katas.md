@@ -168,7 +168,7 @@
 * 2021-10-19: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-10-18: bytecounter, sum, echo, fetchall, timer, reisinge.net/notes/go/slices, sqrt, switch
 * 2021-10-15: search, tcpscanner
-* 2021-10-14: reisinge.net/notes/go/http-servers, tictactoe, golang.org/doc/gowalk/markov
+* 2021-10-14: reisinge.net/notes/go/http-servers, tictactoe, golang.org/doc/codewalk/markov
 * 2021-10-13: shop4, sortbooks, reisinge.net/notes/go/pointers, areader, rot13
 * 2021-10-12: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-10-11: timer, bytecounter, sum, echo, fetchall, reisinge.net/notes/go/slices, sqrt, switch
