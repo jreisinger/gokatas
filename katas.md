@@ -1,4 +1,4 @@
-* 2022-08-02: myprint, boring/channel, boring/generator
+* 2022-08-02: myprint, boring/channel, boring/generator, boring/service
 * 2022-08-01: countgo, myprint
 * 2022-07-29: areader, autoescape, clock2, netcat1
 * 2022-07-28: word2, geometry
