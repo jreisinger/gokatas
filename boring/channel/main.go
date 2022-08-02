@@ -9,9 +9,9 @@ import (
 
 func main() {
 	c := make(chan string)
-	go boring("blah!", c)
+	go boring("blah", c)
 	for i := 0; i < 5; i++ {
-		fmt.Printf("You said: %q\n", <-c)
+		fmt.Println(<-c)
 	}
 }
 
