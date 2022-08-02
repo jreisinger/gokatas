@@ -21,8 +21,8 @@ func boring(msg string) <-chan string {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s %d", msg, i)
 
-			n := time.Duration(rand.Intn(1e3))
-			time.Sleep(n * time.Millisecond)
+			n := rand.Intn(1e3)
+			time.Sleep(time.Duration(n) * time.Millisecond)
 		}
 	}()
 	return c

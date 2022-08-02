@@ -18,6 +18,8 @@ func main() {
 func boring(msg string, c chan string) {
 	for i := 0; ; i++ {
 		c <- fmt.Sprintf("%s %d", msg, i)
-		time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+
+		n := rand.Intn(1e3)
+		time.Sleep(time.Duration(n) * time.Millisecond)
 	}
 }
