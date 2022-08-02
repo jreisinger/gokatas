@@ -1,5 +1,5 @@
 // You can use channels as a handle on a service. You communicate with the
-// service via the channel.
+// service via the channel. Ann and Joe talk in lockstep.
 package main
 
 import (
@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	joe := boring("Joe")
-	ann := boring("Ann")
+	joe := boring("Ann")
+	ann := boring("Joe")
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-joe)
 		fmt.Println(<-ann)
