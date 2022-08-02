@@ -1,5 +1,5 @@
-// myprint shows how fmt.Print is implemented. It uses reflection. See
-// https://research.swtch.com/gotour (from https://go.dev/doc) for more.
+// myprint shows how come fmt.Print accepts arguments of any type. It uses
+// reflection. See research.swtch.com/gotour (from go.dev/doc) for more.
 package main
 
 import (
