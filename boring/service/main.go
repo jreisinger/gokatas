@@ -1,5 +1,4 @@
-// You can use channels as a handle on a service. You communicate with the
-// service via the channel. Ann and Joe talk in lockstep.
+// You can use channels as a handle on a service. Ann and Joe talk in lockstep.
 package main
 
 import (
