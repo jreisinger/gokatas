@@ -44,6 +44,7 @@ If you feel comfortable enough with a kata stop practicing it for some time and 
 
 ```
 cd gokatas
-> katas.md # if you are not me :-)
 go doc
+godoc       # http://localhost:6060/pkg/github.com/jreisinger/gokatas
+> katas.md  # if you are not me :-)
 ```
