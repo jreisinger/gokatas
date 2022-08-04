@@ -21,9 +21,8 @@ type task interface {
 }
 
 func run(f factory) {
-	var wg sync.WaitGroup
-
 	in := make(chan task)
+	var wg sync.WaitGroup
 
 	wg.Add(1)
 	go func() {
@@ -31,9 +30,8 @@ func run(f factory) {
 		for s.Scan() {
 			in <- f.make(s.Text())
 		}
-		if s.Err() != nil {
-			fmt.Fprintf(os.Stderr,
-				"z: reading from STDIN: %v", s.Err())
+		if err := s.Err(); err != nil {
+			fmt.Fprintf(os.Stderr, "z: reading from STDIN: %v", err)
 		}
 		close(in)
 		wg.Done()

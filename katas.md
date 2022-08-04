@@ -1,3 +1,4 @@
+* 2022-08-04: z
 * 2022-08-03: boring/select, boring/select2
 * 2022-08-02: myprint, boring/channel, boring/generator, boring/generator2, boring/multiplex
 * 2022-08-01: countgo, myprint
