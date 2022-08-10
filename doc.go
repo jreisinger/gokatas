@@ -1,6 +1,6 @@
 /*
-Package gokatas contains programming katas for memorizing and perfecting your Go
-movements. Katas are brief, practical and well written Go programs.
+Package gokatas contains programming katas for memorizing and perfecting your
+Go movements. Katas are brief, well written Go programs.
 
 Here's a typical practice cycle:
 

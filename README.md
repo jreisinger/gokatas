@@ -5,7 +5,12 @@
 
 # Go katas
 
-Katas (形) are practiced in martial arts as a way to memorize and perfect the movements being executed. Let's try the same with code. The approach is pretty low-tech. Go katas is basically a [list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of packages and commands that you should be rewriting from scratch or partially. There's a command to visualize your progress:
+Katas (形) are practiced in martial arts as a way to memorize and perfect the
+movements being executed. Let's try the same with code. The approach is pretty
+low-tech. Go katas is basically a
+[list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of
+packages and commands that you should be rewriting from scratch or partially.
+There's a command to visualize your progress:
 
 ```
 $ go run cmd/katas.go
@@ -23,16 +28,18 @@ clock2                8 days ago (Mon)           1
 I've been learning to program in Go. I work in the sysadmin/devops and security
 areas so I usually don't get to program every day. But I still want to keep my
 skills fresh. Maybe even improve them. I use gokatas as one of the ways to
-achieve this. I also sometimes use it as a copy/paste reference.
+achieve this. I also use them as reference or blueprints.
 
 ## How
 
-It's important to practice regularly. So you need to create a habit. Start by
+It's important to practice regularly. You need to create a habit. Start by
 setting a goal that you can meet, e.g. 15 minutes every day before work. At
 first it's fine even if you only read through one of the katas. After some time
 it will require much less will power, it will become natural.
 
-If you feel comfortable enough with a kata stop practicing it for some time and pick up one that is slighly beyond your current ability. Try to write, run or test the code and (most probably) debug it before looking up the solution.
+If you feel comfortable enough with a kata stop practicing it for some time and
+pick up one that is slightly beyond your current ability. Try to write, run or
+test the code before looking up the solution.
 
 ## Initial setup
 
@@ -44,7 +51,6 @@ If you feel comfortable enough with a kata stop practicing it for some time and 
 
 ```
 cd gokatas
+> katas.md # if you are not me :-)
 go doc
-godoc       # http://localhost:6060/pkg/github.com/jreisinger/gokatas
-> katas.md  # if you are not me :-)
 ```
