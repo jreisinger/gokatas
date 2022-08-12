@@ -1,3 +1,4 @@
+* 2022-08-12: areader, autoescape, clock2, netcat1
 * 2022-08-11: geometry, word2
 * 2022-08-10: bytecounter, tempconv, primesieve
 * 2022-08-04: z
