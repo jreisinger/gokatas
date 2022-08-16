@@ -1,4 +1,5 @@
-// You can use channels as a handle on a service. Ann and Joe talk in lockstep.
+// Lockstep makes Ann and Joe talk in lockstep. You can use channels as a handle
+// on a service.
 package main
 
 import (
@@ -8,11 +9,11 @@ import (
 )
 
 func main() {
-	joe := boring("Ann")
-	ann := boring("Joe")
+	ann := boring("Ann")
+	joe := boring("Joe")
 	for i := 0; i < 5; i++ {
-		fmt.Println(<-joe)
 		fmt.Println(<-ann)
+		fmt.Println(<-joe)
 	}
 }
 

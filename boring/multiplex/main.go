@@ -1,4 +1,4 @@
-// Let whosoever is ready talk using fanIn function.
+// Multiplex lets whosoever is ready talk using fanIn function.
 package main
 
 import (
@@ -35,7 +35,7 @@ func boring(msg string) <-chan string {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s, %d", msg, i)
 
-			n := rand.Intn(1e3)
+			n := rand.Intn(2e3)
 			time.Sleep(time.Duration(n) * time.Millisecond)
 		}
 	}()
