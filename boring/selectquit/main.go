@@ -26,7 +26,7 @@ func boring(msg string, quit chan string) <-chan string {
 			time.Sleep(time.Duration(n) * time.Millisecond)
 
 			select {
-			case c <- fmt.Sprintf("%s %d", msg, i):
+			case c <- fmt.Sprintf("%s, %d", msg, i):
 				// do nothing
 			case <-quit:
 				cleanup()

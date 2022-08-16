@@ -1,4 +1,4 @@
-// Channels allow for communication and synchronization between goroutines.
+// A channel allows for communication and synchronization between goroutines.
 package main
 
 import (
@@ -17,7 +17,7 @@ func main() {
 
 func boring(msg string, c chan string) {
 	for i := 0; ; i++ {
-		c <- fmt.Sprintf("%s %d", msg, i)
+		c <- fmt.Sprintf("%s, %d", msg, i)
 
 		n := rand.Intn(1e3)
 		time.Sleep(time.Duration(n) * time.Millisecond)
