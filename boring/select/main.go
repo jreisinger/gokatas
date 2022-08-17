@@ -1,6 +1,6 @@
 /*
 Select statement is another way to handle multiple channels. It's like switch
-but each case is a communication:
+but each case is a communication.
 
  - All channels are evaluated.
  - Blocks until one communication can proceed.

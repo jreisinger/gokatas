@@ -1,10 +1,11 @@
+* 2022-08-17: boring/select, boring/selectquit
 * 2022-08-16: boring/channel, boring/generator, boring/lockstep, boring/multiplex
 * 2022-08-15: countgo, myprint
 * 2022-08-12: areader, autoescape, clock2, netcat1
 * 2022-08-11: geometry, word2
 * 2022-08-10: bytecounter, tempconv, primesieve
 * 2022-08-04: z
-* 2022-08-03: boring/select, boring/select2
+* 2022-08-03: boring/select, boring/selectquit
 * 2022-08-02: myprint, boring/channel, boring/generator, boring/lockstep, boring/multiplex
 * 2022-08-01: countgo, myprint
 * 2022-07-29: areader, autoescape, clock2, netcat1
