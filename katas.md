@@ -1,3 +1,4 @@
+* 2022-08-19: bytecounter, primesieve, tempconv
 * 2022-08-18: z
 * 2022-08-17: boring/select, boring/selectquit, repike
 * 2022-08-16: boring/channel, boring/generator, boring/lockstep, boring/multiplex
