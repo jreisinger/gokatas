@@ -9,8 +9,8 @@ import (
 	"github.com/jreisinger/gokatas"
 )
 
-var showAll = flag.Bool("a", false, "show all katas (default is those last done within two weeks)")
-var sortByCount = flag.Bool("c", false, "sort katas by count (default is by last done)")
+var showLastDoneDaysAgo = flag.Int("d", 14, "show only katas last done `days` ago or less")
+var sortByCount = flag.Bool("c", false, "sort katas by count")
 
 func main() {
 	flag.Parse()
@@ -19,5 +19,5 @@ func main() {
 		fmt.Fprintf(os.Stderr, "gokatas: %v\n", err)
 		os.Exit(1)
 	}
-	gokatas.Print(katas, *showAll, *sortByCount)
+	gokatas.Print(katas, *showLastDoneDaysAgo, *sortByCount)
 }

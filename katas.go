@@ -11,6 +11,7 @@ import (
 )
 
 // KatasFile is a MarkDown file to track katas you've done. It looks like this:
+//
 // 	* 2022-04-25: bytecounter, clock2
 // 	* 2022-04-22: areader
 const KatasFile = "katas.md"
@@ -78,9 +79,9 @@ func Get() ([]Kata, error) {
 	return ks, nil
 }
 
-// Print prints table with statistics about katas. By default only katas last
-// done within two weeks are shown and they are sorted by when last done.
-func Print(katas []Kata, showAll, sortByCount bool) {
+// Print prints table with statistics about katas. Only katas lastDoneDaysAgo or
+// later are shown. Katas are sorted by when last done or by count.
+func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 	const format = "%v\t%v\t%5v\n"
 
 	// Print header.
@@ -93,7 +94,7 @@ func Print(katas []Kata, showAll, sortByCount bool) {
 	var totalCount int
 	sortKatas(katas, &sortByCount)
 	for _, k := range katas {
-		if !show(k, 24*15, &showAll) {
+		if !show(k, lastDoneDaysAgo) {
 			continue
 		}
 
@@ -137,31 +138,21 @@ func sortKatas(katas []Kata, countSort *bool) {
 	}})
 }
 
-// show decides when to show a kata.
-func show(k Kata, lastDoneHoursAgo float64, showAll *bool) bool {
-	if *showAll {
+// show decides when to show a kata. Negative lastDoneDaysAgo returns true.
+func show(k Kata, lastDoneDaysAgo int) bool {
+	if lastDoneDaysAgo < 0 {
 		return true
 	}
-	deadline := time.Now().Add(-time.Hour * time.Duration(lastDoneHoursAgo))
-	return k.LastDoneOn.After(deadline)
+	t := time.Now().Add(-time.Hour * 24 * time.Duration(lastDoneDaysAgo+1))
+	return k.LastDoneOn.After(t)
 }
 
 // formatLastDoneOn formats the time.
 func formatLastDoneOn(lastDoneOn time.Time, sortByCount bool) string {
 	daysAgo := int(time.Since(lastDoneOn).Hours() / 24)
-	weekday := lastDoneOn.Weekday().String()[:3]
-	var s string
-
-	if sortByCount {
-		s = fmt.Sprintf("%s", lastDoneOn.Format("2006-01-02"))
-	} else if daysAgo > 14 {
-		s = fmt.Sprintf("%s (%s)", lastDoneOn.Format("2006-01-02"), weekday)
-	} else {
-		w := "day"
-		if daysAgo != 1 {
-			w += "s"
-		}
-		s = fmt.Sprintf("%d %s ago (%s)", daysAgo, w, weekday)
+	w := "day"
+	if daysAgo != 1 {
+		w += "s"
 	}
-	return s
+	return fmt.Sprintf("%d %s ago", daysAgo, w)
 }
