@@ -1,3 +1,4 @@
+* 2022-08-22: geometry, word2
 * 2022-08-19: bytecounter, primesieve, tempconv
 * 2022-08-18: z
 * 2022-08-17: boring/select, boring/selectquit, repike
