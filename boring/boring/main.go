@@ -1,4 +1,4 @@
-// We listen for a while to a boring person talking "in the background".
+// Boring listens for a while to a boring person talking in a goroutine.
 package main
 
 import (
