@@ -1,5 +1,5 @@
 /*
-Package repike is a Go rewrite of Rob Pike's regex matcher [1] that handles:
+Package repike is a Go [rewrite] of Rob Pike's regex [matcher] that handles:
 
     c    matches any literal character c
     .    matches any single character
@@ -7,9 +7,8 @@ Package repike is a Go rewrite of Rob Pike's regex matcher [1] that handles:
     $    matches the end of the input string
     *    matches zero or more occurrences of the previous character
 
-[1] https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
-
-Taken from https://github.com/benhoyt/repike.
+[rewrite]: https://github.com/benhoyt/repike
+[matcher]: https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
 */
 package repike
 
