@@ -101,7 +101,7 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 		katasCount++
 		totalCount += k.Count
 
-		fmt.Fprintf(tw, format, k.Name, formatLastDoneOn(k.LastDoneOn, sortByCount), k.Count)
+		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDoneOn), k.Count)
 	}
 	// Print footer.
 	fmt.Fprintf(tw, format, "----", "", "-----")
@@ -147,8 +147,8 @@ func show(k Kata, lastDoneDaysAgo int) bool {
 	return k.LastDoneOn.After(t)
 }
 
-// formatLastDoneOn formats the time.
-func formatLastDoneOn(lastDoneOn time.Time, sortByCount bool) string {
+// humanize make the time easier to read for humans.
+func humanize(lastDoneOn time.Time) string {
 	daysAgo := int(time.Since(lastDoneOn).Hours() / 24)
 	w := "day"
 	if daysAgo != 1 {
