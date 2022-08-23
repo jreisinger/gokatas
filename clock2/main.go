@@ -10,13 +10,12 @@ import (
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:1362")
+	ln, err := net.Listen("tcp", "localhost:1362")
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	for {
-		conn, err := listener.Accept()
+		conn, err := ln.Accept()
 		if err != nil { // e.g., connection aborted
 			log.Print(err)
 			continue
@@ -30,6 +29,7 @@ func handle(conn net.Conn) {
 	for {
 		_, err := io.WriteString(conn, time.Now().Format("15:04:05\n"))
 		if err != nil { // e.g., client disconnected
+			log.Print(err)
 			return
 		}
 		time.Sleep(time.Second)
