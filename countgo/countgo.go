@@ -1,5 +1,5 @@
-// Package countgo counts files with extension ".go" in fs.FS. It also shows how
-// to use fs.FS in tests.
+// Package countgo counts files with extension ".go" in fs.FS. It also shows
+// how to use fs.FS in tests.
 //
 // Based on bitfieldconsulting.com/golang/filesystems.
 package countgo
