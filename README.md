@@ -14,13 +14,13 @@ There's a command to visualize your progress:
 
 ```
 $ go run cmd/katas.go
-Kata                         Last done       Count
-----                         ---------       -----
-areader              11 days ago (Fri)           1
-bytecounter           8 days ago (Mon)           1
-clock2                8 days ago (Mon)           1
-----                                         -----
-3                                                3
+Kata           Last done  Done
+----           ---------  ----
+areader      11 days ago    1x
+bytecounter   8 days ago    1x
+clock2        8 days ago    1x
+----                      ----
+3                            3
 ```
 
 ## Why
