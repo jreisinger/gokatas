@@ -86,8 +86,8 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 
 	// Print header.
 	tw := new(tabwriter.Writer).Init(os.Stdout, 0, 8, 2, ' ', 0)
-	fmt.Fprintf(tw, format, "Kata", "Last done", "Count")
-	fmt.Fprintf(tw, format, "----", "---------", "-----")
+	fmt.Fprintf(tw, format, "Kata", "Last done", "Done")
+	fmt.Fprintf(tw, format, "----", "---------", "----")
 
 	// Print lines.
 	var katasCount int
@@ -101,7 +101,7 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 		katasCount++
 		totalCount += k.Count
 
-		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDoneOn), k.Count)
+		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDoneOn), fmt.Sprintf("%dx", k.Count))
 	}
 	// Print footer.
 	fmt.Fprintf(tw, format, "----", "", "-----")
