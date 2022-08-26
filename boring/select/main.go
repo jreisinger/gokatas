@@ -23,7 +23,7 @@ func main() {
 		select {
 		case s := <-c:
 			fmt.Println(s)
-		case <-time.After(500 * time.Millisecond):
+		case <-time.After(time.Millisecond * 500):
 			fmt.Println("You guys are too slow.")
 			return
 		}
