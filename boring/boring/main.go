@@ -3,20 +3,17 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"time"
 )
 
 func main() {
 	go boring("blah") // analogous to the & on the end of a shell command
-	time.Sleep(2 * time.Second)
+	time.Sleep(time.Second * 5)
 }
 
 func boring(msg string) {
 	for i := 0; ; i++ {
 		fmt.Printf("%s, %d\n", msg, i)
-
-		n := rand.Intn(1e3)
-		time.Sleep(time.Duration(n) * time.Millisecond)
+		time.Sleep(time.Second)
 	}
 }
