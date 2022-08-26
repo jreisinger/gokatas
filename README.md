@@ -28,18 +28,20 @@ clock2        8 days ago    1x
 I've been learning to program in Go. I work in the sysadmin/devops and security
 areas so I usually don't get to program every day. But I still want to keep my
 skills fresh. Maybe even improve them. I use gokatas as one of the ways to
-achieve this. I also use them as reference or blueprints.
+achieve this.
 
 ## How
 
-It's important to practice regularly. You need to create a habit. Start by
-setting a goal that you can meet, e.g. 15 minutes every day before work. At
-first it's fine even if you only read through one of the katas. After some time
-it will require much less will power, it will become natural.
+It's important to practice regularly, to create a habit. Start by setting a
+goal that you can meet, e.g. 15 minutes every day before work. At first it's
+fine even if you only read through one of the katas. After some time it will
+require much less will power and you will become more familiar with the code.
 
-If you feel comfortable enough with a kata stop practicing it for some time and
-pick up one that is slightly beyond your current ability. Try to write, run or
-test the code before looking up the solution.
+Try to write (and understand!) and then run or test the code before checking
+the solution (by running `git diff`).
+
+If you feel comfortable enough with a kata stop practicing it (for some time)
+and pick up one that interests you and is slightly beyond your current ability.
 
 ## Initial setup
 
