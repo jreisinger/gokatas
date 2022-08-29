@@ -33,12 +33,12 @@ achieve this.
 ## How
 
 It's important to practice regularly, to create a habit. Start by setting a
-goal that you can meet, e.g. 15 minutes every day before work. At first it's
+goal that you can meet, e.g. 45 minutes every day before work. At first it's
 fine even if you only read through one of the katas. After some time it will
 require much less will power and you will become more familiar with the code.
 
-Try to write (and understand!) and then run or test the code before checking
-the solution (by running `git diff`).
+Try to understand and make the code work before viewing the solution. You can
+view the solution by running `git diff`.
 
 If you feel comfortable enough with a kata stop practicing it (for some time)
 and pick up one that interests you and is slightly beyond your current ability.
