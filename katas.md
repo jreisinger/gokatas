@@ -1,3 +1,4 @@
+* 2022-08-31: bytecounter, primesieve
 * 2022-08-30: boring/selectquit, z, z
 * 2022-08-26: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select
 * 2022-08-25: myprint, boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex
