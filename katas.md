@@ -1,3 +1,4 @@
+* 2022-09-02: geometry
 * 2022-08-31: bytecounter, primesieve
 * 2022-08-30: boring/selectquit, z, z
 * 2022-08-26: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select

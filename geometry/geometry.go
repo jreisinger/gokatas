@@ -23,7 +23,7 @@ type Path []Point
 // Distance returns the distance traveled along the path. (Doesn't conflict
 // with the Point.Distance method).
 func (path Path) Distance() float64 {
-	sum := 0.0
+	var sum float64
 	for i := range path {
 		if i > 0 {
 			sum += path[i-1].Distance(path[i])
