@@ -11,13 +11,13 @@ import (
 
 func main() {
 	const templ = `<p>A: {{.A}}</p><p>B: {{.B}}</p>`
-	var t = template.Must(template.New("escape").Parse(templ))
+	t := template.Must(template.New("autoescape").Parse(templ))
 	var data struct {
 		A string        // untrusted plain text
 		B template.HTML // trusted HTML
 	}
-	data.A = "<b>Hello!</b>"
-	data.B = "<b>Hello!</b>"
+	data.A = "<b>hello</b>"
+	data.B = "<b>hello</b>"
 	if err := t.Execute(os.Stdout, data); err != nil {
 		log.Fatal(err)
 	}
