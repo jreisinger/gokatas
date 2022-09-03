@@ -1,4 +1,4 @@
-// Package compress compresses files. Adapted from the "Go in Practice" book.
+// Package compress compresses files. Adapted from the Go in Practice book.
 package compress
 
 import (
