@@ -27,8 +27,8 @@ clock2        8 days ago    1x
 
 I've been learning to program in Go. I work in the sysadmin/devops and security
 areas so I usually don't get to program every day. But I still want to keep my
-skills fresh. Maybe even improve them. I use gokatas as one of the ways to
-achieve this.
+coding skills fresh. Maybe even improve them. I use gokatas as one of the ways
+to achieve this.
 
 ## How
 
@@ -37,8 +37,8 @@ goal that you can meet, e.g. 45 minutes every day before work. At first it's
 fine even if you only read through one of the katas. After some time it will
 require much less will power and you will become more familiar with the code.
 
-Try to understand and make the code work before viewing the solution. You can
-view the solution by running `git diff`.
+Try to understand and make the code work before viewing the solution (by running
+`git diff`).
 
 If you feel comfortable enough with a kata stop practicing it (for some time)
 and pick up one that interests you and is slightly beyond your current ability.
@@ -53,6 +53,5 @@ and pick up one that interests you and is slightly beyond your current ability.
 
 ```
 cd gokatas
-> katas.md # if you are not me :-)
 go doc
 ```
