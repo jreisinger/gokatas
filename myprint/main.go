@@ -1,4 +1,4 @@
-// myprint shows how come fmt.Print accepts arguments of any type. It uses
+// Myprint shows how come fmt.Print accepts arguments of any type. It uses
 // reflection. See research.swtch.com/gotour (from go.dev/doc) for more.
 package main
 
@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	myPrint("Hello, ", 42, "\n")
+	myPrint("hello, ", 42, "\n")
 }
 
 func myPrint(args ...interface{}) {

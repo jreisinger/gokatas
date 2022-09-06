@@ -1,3 +1,4 @@
+* 2022-09-06: myprint, countgo
 * 2022-09-05: clock2, netcat1
 * 2022-09-03: areader, autoescape
 * 2022-09-02: geometry, word2
