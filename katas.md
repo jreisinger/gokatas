@@ -1,3 +1,4 @@
+* 2022-09-08: boring/selectquit, z
 * 2022-09-07: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select
 * 2022-09-06: myprint, countgo
 * 2022-09-05: clock2, netcat1

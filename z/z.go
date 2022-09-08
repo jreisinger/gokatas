@@ -22,8 +22,10 @@ type Task interface {
 
 func Run(f Factory) {
 	in := make(chan Task)
+	out := make(chan Task)
 	var wg sync.WaitGroup
 
+	// Read lines from stdin and stuff them into in channel.
 	wg.Add(1)
 	go func() {
 		s := bufio.NewScanner(os.Stdin)
@@ -37,8 +39,7 @@ func Run(f Factory) {
 		wg.Done()
 	}()
 
-	out := make(chan Task)
-
+	// Read from in channel, do the work, and write results to out channel.
 	for i := 0; i < 20; i++ {
 		wg.Add(1)
 		go func() {
@@ -55,6 +56,7 @@ func Run(f Factory) {
 		close(out)
 	}()
 
+	// Write results from out channel to stdout.
 	for t := range out {
 		t.Print()
 	}
