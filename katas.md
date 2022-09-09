@@ -1,3 +1,4 @@
+* 2022-09-09: primesieve, geometry, word2
 * 2022-09-08: boring/selectquit, z, bytecounter
 * 2022-09-07: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select
 * 2022-09-06: myprint, countgo
