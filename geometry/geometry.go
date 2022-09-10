@@ -2,6 +2,7 @@
 // declare methods.
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch6/geometry
+// Topics: methods, math
 package geometry
 
 import "math"

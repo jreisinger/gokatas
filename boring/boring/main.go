@@ -1,4 +1,5 @@
 // Boring listens for a while to a boring person talking in a goroutine.
+// Topics: concurrency
 package main
 
 import (

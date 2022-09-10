@@ -3,22 +3,26 @@ package gokatas
 import (
 	"bufio"
 	"fmt"
+	"io/fs"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
+	"strings"
 	"text/tabwriter"
 	"time"
 )
 
 // KatasFile is a MarkDown file to track katas you've done. It looks like this:
 //
-// 	* 2022-04-25: bytecounter, clock2
-// 	* 2022-04-22: areader
+//   - 2022-04-25: bytecounter, clock2
+//   - 2022-04-22: areader
 const KatasFile = "katas.md"
 
 // Kata represents a programming kata.
 type Kata struct {
 	Name       string
+	Topics     []string
 	Count      int
 	LastDoneOn time.Time
 }
@@ -53,6 +57,7 @@ func Get() ([]Kata, error) {
 			if name == "" {
 				continue
 			}
+
 			if kata, ok := katas[name]; ok {
 				kata.Count++
 				if doneOn.After(kata.LastDoneOn) {
@@ -63,6 +68,13 @@ func Get() ([]Kata, error) {
 				kata.Name = name
 				kata.Count = 1
 				kata.LastDoneOn = doneOn
+
+				topics, err := parseKata(name)
+				if err != nil {
+					return nil, err
+				}
+				kata.Topics = topics
+
 				katas[name] = kata
 			}
 		}
@@ -79,15 +91,57 @@ func Get() ([]Kata, error) {
 	return ks, nil
 }
 
+func parseKata(name string) (topics []string, err error) {
+	fn := func(path string, d fs.DirEntry, err error) error {
+		if filepath.Ext(path) == ".go" {
+			f, err := os.Open(path)
+			if err != nil {
+				return err
+			}
+			defer f.Close()
+			s := bufio.NewScanner(f)
+			for s.Scan() {
+				line := s.Text()
+				if !strings.HasPrefix(line, "// Topics:") {
+					continue
+				}
+				topics = append(topics, grepTopics(s.Text())...)
+			}
+			if err := s.Err(); err != nil {
+				return err
+			}
+		}
+		return nil
+	}
+	absPath, err := filepath.Abs(name)
+	if err != nil {
+		return nil, err
+	}
+	err = filepath.WalkDir(absPath, fn)
+	if err != nil {
+		return nil, err
+	}
+	return topics, err
+}
+
+func grepTopics(line string) []string {
+	_, topicsStr, _ := strings.Cut(line, ":")
+	topics := strings.Split(topicsStr, ",")
+	for i := range topics {
+		topics[i] = strings.TrimSpace(topics[i])
+	}
+	return topics
+}
+
 // Print prints table with statistics about katas. Only katas lastDoneDaysAgo or
 // later are shown. Katas are sorted by when last done or by count.
 func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
-	const format = "%v\t%v\t%5v\n"
+	const format = "%v\t%v\t%5v\t%v\n"
 
 	// Print header.
 	tw := new(tabwriter.Writer).Init(os.Stdout, 0, 8, 2, ' ', 0)
-	fmt.Fprintf(tw, format, "Kata", "Last done", "Done")
-	fmt.Fprintf(tw, format, "----", "---------", "----")
+	fmt.Fprintf(tw, format, "Kata", "Last done", "Done", "Topics")
+	fmt.Fprintf(tw, format, "----", "---------", "----", "------")
 
 	// Print lines.
 	var katasCount int
@@ -101,11 +155,11 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 		katasCount++
 		totalCount += k.Count
 
-		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDoneOn), fmt.Sprintf("%dx", k.Count))
+		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDoneOn), fmt.Sprintf("%dx", k.Count), strings.Join(k.Topics, ", "))
 	}
 	// Print footer.
-	fmt.Fprintf(tw, format, "----", "", "-----")
-	fmt.Fprintf(tw, format, katasCount, "", totalCount)
+	fmt.Fprintf(tw, format, "----", "", "-----", "")
+	fmt.Fprintf(tw, format, katasCount, "", totalCount, "")
 
 	tw.Flush() // calculate column widths and print table
 }
