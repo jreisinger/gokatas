@@ -21,10 +21,10 @@ const KatasFile = "katas.md"
 
 // Kata represents a programming kata.
 type Kata struct {
-	Name       string
-	Topics     []string
-	Count      int
-	LastDoneOn time.Time
+	Name      string
+	Topics    []string
+	TimesDone int
+	LastDone  time.Time
 }
 
 // Get gets katas from the KatasFile.
@@ -59,15 +59,15 @@ func Get() ([]Kata, error) {
 			}
 
 			if kata, ok := katas[name]; ok {
-				kata.Count++
-				if doneOn.After(kata.LastDoneOn) {
-					kata.LastDoneOn = doneOn
+				kata.TimesDone++
+				if doneOn.After(kata.LastDone) {
+					kata.LastDone = doneOn
 				}
 				katas[name] = kata
 			} else {
 				kata.Name = name
-				kata.Count = 1
-				kata.LastDoneOn = doneOn
+				kata.TimesDone = 1
+				kata.LastDone = doneOn
 
 				topics, err := parseKata(name)
 				if err != nil {
@@ -153,9 +153,9 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 		}
 
 		katasCount++
-		totalCount += k.Count
+		totalCount += k.TimesDone
 
-		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDoneOn), fmt.Sprintf("%dx", k.Count), strings.Join(k.Topics, ", "))
+		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDone), fmt.Sprintf("%dx", k.TimesDone), strings.Join(k.Topics, ", "))
 	}
 	// Print footer.
 	fmt.Fprintf(tw, format, "----", "", "-----", "")
@@ -177,12 +177,12 @@ func (x customSort) Swap(i, j int)      { x.katas[i], x.katas[j] = x.katas[j], x
 func sortKatas(katas []Kata, countSort *bool) {
 	sort.Sort(customSort{katas, func(x, y Kata) bool {
 		if *countSort {
-			if x.Count != y.Count {
-				return x.Count > y.Count
+			if x.TimesDone != y.TimesDone {
+				return x.TimesDone > y.TimesDone
 			}
 		} else {
-			if x.LastDoneOn != y.LastDoneOn {
-				return x.LastDoneOn.After(y.LastDoneOn)
+			if x.LastDone != y.LastDone {
+				return x.LastDone.After(y.LastDone)
 			}
 		}
 		if x.Name != y.Name {
@@ -198,7 +198,7 @@ func show(k Kata, lastDoneDaysAgo int) bool {
 		return true
 	}
 	t := time.Now().Add(-time.Hour * 24 * time.Duration(lastDoneDaysAgo+1))
-	return k.LastDoneOn.After(t)
+	return k.LastDone.After(t)
 }
 
 // humanize make the time easier to read for humans.
