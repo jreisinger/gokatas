@@ -9,7 +9,7 @@ import (
 	"github.com/jreisinger/gokatas"
 )
 
-var showLastDoneDaysAgo = flag.Int("d", 14, "show only katas last done `days` ago or less")
+var showLastDoneDaysAgo = flag.Int("d", -1, "show only katas last done `days` ago or less")
 var sortByCount = flag.Bool("c", false, "sort katas by done count")
 
 func main() {

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"sort"
@@ -27,8 +28,58 @@ type Kata struct {
 	LastDone  time.Time
 }
 
-// Get gets katas from the KatasFile.
 func Get() ([]Kata, error) {
+	existing, err := getExisting()
+	if err != nil {
+		return nil, err
+	}
+
+	done, err := getDone()
+	if err != nil {
+		return nil, err
+	}
+
+	for i := range existing {
+		for j := range done {
+			if existing[i].Name == done[j].Name {
+				existing[i].TimesDone = done[j].TimesDone
+				existing[i].LastDone = done[j].LastDone
+			}
+		}
+	}
+
+	return existing, nil
+}
+
+// getExistings returns all existing katas.
+func getExisting() ([]Kata, error) {
+	cmd := exec.Command("go", "list", "-f", "{{.Dir}}", "./...")
+	out, err := cmd.Output()
+	if err != nil {
+		return nil, err
+	}
+	cwd, err := os.Getwd()
+	if err != nil {
+		return nil, err
+	}
+	var katas []Kata
+	for _, line := range strings.Split(string(out), "\n") {
+		name := strings.TrimPrefix(line, cwd)
+		name = strings.TrimPrefix(name, "/")
+		if name == "" || strings.HasSuffix(name, "/cmd") {
+			continue
+		}
+		topics, err := parseKata(name)
+		if err != nil {
+			return nil, err
+		}
+		katas = append(katas, Kata{Name: name, Topics: topics})
+	}
+	return katas, err
+}
+
+// getDone returns katas from the KatasFile.
+func getDone() ([]Kata, error) {
 	f, err := os.Open(KatasFile)
 	if err != nil {
 		return nil, err
@@ -202,8 +253,11 @@ func show(k Kata, lastDoneDaysAgo int) bool {
 }
 
 // humanize make the time easier to read for humans.
-func humanize(lastDoneOn time.Time) string {
-	daysAgo := int(time.Since(lastDoneOn).Hours() / 24)
+func humanize(lastDone time.Time) string {
+	if lastDone.IsZero() {
+		return "never"
+	}
+	daysAgo := int(time.Since(lastDone).Hours() / 24)
 	w := "day"
 	if daysAgo != 1 {
 		w += "s"
