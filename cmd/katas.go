@@ -11,6 +11,7 @@ import (
 
 var showLastDoneDaysAgo = flag.Int("d", -1, "show only katas last done `days` ago or less")
 var sortByCount = flag.Bool("c", false, "sort katas by done count")
+var level = flag.String("l", "", "print only katas of `level`")
 
 func main() {
 	flag.Parse()
@@ -19,5 +20,5 @@ func main() {
 		fmt.Fprintf(os.Stderr, "gokatas: %v\n", err)
 		os.Exit(1)
 	}
-	gokatas.Print(katas, *showLastDoneDaysAgo, *sortByCount)
+	gokatas.Print(katas, *showLastDoneDaysAgo, *sortByCount, *level)
 }

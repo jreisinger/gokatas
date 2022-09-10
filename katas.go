@@ -23,9 +23,10 @@ const KatasFile = "katas.md"
 // Kata represents a programming kata.
 type Kata struct {
 	Name      string
-	Topics    []string
-	TimesDone int
 	LastDone  time.Time
+	TimesDone int
+	Level     string
+	Topics    []string
 }
 
 func Get() ([]Kata, error) {
@@ -69,11 +70,11 @@ func getExisting() ([]Kata, error) {
 		if name == "" || strings.HasSuffix(name, "/cmd") {
 			continue
 		}
-		topics, err := parseKata(name)
+		level, topics, err := parseKata(name)
 		if err != nil {
 			return nil, err
 		}
-		katas = append(katas, Kata{Name: name, Topics: topics})
+		katas = append(katas, Kata{Name: name, Level: level, Topics: topics})
 	}
 	return katas, err
 }
@@ -119,13 +120,6 @@ func getDone() ([]Kata, error) {
 				kata.Name = name
 				kata.TimesDone = 1
 				kata.LastDone = doneOn
-
-				topics, err := parseKata(name)
-				if err != nil {
-					return nil, err
-				}
-				kata.Topics = topics
-
 				katas[name] = kata
 			}
 		}
@@ -142,7 +136,7 @@ func getDone() ([]Kata, error) {
 	return ks, nil
 }
 
-func parseKata(name string) (topics []string, err error) {
+func parseKata(name string) (level string, topics []string, err error) {
 	fn := func(path string, d fs.DirEntry, err error) error {
 		if filepath.Ext(path) == ".go" {
 			f, err := os.Open(path)
@@ -153,10 +147,12 @@ func parseKata(name string) (topics []string, err error) {
 			s := bufio.NewScanner(f)
 			for s.Scan() {
 				line := s.Text()
-				if !strings.HasPrefix(line, "// Topics:") {
-					continue
+				if strings.HasPrefix(line, "// Level:") {
+					level = grepLevel(s.Text())
 				}
-				topics = append(topics, grepTopics(s.Text())...)
+				if strings.HasPrefix(line, "// Topics:") {
+					topics = append(topics, grepTopics(s.Text())...)
+				}
 			}
 			if err := s.Err(); err != nil {
 				return err
@@ -166,13 +162,18 @@ func parseKata(name string) (topics []string, err error) {
 	}
 	absPath, err := filepath.Abs(name)
 	if err != nil {
-		return nil, err
+		return "", nil, err
 	}
 	err = filepath.WalkDir(absPath, fn)
 	if err != nil {
-		return nil, err
+		return "", nil, err
 	}
-	return topics, err
+	return level, topics, err
+}
+
+func grepLevel(line string) string {
+	_, level, _ := strings.Cut(line, ":")
+	return strings.TrimSpace(level)
 }
 
 func grepTopics(line string) []string {
@@ -186,13 +187,13 @@ func grepTopics(line string) []string {
 
 // Print prints table with statistics about katas. Only katas lastDoneDaysAgo or
 // later are shown. Katas are sorted by when last done or by count.
-func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
-	const format = "%v\t%v\t%5v\t%v\n"
+func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool, level string) {
+	const format = "%v\t%v\t%5v\t%v\t%v\n"
 
 	// Print header.
 	tw := new(tabwriter.Writer).Init(os.Stdout, 0, 8, 2, ' ', 0)
-	fmt.Fprintf(tw, format, "Kata", "Last done", "Done", "Topics")
-	fmt.Fprintf(tw, format, "----", "---------", "----", "------")
+	fmt.Fprintf(tw, format, "Kata", "Last done", "Done", "Level", "Topics")
+	fmt.Fprintf(tw, format, "----", "---------", "----", "-----", "------")
 
 	// Print lines.
 	var katasCount int
@@ -202,15 +203,18 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool) {
 		if !show(k, lastDoneDaysAgo) {
 			continue
 		}
+		if level != "" && k.Level != level {
+			continue
+		}
 
 		katasCount++
 		totalCount += k.TimesDone
 
-		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDone), fmt.Sprintf("%dx", k.TimesDone), strings.Join(k.Topics, ", "))
+		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDone), fmt.Sprintf("%dx", k.TimesDone), k.Level, strings.Join(k.Topics, ", "))
 	}
 	// Print footer.
-	fmt.Fprintf(tw, format, "----", "", "-----", "")
-	fmt.Fprintf(tw, format, katasCount, "", totalCount, "")
+	fmt.Fprintf(tw, format, "----", "", "----", "", "")
+	fmt.Fprintf(tw, format, katasCount, "", totalCount, "", "")
 
 	tw.Flush() // calculate column widths and print table
 }
