@@ -2,6 +2,9 @@
 // how to use fs.FS in tests.
 //
 // Based on bitfieldconsulting.com/golang/filesystems.
+//
+// Level: intermediate
+// Topics: fs.FS, testing
 package countgo
 
 import (

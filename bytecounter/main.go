@@ -3,6 +3,9 @@
 // io.Writer interface (an abstract type), we can pass it to fmt.Fprint.
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch7/bytecounter.
+//
+// Level: beginner
+// Topics: interfaces
 package main
 
 import "fmt"

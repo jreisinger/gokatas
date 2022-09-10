@@ -1,4 +1,7 @@
 // A channel allows for communication and synchronization between goroutines.
+//
+// Level: beginner
+// Topics: goroutines, channels
 package main
 
 import (

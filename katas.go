@@ -67,7 +67,7 @@ func getExisting() ([]Kata, error) {
 	for _, line := range strings.Split(string(out), "\n") {
 		name := strings.TrimPrefix(line, cwd)
 		name = strings.TrimPrefix(name, "/")
-		if name == "" || strings.HasSuffix(name, "/cmd") {
+		if name == "" || strings.HasSuffix(name, "cmd") {
 			continue
 		}
 		level, topics, err := parseKata(name)

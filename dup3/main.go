@@ -4,6 +4,9 @@
 //
 // os.ReadFile (dup3) and bufio.Scanner (dup2) use the Read and Write methods
 // of *os.File under covers.
+//
+// Level: beginner
+// Topics: io, maps, os.ReadFile, strings.Split
 package main
 
 import (

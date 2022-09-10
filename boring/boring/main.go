@@ -1,5 +1,13 @@
 // Boring listens for a while to a boring person talking in a goroutine.
-// Topics: concurrency
+//
+// Based on Go Concurrency Patterns by Rob Pibe (2012):
+//
+//	Slides	https://talks.golang.org/2012/concurrency.slide
+//	Code	https://talks.golang.org/2012/concurrency/support
+//	Video	https://www.youtube.com/watch?v=f6kdp27TYZs
+//
+// Level: beginner
+// Topics: goroutines
 package main
 
 import (

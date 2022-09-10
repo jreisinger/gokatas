@@ -1,5 +1,8 @@
 // Use quit channel to stop the conversation. Also wait for them to tell us
 // they're done talking.
+//
+// Level: intermediate
+// Topics: goroutines, channels, select
 package main
 
 import (

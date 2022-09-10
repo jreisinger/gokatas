@@ -1,12 +1,13 @@
-/*
-Select statement is another way to handle multiple channels. It's like switch
-but each case is a communication.
-
-  - All channels are evaluated.
-  - Blocks until one communication can proceed.
-  - If multiple can proceed, chooses pseudo-randomly.
-  - A default case, if present, executes immediately if no channel is ready.
-*/
+// Select statement is another way to handle multiple channels. It's like switch
+// but each case is a communication.
+//
+//   - All channels are evaluated.
+//   - Blocks until one communication can proceed.
+//   - If multiple can proceed, chooses pseudo-randomly.
+//   - A default case, if present, executes immediately if no channel is ready.
+//
+// Level: beginner
+// Topics: goroutines, channels, select
 package main
 
 import (

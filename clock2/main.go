@@ -1,5 +1,8 @@
 // Clock2 is a TCP server that periodically writes the time. Adapted from
 // github.com/adonovan/gopl.io/tree/master/ch8/clock2.
+//
+// Level: intermediate
+// Topics: networking
 package main
 
 import (

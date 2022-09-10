@@ -1,4 +1,7 @@
 // Package compress compresses files. Adapted from the Go in Practice book.
+//
+// Level: beginner
+// Topics: concurrency, sync.WaitGroup
 package compress
 
 import (

@@ -1,5 +1,8 @@
 // Generator is a function that returns a channel. We launch the goroutine from
 // inside the generator.
+//
+// Level: beginner
+// Topics: goroutines, channels
 package main
 
 import (
