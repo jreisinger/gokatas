@@ -16,8 +16,8 @@ import (
 
 // KatasFile is a MarkDown file to track katas you've done. It looks like this:
 //
-//   - 2022-04-25: bytecounter, clock2
-//   - 2022-04-22: areader
+//   - 2022-09-12: areader, noescape
+//   - 2022-09-09: geometry
 const KatasFile = "katas.md"
 
 // Kata represents a programming kata.
@@ -29,6 +29,7 @@ type Kata struct {
 	Topics    []string
 }
 
+// Get returns all existing katas and your practice statistics.
 func Get() ([]Kata, error) {
 	existing, err := getExisting()
 	if err != nil {
@@ -187,8 +188,9 @@ func grepTopics(line string) []string {
 	return topics
 }
 
-// Print prints table with statistics about katas. Only katas lastDoneDaysAgo or
-// later are shown. Katas are sorted by when last done or by count.
+// Print prints table with statistics about katas. Only katas of level (if not
+// empty) and lastDoneDaysAgo or sooner are shown. Katas are sorted by when last
+// done or by count.
 func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool, level string) {
 	const format = "%v\t%v\t%5v\t%v\t%v\n"
 
