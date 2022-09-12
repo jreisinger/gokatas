@@ -11,7 +11,7 @@ packages and commands that you should be rewriting from scratch or partially.
 There's a command to show katas and your progress:
 
 ```
-$ go run cmd/katas.go
+$ go run cmd/katas.go -d 14
 Kata               Last done      Done  Level         Topics
 ----               ---------      ----  -----         ------
 areader            0 days ago      51x  beginner      interfaces, io.Reader
