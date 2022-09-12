@@ -1,6 +1,6 @@
-// Boring listens for a while to a boring person talking in a goroutine.
-//
-// Based on Go Concurrency Patterns by Rob Pibe (2012):
+// Package boring and its subpackages hold various Go concurrency patterns in
+// the form of boring conversations. Based on Go Concurrency Patterns by Rob
+// Pibe (2012):
 //
 //	Slides	https://talks.golang.org/2012/concurrency.slide
 //	Code	https://talks.golang.org/2012/concurrency/support
