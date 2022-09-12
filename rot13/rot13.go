@@ -1,6 +1,9 @@
 // Package rot13 implements an io.Reader that reads from an io.Reader,
 // modifying the stream by applying the rot13 cipher. Adapted from
 // tour.golang.org/methods/23.
+//
+// Level: intermediate
+// Topics: algorithms, security, io.Reader
 package rot13
 
 import (

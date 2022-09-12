@@ -1,5 +1,8 @@
 // Fetch prints content found at URLs defined as command line arguments. Adapted
 // from github.com/adonovan/gopl.io/tree/master/ch1/fetch.
+//
+// Level: beginner
+// Topics: web client, net/http
 package main
 
 import (

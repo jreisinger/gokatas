@@ -1,5 +1,8 @@
 // Package logger uses channels to implement non-blocking logging. Adapted from
 // https://youtu.be/zDCKZn4-dck.
+//
+// Level: advanced
+// Topics: concurrency, design
 package logger
 
 import (

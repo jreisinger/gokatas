@@ -1,5 +1,8 @@
 // Proxy mediates TCP traffic between client and upstream. Adapted from
 // youtu.be/J4J-A9tcjcA.
+//
+// Level: intermediate
+// Topics: networking, net, security, concurrency
 package main
 
 import (

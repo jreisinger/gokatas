@@ -1,6 +1,9 @@
 // Fibfunc implements a function that returns a function (a closure) generating
 // Fibonacci sequence. Then it prints the first 46 numbers from the sequence.
 // Adapted from tour.golang.org/moretypes/26.
+//
+// Level: intermediate
+// Topics: algorithms, math
 package main
 
 import "fmt"

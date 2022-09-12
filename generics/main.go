@@ -1,4 +1,7 @@
 // Generics shows the basics of generics. Based on go.dev/doc/tutorial/generics.
+//
+// Level: intermediate
+// Topics: generics
 package main
 
 import "fmt"

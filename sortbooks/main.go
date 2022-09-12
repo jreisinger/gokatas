@@ -1,5 +1,8 @@
 // Sortbooks sorts a collection of books. Based on
 // github.com/adonovan/gopl.io/blob/master/ch7/sorting/.
+//
+// Level: intermediate
+// Topics: sorting, interfaces, pointers
 package main
 
 import (

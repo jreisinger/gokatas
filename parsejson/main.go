@@ -1,4 +1,7 @@
 // Parsejson parses a JSON string and prints it out.
+//
+// Level: beginner
+// Topics: enconding/json
 package main
 
 import (

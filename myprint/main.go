@@ -1,5 +1,8 @@
 // Myprint shows how come fmt.Print accepts arguments of any type. It uses
 // reflection. See research.swtch.com/gotour (from go.dev/doc) for more.
+//
+// Level: intemediate
+// Topics: reflection, switch
 package main
 
 import (

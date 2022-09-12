@@ -3,6 +3,9 @@
 // least one divisor other than 1 and itself).
 //
 // Taken from https://youtu.be/f6kdp27TYZs?t=2208.
+//
+// Level: advanced
+// Topics: algorithms, concurrency
 package main
 
 func Generate(ch chan<- int) {

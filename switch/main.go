@@ -1,4 +1,7 @@
-// Sample functions using switch.
+// Sample functions using switch statement.
+//
+// Level: beginner
+// Topics: switch, flow control
 package main
 
 import (

@@ -2,6 +2,9 @@
 // tests and examples.
 //
 // Adapted from github.com/adonovan/gopl.io/tree/master/ch11/word2
+//
+// Level: intermediate
+// Topics: unicode, runes, testing
 package word
 
 import (

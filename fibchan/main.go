@@ -1,6 +1,9 @@
 // Fibchan implements a function that returns a channel generating Fibonacci
 // sequence. Then it prints first 46 numbers from the sequence. Adapted from
 // rosettacode.org/wiki/Fibonacci_sequence#Go.
+//
+// Level: intermediate
+// Topics: algorithms, math
 package main
 
 import "fmt"

@@ -2,6 +2,9 @@
 // their times and sizes.
 //
 // Adapted from github.com/adonovan/gopl.io/tree/master/ch1/fetchall.
+//
+// Level: intermediate
+// Topics: web client, net/http, concurrency
 package main
 
 import (

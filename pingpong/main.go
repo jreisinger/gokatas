@@ -3,6 +3,9 @@
 // message on the channel, it will wait (block) until printer is ready to
 // receive the message. Note that "ping" and "pong" are alternating. This is
 // because channels act as first-in-first-out queues (https://go.dev/ref/spec).
+//
+// Level: beginner
+// Topics: concurrency, goroutines, channels
 package main
 
 import (

@@ -1,9 +1,10 @@
-/*
-Package reverse reverses a string. We test it by using fuzzing. Adapted from
-go.dev/doc/tutorial/fuzz.
-
-	go test -fuzz=Fuzz -fuzztime 30s reverse/*
-*/
+// Package reverse reverses a string. We test it by using fuzzing. Adapted from
+// go.dev/doc/tutorial/fuzz.
+//
+// go test -fuzz=Fuzz -fuzztime 30s reverse/*
+//
+// Level: intermediate
+// Topics: algorithms, fuzzing
 package reverse
 
 import (

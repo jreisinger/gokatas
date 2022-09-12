@@ -2,6 +2,9 @@
 // counts the HTTP requests. NOTE: Handler for each incoming request is run in
 // a separate goroutine. To avoid race conditions we need to protect the count
 // variable with a mutex.
+//
+// Level: intermediate
+// Topics: web server, net/http, locking, sync.Mutex
 package main
 
 import (

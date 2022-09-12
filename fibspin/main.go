@@ -1,6 +1,9 @@
 // Fibspin calculates 46th number from the Fibonacci sequence. It uses a slow
 // recursive algorithm. While the calculation is being done a spinner is
 // displayed. Adapted from github.com/adonovan/gopl.io/tree/master/ch8/spinner.
+//
+// Level: intermediate
+// Topics: algorithms, math
 package main
 
 import (

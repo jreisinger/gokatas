@@ -2,6 +2,8 @@
 // and printed. To use it implement a Factory and a Task. Then call Run() on
 // your factory. Is uses concurrency to run fast and interfaces and composition
 // to be generic and simple. See https://youtu.be/woCg2zaIVzQ for more.
+//
+// Level: intermediate
 // Topics: concurrency, scripting
 package z
 

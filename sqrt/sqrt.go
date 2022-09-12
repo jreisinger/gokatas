@@ -1,5 +1,8 @@
 // Package sqrt calculates square root: given number x, we want to find the
 // number z for which z² is most nearly x. Source: go.dev/tour/flowcontrol/8
+//
+// Level: beginner
+// Topics: algorithms, math
 package sqrt
 
 import "math"

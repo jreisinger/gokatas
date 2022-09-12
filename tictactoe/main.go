@@ -1,5 +1,8 @@
 // Tictactoe creates a a tic-tac-toe board as a slice of string slices. Adapted
 // from tour.golang.org/moretypes/14.
+//
+// Level: beginner
+// Topics: types, slice of slices
 package main
 
 import (

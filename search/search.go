@@ -1,6 +1,11 @@
 // Package search implements linear and binary search algorithms.
-// 	go test -bench=. search/*	# run tests and all benchmarks
-// See reisinge.net/notes/cs/big-o-notation for more.
+//
+//	go test -bench=. search/*	# run tests and all benchmarks
+//
+// See github.com/jreisinger/homepage/blob/master/notes/cs/big-o-notation.md for more.
+//
+// Level: intermediate
+// Topics: algorithms, testing, benchmarking
 package search
 
 // Linear returns the smallest index of item from a list or -1 if not found.

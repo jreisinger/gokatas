@@ -1,5 +1,8 @@
 // Timer times out a goroutine that emits Go pointer types over a channel.
 // Based on "Go Programming Basics" video from John Graham-Cumming.
+//
+// Level: intermediate
+// Topics: time.Timer, concurrency
 package main
 
 import (

@@ -1,15 +1,16 @@
-/*
-Package repike is a Go [rewrite] of Rob Pike's regex [matcher] that handles:
-
-    c    matches any literal character c
-    .    matches any single character
-    ^    matches the beginning of the input string
-    $    matches the end of the input string
-    *    matches zero or more occurrences of the previous character
-
-[rewrite]: https://github.com/benhoyt/repike
-[matcher]: https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
-*/
+// Package repike is a Go [rewrite] of Rob Pike's regex [matcher] that handles:
+//
+//	c    matches any literal character c
+//	.    matches any single character
+//	^    matches the beginning of the input string
+//	$    matches the end of the input string
+//	*    matches zero or more occurrences of the previous character
+//
+// Level: advanced
+// Topics: algorithms, design
+//
+// [rewrite]: https://github.com/benhoyt/repike
+// [matcher]: https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
 package repike
 
 // Match reports whether regexp matches anywhere in text.
