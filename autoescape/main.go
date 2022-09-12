@@ -2,8 +2,8 @@
 // fields that contain trusted HTML data. (The same can be done for trusted
 // JavaScript, CSS and URLs.) Taken from gopl.io ch4.6 Text and HTML templates.
 //
-// Level: beginner
-// Topics: html/template
+// Level: intermediate
+// Topics: html/template, constants, security
 package main
 
 import (
