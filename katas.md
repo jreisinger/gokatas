@@ -1,34 +1,34 @@
-* 2022-09-12: areader, autoescape
+* 2022-09-12: areader, noescape
 * 2022-09-09: primesieve, geometry, word2
 * 2022-09-08: boring/selectquit, z, bytecounter
 * 2022-09-07: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select
 * 2022-09-06: myprint, countgo
 * 2022-09-05: clock2, netcat1
-* 2022-09-03: areader, autoescape
+* 2022-09-03: areader, noescape
 * 2022-09-02: geometry, word2
 * 2022-08-31: bytecounter, primesieve
 * 2022-08-30: boring/selectquit, z, z
 * 2022-08-26: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select
 * 2022-08-25: myprint, boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex
 * 2022-08-24: countgo, myprint, countgo
-* 2022-08-23: areader, autoescape, clock2, netcat1
+* 2022-08-23: areader, noescape, clock2, netcat1
 * 2022-08-22: geometry, word2
 * 2022-08-19: bytecounter, primesieve
 * 2022-08-18: z
 * 2022-08-17: boring/select, boring/selectquit, repike
 * 2022-08-16: boring/channel, boring/generator, boring/lockstep, boring/multiplex
 * 2022-08-15: countgo, myprint
-* 2022-08-12: areader, autoescape, clock2, netcat1
+* 2022-08-12: areader, noescape, clock2, netcat1
 * 2022-08-11: geometry, word2
 * 2022-08-10: bytecounter, primesieve
 * 2022-08-04: z
 * 2022-08-03: boring/select, boring/selectquit
 * 2022-08-02: myprint, boring/channel, boring/generator, boring/lockstep, boring/multiplex
 * 2022-08-01: countgo, myprint
-* 2022-07-29: areader, autoescape, clock2, netcat1
+* 2022-07-29: areader, noescape, clock2, netcat1
 * 2022-07-28: word2, geometry
 * 2022-07-27: z, z, echo, fetchall, sum
-* 2022-07-15: autoescape, areader, clock2, netcat1
+* 2022-07-15: noescape, areader, clock2, netcat1
 * 2022-07-14: dup2, dup3
 * 2022-07-13: echo, fetchall, sum
 * 2022-07-12: fibchan, fibfunc

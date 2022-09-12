@@ -1,4 +1,4 @@
-// Autoescape shows how to suppress html/template auto-escaping behavior for
+// Noescape shows how to suppress html/template auto-escaping behavior for
 // fields that contain trusted HTML data. (The same can be done for trusted
 // JavaScript, CSS and URLs.) Taken from gopl.io ch4.6 Text and HTML templates.
 //
@@ -14,7 +14,7 @@ import (
 
 func main() {
 	const templ = `<p>A: {{.A}}</p><p>B: {{.B}}</p>`
-	t := template.Must(template.New("autoescape").Parse(templ))
+	t := template.Must(template.New("noescape").Parse(templ))
 	var data struct {
 		A string        // untrusted plain text
 		B template.HTML // trusted HTML
