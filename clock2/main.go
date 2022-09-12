@@ -2,7 +2,7 @@
 // github.com/adonovan/gopl.io/tree/master/ch8/clock2.
 //
 // Level: intermediate
-// Topics: networking
+// Topics: networking, TCP server
 package main
 
 import (
