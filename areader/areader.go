@@ -2,7 +2,7 @@
 // stream of the ASCII character 'A'. Adapted from tour.golang.org/methods/22.
 //
 // Level: beginner
-// Topics: interfaces, methods
+// Topics: interfaces, io.Reader
 package areader
 
 type Areader struct{}
