@@ -48,5 +48,6 @@ interests you and is slightly beyond your current ability.
 
 ```
 cd gokatas
+> katas.md # if you are not me :-)
 go doc
 ```
