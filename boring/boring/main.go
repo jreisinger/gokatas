@@ -7,7 +7,7 @@
 //	Video	https://www.youtube.com/watch?v=f6kdp27TYZs
 //
 // Level: beginner
-// Topics: goroutines
+// Topics: concurrency, design
 package main
 
 import (

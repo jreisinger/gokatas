@@ -5,7 +5,7 @@
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch7/bytecounter.
 //
 // Level: beginner
-// Topics: interfaces
+// Topics: interfaces, io.Writer
 package main
 
 import "fmt"

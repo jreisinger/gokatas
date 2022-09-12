@@ -6,7 +6,7 @@
 //   - If multiple can proceed, chooses pseudo-randomly.
 //   - A default case, if present, executes immediately if no channel is ready.
 //
-// Level: beginner
+// Level: intermediate
 // Topics: goroutines, channels, select
 package main
 

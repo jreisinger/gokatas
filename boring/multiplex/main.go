@@ -1,6 +1,6 @@
 // Multiplex lets whosoever is ready talk using fanIn function.
 //
-// Level: beginner
+// Level: intermediate
 // Topics: goroutines, channels
 package main
 
