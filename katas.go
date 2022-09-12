@@ -88,7 +88,7 @@ func getDone() ([]Kata, error) {
 
 	// Regexes
 	kataLineRE := regexp.MustCompile(`^\s*\*\s*([0-9]{4}\-[0-9]{2}\-[0-9]{2}):\s*(.+)$`)
-	comaRE := regexp.MustCompile(`\s*,\s*`)
+	comaRE := regexp.MustCompile(`\s*,\s*`) // works both with w1,w2 and w1, w2
 
 	katas := make(map[string]Kata) // name to Kata
 
@@ -109,6 +109,8 @@ func getDone() ([]Kata, error) {
 			if name == "" {
 				continue
 			}
+
+			name = strings.TrimSpace(name)
 
 			if kata, ok := katas[name]; ok {
 				kata.TimesDone++
