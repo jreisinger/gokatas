@@ -2,6 +2,8 @@
 // declare methods.
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch6/geometry
+//
+// Level: intermediate
 // Topics: methods, math
 package geometry
 

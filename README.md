@@ -1,8 +1,6 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/jreisinger/gokatas.svg)](https://pkg.go.dev/github.com/jreisinger/gokatas)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jreisinger/gokatas)](https://goreportcard.com/report/github.com/jreisinger/gokatas)
 
-> Practice yourself, for heaven's sake, in little things; and thence proceed to greater. -- Epictetus (Discourses IV.i)
-
 # Go katas
 
 Katas (形) are practiced in martial arts as a way to memorize and perfect the
@@ -10,17 +8,18 @@ movements being executed. Let's try the same with code. The approach is pretty
 low-tech. Go katas is basically a
 [list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of
 packages and commands that you should be rewriting from scratch or partially.
-There's a command to visualize your progress:
+There's a command to show katas and your progress:
 
 ```
 $ go run cmd/katas.go
-Kata           Last done  Done
-----           ---------  ----
-areader      11 days ago    1x
-bytecounter   8 days ago    1x
-clock2        8 days ago    1x
-----                      ----
-3                            3
+Kata               Last done      Done  Level         Topics
+----               ---------      ----  -----         ------
+areader            0 days ago      51x  beginner      interfaces, io.Reader
+noescape           0 days ago       6x  intermediate  html/template, constants, security
+geometry           3 days ago      11x  intermediate  methods, math
+<... snip ...>
+----                              ----
+48                                1340
 ```
 
 ## Why
@@ -32,16 +31,12 @@ to achieve this.
 
 ## How
 
-It's important to practice regularly, to create a habit. Start by setting a
-goal that you can meet, e.g. 45 minutes every day before work. At first it's
-fine even if you only read through one of the katas. After some time it will
-require much less will power and you will become more familiar with the code.
-
-Try to understand and make the code work before viewing the solution (by running
-`git diff`).
-
-If you feel comfortable enough with a kata stop practicing it (for some time)
-and pick up one that interests you and is slightly beyond your current ability.
+It's important to practice regularly, to create a habit. Start by setting a goal
+that you can meet, e.g. 45 minutes every day before work. At first it's fine
+even if you only read through one of the katas. After some time it will require
+much less will power and you will become more familiar with the code.  If you
+feel comfortable enough with a kata stop practicing it (for some time) and pick
+up one that interests you and is slightly beyond your current ability.
 
 ## Initial setup
 
