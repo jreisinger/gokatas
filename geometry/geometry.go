@@ -3,7 +3,7 @@
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch6/geometry
 //
-// Level: intermediate
+// Level: beginner
 // Topics: methods, math
 package geometry
 
