@@ -4,7 +4,7 @@
 // Based on bitfieldconsulting.com/golang/filesystems.
 //
 // Level: intermediate
-// Topics: fs.FS, testing
+// Topics: io/fs, path/filepath, testing/fstest
 package countgo
 
 import (

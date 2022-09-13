@@ -2,7 +2,7 @@
 // reflection. See research.swtch.com/gotour (from go.dev/doc) for more.
 //
 // Level: intemediate
-// Topics: reflection, switch
+// Topics: reflect, strconv, switch, interfaces
 package main
 
 import (
@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	myPrint("hello, ", 42, "\n")
+	myPrint("hello", 42, "\n")
 }
 
 func myPrint(args ...interface{}) {
