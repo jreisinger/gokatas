@@ -18,7 +18,7 @@ import (
 
 func main() {
 	c := fanIn(boring("Ann"), boring("Joe"))
-	// you could also timeout the whole conversation see
+	// you could also time out the whole conversation see
 	// https://go.dev/talks/2012/concurrency.slide#36
 	for {
 		select {
