@@ -1,3 +1,4 @@
+* 2022-09-14: google
 * 2022-09-13: countgo, myprint, boring/boring, boring/channel, boring/generator
 * 2022-09-12: areader, noescape, clock2, netcat1
 * 2022-09-09: primesieve, geometry, word2
