@@ -1,3 +1,5 @@
+// Level: advanced
+// Topics: concurrency, design
 package main
 
 import (
