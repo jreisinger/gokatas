@@ -3,8 +3,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
-	"os"
+	"log"
 
 	"github.com/jreisinger/gokatas"
 )
@@ -15,10 +14,13 @@ var level = flag.String("l", "", "print only katas of `level`")
 
 func main() {
 	flag.Parse()
+
+	log.SetPrefix("gokatas: ")
+	log.SetFlags(0)
+
 	katas, err := gokatas.Get()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "gokatas: %v\n", err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 	gokatas.Print(katas, *showLastDoneDaysAgo, *sortByCount, *level)
 }

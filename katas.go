@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io/fs"
+	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -39,6 +40,16 @@ func Get() ([]Kata, error) {
 	done, err := getDone()
 	if err != nil {
 		return nil, err
+	}
+
+HERE:
+	for _, d := range done {
+		for _, e := range existing {
+			if d.Name == e.Name {
+				continue HERE
+			}
+		}
+		log.Printf("kata '%s' stated in %s does not exist in this repo", d.Name, KatasFile)
 	}
 
 	for i := range existing {
