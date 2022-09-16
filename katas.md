@@ -234,24 +234,24 @@
 * 2021-08-24: bytecounter, sum, dup2, dup3, areader, rot13
 * 2021-08-23: Cloud Native Go
 * 2021-08-20: search, sqrt, switch
-* 2021-08-19: pingpong, shop1, shop2, shop4, reisinge.net/notes/go/slices, sortbooks, tcpscanner, timer
+* 2021-08-19: pingpong, shop1, shop4, reisinge.net/notes/go/slices, sortbooks, tcpscanner, timer
 * 2021-08-18: echo, fetch, fetchall, fibspin, fibchan, parsejson, fibfunc, tictactoe, reisinge.net/notes/go/pointers
 * 2021-08-17: bytecounter, sum, areader, rot13, dup1, dup2, dup3
 * 2021-08-16: Cloud Native Go
 * 2021-08-13: Cloud Native Go, search, sqrt, switch
-* 2021-08-12: pingpong, timer, reisinge.net/notes/go/slices, shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-08-12: pingpong, timer, reisinge.net/notes/go/slices, shop1, shop4, sortbooks, tcpscanner
 * 2021-08-11: dup1, dup2, dup3, echo, fetch, fetchall, reisinge.net/notes/go/pointers, tictactoe, fibfunc, fibchan, fibspin, parsejson
 * 2021-08-10: bytecounter, sum, areader, rot13
 * 2021-08-07: switch, search, sqrt
 * 2021-08-06: Cloud Native Go
-* 2021-08-05: shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-08-05: shop1, shop4, sortbooks, tcpscanner
 * 2021-08-04: fibchan, fibspin, parsejson, pingpong, timer, reisinge.net/notes/go/slices
 * 2021-08-03: dup1, dup2, dup3, echo, fetch, fetchall, reisinge.net/notes/go/pointers, fibfunc
 * 2021-08-02: areader, rot13, bytecounter, sum
 * 2021-07-30: sqrt, search
 * 2021-07-29: switch
 * 2021-07-28: Cloud Native Go
-* 2021-07-27: shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-07-27: shop1, shop4, sortbooks, tcpscanner
 * 2021-07-26: fibchan, fibspin, parsejson, pingpong, timer, reisinge.net/notes/go/slices
 * 2021-07-23: fibfunc
 * 2021-07-22: reisinge.net/notes/go/pointers
@@ -259,97 +259,97 @@
 * 2021-07-20: bytecounter, sum, dup1, dup2, dup3
 * 2021-07-19: areader, search, rot13
 * 2021-07-02: sortbooks, tcpscanner, Cloud Native Go, switch, sqrt
-* 2021-07-01: shop1, shop2, shop4, reisinge.net/notes/go/slices
+* 2021-07-01: shop1, shop4, reisinge.net/notes/go/slices
 * 2021-06-29: fibchan, fibspin, parsejson, pingpong, timer
 * 2021-06-28: reisinge.net/notes/go/pointers, echo, fetch, fibfunc, fetchall
 * 2021-06-26: bytecounter, sum, dup1, dup2, dup3
 * 2021-06-25: rot13, search
 * 2021-06-24: Cloud Native Go, switch, sqrt, areader
 * 2021-06-21: reisinge.net/notes/go/slices, sortbooks, tcpscanner
-* 2021-06-17: shop1, shop2, shop4
+* 2021-06-17: shop1, shop4
 * 2021-06-16: pingpong
 * 2021-06-15: echo, fetch, fetchall, parsejson, timer, fibchan, fibspin
 * 2021-06-14: search, bytecounter, reisinge.net/notes/go/pointers, fibfunc, sum, dup1, dup2, dup3
 * 2021-06-12: Cloud Native Go, sqrt, switch, areader, rot13
-* 2021-06-11: reisinge.net/notes/go/slices, pingpong, shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-06-11: reisinge.net/notes/go/slices, pingpong, shop1, shop4, sortbooks, tcpscanner
 * 2021-06-10: fibchan, fibspin
 * 2021-06-09: sum, dup1, dup2, dup3, parsejson, timer, echo, fetch, fetchall
 * 2021-06-07: search, bytecounter, reisinge.net/notes/go/pointers, fibfunc
-* 2021-06-05: pingpong, Cloud Native Go, switch, sqrt, areader, rot13, shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-06-05: pingpong, Cloud Native Go, switch, sqrt, areader, rot13, shop1, shop4, sortbooks, tcpscanner
 * 2021-06-04: reisinge.net/notes/go/slices
 * 2021-06-03: fibchan, fibspin
 * 2021-06-02: echo, fetch, fetchall
 * 2021-06-01: sum, dup1, dup2, dup3, parsejson, timer
 * 2021-05-31: reisinge.net/notes/go/pointers, fibfunc, search, bytecounter
-* 2021-05-29: rot13, shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-05-29: rot13, shop1, shop4, sortbooks, tcpscanner
 * 2021-05-28: reisinge.net/notes/go/slices, echo, Cloud Native Go, fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
 * 2021-05-25: sum, dup1, dup2, dup3, parsejson, timer
 * 2021-05-24: reisinge.net/notes/go/pointers, fibfunc, search, bytecounter
-* 2021-05-21: shop1, shop2, shop4, rot13, sortbooks, tcpscanner
+* 2021-05-21: shop1, shop4, rot13, sortbooks, tcpscanner
 * 2021-05-20: fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
 * 2021-05-19: reisinge.net/notes/go/slices, echo, Cloud Native Go
 * 2021-05-18: sum, dup1, dup2, dup3, timer, parsejson
 * 2021-05-17: reisinge.net/notes/go/pointers, search, bytecounter, fibfunc
-* 2021-05-14: shop1, shop2, shop4, rot13, sortbooks, tcpscanner
+* 2021-05-14: shop1, shop4, rot13, sortbooks, tcpscanner
 * 2021-05-13: fetch, fetchall, fibchan, fibspin, pingpong, sqrt, switch, areader
 * 2021-05-12: reisinge.net/notes/go/slices, echo, Cloud Native Go
 * 2021-05-11: fibfunc, sum, dup1, dup2, dup3, parsejson, timer
 * 2021-05-10: search, bytecounter, reisinge.net/notes/go/pointers
-* 2021-05-07: shop1, shop2, shop4, sortbooks, tcpscanner, rot13
+* 2021-05-07: shop1, shop4, sortbooks, tcpscanner, rot13
 * 2021-05-06: sqrt, switch, fetch, fetchall, fibchan, fibspin, pingpong, areader
 * 2021-05-05: Cloud Native Go, reisinge.net/notes/go/slices, echo
 * 2021-05-04: fibfunc, sum, dup1, dup2, dup3, parsejson, timer
 * 2021-05-03: search, bytecounter, reisinge.net/notes/go/pointers
-* 2021-04-30: shop1, shop2, shop4, sortbooks, tcpscanner, rot13
+* 2021-04-30: shop1, shop4, sortbooks, tcpscanner, rot13
 * 2021-04-29: fetch, fetchall, fibchan, fibspin, pingpong, areader
 * 2021-04-28: echo, sqrt, switch, fibfunc
 * 2021-04-27: sum, dup1, dup2, dup3, parsejson, Cloud Native Go, timer
 * 2021-04-26: search, bytecounter, reisinge.net/notes/go/pointers
-* 2021-04-23: shop1, shop2, shop4, sortbooks, tcpscanner, rot13
+* 2021-04-23: shop1, shop4, sortbooks, tcpscanner, rot13
 * 2021-04-22: fetch, fetchall, fibchan, fibspin, pingpong, areader
 * 2021-04-21: fibfunc, echo, sqrt, switch
 * 2021-04-20: sum, dup1, dup2, dup3, parsejson, Cloud Native Go, timer
 * 2021-04-19: search, bytecounter, reisinge.net/notes/go/pointers
-* 2021-04-16: shop1, shop2, shop4, sortbooks, tcpscanner, rot13
+* 2021-04-16: shop1, shop4, sortbooks, tcpscanner, rot13
 * 2021-04-15: fetch, fetchall, fibchan, fibspin, pingpong, areader
 * 2021-04-14: echo, switch, sqrt
 * 2021-04-13: sum, parsejson, timer, fibfunc, dup1, dup2, dup3, Cloud Native Go
 * 2021-04-12: search, bytecounter, reisinge.net/notes/go/pointers
-* 2021-04-09: shop1, shop2, shop4, sortbooks, tcpscanner, areader, rot13
+* 2021-04-09: shop1, shop4, sortbooks, tcpscanner, areader, rot13
 * 2021-04-08: fetch, fetchall, fibchan, fibspin, pingpong
 * 2021-04-07: dup1, dup2, dup3, echo, switch, sqrt
 * 2021-04-06: search, bytecounter, fibfunc, sum, parsejson, timer
-* 2021-04-02: fibspin, pingpong, shop1, shop2, shop4, sortbooks, tcpscanner, areader, rot13
+* 2021-04-02: fibspin, pingpong, shop1, shop4, sortbooks, tcpscanner, areader, rot13
 * 2021-04-01: dup1, dup2, dup3, echo, fetch, fetchall, fibchan
 * 2021-03-30: bytecounter, sum, reisinge.net/notes/go/pointers, parsejson, timer, search
-* 2021-03-29: fibspin, pingpong, shop1, shop2, shop4, sortbooks, fibfunc, tcpscanner
+* 2021-03-29: fibspin, pingpong, shop1, shop4, sortbooks, fibfunc, tcpscanner
 * 2021-03-26: dup1, dup2, dup3, fetch, fetchall, echo, fibchan, reisinge.net/notes/go/pointers
 * 2021-03-25: search
 * 2021-03-24: bytecounter, sum, parsejson, timer
 * 2021-03-23: tcpscanner
-* 2021-03-22: fibspin, pingpong, shop1, shop2, shop4, sortbooks
+* 2021-03-22: fibspin, pingpong, shop1, shop4, sortbooks
 * 2021-03-20: echo, fibchan
 * 2021-03-19: dup1, dup2, dup3, fetch, fetchall, search
 * 2021-03-18: bytecounter, sum, parsejson, timer
 * 2021-03-17: tcpscanner
-* 2021-03-16: shop1, shop2, shop4, sortbooks
+* 2021-03-16: shop1, shop4, sortbooks
 * 2021-03-15: fibchan, fibspin, pingpong
 * 2021-03-13: search, echo
 * 2021-03-12: dup1, dup2, dup3, fetch, fetchall
 * 2021-03-11: timer, bytecounter, sum, parsejson
-* 2021-03-10: shop1, shop2, shop4, sortbooks, tcpscanner
+* 2021-03-10: shop1, shop4, sortbooks, tcpscanner
 * 2021-03-09: search, echo, fibchan, fibspin, pingpong
 * 2021-03-08: dup1, dup2, dup3, fetch, fetchall
 * 2021-03-06: bytecounter, sum, parsejson
 * 2021-03-05: shop4, sortbooks, tcpscanner, timer
-* 2021-03-04: fibspin, pingpong, search, fibchan, echo, shop1, shop2
+* 2021-03-04: fibspin, pingpong, search, fibchan, echo, shop1
 * 2021-03-03: dup3, fetch, fetchall
 * 2021-03-02: dup1, dup2
 * 2021-03-01: bytecounter, sum
 * 2021-02-27: fibspin
 * 2021-02-26: timer
 * 2021-02-25: sortbooks, tcpscanner
-* 2021-02-24: shop1, shop2, shop4
+* 2021-02-24: shop1, shop4
 * 2021-02-23: echo
 * 2021-02-22: pingpong
 * 2021-02-19: dup3, fetch, fetchall
@@ -362,14 +362,13 @@
 * 2021-02-10: tcpscanner
 * 2021-02-09: sortbooks
 * 2021-02-08: shop4
-* 2021-02-04: shop1, shop2
+* 2021-02-04: shop1
 * 2021-02-03: pingpong, echo
 * 2021-02-02: fetch, fetchall, tcpscanner
 * 2021-02-01: dup2, dup3
 * 2021-01-30: sum, dup1
 * 2021-01-29: timer, bytecounter
 * 2021-01-28: shop4, sortbooks
-* 2021-01-27: shop2
 * 2021-01-26: shop1
 * 2021-01-25: pingpong, echo
 * 2021-01-22: bytecounter, fetch, fetchall
@@ -378,7 +377,6 @@
 * 2021-01-19: timer
 * 2021-01-18: sortbooks
 * 2021-01-16: shop4
-* 2021-01-15: shop2
 * 2021-01-14: dup2, shop1
 * 2021-01-13: bytecounter, echo
 * 2021-01-12: pingpong
@@ -394,7 +392,7 @@
 * 2020-12-14: fetchall, fetch
 * 2020-12-12: fetchall
 * 2020-12-11: shop4
-* 2020-12-10: pingpong, shop2
+* 2020-12-10: pingpong
 * 2020-12-09: pingpong, shop4
 * 2020-12-07: pingpong, shop4
 * 2020-12-03: shop1, sortbooks
@@ -405,8 +403,6 @@
 * 2020-11-25: dup1, sum
 * 2020-11-24: dup1, shop4
 * 2020-11-23: shop4
-* 2020-11-20: shop2
-* 2020-11-19: shop2
 * 2020-11-13: pingpong, timer, shop1
 * 2020-11-11: echo, timer, pingpong
 * 2020-11-10: echo, timer
@@ -420,19 +416,19 @@
 * 2020-10-29: sum, bytecounter, bytecounter
 * 2020-10-28: sum
 * 2020-10-24: bytecounter
-* 2020-10-17: shop2, shop4
+* 2020-10-17: shop4
 * 2020-10-16: echo, shop1
 * 2020-10-15: sum, dup2, fetch, pingpong
 * 2020-10-14: bytecounter
 * 2020-10-13: timer, timer
-* 2020-10-12: echo, shop1, shop2, shop4
+* 2020-10-12: echo, shop1, shop4
 * 2020-10-10: dup2, fetch, pingpong, dup1
 * 2020-10-09: shop4, timer, bytecounter, sum, dup1
-* 2020-10-08: pingpong, shop1, shop2
+* 2020-10-08: pingpong, shop1
 * 2020-10-07: dup2, fetch
 * 2020-10-06: bytecounter, sum
 * 2020-10-05: echo
-* 2020-10-02: shop1, shop2, shop4, timer
+* 2020-10-02: shop4, timer
 * 2020-10-01: echo
 * 2020-09-30: pingpong
 * 2020-09-29: dup2, fetch
@@ -441,22 +437,21 @@
 * 2020-09-24: shop4, timer, timer, timer
 * 2020-09-23: shop4
 * 2020-09-22: shop4
-* 2020-09-21: shop2, shop4
+* 2020-09-21: shop4
 * 2020-09-19: echo
-* 2020-09-18: fetch, shop1
+* 2020-09-18: fetch
 * 2020-09-17: bytecounter, sum
 * 2020-09-16: bytecounter
 * 2020-09-14: bytecounter
 * 2020-09-09: bytecounter
-* 2020-09-08: shop1, shop2
+* 2020-09-08: shop1
 * 2020-09-07: sum
 * 2020-09-02: sum
 * 2020-09-01: shop1, sum, dup2
 * 2020-08-31: dup1
 * 2020-08-28: dup1
 * 2020-08-27: dup1
-* 2020-08-26: shop2
-* 2020-08-25: shop1, shop2
+* 2020-08-25: shop1
 * 2020-08-24: echo
 * 2020-08-19: fetchall
 * 2020-08-11: fetchall
