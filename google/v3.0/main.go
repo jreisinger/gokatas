@@ -1,5 +1,7 @@
+// V3.0 is a fast and robust program.
+//
 // Level: advanced
-// Topics: concurrency, design
+// Topics: concurrency, timeout, replicas
 package main
 
 import (
@@ -18,16 +20,6 @@ func main() {
 }
 
 type Result string
-type Search func(query string) Result
-
-var (
-	Web1   = fakeSearch("web1")
-	Web2   = fakeSearch("web2")
-	Image1 = fakeSearch("image1")
-	Image2 = fakeSearch("image2")
-	Video1 = fakeSearch("video1")
-	Video2 = fakeSearch("video2")
-)
 
 func Google(query string) (results []Result) {
 	c := make(chan Result)
@@ -46,6 +38,17 @@ func Google(query string) (results []Result) {
 	}
 	return
 }
+
+var (
+	Web1   = fakeSearch("web1")
+	Web2   = fakeSearch("web2")
+	Image1 = fakeSearch("image1")
+	Image2 = fakeSearch("image2")
+	Video1 = fakeSearch("video1")
+	Video2 = fakeSearch("video2")
+)
+
+type Search func(query string) Result
 
 func First(query string, replicas ...Search) Result {
 	c := make(chan Result)

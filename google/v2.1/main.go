@@ -1,7 +1,8 @@
-// V2.1 runs various kinds of search concurrently.
+// V2.1 runs various kinds of search concurrently. Concurrency makes the program
+// faster.
 //
 // Level: advanced
-// Topics: concurrency, design
+// Topics: concurrency
 package main
 
 import (

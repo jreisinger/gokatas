@@ -1,5 +1,8 @@
+// V2.3 introduces search replicas and gets first result returned by the faster
+// replica.
+//
 // Level: advanced
-// Topics: concurrency, design
+// Topics: concurrency, replicas
 package main
 
 import (
@@ -20,7 +23,6 @@ func main() {
 }
 
 type Result string
-type Search func(query string) Result
 
 func First(query string, replicas ...Search) Result {
 	c := make(chan Result)
@@ -30,6 +32,8 @@ func First(query string, replicas ...Search) Result {
 	}
 	return <-c
 }
+
+type Search func(query string) Result
 
 func fakeSearch(kind string) Search {
 	return func(query string) Result {

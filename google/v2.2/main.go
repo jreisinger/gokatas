@@ -1,8 +1,8 @@
 // V2.2 times out the search after 80ms. It sometimes returns only partial
-// results.
+// results. So it is fast but not very robust.
 //
 // Level: advanced
-// Topics: concurrency, design
+// Topics: concurrency, timeout
 package main
 
 import (
