@@ -18,20 +18,6 @@ func main() {
 }
 
 type Result string
-type Search func(query string) Result
-
-var (
-	Web   = fakeSearch("web")
-	Image = fakeSearch("image")
-	Video = fakeSearch("video")
-)
-
-func fakeSearch(kind string) Search {
-	return func(query string) Result {
-		time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))
-		return Result(fmt.Sprintf("%s result for %q\n", kind, query))
-	}
-}
 
 func Google(query string) (results []Result) {
 	c := make(chan Result)
@@ -40,8 +26,22 @@ func Google(query string) (results []Result) {
 	go func() { c <- Video(query) }()
 
 	for i := 0; i < 3; i++ {
-		result := <-c
-		results = append(results, result)
+		results = append(results, <-c)
 	}
 	return
+}
+
+var (
+	Web   = fakeSearch("web")
+	Image = fakeSearch("image")
+	Video = fakeSearch("video")
+)
+
+type Search func(query string) Result
+
+func fakeSearch(kind string) Search {
+	return func(query string) Result {
+		time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))
+		return Result(fmt.Sprintf("%s result for %q\n", kind, query))
+	}
 }
