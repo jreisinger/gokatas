@@ -1,3 +1,5 @@
+// V2.1 runs various kinds of search concurrently.
+//
 // Level: advanced
 // Topics: concurrency, design
 package main

@@ -1,3 +1,6 @@
+// V2.2 times out the search after 80ms. It sometimes returns only partial
+// results.
+//
 // Level: advanced
 // Topics: concurrency, design
 package main
@@ -18,20 +21,7 @@ func main() {
 }
 
 type Result string
-type Search func(query string) Result
 
-var (
-	Web   = fakeSearch("web")
-	Image = fakeSearch("image")
-	Video = fakeSearch("video")
-)
-
-func fakeSearch(kind string) Search {
-	return func(query string) Result {
-		time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))
-		return Result(fmt.Sprintf("%s result for %q\n", kind, query))
-	}
-}
 func Google(query string) (results []Result) {
 	c := make(chan Result)
 	go func() { c <- Web(query) }()
@@ -49,4 +39,19 @@ func Google(query string) (results []Result) {
 		}
 	}
 	return
+}
+
+var (
+	Web   = fakeSearch("web")
+	Image = fakeSearch("image")
+	Video = fakeSearch("video")
+)
+
+type Search func(query string) Result
+
+func fakeSearch(kind string) Search {
+	return func(query string) Result {
+		time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))
+		return Result(fmt.Sprintf("%s result for %q\n", kind, query))
+	}
 }
