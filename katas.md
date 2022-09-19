@@ -82,7 +82,7 @@
 * 2022-05-04: clock2, areader, netcat1
 * 2022-05-03: dup2, dup3, parsejson, pingpong
 * 2022-05-02: sum, echo, fetchall
-* 2022-04-29: timer, switch, pkg.go.dev/net/http, word2
+* 2022-04-29: timer, switch, word2
 * 2022-04-28: tcpscanner, generics, reisinge.net/notes/go/slices
 * 2022-04-27: countgo, bytecounter, fibspin, enum
 * 2022-04-26: sqrt, compress, fibchan, fibfunc
@@ -103,7 +103,7 @@
 * 2022-03-31: shop4, sortbooks, areader
 * 2022-03-30: parsejson, pingpong
 * 2022-03-29: dup2, dup3, reisinge.net/notes/go/slices, generics
-* 2022-03-28: timer, pkg.go.dev/net/http
+* 2022-03-28: timer
 * 2022-03-25: sum, echo, fetchall
 * 2022-03-24: compress, sqrt
 * 2022-03-23: fibchan, fibfunc, fibspin
@@ -112,18 +112,18 @@
 * 2022-03-18: shop4, sortbooks
 * 2022-03-17: parsejson, pingpong
 * 2022-03-16: dup2, dup3, reisinge.net/notes/go/slices, reisinge.net/notes/go/slices, generics
-* 2022-03-15: pkg.go.dev/net/http, sum, echo, fetchall, timer
+* 2022-03-15: sum, echo, fetchall, timer
 * 2022-03-14: sqrt, compress
 * 2022-03-12: fibchan, fibfunc, fibspin
 * 2022-03-10: bytecounter, tcpscanner
 * 2022-03-09: areader, rot13, search, reisinge.net/notes/go/pointers
-* 2022-03-08: shop4, sortbooks, pkg.go.dev/net/http
+* 2022-03-08: shop4, sortbooks
 * 2022-03-07: parsejson, pingpong
 * 2022-03-04: sqrt
 * 2022-03-03: fibchan, fibfunc, fibspin
 * 2022-02-25: bytecounter, tcpscanner
 * 2022-02-24: areader, rot13, search, reisinge.net/notes/go/pointers
-* 2022-02-23: shop4, sortbooks, pkg.go.dev/net/http
+* 2022-02-23: shop4, sortbooks
 * 2022-02-22: parsejson, pingpong, switch
 * 2022-02-21: fibchan, fibfunc, fibspin, sqrt
 * 2022-02-17: dup2, dup3, reisinge.net/notes/go/slices
@@ -131,7 +131,7 @@
 * 2022-02-15: compress, sum, echo
 * 2022-02-14: bytecounter, tcpscanner
 * 2022-02-11: areader, rot13, reisinge.net/notes/go/pointers, search
-* 2022-02-10: shop4, sortbooks, pkg.go.dev/net/http
+* 2022-02-10: shop4, sortbooks
 * 2022-02-09: parsejson, pingpong, switch
 * 2022-02-08: sqrt, fibchan, fibfunc, fibspin
 * 2022-02-07: dup2, dup3, reisinge.net/notes/go/slices
@@ -140,83 +140,83 @@
 * 2022-02-02: bytecounter, tcpscanner
 * 2022-02-01: rot13
 * 2022-01-31: reisinge.net/notes/go/pointers, areader
-* 2022-01-28: shop4, pkg.go.dev/net/http, sortbooks
+* 2022-01-28: shop4, sortbooks
 * 2022-01-27: switch, parsejson, pingpong
 * 2022-01-26: sqrt, fibchan, fibfunc, fibspin
 * 2022-01-25: reisinge.net/notes/go/slices, dup2, dup3
 * 2022-01-24: fetchall, tictactoe, timer
 * 2022-01-21: compress, sum, echo
-* 2022-01-20: bytecounter, tcpscanner, pkg.go.dev/net/http
+* 2022-01-20: bytecounter, tcpscanner
 * 2022-01-19: search, areader, rot13
 * 2022-01-18: sortbooks, reisinge.net/notes/go/pointers
-* 2022-01-17: parsejson, pingpong, reisinge.net/notes/go/http-servers, shop4
+* 2022-01-17: parsejson, pingpong, shop4
 * 2022-01-14: switch, fibchan, fibfunc, fibspin
 * 2022-01-13: dup2, dup3, sqrt
 * 2022-01-12: compress, sum, reisinge.net/notes/go/slices, echo, fetchall, timer, tictactoe
-* 2022-01-11: tcpscanner, pkg.go.dev/net/http, bytecounter
+* 2022-01-11: tcpscanner, bytecounter
 * 2022-01-10: areader, rot13, search
 * 2022-01-06: shop4, sortbooks, reisinge.net/notes/go/pointers
-* 2022-01-05: parsejson, pingpong, reisinge.net/notes/go/http-servers
+* 2022-01-05: parsejson, pingpong
 * 2021-12-23: parsejson, pingpong
 * 2021-12-22: fibchan, fibfunc, fibspin
 * 2021-12-21: dup2, dup3, sqrt, switch
 * 2021-12-20: bytecounter, compress, sum, reisinge.net/notes/go/slices, echo, fetchall, timer, tictactoe
-* 2021-12-16: search, tcpscanner, pkg.go.dev/net/http
+* 2021-12-16: search, tcpscanner
 * 2021-12-15: areader, rot13
 * 2021-12-14: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-12-13: parsejson, pingpong
 * 2021-12-09: fibchan, fibfunc, fibspin
 * 2021-12-08: dup2, dup3, sqrt, switch
 * 2021-12-06: tictactoe, bytecounter, sum, echo, fetchall, compress, timer, reisinge.net/notes/go/slices
-* 2021-12-03: search, tcpscanner, reisinge.net/notes/go/http-servers
+* 2021-12-03: search, tcpscanner
 * 2021-12-02: areader, rot13
 * 2021-12-01: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-11-30: fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-11-26: sqrt, switch, dup2, dup3
 * 2021-11-25: timer, reisinge.net/notes/go/slices, compress
 * 2021-11-24: bytecounter, sum, echo, fetchall
-* 2021-11-23: search, tcpscanner, tictactoe, reisinge.net/notes/go/http-servers
+* 2021-11-23: search, tcpscanner, tictactoe
 * 2021-11-22: areader, rot13
 * 2021-11-19: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-11-18: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-11-16: compress, sqrt, switch
 * 2021-11-15: timer, reisinge.net/notes/go/slices
 * 2021-11-12: bytecounter, sum, echo, fetchall
-* 2021-11-11: search, tcpscanner, tictactoe, reisinge.net/notes/go/http-servers
+* 2021-11-11: search, tcpscanner, tictactoe
 * 2021-11-10: areader, rot13
 * 2021-11-09: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-11-08: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-11-05: sqrt, switch, compress
 * 2021-11-04: bytecounter, sum, echo, fetchall, timer, reisinge.net/notes/go/slices
-* 2021-11-03: search, reisinge.net/notes/go/http-servers, tictactoe, tcpscanner
+* 2021-11-03: search, tictactoe, tcpscanner
 * 2021-11-02: rot13, areader
 * 2021-10-27: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-10-26: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-10-25: bytecounter, sum, echo, fetchall, timer, sqrt, switch, reisinge.net/notes/go/slices
 * 2021-10-23: tcpscanner
-* 2021-10-22: reisinge.net/notes/go/http-servers, tictactoe, search
+* 2021-10-22: tictactoe, search
 * 2021-10-21: areader, rot13
 * 2021-10-20: shop4, sortbooks, reisinge.net/notes/go/pointers
 * 2021-10-19: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-10-18: bytecounter, sum, echo, fetchall, timer, reisinge.net/notes/go/slices, sqrt, switch
 * 2021-10-15: search, tcpscanner
-* 2021-10-14: reisinge.net/notes/go/http-servers, tictactoe
+* 2021-10-14: tictactoe
 * 2021-10-13: shop4, sortbooks, reisinge.net/notes/go/pointers, areader, rot13
 * 2021-10-12: compress, dup2, dup3, fibchan, fibfunc, fibspin, parsejson, pingpong
 * 2021-10-11: timer, bytecounter, sum, echo, fetchall, reisinge.net/notes/go/slices, sqrt, switch
 * 2021-10-07: search, tcpscanner
-* 2021-10-06: rot13, reisinge.net/notes/go/http-servers, tictactoe
+* 2021-10-06: rot13, tictactoe
 * 2021-10-05: parsejson, pingpong, shop4, sortbooks, reisinge.net/notes/go/pointers, areader
 * 2021-10-04: compress, dup2, dup3, fibchan, fibfunc, fibspin
 * 2021-10-01: switch
 * 2021-09-30: reisinge.net/notes/go/slices, bytecounter, sum, echo, fetchall, sqrt
 * 2021-09-29: Learning Go, search, tcpscanner, timer
-* 2021-09-28: reisinge.net/notes/design/basics, reisinge.net/notes/go/http-servers, tictactoe
+* 2021-09-28: tictactoe
 * 2021-09-27: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, reisinge.net/notes/go/pointers, areader, rot13, pingpong, shop4, sortbooks, compress
 * 2021-09-21: bytecounter, sum, echo, fetchall, sqrt, switch
 * 2021-09-20: search, tcpscanner, timer, reisinge.net/notes/go/slices
 * 2021-09-18: compress
-* 2021-09-17: pingpong, shop4, reisinge.net/notes/go/http-servers, sortbooks, tictactoe, reisinge.net/notes/design/basics
+* 2021-09-17: pingpong, shop4, sortbooks, tictactoe
 * 2021-09-16: dup2, dup3, fibchan, fibfunc, fibspin, parsejson, areader, rot13, reisinge.net/notes/go/pointers
 * 2021-09-14: sqrt, switch, bytecounter, sum, echo, fetchall
 * 2021-09-13: search, tcpscanner, timer, reisinge.net/notes/go/slices
