@@ -1,4 +1,4 @@
-* 2022-09-19: boring/lockstep, boring/multiplex, boring/select
+* 2022-09-19: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2022-09-16: google/google, google/v2.1, google/v2.2, google/v2.3, google/v3.0
 * 2022-09-15: google/google
 * 2022-09-14: google/google
