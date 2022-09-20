@@ -1,7 +1,7 @@
 // Lookup version that uses z package.
 //
 // Level: intermediate
-// Topics: concurrency, scripting
+// Topics: concurrency, inferfaces, scripting
 package main
 
 import (
