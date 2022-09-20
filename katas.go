@@ -86,9 +86,22 @@ func getExisting() ([]Kata, error) {
 		if err != nil {
 			return nil, err
 		}
-		katas = append(katas, Kata{Name: name, Level: level, Topics: topics})
+		katas = append(katas, Kata{Name: name, Level: level, Topics: uniq(topics)})
 	}
 	return katas, err
+}
+
+// uniq removes duplicates from topics.
+func uniq(topics []string) []string {
+	seen := make(map[string]bool)
+	var unique []string
+	for _, topic := range topics {
+		if _, ok := seen[topic]; !ok {
+			seen[topic] = true
+			unique = append(unique, topic)
+		}
+	}
+	return unique
 }
 
 // getDone returns katas from the KatasFile.
