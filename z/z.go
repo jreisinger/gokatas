@@ -1,7 +1,11 @@
 // Package z takes lines from stdin, makes them into tasks that get processed
-// and printed. To use it implement a Factory and a Task. Then call Run() on
-// your factory. Is uses concurrency to run fast and interfaces and composition
-// to be generic and simple. See https://youtu.be/woCg2zaIVzQ for more.
+// and printed. Is uses concurrency to run fast and interfaces and composition
+// to be generic and simple.
+//
+// To use it implement a Factory and a Task. Then call Run() on your factory.
+// See cmd/lookup.go for an example.
+//
+// See https://youtu.be/woCg2zaIVzQ for more.
 //
 // Level: intermediate
 // Topics: concurrency, scripting
