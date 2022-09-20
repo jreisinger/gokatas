@@ -213,9 +213,8 @@ func grepTopics(line string) []string {
 }
 
 // Print prints table with statistics about katas. Only katas of level (if not
-// empty) and lastDoneDaysAgo or sooner are shown. Katas are sorted by when last
-// done or by count.
-func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool, level string) {
+// empty) and lastDoneDaysAgo or sooner are shown. Katas are sorted by column.
+func Print(katas []Kata, lastDoneDaysAgo int, column int, level string) {
 	const format = "%v\t%v\t%5v\t%v\t%v\n"
 
 	// Print header.
@@ -226,7 +225,7 @@ func Print(katas []Kata, lastDoneDaysAgo int, sortByCount bool, level string) {
 	// Print lines.
 	var katasCount int
 	var totalCount int
-	sortKatas(katas, &sortByCount)
+	sortKatas(katas, &column)
 	for _, k := range katas {
 		if !show(k, lastDoneDaysAgo) {
 			continue
@@ -256,17 +255,25 @@ func (x customSort) Len() int           { return len(x.katas) }
 func (x customSort) Less(i, j int) bool { return x.less(x.katas[i], x.katas[j]) }
 func (x customSort) Swap(i, j int)      { x.katas[i], x.katas[j] = x.katas[j], x.katas[i] }
 
-// sortKatas first sorts by how recently the kata was done then by kata name.
-func sortKatas(katas []Kata, countSort *bool) {
+// sortKatas sorts katas by column. Not all columns are sortable. Secondary sort
+// orders is always by kata name.
+func sortKatas(katas []Kata, column *int) {
 	sort.Sort(customSort{katas, func(x, y Kata) bool {
-		if *countSort {
-			if x.TimesDone != y.TimesDone {
-				return x.TimesDone > y.TimesDone
+		switch *column {
+		case 1:
+			if x.Name != y.Name {
+				return x.Name < y.Name
 			}
-		} else {
+		case 2:
 			if x.LastDone != y.LastDone {
 				return x.LastDone.After(y.LastDone)
 			}
+		case 3:
+			if x.TimesDone != y.TimesDone {
+				return x.TimesDone > y.TimesDone
+			}
+		default:
+			log.Fatalf("can't sort by column %d", *column)
 		}
 		if x.Name != y.Name {
 			return x.Name < y.Name
