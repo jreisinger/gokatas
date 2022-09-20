@@ -1,14 +1,11 @@
 // Package z takes lines from stdin, makes them into tasks that get processed
 // and printed. Is uses concurrency to run fast and interfaces and composition
-// to be generic and simple.
+// to be generic and simple. It is a generalized version of lookup-v2.
 //
 // To use it implement a Factory and a Task. Then call Run() on your factory.
-// See cmd/lookup.go for an example.
+// See lookup-v2/lookup.go for an example.
 //
 // See https://youtu.be/woCg2zaIVzQ for more.
-//
-// Level: intermediate
-// Topics: concurrency, scripting
 package z
 
 import (

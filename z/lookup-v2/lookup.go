@@ -1,3 +1,7 @@
+// Lookup version that uses z package.
+//
+// Level: intermediate
+// Topics: concurrency, scripting
 package main
 
 import (
@@ -35,9 +39,15 @@ func (l *lookup) Process() {
 }
 
 func (l *lookup) Print() {
-	if l.cloudflare {
-		fmt.Println(l.name)
+	state := "OTHER"
+	switch {
+	case l.err != nil:
+		state = "ERROR"
+	case l.cloudflare:
+		state = "CLOUDFLARE"
 	}
+
+	fmt.Printf("%-10s %s\n", state, l.name)
 }
 
 func main() {
