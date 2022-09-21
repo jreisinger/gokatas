@@ -4,7 +4,7 @@
 // Adapted from github.com/adonovan/gopl.io/tree/master/ch11/word2
 //
 // Level: intermediate
-// Topics: unicode, runes, testing
+// Topics: unicode, testing, rand
 package word
 
 import (

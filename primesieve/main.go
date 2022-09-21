@@ -1,11 +1,11 @@
 // Primesieve is a concurrent prime sieve. That is an algorithm for finding
-// prime numbers by removing composite numbers (positive integers that have at
-// least one divisor other than 1 and itself).
+// prime numbers. It's done by removing composite numbers, i.e. positive
+// integers that have at least one divisor other than 1 and itself.
 //
 // Taken from https://youtu.be/f6kdp27TYZs?t=2208.
 //
 // Level: advanced
-// Topics: algorithms, concurrency
+// Topics: algorithms, math, concurrency
 package main
 
 func Generate(ch chan<- int) {
