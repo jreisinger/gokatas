@@ -4,7 +4,7 @@
 // go test -fuzz=Fuzz -fuzztime 30s reverse/*
 //
 // Level: intermediate
-// Topics: algorithms, fuzzing
+// Topics: algorithms, fuzzing, unicode/utf8
 package reverse
 
 import (
