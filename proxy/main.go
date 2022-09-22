@@ -2,7 +2,7 @@
 // youtu.be/J4J-A9tcjcA.
 //
 // Level: intermediate
-// Topics: networking, net, security, concurrency
+// Topics: net, security, concurrency
 package main
 
 import (
