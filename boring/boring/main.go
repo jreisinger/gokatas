@@ -1,6 +1,8 @@
 // Package boring and its subpackages hold various Go concurrency patterns in
-// the form of boring conversations. Based on Go Concurrency Patterns by Rob
-// Pibe (2012):
+// the form of boring conversations. This is first of them. It's not an honest
+// one because there is no communication.
+//
+// Based on Go Concurrency Patterns by Rob Pike (2012):
 //
 //	Slides	https://talks.golang.org/2012/concurrency.slide
 //	Code	https://talks.golang.org/2012/concurrency/support
