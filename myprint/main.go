@@ -1,7 +1,7 @@
 // Myprint shows how come fmt.Print accepts arguments of any type. It uses
 // reflection. See research.swtch.com/gotour (from go.dev/doc) for more.
 //
-// Level: intemediate
+// Level: intermediate
 // Topics: reflect, strconv, switch, interfaces
 package main
 
@@ -21,7 +21,8 @@ func myPrint(args ...interface{}) {
 		case reflect.String:
 			os.Stdout.WriteString(v.String())
 		case reflect.Int:
-			os.Stdout.WriteString(strconv.FormatInt(v.Int(), 10))
+			n := strconv.FormatInt(v.Int(), 10)
+			os.Stdout.WriteString(n)
 		}
 	}
 }

@@ -1,3 +1,4 @@
+* 2022-09-26: countgo, myprint
 * 2022-09-23: boring/boring, boring/channel, boring/generator 
 * 2022-09-22: areader, clock2, netcat1, noescape
 * 2022-09-21: geometry, primesieve, word2
