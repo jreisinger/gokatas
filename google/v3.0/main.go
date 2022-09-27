@@ -1,4 +1,7 @@
-// V3.0 is a fast and robust program.
+// V3.0 introduces search replicas. It means we have multiple search services
+// for each kind and we take the result returned by the fastest service. This
+// way we dramatically lower the likelihood of discarding results. This is a
+// fast and robust program.
 //
 // Level: advanced
 // Topics: concurrency, timeout, replicas
@@ -23,9 +26,9 @@ type Result string
 
 func Google(query string) (results []Result) {
 	c := make(chan Result)
-	go func() { c <- First(query, Web1, Web2) }()
-	go func() { c <- First(query, Image1, Image2) }()
-	go func() { c <- First(query, Video1, Video2) }()
+	go func() { c <- Fastest(query, Web1, Web2) }()
+	go func() { c <- Fastest(query, Image1, Image2) }()
+	go func() { c <- Fastest(query, Video1, Video2) }()
 	timeout := time.After(80 * time.Millisecond)
 	for i := 0; i < 3; i++ {
 		select {
@@ -50,7 +53,7 @@ var (
 
 type Search func(query string) Result
 
-func First(query string, replicas ...Search) Result {
+func Fastest(query string, replicas ...Search) Result {
 	c := make(chan Result)
 	searchReplica := func(i int) {
 		c <- replicas[i](query)

@@ -1,5 +1,6 @@
 // Google is a toy search engine using the Go concurrency patterns from the
-// boring package. We evolve the code until it is concurrent and replicated. See
+// boring package. We start by invoking Web, Image and Video searches serially.
+// We evolve the code until it is concurrent and replicated. See
 // youtube.com/watch?v=f6kdp27TYZs&t=1766s for more.
 //
 // Level: advanced

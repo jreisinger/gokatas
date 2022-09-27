@@ -1,10 +1,11 @@
+* 2022-09-27: google/google, google/v2.1, google/v2.2, google/v3.0
 * 2022-09-26: countgo, myprint
 * 2022-09-23: boring/boring, boring/channel, boring/generator 
 * 2022-09-22: areader, clock2, netcat1, noescape
 * 2022-09-21: geometry, primesieve, word2
 * 2022-09-20: bytecounter, z, z/lookup-v1, z/lookup-v2
 * 2022-09-19: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
-* 2022-09-16: google/google, google/v2.1, google/v2.2, google/v2.3, google/v3.0
+* 2022-09-16: google/google, google/v2.1, google/v2.2, google/v3.0
 * 2022-09-15: google/google
 * 2022-09-14: google/google
 * 2022-09-13: countgo, myprint, boring/boring, boring/channel, boring/generator
