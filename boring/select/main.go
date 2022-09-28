@@ -25,7 +25,7 @@ func main() {
 		case s := <-c:
 			fmt.Println(s)
 		case <-time.After(time.Millisecond * 500):
-			fmt.Println("You guys are too slow.")
+			fmt.Println("You're too slow.")
 			return
 		}
 	}

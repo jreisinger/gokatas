@@ -18,7 +18,7 @@ func main() {
 		fmt.Println(<-c)
 	}
 	quit <- "bye"
-	fmt.Printf("they say: %q\n", <-quit)
+	fmt.Printf("They said: %s.\n", <-quit)
 }
 
 func boring(msg string, quit chan string) <-chan string {
