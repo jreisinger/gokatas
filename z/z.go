@@ -1,6 +1,6 @@
 // Package z takes lines from stdin, makes them into tasks that get processed
 // and printed. Is uses concurrency to run fast and interfaces and composition
-// to be generic and simple. It is a generalized version of lookup-v2.
+// to be generic and simple. It is a generalized version of lookup-v1.
 //
 // To use it implement a Factory and a Task. Then call Run() on your factory.
 // See lookup-v2/lookup.go for an example.
