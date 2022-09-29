@@ -15,16 +15,16 @@ import (
 type lookupFactory struct{}
 
 func (lookupFactory) Make(line string) z.Task {
-	return &lookup{name: line}
+	return &lookupTask{name: line}
 }
 
-type lookup struct {
+type lookupTask struct {
 	name       string
 	err        error
 	cloudflare bool
 }
 
-func (l *lookup) Process() {
+func (l *lookupTask) Process() {
 	nss, err := net.LookupNS(l.name)
 	if err != nil {
 		l.err = err
@@ -38,7 +38,7 @@ func (l *lookup) Process() {
 	}
 }
 
-func (l *lookup) Print() {
+func (l *lookupTask) Print() {
 	state := "OTHER"
 	switch {
 	case l.err != nil:
