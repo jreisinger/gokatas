@@ -1,3 +1,4 @@
+* 2022-09-30: z/lookup-v2
 * 2022-09-29: z/lookup-v1
 * 2022-09-28: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2022-09-27: google/google, google/v2.1, google/v2.2, google/v3.0
