@@ -28,12 +28,12 @@ func (l *lookupTask) Process() {
 	nss, err := net.LookupNS(l.name)
 	if err != nil {
 		l.err = err
-	} else {
-		for _, ns := range nss {
-			if strings.HasSuffix(ns.Host, ".ns.cloudflare.com.") {
-				l.cloudflare = true
-				break
-			}
+		return
+	}
+	for _, ns := range nss {
+		if strings.HasSuffix(ns.Host, ".ns.cloudflare.com.") {
+			l.cloudflare = true
+			break
 		}
 	}
 }
@@ -46,7 +46,6 @@ func (l *lookupTask) Print() {
 	case l.cloudflare:
 		state = "CLOUDFLARE"
 	}
-
 	fmt.Printf("%-10s %s\n", state, l.name)
 }
 
