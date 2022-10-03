@@ -1,3 +1,4 @@
+* 2022-10-03: bytecounter
 * 2022-09-30: z/lookup-v2, z
 * 2022-09-29: z/lookup-v1
 * 2022-09-28: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
