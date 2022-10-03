@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/jreisinger/gokatas/cookies"
+	"github.com/jreisinger/gokatas/cookies/encrypt"
 )
 
 // In real app this should be read at runtime from and environment variable.
@@ -43,7 +43,7 @@ func setCookieHandler(w http.ResponseWriter, r *http.Request) {
 		SameSite: http.SameSiteLaxMode,
 	}
 
-	err := cookies.WriteEncrypted(w, cookie, secretKey)
+	err := encrypt.Write(w, cookie, secretKey)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "server error", http.StatusInternalServerError)

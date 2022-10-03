@@ -9,7 +9,7 @@
 // Based on https://www.alexedwards.net/blog/working-with-cookies-in-go
 //
 // Level: intermediate
-// Topics: signing, encryption, security
+// Topics: net/http
 //
 // [cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 package cookies

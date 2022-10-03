@@ -1,4 +1,8 @@
-package cookies
+// Package encrypt encrypts (confidentiality) and authenticates (integrity) cookies.
+//
+// Level: intermediate
+// Topics: encryption, authentication
+package encrypt
 
 import (
 	"crypto/aes"
@@ -7,10 +11,11 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/jreisinger/gokatas/cookies"
 )
 
-// WriteEncrypted encrypts (confidentiality) and authenticates (integrity) cookies.
-func WriteEncrypted(w http.ResponseWriter, cookie http.Cookie, secretKey []byte) error {
+func Write(w http.ResponseWriter, cookie http.Cookie, secretKey []byte) error {
 	block, err := aes.NewCipher(secretKey)
 	if err != nil {
 		return err
@@ -30,5 +35,5 @@ func WriteEncrypted(w http.ResponseWriter, cookie http.Cookie, secretKey []byte)
 	plaintext := fmt.Sprintf("%s:%s", cookie.Name, cookie.Value)
 	ecnryptedValue := aesGCM.Seal(nonce, nonce, []byte(plaintext), nil)
 	cookie.Value = string(ecnryptedValue)
-	return Write(w, cookie)
+	return cookies.Write(w, cookie)
 }
