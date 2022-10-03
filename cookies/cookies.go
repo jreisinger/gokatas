@@ -1,4 +1,4 @@
-// Package cookies writes, signes and encrypts cookies [1]. An HTTP cookie is a
+// Package cookies writes, signes and encrypts [cookies]. An HTTP cookie is a
 // small piece of data that a server sends to a user's web browser. Cookies are
 // used mainly for:
 //
@@ -8,10 +8,10 @@
 //
 // Based on https://www.alexedwards.net/blog/working-with-cookies-in-go
 //
-// [1] https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
-//
 // Level: intermediate
-// Topics: signing, ecnryption, security
+// Topics: signing, encryption, security
+//
+// [cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 package cookies
 
 import (
