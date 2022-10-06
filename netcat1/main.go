@@ -1,7 +1,7 @@
 // Netcat1 is a read-only TCP client. Adapted from
 // github.com/adonovan/gopl.io/tree/master/ch8/netcat1.
 //
-// Level: intermediate
+// Level: beginner
 // Topics: networking, TCP client
 package main
 
