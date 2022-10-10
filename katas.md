@@ -1,4 +1,4 @@
-* 2022-10-10: countgo, myprint
+* 2022-10-10: countgo, myprint, google/google, google/v2.1, google/v2.2, google/v3.0
 * 2022-10-07: boring/boring, boring/channel, boring/generator
 * 2022-10-06: areader, clock2, netcat1, noescape
 * 2022-10-03: bytecounter, cookies, cookies/sign, cookies/encrypt
