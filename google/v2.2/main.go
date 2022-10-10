@@ -1,5 +1,5 @@
-// V2.2 times out the search after 80ms. It sometimes returns only partial
-// results. So it is fast but not very robust.
+// V2.2 times out the search after 80ms. Consequently it sometimes returns only
+// partial results. Thus it is fast but not very robust.
 //
 // Level: advanced
 // Topics: concurrency, timeout
