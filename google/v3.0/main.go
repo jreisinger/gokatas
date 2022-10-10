@@ -42,17 +42,6 @@ func Google(query string) (results []Result) {
 	return
 }
 
-var (
-	Web1   = fakeSearch("web1")
-	Web2   = fakeSearch("web2")
-	Image1 = fakeSearch("image1")
-	Image2 = fakeSearch("image2")
-	Video1 = fakeSearch("video1")
-	Video2 = fakeSearch("video2")
-)
-
-type Search func(query string) Result
-
 func Fastest(query string, replicas ...Search) Result {
 	c := make(chan Result)
 	searchReplica := func(i int) {
@@ -63,6 +52,17 @@ func Fastest(query string, replicas ...Search) Result {
 	}
 	return <-c
 }
+
+var (
+	Web1   = fakeSearch("web1")
+	Web2   = fakeSearch("web2")
+	Image1 = fakeSearch("image1")
+	Image2 = fakeSearch("image2")
+	Video1 = fakeSearch("video1")
+	Video2 = fakeSearch("video2")
+)
+
+type Search func(query string) Result
 
 func fakeSearch(kind string) Search {
 	return func(query string) Result {
