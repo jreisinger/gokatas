@@ -26,9 +26,9 @@ type Result string
 
 func Google(query string) (results []Result) {
 	c := make(chan Result)
-	go func() { c <- Fastest(query, Web1, Web2) }()
-	go func() { c <- Fastest(query, Image1, Image2) }()
-	go func() { c <- Fastest(query, Video1, Video2) }()
+	go func() { c <- First(query, Web1, Web2) }()
+	go func() { c <- First(query, Image1, Image2) }()
+	go func() { c <- First(query, Video1, Video2) }()
 	timeout := time.After(80 * time.Millisecond)
 	for i := 0; i < 3; i++ {
 		select {
@@ -42,7 +42,7 @@ func Google(query string) (results []Result) {
 	return
 }
 
-func Fastest(query string, replicas ...Search) Result {
+func First(query string, replicas ...Search) Result {
 	c := make(chan Result)
 	searchReplica := func(i int) {
 		c <- replicas[i](query)
