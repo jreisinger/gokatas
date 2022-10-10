@@ -21,8 +21,8 @@ func myPrint(args ...interface{}) {
 		case reflect.String:
 			os.Stdout.WriteString(v.String())
 		case reflect.Int:
-			n := strconv.FormatInt(v.Int(), 10)
-			os.Stdout.WriteString(n)
+			s := strconv.FormatInt(v.Int(), 10)
+			os.Stdout.WriteString(s)
 		}
 	}
 }
