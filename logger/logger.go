@@ -2,7 +2,7 @@
 // https://youtu.be/zDCKZn4-dck.
 //
 // Level: advanced
-// Topics: concurrency, design
+// Topics: concurrency, design, os/signal
 package logger
 
 import (
