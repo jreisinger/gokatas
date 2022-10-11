@@ -41,18 +41,18 @@ func main() {
 	l := logger.New(&d, grs)
 
 	for i := 0; i < grs; i++ {
-		go func(id int) {
+		go func(i int) {
 			for {
-				l.Println(fmt.Sprintf("log data from gr %d", id))
+				l.Println(fmt.Sprintf("log data from gr %d", i))
 				time.Sleep(10 * time.Millisecond)
 			}
 		}(i)
 	}
 
-	sigChan := make(chan os.Signal, 1)
-	signal.Notify(sigChan, os.Interrupt)
+	sigCh := make(chan os.Signal, 1)
+	signal.Notify(sigCh, os.Interrupt)
 	for {
-		<-sigChan
+		<-sigCh
 		d.problem = !d.problem
 	}
 }
