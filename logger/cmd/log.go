@@ -32,14 +32,18 @@ func main() {
 	const grs = 10
 
 	var d device
+
+	// Blocking logger.
 	// var l log.Logger
 	// l.SetOutput(&d)
+
+	// Non-blocking logger.
 	l := logger.New(&d, grs)
 
 	for i := 0; i < grs; i++ {
 		go func(id int) {
 			for {
-				l.Println(fmt.Sprintf("%d: log data", id))
+				l.Println(fmt.Sprintf("log data from gr %d", id))
 				time.Sleep(10 * time.Millisecond)
 			}
 		}(i)

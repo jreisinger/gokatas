@@ -2,7 +2,7 @@
 // https://youtu.be/zDCKZn4-dck.
 //
 // Level: advanced
-// Topics: concurrency, design, os/signal
+// Topics: design, buffered channels, select, os/signal
 package logger
 
 import (
@@ -12,10 +12,12 @@ import (
 )
 
 type Logger struct {
-	ch chan string
+	ch chan string // data we want to log
 	wg sync.WaitGroup
 }
 
+// New is sometimes called a generator function. It's useful when you need to
+// initialize one or more fields of a type.
 func New(w io.Writer, cap int) *Logger {
 	l := Logger{
 		ch: make(chan string, cap),
@@ -41,6 +43,6 @@ func (l *Logger) Println(s string) {
 	select {
 	case l.ch <- s + "\n":
 	default:
-		fmt.Println("not logging")
+		fmt.Println("WARN: dropping logs")
 	}
 }

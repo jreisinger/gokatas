@@ -1,4 +1,4 @@
-* 2022-10-11: boring/lockstep, boring/multiplex, boring/select
+* 2022-10-11: boring/lockstep, boring/multiplex, boring/select, logger
 * 2022-10-10: countgo, myprint, google/google, google/v2.1, google/v2.2, google/v3.0
 * 2022-10-07: boring/boring, boring/channel, boring/generator
 * 2022-10-06: areader, clock2, netcat1, noescape
