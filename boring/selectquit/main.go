@@ -18,23 +18,22 @@ func main() {
 		fmt.Println(<-c)
 	}
 	quit <- "bye"
-	fmt.Printf("They said: %s.\n", <-quit)
+	fmt.Printf("They said: %q.\n", <-quit)
 }
 
 func boring(msg string, quit chan string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
-			n := rand.Intn(1e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
 			select {
 			case c <- fmt.Sprintf("%s, %d", msg, i):
-				// do nothing
 			case <-quit:
 				cleanup()
 				quit <- "see you"
 				return
 			}
+			n := rand.Intn(1e3)
+			time.Sleep(time.Millisecond * time.Duration(n))
 		}
 	}()
 	return c
