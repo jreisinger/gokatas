@@ -1,7 +1,7 @@
 // Package encrypt encrypts (confidentiality) and authenticates (integrity) cookies.
 //
 // Level: intermediate
-// Topics: encryption, authentication
+// Topics: encryption, authn
 package encrypt
 
 import (

@@ -2,7 +2,7 @@
 // https://youtu.be/zDCKZn4-dck.
 //
 // Level: advanced
-// Topics: design, buffered channels, select, os/signal
+// Topics: design, buffered channels, os/signal
 package logger
 
 import (
