@@ -17,8 +17,8 @@ import (
 
 // KatasFile is a MarkDown file to track katas you've done. It looks like this:
 //
-//   - 2022-09-12: areader, noescape
-//   - 2022-09-09: geometry
+//   - 2022-09-13: boring/boring, boring/channel
+//   - 2022-09-10: areader
 const KatasFile = "katas.md"
 
 // Kata represents a programming kata.
