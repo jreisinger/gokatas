@@ -1,4 +1,4 @@
-// A faster version of lookup.sh that handles errors and can be generalized.
+// A faster version of lookup-v0.sh that handles errors and can be generalized.
 //
 // Level: intermediate
 // Topics: concurrency, scripting
