@@ -31,7 +31,7 @@ func (l *lookupTask) Process() {
 		return
 	}
 	for _, ns := range nss {
-		if strings.HasSuffix(ns.Host, ".ns.cloudflare.com.") {
+		if strings.HasSuffix(ns.Host, ".cloudflare.com.") {
 			l.cloudflare = true
 			break
 		}
@@ -39,16 +39,16 @@ func (l *lookupTask) Process() {
 }
 
 func (l *lookupTask) Print() {
-	state := "OTHER"
+	status := "OTHER"
 	switch {
 	case l.err != nil:
-		state = "ERROR"
+		status = "ERROR"
 	case l.cloudflare:
-		state = "CLOUDFLARE"
+		status = "CLOUDFLARE"
 	}
-	fmt.Printf("%-10s %s\n", state, l.name)
+	fmt.Printf("%-10s %s\n", status, l.name)
 }
 
 func main() {
-	z.Run(&lookupFactory{})
+	z.Run(lookupFactory{})
 }

@@ -15,17 +15,16 @@ import (
 )
 
 type lookup struct {
-	name string
-
-	// Filled in when NS looked up
+	name       string
 	err        error
 	cloudflare bool
 }
 
 func main() {
-	var wg sync.WaitGroup
 	in := make(chan lookup)
+	var wg sync.WaitGroup
 
+	// Read lines from stdin.
 	wg.Add(1)
 	go func() {
 		s := bufio.NewScanner(os.Stdin)
@@ -33,7 +32,7 @@ func main() {
 			in <- lookup{name: s.Text()}
 		}
 		if s.Err() != nil {
-			log.Fatalf("Error reading STDIN: %s", s.Err())
+			log.Fatalf("error reading STDIN: %v", s.Err())
 		}
 		close(in)
 		wg.Done()
@@ -41,20 +40,22 @@ func main() {
 
 	out := make(chan lookup)
 
+	// Write status to stdout.
 	go func() {
 		for l := range out {
-			state := "OTHER"
+			status := "OTHER"
 			switch {
 			case l.err != nil:
-				state = "ERROR"
+				status = "ERROR"
 			case l.cloudflare:
-				state = "CLOUDFLARE"
+				status = "CLOUDFLARE"
 			}
 
-			fmt.Printf("%-10s %s\n", state, l.name)
+			fmt.Printf("%-10s %s\n", status, l.name)
 		}
 	}()
 
+	// Do the NS lookups.
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
