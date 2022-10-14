@@ -7,9 +7,12 @@ import (
 	"github.com/jreisinger/gokatas/areader"
 )
 
-func main() {
+func main(){
 	var r areader.Areader
-	p := make([]byte, 3)
-	r.Read(p) // NOTE: ignoring potential error
-	fmt.Println(string(p))
+	slice := make([]byte, 34)
+	r.Read(slice)
+	fmt.Println(string(slice))
 }
+
+//create a var of type Areader,
+//create a slice of byte, and print it

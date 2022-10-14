@@ -7,9 +7,13 @@ package areader
 
 type Areader struct{}
 
-func (r Areader) Read(p []byte) (int, error) {
-	for i := range p {
-		p[i] = 'A'
+func (r Areader)Read(slice []byte) error{
+	for i:= range slice{
+		slice[i] = 'A'
 	}
-	return len(p), nil
+	return nil
+
 }
+
+//definir um tipo Areader
+//criar uma funcão Read que recebe um []byte e retorna um erro
