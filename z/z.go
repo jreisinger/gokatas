@@ -25,33 +25,34 @@ type Task interface {
 }
 
 func Run(f Factory) {
-	in := make(chan Task)
-	out := make(chan Task)
 	var wg sync.WaitGroup
+	in := make(chan Task)
 
 	// Read lines from stdin and stuff them into in channel.
 	wg.Add(1)
 	go func() {
+		defer wg.Done()
 		s := bufio.NewScanner(os.Stdin)
 		for s.Scan() {
 			in <- f.Make(s.Text())
 		}
-		if err := s.Err(); err != nil {
-			fmt.Fprintf(os.Stderr, "z: reading from STDIN: %v", err)
+		if s.Err() != nil {
+			fmt.Fprintf(os.Stderr, "reading STDIN: %v", s.Err())
 		}
 		close(in)
-		wg.Done()
 	}()
+
+	out := make(chan Task)
 
 	// Read from in channel, do the work, and write results to out channel.
 	for i := 0; i < 20; i++ {
 		wg.Add(1)
 		go func() {
+			defer wg.Done()
 			for t := range in {
 				t.Process()
 				out <- t
 			}
-			wg.Done()
 		}()
 	}
 
