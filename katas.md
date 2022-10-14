@@ -1,3 +1,4 @@
+* 2022-10-14: z
 * 2022-10-13: z/lookup-v1, z/lookup-v2
 * 2022-10-12: boring/selectquit
 * 2022-10-11: boring/lockstep, boring/multiplex, boring/select, logger
