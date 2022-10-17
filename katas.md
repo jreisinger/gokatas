@@ -1,4 +1,4 @@
-* 2022-10-17: cookies
+* 2022-10-17: cookies, bytecounter
 * 2022-10-14: z
 * 2022-10-13: z/lookup-v1, z/lookup-v2
 * 2022-10-12: boring/selectquit
