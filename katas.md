@@ -1,3 +1,4 @@
+* 2022-10-17: cookies
 * 2022-10-14: z
 * 2022-10-13: z/lookup-v1, z/lookup-v2
 * 2022-10-12: boring/selectquit
@@ -5,7 +6,7 @@
 * 2022-10-10: countgo, myprint, google/google, google/v2.1, google/v2.2, google/v3.0
 * 2022-10-07: boring/boring, boring/channel, boring/generator
 * 2022-10-06: areader, clock2, netcat1, noescape
-* 2022-10-03: bytecounter, cookies, cookies/sign, cookies/encrypt
+* 2022-10-03: bytecounter, cookies
 * 2022-09-30: z/lookup-v2, z
 * 2022-09-29: z/lookup-v1
 * 2022-09-28: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
