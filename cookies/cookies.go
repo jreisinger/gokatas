@@ -1,6 +1,6 @@
-// Package cookies writes, signes and encrypts [cookies]. An HTTP cookie is a
-// small piece of data that a server sends to a user's web browser. Cookies are
-// used mainly for:
+// Package cookies writes and reads (not signed and not encrypted) [cookies]. An
+// HTTP cookie is a small piece of data that a server sends to a user's web
+// browser. Cookies are used mainly for:
 //
 //   - Session management (e.g. logins, shopping carts)
 //   - Personalization (e.g. user preferences, themes)
@@ -15,21 +15,45 @@
 package cookies
 
 import (
-	"encoding/base64"
 	"errors"
+	"log"
 	"net/http"
 )
 
 var (
 	ErrValueTooLong = errors.New("cookie value too long")
 	ErrInvalidValue = errors.New("invalid cookie value")
+	name            = "exampleCookie"
 )
 
-func Write(w http.ResponseWriter, cookie http.Cookie) error {
-	cookie.Value = base64.URLEncoding.EncodeToString([]byte(cookie.Value))
-	if len(cookie.String()) > 4096 {
-		return ErrValueTooLong
+// Set sets a cookie and sends it to a client.
+func Set(w http.ResponseWriter, r *http.Request) {
+	cookie := http.Cookie{
+		Name:     name,
+		Value:    "Hello world!",
+		Path:     "/",
+		MaxAge:   3600,
+		HttpOnly: true,
+		Secure:   true,
+		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
-	return nil
+	w.Write([]byte("Cookie set!"))
+}
+
+// Get retrieves the cookie from the request and sends it back to the client in
+// the response body.
+func Get(w http.ResponseWriter, r *http.Request) {
+	cookie, err := r.Cookie(name)
+	if err != nil {
+		switch {
+		case errors.Is(err, http.ErrNoCookie):
+			http.Error(w, "cookie not found", http.StatusBadRequest)
+		default:
+			log.Println(err)
+			http.Error(w, "server error", http.StatusInternalServerError)
+		}
+		return
+	}
+	w.Write([]byte(cookie.Value))
 }
