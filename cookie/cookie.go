@@ -1,4 +1,4 @@
-// Package cookies writes and reads (not signed and not encrypted) [cookies]. An
+// Package cookie writes and reads (not signed and not encrypted) [cookie]. An
 // HTTP cookie is a small piece of data that a server sends to a user's web
 // browser. Cookies are used mainly for:
 //
@@ -12,7 +12,7 @@
 // Topics: net/http
 //
 // [cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
-package cookies
+package cookie
 
 import (
 	"errors"
