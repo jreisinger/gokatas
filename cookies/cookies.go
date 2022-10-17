@@ -38,7 +38,7 @@ func Set(w http.ResponseWriter, r *http.Request) {
 		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
-	w.Write([]byte("Cookie set!"))
+	w.Write([]byte("Set a cookie!"))
 }
 
 // Get retrieves the cookie from the request and sends it back to the client in
@@ -55,5 +55,5 @@ func Get(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	w.Write([]byte(cookie.Value))
+	w.Write([]byte("Got back the cookie named " + cookie.Name))
 }
