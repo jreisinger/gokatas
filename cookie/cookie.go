@@ -20,40 +20,35 @@ import (
 	"net/http"
 )
 
-var (
-	ErrValueTooLong = errors.New("cookie value too long")
-	ErrInvalidValue = errors.New("invalid cookie value")
-	name            = "exampleCookie"
-)
+const Name = "exampleCookie"
 
-// Set sets a cookie and sends it to a client.
+// Set sets a cookie and sends it to a client in the response header.
 func Set(w http.ResponseWriter, r *http.Request) {
 	cookie := http.Cookie{
-		Name:     name,
-		Value:    "Hello world!",
-		Path:     "/",
+		Name:     Name,
+		Value:    "hello world",
 		MaxAge:   3600,
-		HttpOnly: true,
 		Secure:   true,
+		HttpOnly: true,
 		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
-	w.Write([]byte("Set a cookie!"))
+	w.Write([]byte("cookie set"))
 }
 
 // Get retrieves the cookie from the request and sends it back to the client in
 // the response body.
 func Get(w http.ResponseWriter, r *http.Request) {
-	cookie, err := r.Cookie(name)
+	cookie, err := r.Cookie(Name)
 	if err != nil {
 		switch {
 		case errors.Is(err, http.ErrNoCookie):
 			http.Error(w, "cookie not found", http.StatusBadRequest)
 		default:
 			log.Println(err)
-			http.Error(w, "server error", http.StatusInternalServerError)
+			http.Error(w, "internal server error", http.StatusInternalServerError)
 		}
 		return
 	}
-	w.Write([]byte("Got back the cookie named " + cookie.Name))
+	w.Write([]byte("found cookie" + " " + cookie.Name))
 }
