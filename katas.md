@@ -1,3 +1,4 @@
+* 2022-10-18: cookie
 * 2022-10-17: cookie, bytecounter
 * 2022-10-14: z
 * 2022-10-13: z/lookup-v1, z/lookup-v2
