@@ -1,3 +1,4 @@
+* 2022-10-21: boring/lockstep, boring/multiplex, boring/select
 * 2022-10-20: boring/boring, boring/channel, boring/generator
 * 2022-10-19: areader, clock2, netcat1, noescape
 * 2022-10-18: cookie
