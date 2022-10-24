@@ -1,4 +1,4 @@
-// V3.0 introduces search replicas. It means we have multiple search services
+// V3.0 introduces replication. It means we have multiple search services
 // (replicas) for each kind and we take the first result returned by the fastest
 // service. This way we dramatically lower the likelihood of discarding results.
 // This is a fast and robust program.
