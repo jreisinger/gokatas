@@ -12,7 +12,7 @@ import (
 )
 
 type Logger struct {
-	ch chan string // data we want to log
+	ch chan string // logs
 	wg sync.WaitGroup
 }
 

@@ -30,7 +30,6 @@ func (d *device) Write(p []byte) (int, error) {
 
 func main() {
 	const grs = 10
-
 	var d device
 
 	// Blocking logger.
@@ -43,16 +42,16 @@ func main() {
 	for i := 0; i < grs; i++ {
 		go func(i int) {
 			for {
-				l.Println(fmt.Sprintf("log data from gr %d", i))
+				l.Println(fmt.Sprintf("gr %d pretending work", i))
 				time.Sleep(10 * time.Millisecond)
 			}
 		}(i)
 	}
 
-	sigCh := make(chan os.Signal, 1)
-	signal.Notify(sigCh, os.Interrupt)
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, os.Interrupt)
 	for {
-		<-sigCh
+		<-sig
 		d.problem = !d.problem
 	}
 }
