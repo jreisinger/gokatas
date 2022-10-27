@@ -16,8 +16,8 @@ import (
 
 type lookup struct {
 	name       string
-	err        error
 	cloudflare bool
+	err        error
 }
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 			in <- lookup{name: s.Text()}
 		}
 		if s.Err() != nil {
-			log.Fatalf("error reading STDIN: %v", s.Err())
+			log.Fatalf("reading STDIN: %v", s.Err())
 		}
 		close(in)
 		wg.Done()
