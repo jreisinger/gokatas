@@ -40,21 +40,6 @@ func main() {
 
 	out := make(chan lookup)
 
-	// Write status to stdout.
-	go func() {
-		for l := range out {
-			status := "OTHER"
-			switch {
-			case l.err != nil:
-				status = "ERROR"
-			case l.cloudflare:
-				status = "CLOUDFLARE"
-			}
-
-			fmt.Printf("%-10s %s\n", status, l.name)
-		}
-	}()
-
 	// Do the NS lookups.
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
@@ -77,5 +62,21 @@ func main() {
 		}()
 	}
 
-	wg.Wait()
+	go func() {
+		wg.Wait()
+		close(out)
+	}()
+
+	// Write status to stdout.
+	for l := range out {
+		status := "OTHER"
+		switch {
+		case l.err != nil:
+			status = "ERROR"
+		case l.cloudflare:
+			status = "CLOUDFLARE"
+		}
+
+		fmt.Printf("%-10s %s\n", status, l.name)
+	}
 }
