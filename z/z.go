@@ -28,7 +28,7 @@ func Run(f Factory) {
 	var wg sync.WaitGroup
 	in := make(chan Task)
 
-	// Read lines from stdin and stuff them into in channel.
+	// Read lines from stdin and stuff them down the in channel.
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -44,7 +44,8 @@ func Run(f Factory) {
 
 	out := make(chan Task)
 
-	// Read from in channel, do the work, and write results to out channel.
+	// Read from the in channel, do the work, and write results to the out
+	// channel.
 	for i := 0; i < 20; i++ {
 		wg.Add(1)
 		go func() {
@@ -61,7 +62,7 @@ func Run(f Factory) {
 		close(out)
 	}()
 
-	// Write results from out channel to stdout.
+	// Write results from the out channel to stdout.
 	for t := range out {
 		t.Print()
 	}

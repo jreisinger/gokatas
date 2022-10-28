@@ -24,7 +24,7 @@ func main() {
 	in := make(chan lookup)
 	var wg sync.WaitGroup
 
-	// Read lines from stdin.
+	// Read lines from stdin and stuff them down the in channel.
 	wg.Add(1)
 	go func() {
 		s := bufio.NewScanner(os.Stdin)
@@ -40,7 +40,8 @@ func main() {
 
 	out := make(chan lookup)
 
-	// Do the NS lookups.
+	// Read from the in channel, do the NS lookups and stuff the results
+	// down the out channel.
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
@@ -67,7 +68,7 @@ func main() {
 		close(out)
 	}()
 
-	// Write status to stdout.
+	// Write the results from the out channel to stdout.
 	for l := range out {
 		status := "OTHER"
 		switch {
@@ -76,7 +77,6 @@ func main() {
 		case l.cloudflare:
 			status = "CLOUDFLARE"
 		}
-
 		fmt.Printf("%-10s %s\n", status, l.name)
 	}
 }
