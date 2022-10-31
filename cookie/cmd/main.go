@@ -10,8 +10,8 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/get", cookie.Get)
 	mux.HandleFunc("/set", cookie.Set)
+	mux.HandleFunc("/get", cookie.Get)
 	if err := http.ListenAndServe(":3000", mux); err != nil {
 		log.Fatal(err)
 	}

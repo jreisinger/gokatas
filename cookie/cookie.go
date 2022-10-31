@@ -11,7 +11,7 @@
 // Level: intermediate
 // Topics: net/http
 //
-// [cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+// [cookie]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 package cookie
 
 import (
@@ -36,8 +36,8 @@ func Set(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("cookie set"))
 }
 
-// Get retrieves the cookie from the request and sends it back to the client in
-// the response body.
+// Get retrieves the cookie from the request header and sends it back to the
+// client in the response body.
 func Get(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie(Name)
 	if err != nil {
