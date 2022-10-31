@@ -19,7 +19,7 @@ import (
 
 func main() {
 	go boring("blah") // analogous to the & on the end of a shell command
-	time.Sleep(time.Second * 5)
+	time.Sleep(time.Second * 10)
 }
 
 func boring(msg string) {

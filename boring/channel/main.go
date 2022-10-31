@@ -13,15 +13,18 @@ import (
 func main() {
 	c := make(chan string)
 	go boring("blah", c)
-	for i := 0; i < 5; i++ {
-		fmt.Println(<-c)
+	for i := 0; i <= 5; i++ {
+		fmt.Println(<- c)
 	}
 }
 
-func boring(msg string, c chan string) {
+func boring(s string, c chan string) {
 	for i := 0; ; i++ {
-		c <- fmt.Sprintf("%s, %d", msg, i)
+		c <- fmt.Sprintf("%s , %d \n", s, i)
 		n := rand.Intn(1e3)
-		time.Sleep(time.Millisecond * time.Duration(n))
+		time.Sleep(time.Duration(n) * time.Millisecond)
 	}
 }
+
+//criar uma func boring que recebe uma str e um chan de param
+//chamar boring na main
