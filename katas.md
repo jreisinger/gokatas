@@ -1,3 +1,4 @@
+* 2022-11-02: areader, clock2, netcat1, noescape
 * 2022-10-31: cookie
 * 2022-10-29: bytecounter
 * 2022-10-28: z/lookup-v1, z/lookup-v2
