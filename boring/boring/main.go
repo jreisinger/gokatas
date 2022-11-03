@@ -1,6 +1,6 @@
 // Package boring and its subpackages hold various Go concurrency patterns in
 // the form of boring conversations. This is first of them. It's not an honest
-// one because there is no communication.
+// one because there is no communication between main and boring goroutines.
 //
 // Based on Go Concurrency Patterns by Rob Pike (2012):
 //
@@ -14,17 +14,19 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"time"
 )
 
 func main() {
-	go boring("blah") // analogous to the & on the end of a shell command
+	go boring("blah") // independently executing function
 	time.Sleep(time.Second * 5)
 }
 
 func boring(msg string) {
 	for i := 0; ; i++ {
 		fmt.Printf("%s, %d\n", msg, i)
-		time.Sleep(time.Second)
+		n := rand.Intn(1e3)
+		time.Sleep(time.Millisecond * time.Duration(n))
 	}
 }
