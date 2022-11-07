@@ -1,8 +1,8 @@
-// V2.2 times out the search after 80ms. Consequently it sometimes returns only
-// partial results. Thus it is fast but not very robust.
+// V2.0 runs various kinds of search concurrently. Concurrency makes the program
+// faster.
 //
 // Level: advanced
-// Topics: concurrency, timeout
+// Topics: concurrency
 package main
 
 import (
@@ -28,15 +28,8 @@ func Google(query string) (results []Result) {
 	go func() { c <- Image(query) }()
 	go func() { c <- Video(query) }()
 
-	timeout := time.After(80 * time.Millisecond)
 	for i := 0; i < 3; i++ {
-		select {
-		case result := <-c:
-			results = append(results, result)
-		case <-timeout:
-			fmt.Println("timed out")
-			return
-		}
+		results = append(results, <-c)
 	}
 	return
 }
