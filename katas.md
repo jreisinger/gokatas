@@ -1,3 +1,4 @@
+* 2022-11-07: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2022-11-05: boring/selectquit, countgo, myprint
 * 2022-11-04: boring/lockstep, boring/multiplex, boring/select
 * 2022-11-03: boring/boring, boring/channel, boring/generator
@@ -8,7 +9,7 @@
 * 2022-10-27: z
 * 2022-10-26: logger
 * 2022-10-25: logger
-* 2022-10-24: boring/selectquit, countgo, google/google, google/v2.1, google/v2.2, google/v3.0, myprint
+* 2022-10-24: boring/selectquit, countgo, google/google, google/v2.0, google/v2.1, google/v3.0, myprint
 * 2022-10-21: boring/lockstep, boring/multiplex, boring/select
 * 2022-10-20: boring/boring, boring/channel, boring/generator
 * 2022-10-19: areader, clock2, netcat1, noescape
@@ -18,21 +19,21 @@
 * 2022-10-13: z/lookup-v1, z/lookup-v2
 * 2022-10-12: boring/selectquit
 * 2022-10-11: boring/lockstep, boring/multiplex, boring/select, logger
-* 2022-10-10: countgo, myprint, google/google, google/v2.1, google/v2.2, google/v3.0
+* 2022-10-10: countgo, myprint, google/google, google/v2.0, google/v2.1, google/v3.0
 * 2022-10-07: boring/boring, boring/channel, boring/generator
 * 2022-10-06: areader, clock2, netcat1, noescape
 * 2022-10-03: bytecounter, cookie
 * 2022-09-30: z/lookup-v2, z
 * 2022-09-29: z/lookup-v1
 * 2022-09-28: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
-* 2022-09-27: google/google, google/v2.1, google/v2.2, google/v3.0
+* 2022-09-27: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2022-09-26: countgo, myprint
 * 2022-09-23: boring/boring, boring/channel, boring/generator 
 * 2022-09-22: areader, clock2, netcat1, noescape
 * 2022-09-21: geometry, primesieve, word2
 * 2022-09-20: bytecounter, z, z/lookup-v1, z/lookup-v2
 * 2022-09-19: boring/lockstep, boring/multiplex, boring/select, boring/selectquit
-* 2022-09-16: google/google, google/v2.1, google/v2.2, google/v3.0
+* 2022-09-16: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2022-09-15: google/google
 * 2022-09-14: google/google
 * 2022-09-13: countgo, myprint, boring/boring, boring/channel, boring/generator
