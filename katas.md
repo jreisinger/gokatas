@@ -1,3 +1,4 @@
+* 2022-11-08: google/v2.1, google/v3.0, logger
 * 2022-11-07: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2022-11-05: boring/selectquit, countgo, myprint
 * 2022-11-04: boring/lockstep, boring/multiplex, boring/select
