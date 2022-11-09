@@ -26,9 +26,11 @@ type Task interface {
 
 func Run(f Factory) {
 	var wg sync.WaitGroup
+
 	in := make(chan Task)
 
-	// Read lines from stdin and stuff them down the in channel.
+	// Read lines from stdin, make them into tasks, and stuff them down the
+	// in channel.
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -37,15 +39,15 @@ func Run(f Factory) {
 			in <- f.Make(s.Text())
 		}
 		if s.Err() != nil {
-			fmt.Fprintf(os.Stderr, "reading STDIN: %v", s.Err())
+			fmt.Fprintf(os.Stderr, "z: reading STDIN: %v", s.Err())
 		}
 		close(in)
 	}()
 
 	out := make(chan Task)
 
-	// Read from the in channel, do the work, and write results to the out
-	// channel.
+	// Read tasks from the in channel, process them, and stuff them down the
+	// out channel.
 	for i := 0; i < 20; i++ {
 		wg.Add(1)
 		go func() {
