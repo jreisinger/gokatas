@@ -21,8 +21,9 @@ type lookup struct {
 }
 
 func main() {
-	in := make(chan lookup)
 	var wg sync.WaitGroup
+
+	in := make(chan lookup)
 
 	// Read lines from stdin and stuff them down the in channel.
 	wg.Add(1)
@@ -45,13 +46,14 @@ func main() {
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
+			defer wg.Done()
 			for l := range in {
 				nss, err := net.LookupNS(l.name)
 				if err != nil {
 					l.err = err
 				} else {
 					for _, ns := range nss {
-						if strings.HasSuffix(ns.Host, ".ns.cloudflare.com.") {
+						if strings.HasSuffix(ns.Host, "cloudflare.com.") {
 							l.cloudflare = true
 							break
 						}
@@ -59,7 +61,6 @@ func main() {
 				}
 				out <- l
 			}
-			wg.Done()
 		}()
 	}
 
