@@ -37,7 +37,7 @@ func Set(w http.ResponseWriter, r *http.Request) {
 // Show retrieves the cookie from the request header and sends it back to the
 // client in the response body.
 func Show(w http.ResponseWriter, r *http.Request) {
-	cookie, err := r.Cookie(Name)
+	_, err := r.Cookie(Name)
 	if err != nil {
 		switch {
 		case errors.Is(err, http.ErrNoCookie):
@@ -48,5 +48,5 @@ func Show(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	w.Write([]byte("found cookie" + " " + cookie.Name))
+	w.Write([]byte("cookie found"))
 }

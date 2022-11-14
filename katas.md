@@ -1,3 +1,4 @@
+* 2022-11-14: cookie
 * 2022-11-10: z/lookup-v1
 * 2022-11-09: z/lookup-v2, z
 * 2022-11-08: google/v2.1, google/v3.0, logger
