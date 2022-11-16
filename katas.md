@@ -1,3 +1,4 @@
+* 2022-11-16: boring/boring, boring/channel, boring/generator
 * 2022-11-15: areader, clock2, netcat1, noescape
 * 2022-11-14: cookie
 * 2022-11-10: z/lookup-v1
