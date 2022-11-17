@@ -12,20 +12,23 @@ import (
 )
 
 func main() {
-	c := boring("blah")
-	for i := 0; i < 5; i++ {
-		fmt.Println(<-c)
+	c:= boring("esse é meu texto chato")
+
+	for i:=0;i<8;i++{
+		fmt.Println(<- c)
 	}
 }
 
 func boring(msg string) <-chan string {
-	c := make(chan string)
+	canal := make(chan string)
+
 	go func() {
 		for i := 0; ; i++ {
-			c <- fmt.Sprintf("%s, %d", msg, i)
-			n := rand.Intn(1e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
+			canal <- fmt.Sprintf("%s, %d", msg, i)
+			r := rand.Intn(1e2)
+			time.Sleep(time.Millisecond * time.Duration(r))
+
 		}
 	}()
-	return c
+	return canal
 }

@@ -11,18 +11,18 @@ import (
 )
 
 func main() {
-	c := make(chan string)
-	go boring("blah", c)
-	for i := 0; i <= 5; i++ {
+	c:=make(chan string)
+	go boring("oi", c)
+	for i:=0; i <7;i++{
 		fmt.Println(<- c)
 	}
 }
 
-func boring(s string, c chan string) {
-	for i := 0; ; i++ {
-		c <- fmt.Sprintf("%s , %d \n", s, i)
-		n := rand.Intn(1e3)
-		time.Sleep(time.Duration(n) * time.Millisecond)
+func boring(msg string, c chan string){
+	for i :=0;;i++{
+		c <- fmt.Sprintf("%s %d \n", msg, i)
+		tmp:=rand.Intn(1e3)
+		time.Sleep(time.Duration(tmp)*time.Millisecond)
 	}
 }
 
