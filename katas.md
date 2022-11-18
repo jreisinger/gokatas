@@ -1,3 +1,4 @@
+* 2022-11-18: boring/selectquit, countgo, myprint
 * 2022-11-17: boring/lockstep, boring/multiplex, boring/select
 * 2022-11-16: boring/boring, boring/channel, boring/generator
 * 2022-11-15: areader, clock2, netcat1, noescape
