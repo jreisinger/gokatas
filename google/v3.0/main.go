@@ -45,9 +45,7 @@ func Google(query string) (results []Result) {
 
 func First(query string, replicas ...Search) Result {
 	c := make(chan Result)
-	replica := func(i int) {
-		c <- replicas[i](query)
-	}
+	replica := func(i int) { c <- replicas[i](query) }
 	for i := range replicas {
 		go replica(i)
 	}
@@ -55,12 +53,12 @@ func First(query string, replicas ...Search) Result {
 }
 
 var (
-	Web1   = fakeSearch("web1")
-	Web2   = fakeSearch("web2")
-	Image1 = fakeSearch("image1")
-	Image2 = fakeSearch("image2")
-	Video1 = fakeSearch("video1")
-	Video2 = fakeSearch("video2")
+	Web1   = fakeSearch("web")
+	Web2   = fakeSearch("web")
+	Image1 = fakeSearch("image")
+	Image2 = fakeSearch("image")
+	Video1 = fakeSearch("video")
+	Video2 = fakeSearch("video")
 )
 
 type Search func(query string) Result
