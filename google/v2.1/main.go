@@ -28,7 +28,7 @@ func Google(query string) (results []Result) {
 	go func() { c <- Image(query) }()
 	go func() { c <- Video(query) }()
 
-	timeout := time.After(80 * time.Millisecond)
+	timeout := time.After(time.Millisecond * 80)
 	for i := 0; i < 3; i++ {
 		select {
 		case result := <-c:
