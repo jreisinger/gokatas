@@ -1,3 +1,4 @@
+* 2022-11-23: z/lookup-v1
 * 2022-11-22: logger
 * 2022-11-21: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2022-11-18: boring/selectquit, countgo, myprint
