@@ -1,3 +1,4 @@
+* 2022-12-08: rot13, tcpscanner
 * 2022-12-07: z/lookup-v1
 * 2022-12-06: logger
 * 2022-12-05: google/google, google/v2.0, google/v2.1, google/v3.0
