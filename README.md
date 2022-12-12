@@ -9,9 +9,9 @@ movements being executed. Let's try the same with Go code.
 ## Why
 
 I've been learning to program in Go. I work in the sysadmin/devops and security
-areas so I usually don't get to program every day. But I still want to keep my
-coding skills fresh. Maybe even improve them. I use gokatas as one of the ways
-to achieve this.
+areas so I don't get to program every day. But I still want to keep my coding
+skills fresh. Maybe even improve them. I use gokatas as one of the ways to
+achieve this.
 
 ## How
 
