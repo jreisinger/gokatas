@@ -7,7 +7,7 @@ package areader
 
 type Areader struct{}
 
-func (r Areader) Read(p []byte) (int, error) {
+func (Areader) Read(p []byte) (int, error) {
 	for i := range p {
 		p[i] = 'A'
 	}
