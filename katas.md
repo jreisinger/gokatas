@@ -1,3 +1,4 @@
+* 2022-12-13: boring/boring, boring/channel, boring/generator
 * 2022-12-12: areader, clock2, netcat1, noescape
 * 2022-12-08: rot13, tcpscanner
 * 2022-12-07: z/lookup-v1
