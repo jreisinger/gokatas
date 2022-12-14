@@ -1,5 +1,5 @@
-// Lockstep makes Ann and Joe talk in lockstep. You can use channels as a handle
-// on a service.
+// Lockstep makes Ann and Joe talk in lockstep (one after another). You can use
+// channels as a handle on a service.
 //
 // Level: beginner
 // Topics: goroutines, channels
