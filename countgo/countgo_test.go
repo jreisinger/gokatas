@@ -18,10 +18,10 @@ func TestFilesOnDisk(t *testing.T) {
 func TestFilesInMemory(t *testing.T) {
 	t.Parallel()
 	fsys := fstest.MapFS{
-		"file.go":               {},
 		"subfolder/file.go":     {},
 		"subfolder2/another.go": {},
 		"subfolder2/file.go":    {},
+		"file.go":               {},
 	}
 	want := 4
 	if got := Files(fsys); got != want {

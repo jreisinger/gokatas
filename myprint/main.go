@@ -1,5 +1,6 @@
-// Myprint shows how come fmt.Print accepts arguments of any type. It uses
-// reflection. See research.swtch.com/gotour (from go.dev/doc) for more.
+// Myprint shows how come fmt.Print can print any number of arguments of any
+// type. It uses reflection. See research.swtch.com/gotour (from go.dev/doc) for
+// more.
 //
 // Level: intermediate
 // Topics: reflect, strconv, switch, interfaces
@@ -12,7 +13,7 @@ import (
 )
 
 func main() {
-	myPrint("hello", 42, "\n")
+	myPrint("hello", 42)
 }
 
 func myPrint(args ...interface{}) {
