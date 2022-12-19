@@ -16,9 +16,10 @@ type Logger struct {
 	wg sync.WaitGroup
 }
 
-// New is sometimes called a generator function. It's useful when you need to
-// initialize one or more fields of a type.
 func New(w io.Writer, cap int) *Logger {
+	// New is sometimes called a generator function. It's useful when you
+	// need to initialize one or more fields of a type.
+
 	l := Logger{
 		ch: make(chan string, cap),
 	}

@@ -1,10 +1,9 @@
 // Log handles logging correctly. When it's not possible to write logs for some
 // reason the whole program will not block.
 //
-// Start 10 goroutines each of which will be writing logs to a device. Simulate
-// a device problem (e.g. disk or network issue) by pressing Ctrl-C. Press
-// Ctrl-C again to "fix" the problem. Ctrl-\ will terminate the program (with a
-// core dump).
+// Start 10 goroutines each of which will be writing logs to a log collector.
+// Simulate a log collector problem by pressing Ctrl-C. Press Ctrl-C again to
+// "fix" the problem. Ctrl-\ will terminate the program (with a core dump).
 package main
 
 import (
@@ -16,12 +15,12 @@ import (
 	"github.com/jreisinger/gokatas/logger"
 )
 
-type device struct {
+type logCollector struct {
 	problem bool
 }
 
-func (d *device) Write(p []byte) (int, error) {
-	for d.problem {
+func (c *logCollector) Write(p []byte) (int, error) {
+	for c.problem {
 		time.Sleep(time.Second)
 	}
 
@@ -30,14 +29,14 @@ func (d *device) Write(p []byte) (int, error) {
 
 func main() {
 	const grs = 10
-	var d device
+	var c logCollector
 
 	// Blocking logger.
 	// var l log.Logger
 	// l.SetOutput(&d)
 
 	// Non-blocking logger.
-	l := logger.New(&d, grs)
+	l := logger.New(&c, grs)
 
 	for i := 0; i < grs; i++ {
 		go func(i int) {
@@ -52,6 +51,6 @@ func main() {
 	signal.Notify(sig, os.Interrupt)
 	for {
 		<-sig
-		d.problem = !d.problem
+		c.problem = !c.problem
 	}
 }
