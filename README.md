@@ -1,5 +1,6 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/jreisinger/gokatas.svg)](https://pkg.go.dev/github.com/jreisinger/gokatas)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jreisinger/gokatas)](https://goreportcard.com/report/github.com/jreisinger/gokatas)
+[![test and scan](https://github.com/jreisinger/gokatas/actions/workflows/go.yaml/badge.svg)](https://github.com/jreisinger/gokatas/actions/workflows/go.yaml)
 
 # Go katas
 
