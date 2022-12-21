@@ -13,6 +13,7 @@ import (
 // rot13 is a simple sibstitution cipher that rotates all alphabetical
 // characters by 13 places. It's decoded by the same algorithm.
 func rot13(b byte) byte {
+	// Explained here: https://stackoverflow.com/questions/25214008/rot13-and-the-use-of-the-modulo
 	var a, z byte
 	switch {
 	case 'a' <= b && b <= 'z':
