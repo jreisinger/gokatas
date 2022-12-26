@@ -12,23 +12,22 @@ import (
 )
 
 func main() {
-	c:= boring("esse é meu texto chato")
+c := boring("valeu, natalina")
 
-	for i:=0;i<8;i++{
-		fmt.Println(<- c)
-	}
+for i:=0;i<10;i++{
+	fmt.Println(<-c)
+}
 }
 
-func boring(msg string) <-chan string {
-	canal := make(chan string)
+func boring(msg string) <-chan string{
+	c := make(chan string)
 
-	go func() {
-		for i := 0; ; i++ {
-			canal <- fmt.Sprintf("%s, %d", msg, i)
-			r := rand.Intn(1e2)
-			time.Sleep(time.Millisecond * time.Duration(r))
-
+	go func(){
+		for i:=0;;i++{
+			c <- fmt.Sprintf("%s %d", msg, i)
+			r:= rand.Intn(1e3)
+			time.Sleep(time.Duration(r) * time.Millisecond)
 		}
 	}()
-	return canal
+	return c
 }
