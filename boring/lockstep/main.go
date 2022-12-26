@@ -6,28 +6,33 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
+	"fmt"
 	"time"
 )
 
 func main() {
 	ann := boring("Ann")
 	joe := boring("Joe")
-	for i := 0; i < 5; i++ {
+
+	for i:=0;i<=10;i++{
 		fmt.Println(<-ann)
 		fmt.Println(<-joe)
 	}
+
 }
 
 func boring(msg string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
-			c <- fmt.Sprintf("%s, %d", msg, i)
-			n := rand.Intn(1e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
+			c <- fmt.Sprintf("%s %d", msg, i)
+
+			rnd := rand.Intn(1e3)
+			time.Sleep(time.Duration(rnd) * time.Millisecond)
+
 		}
+
 	}()
 	return c
 }
