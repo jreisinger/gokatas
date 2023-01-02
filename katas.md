@@ -1,3 +1,4 @@
+* 2023-01-02: areader, clock2, netcat1, noescape
 * 2022-12-22: areader, clock2, netcat1, noescape
 * 2022-12-21: rot13, tcpscanner
 * 2022-12-20: z/lookup-v1
