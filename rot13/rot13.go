@@ -10,9 +10,9 @@ import (
 	"io"
 )
 
-// rot13 is a simple sibstitution cipher that rotates all alphabetical
+// rot13 is a simple substitution cipher that rotates all alphabetical
 // characters by 13 places. You can use the same algorithm both for encoding and
-// decoding (13 is half of 26). Algorithm explaination:
+// decoding (13 is half of 26). Algorithm explanation:
 // https://stackoverflow.com/questions/25214008/rot13-and-the-use-of-the-modulo
 func rot13(b byte) byte {
 	var a, z byte
@@ -32,7 +32,7 @@ type Reader struct {
 }
 
 func (r Reader) Read(p []byte) (int, error) {
-	n, err := r.R.Read(p) // remove Code to get stack overflow error :-)
+	n, err := r.R.Read(p) // remove R to get stack overflow error :-)
 	for i := 0; i < n; i++ {
 		p[i] = rot13(p[i])
 	}
