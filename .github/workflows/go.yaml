@@ -1,7 +1,0 @@
-name: test and scan
-
-on: [push]
-
-jobs:
-  go:
-    uses: jreisinger/github-actions/.github/workflows/go.yml@main
