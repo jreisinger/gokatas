@@ -12,21 +12,20 @@ import (
 )
 
 func main() {
-	ann := boring("Ann")
-	joe := boring("Joe")
+	ann := say("Ann")
+	joe := say("Joe")
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-ann)
 		fmt.Println(<-joe)
 	}
 }
 
-func boring(msg string) <-chan string {
+func say(msg string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s, %d", msg, i)
-			n := rand.Intn(1e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
+			time.Sleep(time.Millisecond * time.Duration(rand.Intn(1e3)))
 		}
 	}()
 	return c

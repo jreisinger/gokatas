@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	c := fanIn(boring("Ann"), boring("Joe"))
+	c := fanIn(say("Ann"), say("Joe"))
 	for i := 0; i < 10; i++ {
 		fmt.Println(<-c)
 	}
@@ -32,13 +32,12 @@ func fanIn(input1, input2 <-chan string) <-chan string {
 	return c
 }
 
-func boring(msg string) <-chan string {
+func say(msg string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s, %d", msg, i)
-			n := rand.Intn(2e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
+			time.Sleep(time.Millisecond * time.Duration(rand.Intn(1e3)))
 		}
 	}()
 	return c

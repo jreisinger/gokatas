@@ -12,16 +12,15 @@ import (
 
 func main() {
 	c := make(chan string)
-	go boring("blah", c)
+	go say("blah", c)
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-c)
 	}
 }
 
-func boring(msg string, c chan string) {
+func say(msg string, c chan string) {
 	for i := 0; ; i++ {
 		c <- fmt.Sprintf("%s, %d", msg, i)
-		n := rand.Intn(1e3)
-		time.Sleep(time.Millisecond * time.Duration(n))
+		time.Sleep(time.Millisecond * time.Duration(rand.Intn(1e3)))
 	}
 }

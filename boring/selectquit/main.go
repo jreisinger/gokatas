@@ -13,7 +13,7 @@ import (
 
 func main() {
 	quit := make(chan string)
-	c := boring("blah", quit)
+	c := say("blah", quit)
 	for i := rand.Intn(10); i >= 0; i-- {
 		fmt.Println(<-c)
 	}
@@ -21,7 +21,7 @@ func main() {
 	fmt.Printf("They said: %q.\n", <-quit)
 }
 
-func boring(msg string, quit chan string) <-chan string {
+func say(msg string, quit chan string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
@@ -32,8 +32,7 @@ func boring(msg string, quit chan string) <-chan string {
 				quit <- "see you"
 				return
 			}
-			n := rand.Intn(1e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
+			time.Sleep(time.Millisecond * time.Duration(rand.Intn(1e3)))
 		}
 	}()
 	return c

@@ -1,6 +1,6 @@
 // Boring contains various Go concurrency patterns in the form of boring
 // conversations. This is first of them. It's not an honest one because there is
-// no communication between the main and the boring goroutine.
+// no communication between the main and the say goroutine.
 //
 // Based on Go Concurrency Patterns by Rob Pike (2012):
 //
@@ -19,14 +19,13 @@ import (
 )
 
 func main() {
-	go boring("blah") // independently executing function
+	go say("blah")
 	time.Sleep(time.Second * 5)
 }
 
-func boring(msg string) {
+func say(msg string) {
 	for i := 0; ; i++ {
 		fmt.Printf("%s, %d\n", msg, i)
-		n := rand.Intn(1e3)
-		time.Sleep(time.Millisecond * time.Duration(n))
+		time.Sleep(time.Millisecond * time.Duration(rand.Intn(1e3)))
 	}
 }
