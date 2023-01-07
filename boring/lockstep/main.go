@@ -12,6 +12,7 @@ import (
 )
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	ann := say("Ann")
 	joe := say("Joe")
 	for i := 0; i < 5; i++ {

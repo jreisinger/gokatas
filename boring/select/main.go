@@ -17,6 +17,7 @@ import (
 )
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	c := fanIn(say("Ann"), say("Joe"))
 	// you could also time out the whole conversation see
 	// https://go.dev/talks/2012/concurrency.slide#36
