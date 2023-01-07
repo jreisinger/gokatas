@@ -37,7 +37,7 @@ func say(msg string) <-chan string {
 	go func() {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s, %d", msg, i)
-			time.Sleep(time.Millisecond * time.Duration(rand.Intn(1e3)))
+			time.Sleep(time.Millisecond * time.Duration(rand.Intn(2e3)))
 		}
 	}()
 	return c
