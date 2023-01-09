@@ -1,6 +1,9 @@
 // Package countgo counts files with extension ".go" in fs.FS. It also shows
 // how to use fs.FS in tests.
 //
+// When you’re dealing with trees of files, use fs.FS rather than trying to
+// write the recursion code yourself.
+//
 // Based on bitfieldconsulting.com/golang/filesystems.
 //
 // Level: intermediate

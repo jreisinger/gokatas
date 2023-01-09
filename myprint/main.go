@@ -1,5 +1,5 @@
-// Myprint shows how come fmt.Print can print any number of arguments of any
-// type. It uses reflection. See research.swtch.com/gotour (from go.dev/doc) for
+// Myprint shows how come fmt.Print can print (any number of) arguments of any
+// type. It uses reflection. See research.swtch.com/gotour, from go.dev/doc, for
 // more.
 //
 // Level: intermediate
