@@ -1,3 +1,4 @@
+* 2023-01-10: search, fetchall, shop4
 * 2023-01-09: countgo, myprint
 * 2023-01-06: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-01-05: google/google, google/v2.0, google/v2.1, google/v3.0
