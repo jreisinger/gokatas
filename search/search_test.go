@@ -4,6 +4,7 @@ import (
 	"testing"
 )
 
+// Must be sorted for binary search to work.
 var list = []int{1, 2, 2, 3, 4, 5, 7, 8, 9}
 
 var tests = []struct {
@@ -21,7 +22,7 @@ var tests = []struct {
 	{list, 10, -1},
 }
 
-func TestLinearsearch(t *testing.T) {
+func TestLinear(t *testing.T) {
 	for _, test := range tests {
 		if idx := Linear(test.list, test.item); idx != test.idx {
 			t.Errorf("Linear(%v, %d) = %d, want %d",
@@ -30,7 +31,7 @@ func TestLinearsearch(t *testing.T) {
 	}
 }
 
-func TestBinarysearch(t *testing.T) {
+func TestBinary(t *testing.T) {
 	for _, test := range tests {
 		if idx := Binary(test.list, test.item); idx != test.idx {
 			t.Errorf("Binary(%v, %d) = %d, want %d",
