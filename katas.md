@@ -1,3 +1,4 @@
+* 2023-01-11: geometry
 * 2023-01-10: search, fetchall, shop4, slices
 * 2023-01-09: countgo, myprint
 * 2023-01-06: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
