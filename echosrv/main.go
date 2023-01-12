@@ -1,6 +1,6 @@
-// Echo is a web server that echoes the path component of the URL. It also
-// counts the HTTP requests. NOTE: Handler for each incoming request is run in
-// a separate goroutine. To avoid race conditions we need to protect the count
+// Echosrv is a web server that echoes the path component of the URL. It also
+// counts the HTTP requests. NOTE: Handler for each incoming request is run in a
+// separate goroutine. To avoid race conditions we need to protect the count
 // variable with a mutex.
 //
 // Level: beginner
