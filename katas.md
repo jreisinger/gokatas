@@ -1,3 +1,4 @@
+* 2023-01-13: bytecounter
 * 2023-01-12: echo
 * 2023-01-11: geometry
 * 2023-01-10: search, fetchall, shop4, slices
