@@ -1,3 +1,4 @@
+* 2023-01-16: areader, clock2, netcat1, noescape
 * 2023-01-13: bytecounter
 * 2023-01-12: echo
 * 2023-01-11: geometry
