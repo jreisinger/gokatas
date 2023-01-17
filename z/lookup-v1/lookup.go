@@ -21,9 +21,9 @@ type lookup struct {
 }
 
 func main() {
-	var wg sync.WaitGroup
-
 	in := make(chan lookup)
+
+	var wg sync.WaitGroup
 
 	// Read lines from stdin and stuff them down the in channel.
 	wg.Add(1)
@@ -46,7 +46,6 @@ func main() {
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
-			defer wg.Done()
 			for l := range in {
 				nss, err := net.LookupNS(l.name)
 				if err != nil {
@@ -61,6 +60,7 @@ func main() {
 				}
 				out <- l
 			}
+			wg.Done()
 		}()
 	}
 

@@ -3,7 +3,7 @@
 // to try to connect to. Collect the results, 0 means couldn't connect, and
 // print them. Adapted from the "Black Hat Go" book.
 //
-// Topics: concurrency, security
+// Topics: concurrency, security, scripting
 // Level: intermediate
 package main
 
