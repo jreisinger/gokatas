@@ -1,3 +1,4 @@
+* 2023-01-18: logger
 * 2023-01-17: rot13, tcpscanner, z/lookup-v1, bytecounter
 * 2023-01-16: areader, clock2, netcat1, noescape
 * 2023-01-13: bytecounter
