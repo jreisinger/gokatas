@@ -36,7 +36,7 @@ func Google(query string) (results []Result) {
 		case result := <-c:
 			results = append(results, result)
 		case <-timeout:
-			fmt.Println("timed out")
+			fmt.Println("timeout")
 			return
 		}
 	}
