@@ -19,7 +19,7 @@ func main() {
 		fmt.Println(<-c)
 	}
 	quit <- "bye"
-	fmt.Printf("They said: %q.\n", <-quit)
+	fmt.Println(<-quit)
 }
 
 func say(msg string, quit chan string) <-chan string {
