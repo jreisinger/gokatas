@@ -18,7 +18,9 @@ func main() {
 }
 
 func fanIn(input1, input2 <-chan string) <-chan string {
+
 	c := make(chan string)
+
 	go func() {
 		for {
 			c <- <-input1
@@ -26,7 +28,7 @@ func fanIn(input1, input2 <-chan string) <-chan string {
 	}()
 	go func() {
 		for {
-			c <- <-input2
+			c <- <-input1
 		}
 	}()
 	return c
@@ -37,8 +39,8 @@ func boring(msg string) <-chan string {
 	go func() {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s, %d", msg, i)
-			n := rand.Intn(2e3)
-			time.Sleep(time.Millisecond * time.Duration(n))
+			r := rand.Intn(2e3)
+			time.Sleep(time.Duration(time.Duration(r)) * time.Millisecond)
 		}
 	}()
 	return c
