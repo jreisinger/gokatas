@@ -22,7 +22,7 @@ func myPrint(args ...any) {
 		case reflect.String:
 			os.Stdout.WriteString(v.String())
 		case reflect.Int:
-			os.Stdout.WriteString(strconv.Itoa(10))
+			os.Stdout.WriteString(strconv.FormatInt(v.Int(), 10))
 		}
 	}
 }
