@@ -16,13 +16,13 @@ func main() {
 	myPrint("hello", 42)
 }
 
-func myPrint(args ...interface{}) {
+func myPrint(args ...any) {
 	for _, arg := range args {
 		switch v := reflect.ValueOf(arg); v.Kind() {
 		case reflect.String:
 			os.Stdout.WriteString(v.String())
 		case reflect.Int:
-			os.Stdout.WriteString(strconv.FormatInt(v.Int(), 10))
+			os.Stdout.WriteString(strconv.Itoa(10))
 		}
 	}
 }
