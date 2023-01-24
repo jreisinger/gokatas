@@ -1,3 +1,4 @@
+* 2023-01-24: fetchall
 * 2023-01-23: countgo, myprint
 * 2023-01-20: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-01-19: google/google, google/v2.0, google/v2.1, google/v3.0
