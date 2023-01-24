@@ -17,9 +17,8 @@ import (
 )
 
 func main() {
-	c := fanIn(boring("Ann"), boring("Joe"))
-	// you could also time out the whole conversation see
-	// https://go.dev/talks/2012/concurrency.slide#36
+	c := fanIn(boring("Valeu"), boring("Natalina"))
+
 	for {
 		select {
 		case s := <-c:
