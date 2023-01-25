@@ -1,5 +1,7 @@
 // Package geometry defines simple types for plane geometry. Is shows how to
-// declare methods.
+// declare methods. An object oriented program, such as this one, uses methods
+// to express the properties and operations of each data structure so that
+// clients need not access object's representation directly.
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch6/geometry
 //
