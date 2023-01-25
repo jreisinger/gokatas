@@ -1,3 +1,4 @@
+* 2023-01-25: geometry
 * 2023-01-24: fetchall
 * 2023-01-23: countgo, myprint
 * 2023-01-20: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
