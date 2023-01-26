@@ -17,8 +17,6 @@ func TestEcho(t *testing.T) {
 		{false, "", []string{}, ""},
 		{true, "\t", []string{"one", "two", "three"}, "one\ttwo\tthree\n"},
 		{true, ",", []string{"a", "b", "c"}, "a,b,c\n"},
-		// uncomment next line to see a failed test
-		// {true, ",", []string{"a", "b", "c"}, "a b c\n"},
 		{false, ":", []string{"1", "2", "3"}, "1:2:3"},
 	}
 

@@ -1,3 +1,4 @@
+* 2023-01-26: echo
 * 2023-01-25: geometry
 * 2023-01-24: fetchall
 * 2023-01-23: countgo, myprint
