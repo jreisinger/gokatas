@@ -1,3 +1,4 @@
+* 2023-01-27: areader, clock2, netcat1, noescape
 * 2023-01-26: echo
 * 2023-01-25: geometry
 * 2023-01-24: fetchall
