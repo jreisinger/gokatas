@@ -1,9 +1,9 @@
-// Log handles logging correctly. When it's not possible to write logs for some
-// reason the whole program will not block.
+// Log handles logging correctly. When it's not possible to write logs the
+// goroutines will not block.
 //
-// Start 10 goroutines each of which will be writing logs to a log collector.
-// Simulate a log collector problem by pressing Ctrl-C. Press Ctrl-C again to
-// "fix" the problem. Ctrl-\ will terminate the program (with a core dump).
+// Start 10 goroutines each of which will be writing logs to a device. Simulate
+// a device problem by pressing Ctrl-C. Press Ctrl-C again to "fix" the problem.
+// Ctrl-\ will terminate the program (with a core dump).
 package main
 
 import (
@@ -15,12 +15,12 @@ import (
 	"github.com/jreisinger/gokatas/logger"
 )
 
-type logCollector struct {
+type device struct {
 	problem bool
 }
 
-func (c *logCollector) Write(p []byte) (int, error) {
-	for c.problem {
+func (d *device) Write(p []byte) (int, error) {
+	for d.problem {
 		time.Sleep(time.Second)
 	}
 
@@ -29,19 +29,19 @@ func (c *logCollector) Write(p []byte) (int, error) {
 
 func main() {
 	const grs = 10
-	var c logCollector
+	var d device
 
-	// Blocking logger.
+	// Standard logger is a blocking logger.
 	// var l log.Logger
 	// l.SetOutput(&d)
 
 	// Non-blocking logger.
-	l := logger.New(&c, grs)
+	l := logger.New(&d, grs)
 
 	for i := 0; i < grs; i++ {
-		go func(i int) {
+		go func(id int) {
 			for {
-				l.Println(fmt.Sprintf("gr %d pretending work", i))
+				l.Println(fmt.Sprintf("gr %d log data", id))
 				time.Sleep(10 * time.Millisecond)
 			}
 		}(i)
@@ -49,8 +49,9 @@ func main() {
 
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt)
+
 	for {
 		<-sig
-		c.problem = !c.problem
+		d.problem = !d.problem
 	}
 }

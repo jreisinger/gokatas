@@ -17,8 +17,8 @@ type Logger struct {
 }
 
 func New(w io.Writer, cap int) *Logger {
-	// New is sometimes called a generator function. It's useful when you
-	// need to initialize one or more fields of a type.
+	// New is sometimes called a factory function. It's useful when you need
+	// to initialize one or more fields of a type.
 
 	l := Logger{
 		ch: make(chan string, cap),
@@ -27,7 +27,7 @@ func New(w io.Writer, cap int) *Logger {
 	l.wg.Add(1)
 	go func() {
 		for v := range l.ch {
-			fmt.Fprint(w, v)
+			fmt.Fprintln(w, v)
 		}
 		l.wg.Done()
 	}()
@@ -42,7 +42,7 @@ func (l *Logger) Stop() {
 
 func (l *Logger) Println(s string) {
 	select {
-	case l.ch <- s + "\n":
+	case l.ch <- s:
 	default:
 		fmt.Println("WARN: dropping logs")
 	}
