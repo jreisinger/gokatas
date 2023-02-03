@@ -1,3 +1,4 @@
+* 2023-02-03: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-02-02: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-02-01: logger
 * 2023-01-31: bytecounter, rot13, tcpscanner, z/lookup-v1
