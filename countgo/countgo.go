@@ -16,13 +16,14 @@ import (
 )
 
 func Files(fsys fs.FS) (count int) {
-	fs.WalkDir(fsys, ".", func(path string, d fs.DirEntry, err error) error {
+	fn := func(path string, d fs.DirEntry, err error) error {
 		// NOTE: When there is an error walking the fsys it's stored in
 		// err. We just ignore it. You might want to handle it in prod.
 		if filepath.Ext(path) == ".go" {
 			count++
 		}
 		return nil
-	})
+	}
+	fs.WalkDir(fsys, ".", fn)
 	return count
 }

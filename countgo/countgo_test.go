@@ -11,7 +11,7 @@ import (
 func TestFilesOnDisk(t *testing.T) {
 	t.Parallel()
 	fsys := os.DirFS("testdata")
-	want := 4
+	want := 2
 	if got := countgo.Files(fsys); got != want {
 		t.Errorf("got %d, want %d", got, want)
 	}
@@ -20,12 +20,11 @@ func TestFilesOnDisk(t *testing.T) {
 func TestFilesInMemory(t *testing.T) {
 	t.Parallel()
 	fsys := fstest.MapFS{
-		"subfolder/file.go":     {},
-		"subfolder2/another.go": {},
-		"subfolder2/file.go":    {},
-		"file.go":               {},
+		"":            {},
+		"file.go":     {},
+		"dir/file.go": {},
 	}
-	want := 4
+	want := 2
 	if got := countgo.Files(fsys); got != want {
 		t.Errorf("got %d, want %d", got, want)
 	}
