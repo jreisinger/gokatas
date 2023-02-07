@@ -1,5 +1,6 @@
-// Fetchall concurrently fetches URLs supplied as CLI arguments and reports
-// their times and sizes.
+// Fetchall ranges over the CLI arguments (that should be URLs) and fetches each
+// of them. It reports the size of the resource at the URL and the time it took
+// to download it. It does this concurrently.
 //
 // Adapted from github.com/adonovan/gopl.io/tree/master/ch1/fetchall.
 //
