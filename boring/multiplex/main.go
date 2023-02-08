@@ -22,7 +22,8 @@ func fanIn(input1, input2 <-chan string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for {
-			c <- <-input1
+			valueImput := <-input1
+			c <- valueImput
 		}
 	}()
 	go func() {
