@@ -1,3 +1,4 @@
+* 2023-02-09: echo
 * 2023-02-07: fetchall
 * 2023-02-06: countgo, myprint
 * 2023-02-03: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit

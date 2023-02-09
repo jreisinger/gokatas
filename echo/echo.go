@@ -25,7 +25,7 @@ func main() {
 	flag.Parse()
 	if err := echo(!*n, *s, flag.Args()); err != nil {
 		fmt.Fprintf(os.Stderr, "echo: %v\n", err)
-		os.Exit(1) // call os.Exit or log.Fatal only from main
+		os.Exit(1) // call os.Exit or log.Fatal only from main if testing
 	}
 }
 
