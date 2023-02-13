@@ -6,6 +6,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"io/fs"
 	"log"
@@ -19,7 +20,7 @@ func main() {
 
 	// Make directory.
 	err := os.Mkdir("a", 0750)
-	if err != nil && !os.IsExist(err) {
+	if err != nil && !errors.Is(err, fs.ErrExist) {
 		log.Fatal(err)
 	}
 
@@ -28,7 +29,7 @@ func main() {
 
 	// Make all directories, like mkdir -p.
 	err = os.MkdirAll(filepath.Join("a", "b", "c"), 0750)
-	if err != nil && !os.IsExist(err) {
+	if err != nil && !errors.Is(err, fs.ErrExist) {
 		log.Fatal(err)
 	}
 
