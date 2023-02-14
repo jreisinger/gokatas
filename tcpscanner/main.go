@@ -1,10 +1,12 @@
 // Tcpscanner reports open TCP ports on a host. First create a pool of workers
 // that will do the scanning by connecting to ports. Then send them port numbers
 // to try to connect to. Collect the results, 0 means couldn't connect, and
-// print them. Adapted from the "Black Hat Go" book.
+// print them. Adapted from the "Black Hat Go" [book].
 //
 // Topics: concurrency, security, scripting
 // Level: intermediate
+//
+// [book]: https://github.com/blackhat-go/bhg/blob/master/ch-2/tcp-scanner-final
 package main
 
 import (
@@ -31,10 +33,10 @@ func worker(ports, results chan int) {
 }
 
 func main() {
-	ports := make(chan int)
+	ports := make(chan int, 100) // can hold 100 items before sender blocks
 	results := make(chan int)
 
-	for i := 0; i < 100; i++ {
+	for i := 0; i < cap(ports); i++ {
 		go worker(ports, results)
 	}
 
