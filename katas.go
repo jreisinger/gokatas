@@ -172,13 +172,24 @@ func parseKata(name string) (level string, topics []string, err error) {
 			}
 			defer f.Close()
 			s := bufio.NewScanner(f)
+			var inCommentBlock bool
+			levelRE := regexp.MustCompile(`Level:\s*\w+`)
+			topicsRE := regexp.MustCompile(`Topics:\s*\w+`)
 			for s.Scan() {
 				line := s.Text()
-				if strings.HasPrefix(line, "// Level:") {
-					level = grepLevel(s.Text())
+				if strings.HasPrefix(line, "/*") {
+					inCommentBlock = true
 				}
-				if strings.HasPrefix(line, "// Topics:") {
-					topics = append(topics, grepTopics(s.Text())...)
+				if strings.HasPrefix(line, "*/") {
+					inCommentBlock = false
+				}
+				if inCommentBlock || strings.HasPrefix(line, "//") {
+					if levelRE.MatchString(line) {
+						level = cutLevel(s.Text())
+					}
+					if topicsRE.MatchString(line) {
+						topics = append(topics, cutTopics(s.Text())...)
+					}
 				}
 			}
 			if err := s.Err(); err != nil {
@@ -198,12 +209,12 @@ func parseKata(name string) (level string, topics []string, err error) {
 	return level, topics, err
 }
 
-func grepLevel(line string) string {
+func cutLevel(line string) string {
 	_, level, _ := strings.Cut(line, ":")
 	return strings.TrimSpace(level)
 }
 
-func grepTopics(line string) []string {
+func cutTopics(line string) []string {
 	_, topicsStr, _ := strings.Cut(line, ":")
 	topics := strings.Split(topicsStr, ",")
 	for i := range topics {
