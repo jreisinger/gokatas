@@ -1,4 +1,6 @@
 /*
+Panic describes and shows how panic and defer works.
+
 Panics come from:
   - runtime (e.g. out-of-bounds array access or nil pointer dereference)
   - built-in panic function (for grave errors or impossible situations)
@@ -10,6 +12,8 @@ During panic
  1. normal execution stops
  2. all deferred function calls in that goroutine are executed in LIFO order
  3. the program crashes with panic value (usually an error message) + stack trace for each goroutine
+
+Taken from: https://github.com/adonovan/gopl.io/blob/master/ch5/defer1/defer.go
 
 Level: beginner
 Topics: panic, defer
