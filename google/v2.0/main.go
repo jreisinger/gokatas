@@ -1,5 +1,5 @@
-// V2.0 runs various kinds of search concurrently. Concurrency makes the program
-// faster.
+// V2.0 runs various kinds of search concurrently using the fan-in pattern.
+// Concurrency makes the program faster.
 //
 // Level: advanced
 // Topics: concurrency
@@ -29,7 +29,8 @@ func Google(query string) (results []Result) {
 	go func() { c <- Video(query) }()
 
 	for i := 0; i < 3; i++ {
-		results = append(results, <-c)
+		result := <-c
+		results = append(results, result)
 	}
 	return
 }

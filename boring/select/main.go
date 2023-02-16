@@ -7,7 +7,7 @@
 //   - A default case, if present, executes immediately if no channel is ready.
 //
 // Level: intermediate
-// Topics: goroutines, channels, select
+// Topics: select, timeout, fan-in
 package main
 
 import (

@@ -2,7 +2,7 @@
 // channels as a handle on a service.
 //
 // Level: beginner
-// Topics: goroutines, channels
+// Topics: goroutines, channels, service
 package main
 
 import (
