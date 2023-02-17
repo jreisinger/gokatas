@@ -25,9 +25,9 @@ There's a command to show katas and your progress:
 $ go run cmd/katas.go -d 7 -l beginner
 Kata              Last done    Done  Level     Topics
 ----              ---------    ----  -----     ------
+areader           3 days ago     7x  beginner  interfaces, io.Reader
 boring/boring     0 days ago     4x  beginner  concurrency, design
 boring/channel    0 days ago     6x  beginner  goroutines, channels
-areader           3 days ago     7x  beginner  interfaces, io.Reader
 ----                           ----
 3                                17
 ```
