@@ -3,7 +3,7 @@
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch11/echo
 //
 // Level: beginner
-// Topics: command, testing
+// Topics: command, testing, scripting
 package main
 
 import (
