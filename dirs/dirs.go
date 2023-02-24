@@ -18,28 +18,30 @@ func main() {
 	log.SetFlags(0)
 	log.SetPrefix(os.Args[0] + ": ")
 
+	const tmp = "a"
+
 	// Make directory.
-	err := os.Mkdir("a", 0750)
+	err := os.Mkdir(tmp, 0750)
 	if err != nil && !errors.Is(err, fs.ErrExist) {
 		log.Fatal(err)
 	}
 
 	// Remove all, like rm -rf.
-	defer os.RemoveAll("a")
+	defer os.RemoveAll(tmp)
 
 	// Make all directories, like mkdir -p.
-	err = os.MkdirAll(filepath.Join("a", "b", "c"), 0750)
+	err = os.MkdirAll(filepath.Join(tmp, "b", "c"), 0750)
 	if err != nil && !errors.Is(err, fs.ErrExist) {
 		log.Fatal(err)
 	}
 
-	createEmptyFile(filepath.Join("a", "f1"))
-	createEmptyFile(filepath.Join("a", "b", "f1"))
-	createEmptyFile(filepath.Join("a", "b", "f2"))
-	createEmptyFile(filepath.Join("a", "b", "c", "f3"))
+	createEmptyFile(filepath.Join(tmp, "f1"))
+	createEmptyFile(filepath.Join(tmp, "b", "f1"))
+	createEmptyFile(filepath.Join(tmp, "b", "f2"))
+	createEmptyFile(filepath.Join(tmp, "b", "c", "f3"))
 
 	// Read directory entries.
-	entries, err := os.ReadDir("a")
+	entries, err := os.ReadDir(tmp)
 	if err != nil {
 		log.Print(err)
 	}
@@ -55,17 +57,9 @@ func main() {
 	fmt.Println()
 
 	// Walk directory recursively.
-	err = filepath.WalkDir("a", visit)
+	err = filepath.WalkDir(tmp, visit)
 	if err != nil {
-		log.Printf("error walking the path %q: %v\n", "a", err)
-	}
-}
-
-var createEmptyFile = func(name string) {
-	d := []byte("")
-	err := os.WriteFile(name, d, 0644)
-	if err != nil {
-		log.Fatal(err)
+		log.Printf("error walking the path %q: %v\n", tmp, err)
 	}
 }
 
@@ -80,6 +74,14 @@ func visit(path string, entry fs.DirEntry, err error) error {
 	}
 	printFileInfo(fi)
 	return nil
+}
+
+var createEmptyFile = func(name string) {
+	d := []byte("")
+	err := os.WriteFile(name, d, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func printFileInfo(fi fs.FileInfo) {
