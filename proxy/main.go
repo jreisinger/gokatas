@@ -29,7 +29,8 @@ func main() {
 }
 
 func proxy(conn net.Conn) {
-	defer conn.Close() // to release precious file descriptor
+	// Release precious (there are not that many) file descriptor.
+	defer conn.Close()
 
 	upstream, err := net.Dial("tcp", "google.com:http")
 	if err != nil {
