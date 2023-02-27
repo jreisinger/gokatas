@@ -13,28 +13,32 @@ import (
 )
 
 func main() {
-	ln, err := net.Listen("tcp", "localhost:1362")
-	if err != nil {
-		log.Fatal(err)
+listen, err := net.Listen("tcp", "localhost:1262")
+if err != nil{
+	log.Fatal(err)
+}
+
+for {
+	conn, err := listen.Accept()
+	if err != nil{
+		log.Print(err)
+		continue //continuará tentando aceitar a conexão, em loop. protocolo feminista, precisa de consentimento 
 	}
-	for {
-		conn, err := ln.Accept()
-		if err != nil { // e.g., connection aborted
-			log.Print(err)
-			continue
-		}
-		go handle(conn)
-	}
+	go handle(conn)
+}
+
 }
 
 func handle(conn net.Conn) {
-	defer conn.Close()
-	for {
-		_, err := io.WriteString(conn, time.Now().Format("15:04:05\n"))
-		if err != nil { // e.g., client disconnected
-			log.Print(err)
-			return
-		}
-		time.Sleep(time.Second)
+defer conn.Close()
+
+for{
+	_, err := io.WriteString(conn, time.Now().Format("11:04:00 \n"))
+	if err != nil{
+		log.Print(err)
+		return
 	}
+	time.Sleep(time.Second)
+}
+
 }

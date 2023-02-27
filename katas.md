@@ -21,3 +21,6 @@
 * 2023-01-25: boring/select
 * 2023-02-08: boring/selectquit
 * 2023-02-08: boring/selectquit
+* 2023-02-08: boring/bytecounter
+* 2023-02-16: boring/bytecounter
+* 2023-02-16: boring/clock2
