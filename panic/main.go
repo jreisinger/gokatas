@@ -1,9 +1,9 @@
 /*
-Panic describes and shows how panic and defer works.
+Panic describes and shows how panic and defer work.
 
 Panics come from:
-  - runtime (e.g. out-of-bounds array access or nil pointer dereference)
-  - built-in panic function (for grave errors or impossible situations)
+ 1. runtime (e.g. out-of-bounds array access or nil pointer dereference)
+ 2. built-in panic function (for grave errors or impossible situations)
 
 "Expected" errors (from incorrect input, misconfiguration, or failing I/O)
 should be handled using error values.
