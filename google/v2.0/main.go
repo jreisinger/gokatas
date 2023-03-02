@@ -1,4 +1,4 @@
-// V2.0 runs various kinds of search concurrently using the fan-in pattern.
+// V2.0 runs the three kinds of search concurrently using the fan-in pattern.
 // Concurrency makes the program faster.
 //
 // Level: advanced

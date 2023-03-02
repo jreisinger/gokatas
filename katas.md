@@ -1,3 +1,4 @@
+* 2023-03-02: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-03-01: logger
 * 2023-02-28: panic
 * 2023-02-25: proxy
