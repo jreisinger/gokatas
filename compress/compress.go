@@ -11,7 +11,7 @@ import (
 )
 
 func Compress(file string) error {
-	in, err := os.Open(file)
+	in, err := os.Open(file) // dúvida: pq ele abre o file antes de criar o arquivo??
 	if err != nil {
 		return err
 	}

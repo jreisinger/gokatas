@@ -13,32 +13,31 @@ import (
 )
 
 func main() {
-listen, err := net.Listen("tcp", "localhost:1262")
-if err != nil{
-	log.Fatal(err)
-}
-
-for {
-	conn, err := listen.Accept()
-	if err != nil{
-		log.Print(err)
-		continue //continuará tentando aceitar a conexão, em loop. protocolo feminista, precisa de consentimento 
+	listen, err := net.Listen("tcp", "localhost:1245")
+	if err != nil {
+		log.Fatal(err)
 	}
-	go handle(conn)
-}
+
+	for {
+		conn, err := listen.Accept()
+		if err != nil {
+			log.Print(err)
+			continue //
+		}
+		go handle(conn)
+	}
 
 }
 
 func handle(conn net.Conn) {
-defer conn.Close()
+	defer conn.Close()
 
-for{
-	_, err := io.WriteString(conn, time.Now().Format("11:04:00 \n"))
-	if err != nil{
-		log.Print(err)
-		return
+	for {
+		_, err := io.WriteString(conn, time.Now().Format("01:01:00 \n"))
+		if err != nil {
+			log.Print(err)
+			break
+		}
 	}
-	time.Sleep(time.Second)
 }
-
-}
+//o código não faz nada quando uso o go run porque não tem um request vindo do client

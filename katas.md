@@ -24,3 +24,10 @@
 * 2023-02-08: boring/bytecounter
 * 2023-02-16: boring/bytecounter
 * 2023-02-16: boring/clock2
+* 2023-02-24: boring/clock2
+* 2023-02-27: boring/clock2
+* 2023-02-28: boring/clock2
+* 2023-03-02: compress/cmd
+* 2023-03-02: compress/cmd
+* 2023-03-03: compress/cmd
+* 2023-03-03: compress/cmd
