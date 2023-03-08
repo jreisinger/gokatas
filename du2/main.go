@@ -43,8 +43,8 @@ loop:
 	for {
 		select {
 		case size, ok := <-fileSizes:
-			if !ok {
-				break loop // fileSizes was closed
+			if !ok { // fileSizes was closed
+				break loop // go.dev/ref/spec#Break_statements
 			}
 			nfiles++
 			nbytes += size
