@@ -35,6 +35,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	createEmptyFile := func(name string) {
+		err := os.WriteFile(name, []byte(""), 0640)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
 	createEmptyFile(filepath.Join(tmp, "f1"))
 	createEmptyFile(filepath.Join(tmp, "b", "f1"))
 	createEmptyFile(filepath.Join(tmp, "b", "f2"))
@@ -46,45 +53,37 @@ func main() {
 		log.Print(err)
 	}
 	for _, entry := range entries {
-		fmt.Printf("--- %s ---\n", entry.Name())
+
 		fi, err := entry.Info()
 		if err != nil {
-			log.Fatal(err)
+			log.Print(err)
 		}
-		printFileInfo(fi)
+		printInfo(fi)
+
 	}
 
-	fmt.Println()
-
 	// Walk directory recursively.
+	visit := func(path string, entry fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		fmt.Printf("--- %s ---\n", path)
+
+		fi, err := entry.Info()
+		if err != nil {
+			return err
+		}
+		printInfo(fi)
+
+		return nil
+	}
 	err = filepath.WalkDir(tmp, visit)
 	if err != nil {
 		log.Printf("error walking the path %q: %v\n", tmp, err)
 	}
 }
 
-func visit(path string, entry fs.DirEntry, err error) error {
-	if err != nil {
-		return err
-	}
-	fmt.Printf("--- %s ---\n", path)
-	fi, err := entry.Info()
-	if err != nil {
-		return err
-	}
-	printFileInfo(fi)
-	return nil
-}
-
-var createEmptyFile = func(name string) {
-	d := []byte("")
-	err := os.WriteFile(name, d, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
-func printFileInfo(fi fs.FileInfo) {
-	fmt.Printf("IsDir: %v\nName: %v\nSize: %v\n",
-		fi.IsDir(), fi.Name(), fi.Size())
+func printInfo(fi fs.FileInfo) {
+	fmt.Printf("Name\t%v\nIsDir\t%v\nSize\t%v\n\n",
+		fi.Name(), fi.IsDir(), fi.Size())
 }

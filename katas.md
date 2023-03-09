@@ -1,3 +1,4 @@
+* 2023-03-09: dirs
 * 2023-03-08: du1, du2
 * 2023-03-06: echo
 * 2023-03-03: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
