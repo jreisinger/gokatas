@@ -17,7 +17,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for { // accept loop
+	for {
 		conn, err := listener.Accept()
 		if err != nil {
 			log.Print(err)
@@ -39,6 +39,7 @@ func proxy(conn net.Conn) {
 	}
 	defer upstream.Close()
 
-	go io.Copy(upstream, conn) // in this case it's ok not track goroutine
+	// In this case it's ok not track the goroutine.
+	go io.Copy(upstream, conn)
 	io.Copy(conn, upstream)
 }
