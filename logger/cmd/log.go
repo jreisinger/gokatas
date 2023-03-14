@@ -51,6 +51,6 @@ func main() {
 	signal.Notify(sigs, os.Interrupt)
 	for {
 		<-sigs
-		d.problem = !d.problem
+		d.problem = !d.problem // (&d).problem = !(&d).problem
 	}
 }
