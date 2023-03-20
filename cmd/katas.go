@@ -10,7 +10,7 @@ import (
 
 var showLastDoneDaysAgo = flag.Int("d", -1, "show only katas last done `days` ago or less")
 var showLevel = flag.String("l", "", "show only katas of `level`")
-var sortByColumn = flag.Int("c", 2, "sort by `column`")
+var sortByColumn = flag.Int("c", 1, "sort by `column`")
 
 func main() {
 	flag.Parse()

@@ -19,10 +19,10 @@ to achieve this.
 The approach is pretty low-tech. Go katas is basically a
 [list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of
 packages and commands that you should understand and then be rewriting from
-scratch or partially.  There's a command to show katas and your progress:
+scratch or partially. There's a command to show katas and your progress:
 
 ```
-$ go run cmd/katas.go -d 7 -l beginner
+$ go run cmd/katas.go -d 7 -c 2
 Kata              Last done    Done  Level     Topics
 ----              ---------    ----  -----     ------
 boring/boring     0 days ago     4x  beginner  concurrency, design
