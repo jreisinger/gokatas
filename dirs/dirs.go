@@ -48,33 +48,30 @@ func main() {
 	createEmptyFile(filepath.Join(tmp, "b", "c", "f3"))
 
 	// Read directory entries.
+	fmt.Println("--- os.ReadDir ---")
 	entries, err := os.ReadDir(tmp)
 	if err != nil {
 		log.Print(err)
 	}
 	for _, entry := range entries {
-
 		fi, err := entry.Info()
 		if err != nil {
 			log.Print(err)
 		}
-		printInfo(fi)
-
+		printFileInfo(filepath.Join(tmp, entry.Name()), fi)
 	}
 
 	// Walk directory recursively.
+	fmt.Println("--- filepath.WalkDir ---")
 	visit := func(path string, entry fs.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
-		fmt.Printf("--- %s ---\n", path)
-
 		fi, err := entry.Info()
 		if err != nil {
 			return err
 		}
-		printInfo(fi)
-
+		printFileInfo(path, fi)
 		return nil
 	}
 	err = filepath.WalkDir(tmp, visit)
@@ -83,7 +80,7 @@ func main() {
 	}
 }
 
-func printInfo(fi fs.FileInfo) {
-	fmt.Printf("Name\t%v\nIsDir\t%v\nSize\t%v\n\n",
-		fi.Name(), fi.IsDir(), fi.Size())
+func printFileInfo(path string, fi fs.FileInfo) {
+	fmt.Printf("Path\t%v\nName\t%v\nIsDir\t%v\nSize\t%v\n\n",
+		path, fi.Name(), fi.IsDir(), fi.Size())
 }
