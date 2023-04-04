@@ -7,7 +7,7 @@ import (
 )
 
 func TestEcho(t *testing.T) {
-	var tests = []struct {
+	tests := []struct {
 		newline bool
 		sep     string
 		args    []string
@@ -20,8 +20,7 @@ func TestEcho(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		descr := fmt.Sprintf("echo(%v, %q, %q)",
-			test.newline, test.sep, test.args)
+		descr := fmt.Sprintf("echo(%v, %q, %q)", test.newline, test.sep, test.args)
 
 		out = new(bytes.Buffer) // captured output
 

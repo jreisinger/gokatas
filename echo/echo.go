@@ -1,4 +1,5 @@
-// Echo prints its command-line arguments.
+// Echo prints its command-line arguments. It also shows how to test a command
+// (package main) instead of the usual library packages.
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch11/echo
 //
