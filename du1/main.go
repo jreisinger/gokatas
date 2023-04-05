@@ -8,7 +8,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io/fs"
 	"os"
 	"path/filepath"
 )
@@ -51,17 +51,20 @@ func walkDir(dir string, fileSizes chan<- int64) {
 			subdir := filepath.Join(dir, entry.Name())
 			walkDir(subdir, fileSizes)
 		} else {
-			fileSizes <- entry.Size()
+			fi, err := entry.Info()
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "du1: %v\n", err)
+			}
+			fileSizes <- fi.Size()
 		}
 	}
 }
 
 // dirents returns the entries of directory dir.
-func dirents(dir string) []os.FileInfo {
-	entries, err := ioutil.ReadDir(dir)
+func dirents(dir string) []fs.DirEntry {
+	entries, err := os.ReadDir(dir)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "du1: %v\n", err)
-		return nil
 	}
 	return entries
 }
