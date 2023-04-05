@@ -16,21 +16,21 @@ import (
 func main() {
 	// Determine the initial directories.
 	flag.Parse()
-	roots := flag.Args()
-	if len(roots) == 0 {
-		roots = []string{"."}
+	dirs := flag.Args()
+	if len(dirs) == 0 {
+		dirs = []string{"."}
 	}
 
-	// Traverse the file tree.
+	// Walk the initial directories.
 	fileSizes := make(chan int64)
 	go func() {
-		for _, root := range roots {
-			walkDir(root, fileSizes)
+		for _, dir := range dirs {
+			walkDir(dir, fileSizes)
 		}
 		close(fileSizes)
 	}()
 
-	// Print the results.
+	// Print the number of files and bytes.
 	var nfiles, nbytes int64
 	for size := range fileSizes {
 		nfiles++
