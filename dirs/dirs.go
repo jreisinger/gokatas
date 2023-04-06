@@ -22,7 +22,7 @@ func main() {
 
 	// Make directory.
 	err := os.Mkdir(tmp, 0750)
-	if err != nil && !errors.Is(err, fs.ErrExist) {
+	if err != nil && !errors.Is(err, os.ErrExist) {
 		log.Fatal(err)
 	}
 
@@ -31,7 +31,7 @@ func main() {
 
 	// Make all directories, like mkdir -p.
 	err = os.MkdirAll(filepath.Join(tmp, "b", "c"), 0750)
-	if err != nil && !errors.Is(err, fs.ErrExist) {
+	if err != nil && !errors.Is(err, os.ErrExist) {
 		log.Fatal(err)
 	}
 
@@ -76,7 +76,7 @@ func main() {
 	}
 	err = filepath.WalkDir(tmp, visit)
 	if err != nil {
-		log.Printf("error walking the path %q: %v\n", tmp, err)
+		log.Printf("walking the path %q: %v\n", tmp, err)
 	}
 }
 

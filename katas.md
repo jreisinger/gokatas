@@ -1,3 +1,4 @@
+* 2023-04-06: dirs
 * 2023-04-05: du1, du2
 * 2023-04-04: echo
 * 2023-04-03: google/google, google/v2.0, google/v2.1, google/v3.0
