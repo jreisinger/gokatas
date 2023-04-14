@@ -4,8 +4,9 @@
 
 # Go katas
 
-Katas (形) are practiced in martial arts as a way to memorize and perfect the
-movements being executed. Let's try the same with Go code.
+Katas (形) are practiced in martial arts as a way to internalize the movements
+and techniques so they can be executed and adapted under different
+circumstances, without thought or hesitation. Let's try the same with Go code.
 
 ## Why
 
@@ -18,11 +19,12 @@ to achieve this.
 
 The approach is pretty low-tech. Go katas is basically a
 [list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of
-packages and commands that you should understand and then be rewriting from
-scratch or partially. There's a command to show katas and your progress:
+packages and commands (package main) that you should understand and then be
+rewriting from scratch or partially. There's a command to show katas and your
+progress:
 
 ```
-$ go run cmd/katas.go -d 7 -c 2
+$ go run cmd/katas.go -c 2
 Kata              Last done    Done  Level     Topics
 ----              ---------    ----  -----     ------
 boring/boring     0 days ago     4x  beginner  concurrency, design
@@ -39,8 +41,8 @@ you only read through one of the beginner level katas.
 
 After some time it will require much less will power and you will become more
 familiar with the code. If you feel comfortable enough with a kata, stop
-practicing it (for some time) and pick up one that interests you and is slightly
-beyond your current ability.
+practicing it (for some time) and pick up one that interests you and is
+slightly beyond your current ability.
 
 ## Initial setup
 
