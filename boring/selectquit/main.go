@@ -12,7 +12,6 @@ import (
 )
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	quit := make(chan string)
 	c := say("blah", quit)
 	for i := rand.Intn(10); i >= 0; i-- {

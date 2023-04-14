@@ -32,14 +32,14 @@ func main() {
 	}
 }
 
-func fanIn(input1, input2 <-chan string) <-chan string {
+func fanIn(c1, c2 <-chan string) <-chan string {
 	c := make(chan string)
 	go func() { // only one goroutine is needed now
 		for {
 			select {
-			case s := <-input1:
+			case s := <-c1:
 				c <- s
-			case s := <-input2:
+			case s := <-c2:
 				c <- s
 			}
 		}
