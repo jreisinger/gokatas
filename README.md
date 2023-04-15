@@ -39,10 +39,10 @@ habits are what enable mastery. Set a goal that you can meet, e.g. 45 minutes
 every day before work. Start by taking baby steps. At first it's fine even if
 you only read through one of the beginner level katas.
 
-After some time it will require much less will power and you will become more
-familiar with the code. If you feel comfortable enough with a kata, stop
-practicing it (for some time) and pick up one that interests you and is
-slightly beyond your current ability.
+After enough time it will require much less will power to practice. Your
+programming moves will start looking simpler and smoother. If you feel
+comfortable enough with a kata, stop practicing it (for some time) and pick up
+one that interests you and is slightly beyond your current ability.
 
 ## Initial setup
 
