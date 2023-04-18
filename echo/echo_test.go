@@ -15,12 +15,13 @@ func TestEcho(t *testing.T) {
 	}{
 		{false, "", []string{}, ""},
 		{true, " ", []string{}, "\n"},
-		{true, "\t", []string{"one", "two", "three"}, "one\ttwo\tthree\n"},
-		{false, ":", []string{"1", "2", "3"}, "1:2:3"},
+		{false, ",", []string{"1", "2", "3"}, "1,2,3"},
+		{true, "\t", []string{"a", "b", "c"}, "a\tb\tc\n"},
 	}
 
 	for _, test := range tests {
-		descr := fmt.Sprintf("echo(%v, %q, %q)", test.newline, test.sep, test.args)
+		descr := fmt.Sprintf("echo(%t, %q, %q)",
+			test.newline, test.sep, test.args)
 
 		out = new(bytes.Buffer) // captured output
 
