@@ -35,7 +35,7 @@ func main() {
 	// Print the results periodically.
 	var tick <-chan time.Time
 	if *verbose {
-		// if tick is nil it's effectively disabled in the select
+		// if tick is nil it's effectively disabled in the select below
 		tick = time.Tick(500 * time.Millisecond)
 	}
 	var nfiles, nbytes int64
