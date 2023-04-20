@@ -77,9 +77,8 @@ func main() {
 		printFileInfo(path, fi)
 		return nil
 	}
-	err = filepath.WalkDir(a, visit)
-	if err != nil {
-		log.Printf("walking the path %q: %v\n", a, err)
+	if err := filepath.WalkDir(a, visit); err != nil {
+		log.Printf("walking %s: %v", a, err)
 	}
 }
 
