@@ -15,23 +15,24 @@ import (
 )
 
 func main() {
+	// CLI tool style logging.
 	log.SetFlags(0)
 	log.SetPrefix(os.Args[0] + ": ")
 
-	const tmp = "a"
+	const a = "a"
 
 	// Make directory.
-	err := os.Mkdir(tmp, 0750)
+	err := os.Mkdir(a, 0750)
 	if err != nil && !errors.Is(err, os.ErrExist) {
 		log.Fatal(err)
 	}
 
-	// Remove all, like rm -rf.
-	defer os.RemoveAll(tmp)
+	// Remove all (after we are done), like rm -rf.
+	defer os.RemoveAll(a)
 
 	// Make all directories, like mkdir -p.
-	err = os.MkdirAll(filepath.Join(tmp, "b", "c"), 0750)
-	if err != nil && !errors.Is(err, os.ErrExist) {
+	path := filepath.Join(a, "b", "c")
+	if err := os.MkdirAll(path, 0750); err != nil {
 		log.Fatal(err)
 	}
 
@@ -42,14 +43,14 @@ func main() {
 		}
 	}
 
-	createEmptyFile(filepath.Join(tmp, "f1"))
-	createEmptyFile(filepath.Join(tmp, "b", "f1"))
-	createEmptyFile(filepath.Join(tmp, "b", "f2"))
-	createEmptyFile(filepath.Join(tmp, "b", "c", "f3"))
+	createEmptyFile(filepath.Join(a, "1"))
+	createEmptyFile(filepath.Join(a, "b", "1"))
+	createEmptyFile(filepath.Join(a, "b", "2"))
+	createEmptyFile(filepath.Join(a, "b", "c", "3"))
 
 	// Read directory entries.
 	fmt.Println("--- os.ReadDir ---")
-	entries, err := os.ReadDir(tmp)
+	entries, err := os.ReadDir(a)
 	if err != nil {
 		log.Print(err)
 	}
@@ -57,8 +58,10 @@ func main() {
 		fi, err := entry.Info()
 		if err != nil {
 			log.Print(err)
+			continue
 		}
-		printFileInfo(filepath.Join(tmp, entry.Name()), fi)
+		path := filepath.Join(a, entry.Name())
+		printFileInfo(path, fi)
 	}
 
 	// Walk directory recursively.
@@ -74,9 +77,9 @@ func main() {
 		printFileInfo(path, fi)
 		return nil
 	}
-	err = filepath.WalkDir(tmp, visit)
+	err = filepath.WalkDir(a, visit)
 	if err != nil {
-		log.Printf("walking the path %q: %v\n", tmp, err)
+		log.Printf("walking the path %q: %v\n", a, err)
 	}
 }
 

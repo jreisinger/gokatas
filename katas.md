@@ -1,3 +1,4 @@
+* 2023-04-20: dirs
 * 2023-04-19: du1, du2
 * 2023-04-18: shop4, echo
 * 2023-04-17: google/google, google/v2.0, google/v2.1, google/v3.0
