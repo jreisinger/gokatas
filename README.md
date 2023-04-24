@@ -24,14 +24,14 @@ rewriting from scratch or partially. There's a command to show katas and your
 progress:
 
 ```
-$ go run cmd/katas.go -c 2 -d 14
+$ go run cmd/gokatas.go -c 2 -d 14
 Kata              Last done    Done  Level     Topics
 ----              ---------    ----  -----     ------
-boring/boring     0 days ago     4x  beginner  concurrency, design
-boring/channel    0 days ago     6x  beginner  goroutines, channels
-areader           3 days ago     7x  beginner  interfaces, io.Reader
+boring/boring     0 days ago     1x  beginner  concurrency, design
+boring/channel    0 days ago     1x  beginner  goroutines, channels
+areader           3 days ago     2x  beginner  interfaces, io.Reader
 ----                           ----
-3                                17
+3                                4x 
 ```
 
 It's important to practice regularly because repetition creates habits, and

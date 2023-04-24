@@ -30,38 +30,38 @@ type Kata struct {
 	Topics    []string
 }
 
-// Get returns all existing katas and your practice statistics.
-func Get() ([]Kata, error) {
+// Done returns katas you have done, i.e. written to KatasFile.
+func Done(lastDoneDaysAgo int) ([]Kata, error) {
 	existing, err := getExisting()
 	if err != nil {
 		return nil, err
 	}
 
-	done, err := getDone()
+	done, err := getDone(lastDoneDaysAgo)
 	if err != nil {
 		return nil, err
 	}
 
+	var katas []Kata
 HERE:
+	// Check kata you put in yaml file really exists.
 	for _, d := range done {
 		for _, e := range existing {
 			if d.Name == e.Name {
+				katas = append(katas, Kata{
+					Name:      d.Name,
+					LastDone:  d.LastDone,
+					TimesDone: d.TimesDone,
+					Level:     e.Level,
+					Topics:    e.Topics,
+				})
 				continue HERE
 			}
 		}
 		log.Printf("kata '%s' stated in %s does not exist in this repo", d.Name, KatasFile)
 	}
 
-	for i := range existing {
-		for j := range done {
-			if existing[i].Name == done[j].Name {
-				existing[i].TimesDone = done[j].TimesDone
-				existing[i].LastDone = done[j].LastDone
-			}
-		}
-	}
-
-	return existing, nil
+	return katas, nil
 }
 
 // getExistings returns all existing katas.
@@ -105,7 +105,7 @@ func uniq(topics []string) []string {
 }
 
 // getDone returns katas from the KatasFile.
-func getDone() ([]Kata, error) {
+func getDone(lastDoneDaysAgo int) ([]Kata, error) {
 	f, err := os.Open(KatasFile)
 	if err != nil {
 		return nil, err
@@ -128,6 +128,11 @@ func getDone() ([]Kata, error) {
 		doneOn, err := time.Parse("2006-01-02", date)
 		if err != nil {
 			return nil, err
+		}
+
+		t := time.Now().Add(-time.Duration(lastDoneDaysAgo) * time.Hour * 24)
+		if doneOn.Before(t) {
+			continue
 		}
 
 		for _, name := range comaRE.Split(katasStr, -1) {
@@ -225,7 +230,7 @@ func cutTopics(line string) []string {
 
 // Print prints table with statistics about katas. Only katas of level (if not
 // empty) and lastDoneDaysAgo or sooner are shown. Katas are sorted by column.
-func Print(katas []Kata, lastDoneDaysAgo int, column int, level string) {
+func Print(katas []Kata, column int) {
 	const format = "%v\t%v\t%5v\t%v\t%v\n"
 
 	// Print header.
@@ -235,26 +240,32 @@ func Print(katas []Kata, lastDoneDaysAgo int, column int, level string) {
 
 	// Print lines.
 	var katasCount int
-	var totalCount int
+	var doneCount int
 	sortKatas(katas, &column)
 	for _, k := range katas {
-		if !show(k, lastDoneDaysAgo) {
-			continue
-		}
-		if level != "" && k.Level != level {
-			continue
-		}
-
 		katasCount++
-		totalCount += k.TimesDone
+		doneCount += k.TimesDone
 
 		fmt.Fprintf(tw, format, k.Name, humanize(k.LastDone), fmt.Sprintf("%dx", k.TimesDone), k.Level, strings.Join(k.Topics, ", "))
 	}
 	// Print footer.
 	fmt.Fprintf(tw, format, "----", "", "----", "", "")
-	fmt.Fprintf(tw, format, katasCount, "", totalCount, "", "")
+	fmt.Fprintf(tw, format, katasCount, "", fmt.Sprintf("%dx", doneCount), "", "")
 
 	tw.Flush() // calculate column widths and print table
+}
+
+// humanize make the time easier to read for humans.
+func humanize(t time.Time) string {
+	if t.IsZero() {
+		return "never"
+	}
+	daysAgo := int(time.Since(t).Hours() / 24)
+	w := "day"
+	if daysAgo != 1 {
+		w += "s"
+	}
+	return fmt.Sprintf("%d %s ago", daysAgo, w)
 }
 
 type customSort struct {
@@ -291,26 +302,4 @@ func sortKatas(katas []Kata, column *int) {
 		}
 		return false
 	}})
-}
-
-// show decides when to show a kata. Negative lastDoneDaysAgo returns true.
-func show(k Kata, lastDoneDaysAgo int) bool {
-	if lastDoneDaysAgo < 0 {
-		return true
-	}
-	t := time.Now().Add(-time.Hour * 24 * time.Duration(lastDoneDaysAgo+1))
-	return k.LastDone.After(t)
-}
-
-// humanize make the time easier to read for humans.
-func humanize(lastDone time.Time) string {
-	if lastDone.IsZero() {
-		return "never"
-	}
-	daysAgo := int(time.Since(lastDone).Hours() / 24)
-	w := "day"
-	if daysAgo != 1 {
-		w += "s"
-	}
-	return fmt.Sprintf("%d %s ago", daysAgo, w)
 }
