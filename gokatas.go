@@ -30,7 +30,8 @@ type Kata struct {
 	Topics    []string
 }
 
-// Done returns katas you have done, i.e. written to KatasFile.
+// Done returns katas you have done, i.e. written to KatasFile. If there are no
+// katas in KatasFile all existing katas will be returned.
 func Done(lastDoneDaysAgo int) ([]Kata, error) {
 	existing, err := getExisting()
 	if err != nil {
@@ -61,10 +62,18 @@ HERE:
 		log.Printf("kata '%s' stated in %s does not exist in this repo", d.Name, KatasFile)
 	}
 
+	// If you haven't done any kata return all existing katas.
+	if len(katas) == 0 {
+		katas, err = getExisting()
+		if err != nil {
+			return nil, err
+		}
+	}
+
 	return katas, nil
 }
 
-// getExistings returns all existing katas.
+// getExisting returns all existing katas.
 func getExisting() ([]Kata, error) {
 	cmd := exec.Command("go", "list", "-f", "{{.Dir}}", "./...")
 	out, err := cmd.Output()

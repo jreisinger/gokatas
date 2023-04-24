@@ -9,8 +9,8 @@ import (
 	"github.com/jreisinger/gokatas"
 )
 
-var lastDoneDaysAgo = flag.Int("d", daysSinceGoBirth(), "show only katas last done `days` ago or less")
 var sortByColumn = flag.Int("c", 1, "sort katas by `column`")
+var lastDoneDaysAgo = flag.Int("d", daysSinceGoBirth(), "show only katas last done `days` ago or less")
 
 func daysSinceGoBirth() int {
 	birth := time.Date(2009, 11, 10, 23, 0, 0, 0, time.UTC)
