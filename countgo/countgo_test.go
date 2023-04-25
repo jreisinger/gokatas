@@ -1,31 +1,25 @@
-package countgo_test
+package countgo
 
 import (
-	"os"
+	"io/fs"
 	"testing"
 	"testing/fstest"
-
-	"github.com/jreisinger/gokatas/countgo"
 )
 
-func TestFilesOnDisk(t *testing.T) {
-	t.Parallel()
-	fsys := os.DirFS("testdata")
-	want := 2
-	if got := countgo.Files(fsys); got != want {
-		t.Errorf("got %d, want %d", got, want)
+func TestFiles(t *testing.T) {
+	tests := []struct {
+		fsys fs.FS
+		want int
+	}{
+		{fstest.MapFS{}, 0},
+		{fstest.MapFS{"dir.go": &fstest.MapFile{Mode: fs.ModeDir}}, 0},
+		{fstest.MapFS{"dir/file.go": {}, "file": {}, "file.go": {}}, 2},
 	}
-}
 
-func TestFilesInMemory(t *testing.T) {
-	t.Parallel()
-	fsys := fstest.MapFS{
-		"":            {},
-		"file.go":     {},
-		"dir/file.go": {},
-	}
-	want := 2
-	if got := countgo.Files(fsys); got != want {
-		t.Errorf("got %d, want %d", got, want)
+	for i, test := range tests {
+		got := Files(test.fsys)
+		if got != test.want {
+			t.Errorf("test %d: got %d, want %d", i, got, test.want)
+		}
 	}
 }

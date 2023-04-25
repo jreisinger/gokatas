@@ -1,8 +1,5 @@
-// Package countgo counts files with extension ".go" in fs.FS. It also shows
-// how to use fs.FS in tests.
-//
-// When you’re dealing with trees of files, use fs.FS rather than trying to
-// write the recursion code yourself.
+// Package countgo counts files with extension ".go" in fs.FS. It also shows how
+// to use fs.FS in tests.
 //
 // Based on bitfieldconsulting.com/golang/filesystems.
 //
@@ -16,10 +13,11 @@ import (
 )
 
 func Files(fsys fs.FS) (count int) {
-	fn := func(path string, d fs.DirEntry, err error) error {
-		// NOTE: When there is an error walking the fsys it's stored in
-		// err. We just ignore it. You might want to handle it in prod.
-		if filepath.Ext(path) == ".go" {
+	fn := func(path string, entry fs.DirEntry, err error) error {
+		if err != nil {
+			return filepath.SkipDir
+		}
+		if !entry.IsDir() && filepath.Ext(path) == ".go" {
 			count++
 		}
 		return nil
