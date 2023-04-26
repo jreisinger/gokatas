@@ -1,3 +1,4 @@
+* 2023-04-25: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-04-25: countgo, proxy
 * 2023-04-24: panic
 * 2023-04-21: logger

@@ -17,7 +17,7 @@ func main() {
 	}
 }
 
-func fanIn(c1, c2 <-chan string) chan string {
+func fanIn(c1, c2 <-chan string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for {
