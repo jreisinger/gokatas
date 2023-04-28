@@ -4,7 +4,7 @@
 //
 //   - Session management (e.g. logins, shopping carts)
 //   - Personalization (e.g. user preferences, themes)
-//   - Tracking (recording and analyzing user behavior)
+//   - Tracking (recording and analyzing user behavior)-:
 //
 // Based on https://www.alexedwards.net/blog/working-with-cookies-in-go
 //
@@ -20,7 +20,7 @@ import (
 
 const Name = "exampleCookie"
 
-// Set sets a cookie and sends it to a client in the response header.
+// Set adds a "Set-Cookie" header to the response and sends it to a client.
 func Set(w http.ResponseWriter, r *http.Request) {
 	cookie := http.Cookie{
 		Name:     Name,
