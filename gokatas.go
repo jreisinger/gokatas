@@ -140,7 +140,7 @@ func getDone(lastDoneDaysAgo int) ([]Kata, error) {
 		}
 
 		t := time.Now().Add(-time.Duration(lastDoneDaysAgo) * time.Hour * 24)
-		if doneOn.Before(t) {
+		if doneOn.Before(t.Round(time.Hour * 24)) {
 			continue
 		}
 
