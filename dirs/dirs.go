@@ -48,7 +48,7 @@ func main() {
 	createEmptyFile(filepath.Join(a, "b", "2"))
 	createEmptyFile(filepath.Join(a, "b", "c", "3"))
 
-	// Read directory entries.
+	// Read directory entries and print file info.
 	fmt.Println("--- os.ReadDir ---")
 	entries, err := os.ReadDir(a)
 	if err != nil {
@@ -64,7 +64,7 @@ func main() {
 		printFileInfo(path, fi)
 	}
 
-	// Walk directory recursively.
+	// Walk directory recursively and print file info.
 	fmt.Println("--- filepath.WalkDir ---")
 	visit := func(path string, entry fs.DirEntry, err error) error {
 		if err != nil {
