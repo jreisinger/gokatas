@@ -6,7 +6,6 @@
 * 2023-04-24: panic
 * 2023-04-21: logger
 * 2023-04-20: dirs
-* 2023-04-19: du1, du2
 * 2023-04-18: shop4, echo
 * 2023-04-17: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-04-14: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
@@ -14,11 +13,9 @@
 * 2023-04-11: panic
 * 2023-04-10: logger
 * 2023-04-06: dirs
-* 2023-04-05: du1, du2
 * 2023-04-04: echo
 * 2023-04-03: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-03-23: dirs
-* 2023-03-22: du1, du2
 * 2023-03-21: echo
 * 2023-03-20: google/v2.0, google/v2.1, google/v3.0
 * 2023-03-15: google/google
@@ -26,7 +23,6 @@
 * 2023-03-13: panic
 * 2023-03-10: proxy
 * 2023-03-09: dirs
-* 2023-03-08: du1, du2
 * 2023-03-06: echo
 * 2023-03-03: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-03-02: google/google, google/v2.0, google/v2.1, google/v3.0
@@ -34,15 +30,13 @@
 * 2023-02-28: panic
 * 2023-02-25: proxy
 * 2023-02-24: dirs
-* 2023-02-23: du1, du2
 * 2023-02-22: echo
 * 2023-02-17: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex
 * 2023-02-16: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-02-15: logger
 * 2023-02-14: panic
 * 2023-02-13: dirs
-* 2023-02-10: du1, du2
-* 2023-02-09: echo, du1
+* 2023-02-09: echo
 * 2023-02-07: fetchall
 * 2023-02-06: countgo, myprint
 * 2023-02-03: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
