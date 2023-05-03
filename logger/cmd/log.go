@@ -42,15 +42,15 @@ func main() {
 		go func(id int) {
 			for {
 				l.Println(fmt.Sprintf("log from gr %d", id))
-				time.Sleep(10 * time.Millisecond)
+				time.Sleep(time.Millisecond * 100)
 			}
 		}(i)
 	}
 
-	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, os.Interrupt)
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
 	for {
-		<-sigs
+		<-c
 		d.problem = !d.problem // (&d).problem = !(&d).problem
 	}
 }

@@ -26,8 +26,8 @@ func New(w io.Writer, cap int) *Logger {
 
 	l.wg.Add(1)
 	go func() {
-		for v := range l.ch {
-			fmt.Fprintln(w, v)
+		for s := range l.ch {
+			fmt.Fprintln(w, s)
 		}
 		l.wg.Done()
 	}()
