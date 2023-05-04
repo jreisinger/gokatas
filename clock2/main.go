@@ -13,17 +13,17 @@ import (
 )
 
 func main() {
-	ln, err := net.Listen("tcp", "localhost:1362")
+	listener, err := net.Listen("tcp", "localhost:1362")
 	if err != nil {
 		log.Fatal(err)
 	}
 	for {
-		conn, err := ln.Accept()
+		conn, err := listener.Accept()
 		if err != nil { // e.g., connection aborted
 			log.Print(err)
 			continue
 		}
-		go handle(conn)
+		go handle(conn) // handle connections concurrently
 	}
 }
 
