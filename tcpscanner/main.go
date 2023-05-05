@@ -33,23 +33,23 @@ func worker(ports, results chan int) {
 }
 
 func main() {
-	ports := make(chan int, 100) // can hold 100 items before sender blocks
-	results := make(chan int)
+	in := make(chan int, 100) // can hold 100 items before sender blocks
+	out := make(chan int)
 
-	for i := 0; i < cap(ports); i++ {
-		go worker(ports, results)
+	for i := 0; i < cap(in); i++ {
+		go worker(in, out)
 	}
 
 	go func() {
 		for i := 1; i <= 1024; i++ {
-			ports <- i
+			in <- i
 		}
 	}()
 
 	var openports []int
 
 	for i := 1; i <= 1024; i++ {
-		port := <-results
+		port := <-out
 		if port != 0 {
 			openports = append(openports, port)
 		}

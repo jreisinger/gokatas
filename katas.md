@@ -1,3 +1,4 @@
+* 2023-05-05: tcpscanner, fetchall
 * 2023-05-04: clock2, netcat1
 * 2023-05-03: logger
 * 2023-05-02: echo, dirs
