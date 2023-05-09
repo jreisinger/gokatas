@@ -1,9 +1,11 @@
-package countgo
+package countgo_test
 
 import (
 	"io/fs"
 	"testing"
 	"testing/fstest"
+
+	"github.com/jreisinger/gokatas/countgo"
 )
 
 func TestFiles(t *testing.T) {
@@ -17,7 +19,7 @@ func TestFiles(t *testing.T) {
 	}
 
 	for i, test := range tests {
-		got := Files(test.fsys)
+		got := countgo.Files(test.fsys)
 		if got != test.want {
 			t.Errorf("test %d: got %d, want %d", i, got, test.want)
 		}
