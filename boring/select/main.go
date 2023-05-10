@@ -6,6 +6,8 @@
 //   - If multiple can proceed, chooses pseudo-randomly.
 //   - A default case, if present, executes immediately if no channel is ready.
 //
+// Timeout the conversation when no one speaks for 800 ms.
+//
 // Level: intermediate
 // Topics: select, timeout, fan-in
 package main
@@ -19,8 +21,6 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	c := fanIn(say("Ann"), say("Joe"))
-	// you could also time out the whole conversation see
-	// https://go.dev/talks/2012/concurrency.slide#36
 	for {
 		select {
 		case s := <-c:
