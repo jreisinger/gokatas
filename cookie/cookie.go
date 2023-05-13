@@ -34,22 +34,24 @@ func Set(w http.ResponseWriter, r *http.Request) {
 		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
-	w.Write([]byte("cookie set"))
+
+	w.Write([]byte("cookie set: " + cookie.String()))
 }
 
 // Show retrieves the cookie from the "Cookie" request header and sends it back
 // to the client in the response body.
 func Show(w http.ResponseWriter, r *http.Request) {
-	_, err := r.Cookie(Name)
+	cookie, err := r.Cookie(Name)
 	if err != nil {
 		switch {
 		case errors.Is(err, http.ErrNoCookie):
-			http.Error(w, "cookie not found", http.StatusBadRequest)
+			http.Error(w, "no cookie", http.StatusBadRequest)
 		default:
 			log.Println(err)
 			http.Error(w, "internal server error", http.StatusInternalServerError)
 		}
 		return
 	}
-	w.Write([]byte("cookie found"))
+
+	w.Write([]byte("cookie: " + cookie.String()))
 }

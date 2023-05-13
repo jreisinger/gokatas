@@ -12,7 +12,5 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/set", cookie.Set)
 	mux.HandleFunc("/show", cookie.Show)
-	if err := http.ListenAndServe(":3000", mux); err != nil {
-		log.Fatal(err)
-	}
+	log.Fatal(http.ListenAndServe("localhost:8000", mux))
 }
