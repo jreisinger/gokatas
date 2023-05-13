@@ -1,6 +1,7 @@
-// Package cookie writes and reads (not signed and not encrypted) cookie. An
-// HTTP cookie is a small piece of data that a server sends to a user's web
-// browser. Cookies are used mainly for:
+// Package cookie writes and reads a (not signed and not encrypted) HTTP
+// [cookie]. It is a small piece of data that a server sends to a user's web
+// browser or other HTTP client. This way server can map HTTP traffic (which is
+// stateless) to a specific client. Cookies are used for:
 //
 //   - Session management (e.g. logins, shopping carts)
 //   - Personalization (e.g. user preferences, themes)
@@ -10,6 +11,8 @@
 //
 // Level: intermediate
 // Topics: net/http
+//
+// [cookie]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 package cookie
 
 import (
@@ -18,24 +21,24 @@ import (
 	"net/http"
 )
 
-const Name = "exampleCookie"
+const Name = "ExampleCookie"
 
 // Set adds a "Set-Cookie" header to the response and sends it to a client.
 func Set(w http.ResponseWriter, r *http.Request) {
 	cookie := http.Cookie{
 		Name:     Name,
-		Value:    "hello world",
+		Value:    "Example Cookie",
 		MaxAge:   3600,
-		Secure:   true,
-		HttpOnly: true,
+		Secure:   true, // only sent over HTTPS (except on localhost)
+		HttpOnly: true, // inaccessible to the JavaScript (prevents XSS)
 		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
 	w.Write([]byte("cookie set"))
 }
 
-// Show retrieves the cookie from the request header and sends it back to the
-// client in the response body.
+// Show retrieves the cookie from the "Cookie" request header and sends it back
+// to the client in the response body.
 func Show(w http.ResponseWriter, r *http.Request) {
 	_, err := r.Cookie(Name)
 	if err != nil {
