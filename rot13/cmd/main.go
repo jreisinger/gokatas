@@ -10,7 +10,8 @@ import (
 )
 
 func main() {
-	s := strings.NewReader("Lbh penpxrq gur pbqr!")
+	ciphertext := "Lbh penpxrq gur pbqr!"
+	s := strings.NewReader(ciphertext)
 	r := rot13.Reader{R: s}
-	io.Copy(os.Stdout, &r)
+	io.Copy(os.Stdout, r) // plaintext to STDOUT
 }

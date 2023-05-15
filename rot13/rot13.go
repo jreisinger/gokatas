@@ -24,6 +24,7 @@ func rot13(b byte) byte {
 	default:
 		return b
 	}
+	// return (b-a+13)%26 + a
 	return (b-a+13)%(z-a+1) + a
 }
 
