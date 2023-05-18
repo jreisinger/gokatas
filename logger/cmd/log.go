@@ -47,10 +47,10 @@ func main() {
 		}(i)
 	}
 
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt)
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, os.Interrupt)
 	for {
-		<-c
+		<-sigs
 		d.problem = !d.problem // (&d).problem = !(&d).problem
 	}
 }

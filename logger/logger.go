@@ -12,8 +12,8 @@ import (
 )
 
 type Logger struct {
-	ch chan string // logs
-	wg sync.WaitGroup
+	logs chan string
+	wg   sync.WaitGroup
 }
 
 func New(w io.Writer, cap int) *Logger {
@@ -21,12 +21,12 @@ func New(w io.Writer, cap int) *Logger {
 	// to initialize one or more fields of a type.
 
 	l := Logger{
-		ch: make(chan string, cap),
+		logs: make(chan string, cap),
 	}
 
 	l.wg.Add(1)
 	go func() {
-		for s := range l.ch {
+		for s := range l.logs {
 			fmt.Fprintln(w, s)
 		}
 		l.wg.Done()
@@ -36,13 +36,13 @@ func New(w io.Writer, cap int) *Logger {
 }
 
 func (l *Logger) Stop() {
-	close(l.ch)
+	close(l.logs)
 	l.wg.Wait()
 }
 
-func (l *Logger) Println(s string) {
+func (l *Logger) Println(log string) {
 	select {
-	case l.ch <- s:
+	case l.logs <- log:
 	default:
 		fmt.Println("WARN: dropping logs")
 	}

@@ -1,3 +1,4 @@
+* 2023-05-18: logger, slices
 * 2023-05-17: clock2, netcat1
 * 2023-05-16: areader, bytecounter
 * 2023-05-15: bytecounter, rot13
