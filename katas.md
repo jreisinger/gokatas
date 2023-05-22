@@ -1,3 +1,4 @@
+* 2023-05-22: countgo, proxy
 * 2023-05-19: fetchall, tcpscanner
 * 2023-05-18: logger, slices
 * 2023-05-17: clock2, netcat1
