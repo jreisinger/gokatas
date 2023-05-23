@@ -1,3 +1,4 @@
+* 2023-05-23: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-05-22: countgo, proxy
 * 2023-05-19: fetchall, tcpscanner
 * 2023-05-18: logger, slices
