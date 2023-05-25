@@ -1,3 +1,4 @@
+* 2023-05-25: cookie, shop4
 * 2023-05-24: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-05-23: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-05-22: countgo, proxy
