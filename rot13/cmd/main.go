@@ -11,6 +11,6 @@ import (
 
 func main() {
 	s := strings.NewReader("Lbh penpxrq gur pbqr!")
-	r := rot13.Reader{s}
+	r := rot13.Reader{R: s}
 	io.Copy(os.Stdout, &r)
 }
