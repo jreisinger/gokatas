@@ -1,3 +1,4 @@
+* 2023-05-29: areader, bytecounter
 * 2023-05-26: rot13
 * 2023-05-25: cookie, shop4
 * 2023-05-24: google/google, google/v2.0, google/v2.1, google/v3.0

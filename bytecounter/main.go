@@ -1,7 +1,7 @@
-// Bytecounter shows how to use interfaces. It implements a concrete type named
-// ByteCounter whose Write method counts bytes before discarding them. Since
-// ByteCounter satisfies the io.Writer interface (an abstract type), we can pass
-// it to fmt.Fprint.
+// Bytecounter shows how to use interfaces. It implements a (concrete) type
+// named ByteCounter whose Write method counts bytes before discarding them.
+// Since ByteCounter satisfies the io.Writer interface (an abstract type), we
+// can pass it to fmt.Fprint.
 //
 // Adapted from github.com/adonovan/gopl.io/blob/master/ch7/bytecounter.
 //
