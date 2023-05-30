@@ -1,3 +1,4 @@
+* 2023-05-30: clock2, netcat1
 * 2023-05-29: areader, bytecounter
 * 2023-05-26: rot13
 * 2023-05-25: cookie, shop4
