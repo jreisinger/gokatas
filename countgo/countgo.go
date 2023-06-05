@@ -13,15 +13,15 @@ import (
 )
 
 func Files(fsys fs.FS) (count int) {
-	fn := func(path string, entry fs.DirEntry, err error) error {
+	visit := func(path string, entry fs.DirEntry, err error) error {
 		if err != nil {
-			return filepath.SkipDir
+			return fs.SkipDir
 		}
 		if !entry.IsDir() && filepath.Ext(path) == ".go" {
 			count++
 		}
 		return nil
 	}
-	fs.WalkDir(fsys, ".", fn)
-	return count
+	fs.WalkDir(fsys, ".", visit)
+	return
 }

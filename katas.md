@@ -1,3 +1,4 @@
+* 2023-06-05: countgo, proxy
 * 2023-05-31: logger, slices
 * 2023-05-30: clock2, netcat1
 * 2023-05-29: areader, bytecounter
