@@ -48,7 +48,8 @@ func First(query string, replicas ...Search) Result {
 	for i := range replicas {
 		go replica(i)
 	}
-	return <-c
+	result := <-c
+	return result
 }
 
 var (
