@@ -14,7 +14,6 @@ import (
 )
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	start := time.Now()
 	results := Google("golang")
 	elapsed := time.Since(start)
