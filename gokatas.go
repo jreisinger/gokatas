@@ -30,44 +30,44 @@ type Kata struct {
 	Topics    []string
 }
 
-// Get returns katas you have done, i.e. written to KatasFile. If there are no
-// katas in KatasFile all existing katas will be returned.
-func Get(lastDoneDaysAgo int) ([]Kata, error) {
+// Get returns all existing katas and adds info about those you have done, i.e.
+// written to KatasFile.
+func Get() ([]Kata, error) {
 	existing, err := getExisting()
 	if err != nil {
 		return nil, fmt.Errorf("getting all existing katas: %v", err)
 	}
 
-	done, err := getDone(lastDoneDaysAgo)
+	done, err := getDone()
 	if err != nil {
 		return nil, fmt.Errorf("getting done katas: %v", err)
 	}
 
-	var katas []Kata
-HERE:
-	// Check kata you put in yaml file really exists.
+	// Check kata you put in KatasFile file really exists.
 	for _, d := range done {
+		var exists bool
 		for _, e := range existing {
 			if d.Name == e.Name {
-				katas = append(katas, Kata{
-					Name:      d.Name,
-					LastDone:  d.LastDone,
-					TimesDone: d.TimesDone,
-					Level:     e.Level,
-					Topics:    e.Topics,
-				})
-				continue HERE
+				exists = true
+				break
 			}
 		}
-		log.Printf("kata '%s' stated in %s does not exist in this repo", d.Name, KatasFile)
+		if !exists {
+			log.Printf("kata '%s' stated in %s does not exist in this repo", d.Name, KatasFile)
+		}
 	}
 
-	// If you haven't done any kata return all existing katas.
-	if len(katas) == 0 {
-		katas, err = getExisting()
-		if err != nil {
-			return nil, err
+	var katas []Kata
+
+	// Enrich existing katas with done info.
+	for _, e := range existing {
+		for _, d := range done {
+			if e.Name == d.Name {
+				e.LastDone = d.LastDone
+				e.TimesDone = d.TimesDone
+			}
 		}
+		katas = append(katas, e)
 	}
 
 	return katas, nil
@@ -114,7 +114,7 @@ func uniq(topics []string) []string {
 }
 
 // getDone returns katas from the KatasFile.
-func getDone(lastDoneDaysAgo int) ([]Kata, error) {
+func getDone() ([]Kata, error) {
 	f, err := os.Open(KatasFile)
 	if err != nil {
 		return nil, err
@@ -137,11 +137,6 @@ func getDone(lastDoneDaysAgo int) ([]Kata, error) {
 		doneOn, err := time.Parse("2006-01-02", date)
 		if err != nil {
 			return nil, err
-		}
-
-		t := time.Now().Add(-time.Duration(lastDoneDaysAgo) * time.Hour * 24)
-		if doneOn.Before(t.Round(time.Hour * 24)) {
-			continue
 		}
 
 		for _, name := range comaRE.Split(katasStr, -1) {
@@ -237,8 +232,7 @@ func cutTopics(line string) []string {
 	return topics
 }
 
-// Print prints table with statistics about katas. Only katas of level (if not
-// empty) and lastDoneDaysAgo or sooner are shown. Katas are sorted by column.
+// Print prints table with statistics about katas sorted by column.
 func Print(katas []Kata, column int) {
 	const format = "%v\t%v\t%5v\t%v\t%v\n"
 

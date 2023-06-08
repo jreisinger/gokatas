@@ -24,7 +24,7 @@ rewriting from scratch or partially. There's a command to show katas and your
 progress:
 
 ```
-$ go run cmd/gokatas.go -c 2 -d 14
+$ go run cmd/gokatas.go -c 2
 Kata              Last done    Done  Level     Topics
 ----              ---------    ----  -----     ------
 boring/boring     0 days ago     1x  beginner  concurrency, design
