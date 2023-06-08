@@ -297,6 +297,10 @@ func sortKatas(katas []Kata, column *int) {
 			if x.TimesDone != y.TimesDone {
 				return x.TimesDone > y.TimesDone
 			}
+		case 4:
+			if x.Level != y.Level {
+				return x.Level > y.Level
+			}
 		default:
 			log.Fatalf("can't sort by column %d", *column)
 		}
