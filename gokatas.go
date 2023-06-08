@@ -295,7 +295,7 @@ func sortKatas(katas []Kata, column *int) {
 			}
 		case 3:
 			if x.TimesDone != y.TimesDone {
-				return x.TimesDone > y.TimesDone
+				return x.TimesDone < y.TimesDone
 			}
 		case 4:
 			if x.Level != y.Level {
