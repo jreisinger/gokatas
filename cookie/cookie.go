@@ -10,7 +10,7 @@
 // Based on https://www.alexedwards.net/blog/working-with-cookies-in-go
 //
 // Level: intermediate
-// Topics: net/http
+// Topics: web server, net/http
 //
 // [cookie]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 package cookie
