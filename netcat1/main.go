@@ -2,7 +2,7 @@
 // github.com/adonovan/gopl.io/tree/master/ch8/netcat1.
 //
 // Level: beginner
-// Topics: networking, TCP client
+// Topics: networking, TCP client, read-only
 package main
 
 import (
