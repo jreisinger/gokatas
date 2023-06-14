@@ -1,4 +1,5 @@
-* 2023-06-14: clock2, netcat1, netcat2
+* 2023-06-14: slices, logger
+* 2023-06-13: clock2, netcat1, netcat2
 * 2023-06-09: rot13
 * 2023-06-08: shop4, cookie
 * 2023-06-07: google/google, google/v2.0, google/v2.1, google/v3.0, findlinks2

@@ -1,4 +1,4 @@
-// Log handles logging correctly. When it's not possible to write logs the
+// Log handles logging gracefully. When it's not possible to write logs the
 // goroutines will not block.
 //
 // Start 10 goroutines each of which will be writing logs to a device. Simulate
@@ -35,7 +35,6 @@ func main() {
 	// var l log.Logger
 	// l.SetOutput(&d)
 
-	// Non-blocking logger.
 	l := logger.New(&d, grs)
 
 	for i := 0; i < grs; i++ {
@@ -51,6 +50,6 @@ func main() {
 	signal.Notify(sigs, os.Interrupt)
 	for {
 		<-sigs
-		d.problem = !d.problem // (&d).problem = !(&d).problem
+		d.problem = !d.problem
 	}
 }

@@ -1,5 +1,5 @@
-// Package logger uses channels to implement non-blocking logging. Adapted from
-// https://youtu.be/zDCKZn4-dck.
+// Package logger uses channels to implement non-blocking
+// logging. Adapted from https://youtu.be/zDCKZn4-dck.
 //
 // Level: advanced
 // Topics: design, buffered channels, os/signal
@@ -17,9 +17,8 @@ type Logger struct {
 }
 
 func New(w io.Writer, cap int) *Logger {
-	// New is sometimes called a factory function. It's useful when you need
-	// to initialize one or more fields of a type.
-
+	// New is sometimes called a factory function. It's useful
+	// when you need to initialize one or more fields of a type.
 	l := Logger{
 		logs: make(chan string, cap),
 	}
