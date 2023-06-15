@@ -10,7 +10,7 @@ import (
 	"os"
 	"sync"
 
-	"gopl.io/ch8/thumbnail"
+	"github.com/jreisinger/gokatas/thumbnail"
 )
 
 // Nail3 makes thumbnails of the specified files in parallel.
