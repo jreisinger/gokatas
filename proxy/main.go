@@ -29,8 +29,7 @@ func main() {
 }
 
 func proxy(conn net.Conn) {
-	// Release precious file descriptor; there are not that many.
-	defer conn.Close()
+	defer conn.Close() // release precious file descriptor
 
 	upstream, err := net.Dial("tcp", "google.com:http")
 	if err != nil {
@@ -39,7 +38,6 @@ func proxy(conn net.Conn) {
 	}
 	defer upstream.Close()
 
-	// In this case it's ok not track the goroutine.
-	go io.Copy(upstream, conn)
+	go io.Copy(upstream, conn) // here it's ok not to track the goroutine
 	io.Copy(conn, upstream)
 }
