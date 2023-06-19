@@ -1,4 +1,4 @@
-// Areader reads three bytes from Areader into a slice.
+// Areader reads three bytes from A into a slice.
 package main
 
 import (
@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	var a areader.Areader
+	var a areader.A
 	p := make([]byte, 3)
-	a.Read(p) // NOTE: ignoring potential error
-	fmt.Println(string(p))
+	a.Read(p)              // NOTE: ignoring potential error
+	fmt.Println(string(p)) // AAA
 }

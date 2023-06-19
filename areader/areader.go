@@ -5,9 +5,9 @@
 // Topics: interfaces, io.Reader
 package areader
 
-type Areader struct{}
+type A struct{}
 
-func (Areader) Read(p []byte) (int, error) {
+func (A) Read(p []byte) (int, error) {
 	for i := range p {
 		p[i] = 'A'
 	}
