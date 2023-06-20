@@ -1,3 +1,4 @@
+* 2023-06-20: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2023-06-19: areader, bytecounter
 * 2023-06-16: countgo, proxy
 * 2023-06-15: thumb

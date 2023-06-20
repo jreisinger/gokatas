@@ -3,7 +3,7 @@
 //
 //   - All channels are evaluated.
 //   - Blocks until one communication can proceed.
-//   - If multiple can proceed, chooses pseudo-randomly.
+//   - If multiple can proceed, chooses (pseudo-)randomly.
 //   - A default case, if present, executes immediately if no channel is ready.
 //
 // Timeout the conversation when no one speaks for 800 ms.
@@ -19,7 +19,6 @@ import (
 )
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	c := fanIn(say("Ann"), say("Joe"))
 	for {
 		select {
