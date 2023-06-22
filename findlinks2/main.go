@@ -7,7 +7,7 @@
 //	findlinks url ...
 //
 // Level: intermediate
-// Topics: net/http, net/html, recursion
+// Topics: recursion, net/http, golang.org/x/net/html
 package main
 
 import (
@@ -42,16 +42,16 @@ func findLinks(url string) ([]string, error) {
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("getting %s: %v", url, resp.Status)
 	}
-
 	doc, err := html.Parse(resp.Body)
 	if err != nil {
 		return nil, fmt.Errorf("parsing %s as HTML: %v", url, err)
 	}
-
 	return visit(nil, doc), nil
 }
 
-// visit appends to links each link found in n, and returns the result.
+// visit recursively traverses an HTML node tree, extracts the link from the
+// href attribute of each anchor element <a href='...'>, appends it to the links
+// slice, and returns the resulting slice.
 func visit(links []string, n *html.Node) []string {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, a := range n.Attr {
