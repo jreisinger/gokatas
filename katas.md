@@ -1,3 +1,4 @@
+* 2023-06-23: shop4, cookie
 * 2023-06-22: findlinks2, outline
 * 2023-06-21: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-06-20: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
