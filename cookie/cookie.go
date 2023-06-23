@@ -31,7 +31,6 @@ func Set(w http.ResponseWriter, r *http.Request) {
 		MaxAge:   3600,
 		Secure:   true, // only sent over HTTPS (except on localhost)
 		HttpOnly: true, // inaccessible to JavaScript (prevents XSS)
-		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
 
