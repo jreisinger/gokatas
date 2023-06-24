@@ -1,3 +1,4 @@
+* 2023-06-24: rot13
 * 2023-06-23: shop4, cookie
 * 2023-06-22: findlinks2, outline
 * 2023-06-21: google/google, google/v2.0, google/v2.1, google/v3.0
