@@ -6,7 +6,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"net"
@@ -14,19 +13,13 @@ import (
 )
 
 func main() {
-	if len(os.Args[1:]) != 2 {
-		fmt.Fprintf(os.Stderr, "netcat2: supply host and port\n")
-		os.Exit(1)
-	}
-	host, port := os.Args[1], os.Args[2]
-	addr := fmt.Sprintf("%s:%s", host, port)
-	conn, err := net.Dial("tcp", addr)
+	conn, err := net.Dial("tcp", "localhost:1362")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer conn.Close()
 	go mustCopy(os.Stdout, conn)
-	mustCopy(conn, os.Stdout)
+	mustCopy(conn, os.Stdin)
 }
 
 func mustCopy(dst io.Writer, src io.Reader) {
