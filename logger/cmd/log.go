@@ -40,7 +40,7 @@ func main() {
 	for i := 0; i < grs; i++ {
 		go func(id int) {
 			for {
-				l.Println(fmt.Sprintf("log from gr %d", id))
+				l.Write(fmt.Sprintf("log from gr %d\n", id))
 				time.Sleep(time.Millisecond * 100)
 			}
 		}(i)

@@ -1,3 +1,4 @@
+* 2023-06-27: slices, logger
 * 2023-06-26: clock2, netcat1, netcat2
 * 2023-06-24: rot13
 * 2023-06-23: shop4, cookie

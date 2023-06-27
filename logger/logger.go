@@ -16,6 +16,7 @@ type Logger struct {
 	wg   sync.WaitGroup
 }
 
+// New creates a logger that will write logs to w. Cap is the capacity of logs buffer.
 func New(w io.Writer, cap int) *Logger {
 	// New is sometimes called a factory function. It's useful
 	// when you need to initialize one or more fields of a type.
@@ -25,21 +26,23 @@ func New(w io.Writer, cap int) *Logger {
 
 	l.wg.Add(1)
 	go func() {
+		defer l.wg.Done()
 		for s := range l.logs {
-			fmt.Fprintln(w, s)
+			fmt.Fprint(w, s)
 		}
-		l.wg.Done()
 	}()
 
 	return &l
 }
 
+// Stop will wait for logs buffer to be written and then stops.
 func (l *Logger) Stop() {
 	close(l.logs)
 	l.wg.Wait()
 }
 
-func (l *Logger) Println(log string) {
+// Write writes the log. If the log buffer is full it prints a warning and exits.
+func (l *Logger) Write(log string) {
 	select {
 	case l.logs <- log:
 	default:
