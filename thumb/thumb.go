@@ -15,10 +15,10 @@ import (
 
 // Nail3 makes thumbnails of the specified files in parallel.
 func Nail3(filenames []string) {
-	ch := make(chan struct{})
+	ch := make(chan struct{}) // empty struct occupies zero bytes of storage
 	for _, f := range filenames {
 		go func(f string) {
-			thumbnail.ImageFile(f) // NOTE: ignoring errors
+			thumbnail.ImageFile(f) // NOTE: ignoring potential error
 			ch <- struct{}{}
 		}(f)
 	}
@@ -64,7 +64,7 @@ func Nail5(filenames []string) (thumbfiles []string, err error) {
 // over a channel.)
 func Nail6(filenames <-chan string) int64 {
 	sizes := make(chan int64)
-	var wg sync.WaitGroup // number of working goroutines
+	var wg sync.WaitGroup // number of worker goroutines
 	for f := range filenames {
 		wg.Add(1)
 		// worker
