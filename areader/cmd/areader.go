@@ -10,6 +10,6 @@ import (
 func main() {
 	var a areader.A
 	p := make([]byte, 3)
-	a.Read(p)              // NOTE: ignoring potential error
-	fmt.Println(string(p)) // AAA
+	a.Read(p)
+	fmt.Println(string(p))
 }

@@ -1,3 +1,4 @@
+* 2023-07-01: areader, bytecounter
 * 2023-06-29: countgo, proxy
 * 2023-06-28: thumb
 * 2023-06-27: slices, logger
