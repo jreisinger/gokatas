@@ -1,3 +1,4 @@
+* 2023-07-11: logger, slices
 * 2023-07-10: clock2, netcat1, netcat2
 * 2023-07-04: google/google, google/v2.0, google/v2.1, google/v3.0
 * 2023-07-03: boring/boring, boring/channel, boring/generator, boring/lockstep, boring/multiplex, boring/select, boring/selectquit

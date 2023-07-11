@@ -35,7 +35,7 @@ func New(w io.Writer, cap int) *Logger {
 	return &l
 }
 
-// Stop will wait for logs buffer to be written and then stops.
+// Stop stops accepting logs and waits for logs buffer to be written.
 func (l *Logger) Stop() {
 	close(l.logs)
 	l.wg.Wait()
