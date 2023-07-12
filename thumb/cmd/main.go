@@ -1,4 +1,4 @@
-// Thumb generates thumnails for the supplied JPEG pictures.
+// Thumb generates thumbnails for the supplied JPEG pictures.
 package main
 
 import (
