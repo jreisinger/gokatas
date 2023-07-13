@@ -12,13 +12,13 @@ import (
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:8000")
+	ln, err := net.Listen("tcp", "localhost:8000")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for {
-		conn, err := listener.Accept()
+		conn, err := ln.Accept()
 		if err != nil {
 			log.Print(err)
 			continue

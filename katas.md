@@ -1,3 +1,4 @@
+* 2023-07-13: countgo, proxy
 * 2023-07-12: thumb
 * 2023-07-11: logger, slices
 * 2023-07-10: clock2, netcat1, netcat2
