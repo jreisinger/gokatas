@@ -36,7 +36,9 @@ func Nail5(filenames []string) (thumbfiles []string, err error) {
 		err       error
 	}
 
-	// buffered channel with sufficient capacity to avoid goroutine leak
+	// Buffered channel with sufficient capacity to avoid goroutine leak.
+	// This is needed because the function might return early when there's
+	// an error.
 	ch := make(chan item, len(filenames))
 
 	for _, f := range filenames {
