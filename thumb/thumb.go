@@ -16,12 +16,14 @@ import (
 // Nail3 makes thumbnails of the specified files in parallel.
 func Nail3(filenames []string) {
 	ch := make(chan struct{}) // empty struct occupies zero bytes of storage
+
 	for _, f := range filenames {
 		go func(f string) {
 			thumbnail.ImageFile(f) // NOTE: ignoring potential error
 			ch <- struct{}{}
 		}(f)
 	}
+
 	// Wait for goroutines to complete.
 	for range filenames {
 		<-ch
@@ -37,8 +39,8 @@ func Nail5(filenames []string) (thumbfiles []string, err error) {
 	}
 
 	// Buffered channel with sufficient capacity to avoid goroutine leak.
-	// This is needed because the function might return early when there's
-	// an error.
+	// This is needed because the Nail5 function might return early when
+	// there's an error and the goroutines would block forever.
 	ch := make(chan item, len(filenames))
 
 	for _, f := range filenames {
@@ -50,7 +52,7 @@ func Nail5(filenames []string) (thumbfiles []string, err error) {
 	}
 
 	for range filenames {
-		it := <-ch
+		it := <-ch // no need to drain it because it's buffered
 		if it.err != nil {
 			return nil, err
 		}
@@ -67,8 +69,10 @@ func Nail5(filenames []string) (thumbfiles []string, err error) {
 func Nail6(filenames <-chan string) int64 {
 	sizes := make(chan int64)
 	var wg sync.WaitGroup // number of worker goroutines
+
 	for f := range filenames {
 		wg.Add(1)
+
 		// worker
 		go func(f string) {
 			defer wg.Done()
@@ -81,11 +85,13 @@ func Nail6(filenames <-chan string) int64 {
 			sizes <- info.Size()
 		}(f)
 	}
+
 	// closer
 	go func() {
 		wg.Wait()
 		close(sizes)
 	}()
+
 	var total int64
 	for size := range sizes {
 		total += size
