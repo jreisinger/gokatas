@@ -1,3 +1,4 @@
+* 2023-09-05: count
 * 2023-08-25: areader, bytecounter
 * 2023-07-31: areader, bytecounter
 * 2023-07-28: thumb
