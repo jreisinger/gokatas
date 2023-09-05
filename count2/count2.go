@@ -29,6 +29,20 @@ func WithInput(input io.Reader) option {
 	}
 }
 
+func WithInputFromArgs(args []string) option {
+	return func(c *Counter) error {
+		if len(args) < 1 {
+			return nil
+		}
+		f, err := os.Open(args[0])
+		if err != nil {
+			return err
+		}
+		c.input = f
+		return nil
+	}
+}
+
 func WithOutput(output io.Writer) option {
 	return func(c *Counter) error {
 		if output == nil { // validate option
