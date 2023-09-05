@@ -2,6 +2,8 @@
 // It provides a default input, which is STDIN, with the possibility to change
 // it. Source: https://bitfieldconsulting.com/books/tools
 //
+// If you want to climb a mountain, begin at the top. -- Zen saying
+//
 // Level: intermediate
 // Topics: TDD, design, scripting
 package count
