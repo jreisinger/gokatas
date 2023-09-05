@@ -35,14 +35,15 @@ areader           3 days ago     2x  beginner  interfaces, io.Reader
 ```
 
 It's important to practice regularly because repetition creates habits, and
-habits are what enable mastery. Set a goal that you can meet, e.g. 45 minutes
-every day before work. Start by taking baby steps. At first it's fine even if
-you only read through one of the beginner level katas.
+habits are what enable mastery. Start by taking baby steps. Set a goal that you
+can meet, e.g. 15 minutes every day before work. At first it's fine even if you
+only read through one of the beginner level katas. Use documentation or a search
+engine if you don't understand something.
 
-After enough time it will require much less will power to practice. Your
+After some time it will require much less will power to practice. Your
 programming moves will start looking simpler and smoother. If you feel
-comfortable enough with a kata, stop practicing it (for some time) and pick up
-one that interests you and is slightly beyond your current ability.
+comfortable enough with a kata, stop practicing it and pick another one that
+interests you and is slightly beyond your current ability.
 
 ## Initial setup
 
