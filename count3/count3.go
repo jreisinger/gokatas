@@ -1,6 +1,5 @@
-// Package count3 is like count2 but it accepts input also from one or more
-// files supplied as command line arguments. It also tests the script using
-// testscript.
+// Package count3 accepts input also from one or more files supplied as command
+// line arguments. It also tests the script using testscript.
 //
 // Level: advanced
 // Topics: testscript, scripting

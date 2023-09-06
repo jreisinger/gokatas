@@ -1,11 +1,12 @@
-// Package count counts lines. It was created with a test-first approach (TDD).
-// It provides a default input, which is STDIN, with the possibility to change
-// it. Source: https://bitfieldconsulting.com/books/tools
+// Package count counts lines in input. The input defaults to STDIN. Write this
+// package with test-first approach (TDD). All non-trivial code should be inside
+// the package count, not main. Adapted from
+// https://bitfieldconsulting.com/books/tools
 //
 // If you want to climb a mountain, begin at the top. -- Zen saying
 //
 // Level: intermediate
-// Topics: default options, scripting
+// Topics: TDD, default options, scripting
 package count
 
 import (
