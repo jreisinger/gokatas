@@ -2,7 +2,7 @@
 // Based on https://gobyexample.com/directories.
 //
 // Level: beginner
-// Topics: io/fs, directories, scripting
+// Topics: io/fs, directories
 package main
 
 import (

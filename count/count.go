@@ -6,7 +6,7 @@
 // If you want to climb a mountain, begin at the top. -- Zen saying
 //
 // Level: intermediate
-// Topics: TDD, default options, scripting
+// Topics: TDD, default options
 package count
 
 import (

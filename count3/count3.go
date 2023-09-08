@@ -2,7 +2,7 @@
 // line arguments. It also tests the script using testscript.
 //
 // Level: advanced
-// Topics: testscript, scripting
+// Topics: testscript
 package count3
 
 import (

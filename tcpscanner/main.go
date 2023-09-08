@@ -3,7 +3,7 @@
 // to try to connect to. Collect the results, 0 means couldn't connect, and
 // print them. Adapted from the "Black Hat Go" [book].
 //
-// Topics: concurrency, security, scripting
+// Topics: concurrency, security
 // Level: intermediate
 //
 // [book]: https://github.com/blackhat-go/bhg/blob/master/ch-2/tcp-scanner-final

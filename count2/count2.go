@@ -1,7 +1,7 @@
 // Package count2 uses "functional options" pattern to set zero or more options.
 //
 // Level: intermediate
-// Topics: functional options, scripting
+// Topics: functional options
 package count2
 
 import (
