@@ -6,7 +6,7 @@
 // If you want to climb a mountain, begin at the top. -- Zen saying
 //
 // Level: intermediate
-// Topics: TDD, default options
+// Topics: TDD, default options, tpg-tools
 package count
 
 import (

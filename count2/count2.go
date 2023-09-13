@@ -1,7 +1,7 @@
 // Package count2 uses "functional options" pattern to set zero or more options.
 //
 // Level: intermediate
-// Topics: functional options
+// Topics: functional options, tpg-tools
 package count2
 
 import (

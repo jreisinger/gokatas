@@ -2,7 +2,7 @@
 // approach (TDD). Adapted from: https://bitfieldconsulting.com/books/tools
 //
 // Level: Intermediate
-// Topics: TDD, files, go-cmp
+// Topics: TDD, files, go-cmp, tpg-tools
 package write
 
 import (

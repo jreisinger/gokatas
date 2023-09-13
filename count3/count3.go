@@ -2,7 +2,7 @@
 // line arguments. It also tests the script using testscript.
 //
 // Level: advanced
-// Topics: testscript
+// Topics: testscript, tpg-tools
 package count3
 
 import (
