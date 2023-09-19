@@ -1,7 +1,7 @@
 // Package write shows how to write programs manipulating files with test-first
 // approach (TDD). Adapted from: https://bitfieldconsulting.com/books/tools
 //
-// Level: Intermediate
+// Level: intermediate
 // Topics: TDD, files, go-cmp, tpg-tools
 package write
 

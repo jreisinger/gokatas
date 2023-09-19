@@ -7,7 +7,7 @@
 // values to bytes. It creates binary format as opposed to text format like
 // JSON. Adapted from: https://github.com/bitfield/tpg-tools2/tree/main/kv
 //
-// Level: Intermediate
+// Level: intermediate
 // Topics: encoding/gob, marshaling, tpg-tools
 package kv
 
