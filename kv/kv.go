@@ -1,10 +1,11 @@
-// Package kv implements key-value store that persists data to disk. The process
-// of sending data out of the program is called marshalling. We could marshal Go
-// data into many formats: plain text, base64-encoded text, SQL results or
-// queries, TCP/IP packets, ... The simplest way to format data for transmission
-// is a stream of bytes. This kind of marshalling is called serialization. The
-// encoding/gob package can serialise most kinds of Go values to bytes. Adapted
-// from: https://github.com/bitfield/tpg-tools2/tree/main/kv
+// Package kv implements key-value store that persists data to disk. The
+// process of sending data out of the program is called marshalling. We could
+// marshal Go data into many formats: plain text, base64-encoded text, SQL
+// results or queries, TCP/IP packets, ... The simplest way to format data for
+// transmission is a stream of bytes. This kind of marshalling is called
+// serialization. The encoding/gob package can serialise (most kinds of) Go
+// values to bytes. It creates binary format as opposed to text format like
+// JSON. Adapted from: https://github.com/bitfield/tpg-tools2/tree/main/kv
 //
 // Level: Intermediate
 // Topics: encoding/gob, marshaling, tpg-tools
