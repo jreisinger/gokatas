@@ -1,8 +1,8 @@
-// Package count3 accepts input also from one or more files supplied as command
-// line arguments. It also tests the script using testscript.
+// Package count3 uses "functional options" pattern to set zero or more options.
+// Adapted from https://github.com/bitfield/tpg-tools2/tree/main/count/3
 //
-// Level: advanced
-// Topics: testscript, tpg-tools
+// Level: intermediate
+// Topics: functional options, tpg-tools
 package count3
 
 import (
@@ -13,16 +13,14 @@ import (
 	"os"
 )
 
-type Counter struct {
-	files []io.Reader
+type counter struct {
 	input io.Reader
-	ouput io.Writer
 }
 
-type option func(*Counter) error
+type option func(c *counter) error
 
 func WithInput(input io.Reader) option {
-	return func(c *Counter) error {
+	return func(c *counter) error {
 		if input == nil { // validate option
 			return errors.New("nil input reader")
 		}
@@ -31,38 +29,9 @@ func WithInput(input io.Reader) option {
 	}
 }
 
-func WithInputFromArgs(args []string) option {
-	return func(c *Counter) error {
-		if len(args) < 1 {
-			return nil
-		}
-		c.files = make([]io.Reader, len(args))
-		for i, path := range args {
-			f, err := os.Open(path)
-			if err != nil {
-				return err
-			}
-			c.files[i] = f
-		}
-		c.input = io.MultiReader(c.files...)
-		return nil
-	}
-}
-
-func WithOutput(output io.Writer) option {
-	return func(c *Counter) error {
-		if output == nil { // validate option
-			return errors.New("nil output writer")
-		}
-		c.ouput = output
-		return nil
-	}
-}
-
-func NewCounter(opts ...option) (*Counter, error) {
-	c := &Counter{
+func NewCounter(opts ...option) (*counter, error) {
+	c := &counter{
 		input: os.Stdin,
-		ouput: os.Stdout,
 	}
 	for _, opt := range opts {
 		if err := opt(c); err != nil {
@@ -72,26 +41,19 @@ func NewCounter(opts ...option) (*Counter, error) {
 	return c, nil
 }
 
-func (c *Counter) Lines() int {
+func (c *counter) Lines() int {
 	var lines int
-	input := bufio.NewScanner(c.input)
-	for input.Scan() {
+	scanner := bufio.NewScanner(c.input)
+	for scanner.Scan() {
 		lines++
-	}
-	for _, f := range c.files {
-		f.(io.Closer).Close()
 	}
 	return lines
 }
 
-func Main() int {
-	c, err := NewCounter(
-		WithInputFromArgs(os.Args[1:]),
-	)
+func Main() {
+	c, err := NewCounter()
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		return 1
+		panic(err)
 	}
 	fmt.Println(c.Lines())
-	return 0
 }

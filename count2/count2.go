@@ -1,49 +1,38 @@
-// Package count2 uses "functional options" pattern to set zero or more options.
+// Package count2 counts lines in input. The input defaults to STDIN. Write this
+// package with test-first approach (TDD). All non-trivial code should be inside
+// the package count2, not main. Adapted from
+// https://github.com/bitfield/tpg-tools2/tree/main/count/2
+//
+// If you want to climb a mountain, begin at the top. -- Zen saying
 //
 // Level: intermediate
-// Topics: functional options, tpg-tools
+// Topics: TDD, default options, tpg-tools
 package count2
 
 import (
 	"bufio"
-	"errors"
+	"fmt"
 	"io"
 	"os"
 )
 
-type Counter struct {
-	input io.Reader
+type counter struct {
+	Input io.Reader
 }
 
-type option func(c *Counter) error
-
-func WithInput(input io.Reader) option {
-	return func(c *Counter) error {
-		if input == nil { // validate option
-			return errors.New("nil input reader")
-		}
-		c.input = input
-		return nil
-	}
+func NewCounter() *counter {
+	return &counter{Input: os.Stdin}
 }
 
-func NewCounter(opts ...option) (*Counter, error) {
-	c := &Counter{
-		input: os.Stdin,
-	}
-	for _, opt := range opts {
-		if err := opt(c); err != nil {
-			return nil, err
-		}
-	}
-	return c, nil
-}
-
-func (c *Counter) Lines() int {
+func (c *counter) Lines() int {
 	var lines int
-	scanner := bufio.NewScanner(c.input)
-	for scanner.Scan() {
+	s := bufio.NewScanner(c.Input)
+	for s.Scan() {
 		lines++
 	}
 	return lines
+}
+
+func Main() {
+	fmt.Println(NewCounter().Lines())
 }

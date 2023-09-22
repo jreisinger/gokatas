@@ -7,15 +7,10 @@ import (
 	"github.com/jreisinger/gokatas/count2"
 )
 
-func TestCountingLines(t *testing.T) {
+func TestLines_CountsLinesInInput(t *testing.T) {
 	t.Parallel()
-	input := strings.NewReader("1\n2\n3")
-	c, err := count2.NewCounter(
-		count2.WithInput(input),
-	)
-	if err != nil {
-		t.Fatal(err)
-	}
+	c := count2.NewCounter()
+	c.Input = strings.NewReader("1\n2\n3\n")
 	want := 3
 	got := c.Lines()
 	if want != got {
