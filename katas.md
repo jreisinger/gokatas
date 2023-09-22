@@ -1,11 +1,12 @@
+* 2023-09-22: count2, count3, count5
 * 2023-09-21: weather
 * 2023-09-19: promyaml
 * 2023-09-18: kv
 * 2023-09-13: battery
 * 2023-09-11: older
 * 2023-09-07: write
-* 2023-09-06: count, count2, count3
-* 2023-09-05: count, count2, count3
+* 2023-09-06: count2, count3, count5
+* 2023-09-05: count2, count3, count5
 * 2023-08-25: areader, bytecounter
 * 2023-07-31: areader, bytecounter
 * 2023-07-28: thumb
