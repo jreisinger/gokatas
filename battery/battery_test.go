@@ -1,25 +1,24 @@
-package battery_test
+package battery
 
 import (
 	"os"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/jreisinger/gokatas/battery"
 )
 
-func TestParsePmsetOutput_GetsChargePercent(t *testing.T) {
+func TestParsePmsetOutput_GetsCorrectBatteryStatus(t *testing.T) {
 	t.Parallel()
-	input, err := os.ReadFile("testdata/pmset.txt")
-	if err != nil {
-		t.Error(err)
-	}
-	want := battery.Status{
+	want := Status{
 		ChargePercent: 94,
 	}
-	got, err := battery.ParsePmsetOutput(string(input))
+	data, err := os.ReadFile("testdata/pmset.txt")
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
+	}
+	got, err := parsePmsetOutput(string(data))
+	if err != nil {
+		t.Fatal(err)
 	}
 	if !cmp.Equal(want, got) {
 		t.Error(cmp.Diff(want, got))

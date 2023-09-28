@@ -1,14 +1,22 @@
 //go:build integration
 
-// go test -tags=integration
-package battery_test
+/*
+Unit tests
+- test functions work as expected in isolation
+
+Integration tests
+- test assumptions about how external dependencies work are still true
+- can be slower because we run them less often
+
+go test -tags=integration
+*/
+
+package battery
 
 import (
 	"bytes"
 	"os/exec"
 	"testing"
-
-	"github.com/jreisinger/gokatas/battery"
 )
 
 func TestGetPmsetOutput_CapturesCmdOutput(t *testing.T) {
@@ -20,11 +28,11 @@ func TestGetPmsetOutput_CapturesCmdOutput(t *testing.T) {
 	if !bytes.Contains(data, []byte("InternalBattery")) {
 		t.Skip("no battery fitted")
 	}
-	output, err := battery.GetPmsetOutput()
+	output, err := getPmsetOutput()
 	if err != nil {
 		t.Fatal(err)
 	}
-	status, err := battery.ParsePmsetOutput(output)
+	status, err := parsePmsetOutput(output)
 	if err != nil {
 		t.Fatal(err)
 	}

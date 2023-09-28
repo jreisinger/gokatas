@@ -11,6 +11,7 @@ func main() {
 	status, err := battery.GetStatus()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "battery: couldn't get status: %v", err)
+		os.Exit(1)
 	}
 	fmt.Printf("battery %d%% charged\n", status.ChargePercent)
 }
