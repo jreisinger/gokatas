@@ -21,11 +21,23 @@ import (
 	"strconv"
 )
 
-var percentage = regexp.MustCompile(`(\d+)%`)
-
 type Status struct {
 	ChargePercent int
 }
+
+func GetStatus() (Status, error) {
+	output, err := getPmsetOutput()
+	if err != nil {
+		return Status{}, err
+	}
+	status, err := parsePmsetOutput(output)
+	if err != nil {
+		return Status{}, err
+	}
+	return status, nil
+}
+
+var percentage = regexp.MustCompile(`(\d+)%`)
 
 func parsePmsetOutput(output string) (Status, error) {
 	matches := percentage.FindStringSubmatch(output)
@@ -33,12 +45,12 @@ func parsePmsetOutput(output string) (Status, error) {
 		return Status{}, fmt.Errorf(
 			"failed to parse pmset output: %q", output)
 	}
-	charge, err := strconv.Atoi(matches[1])
+	i, err := strconv.Atoi(matches[1])
 	if err != nil {
 		return Status{}, fmt.Errorf(
-			"failed to parse charge percentage: %v", err)
+			"failed to parse pmset ouput: %v", err)
 	}
-	return Status{ChargePercent: charge}, nil
+	return Status{ChargePercent: i}, nil
 }
 
 func getPmsetOutput() (string, error) {
@@ -47,12 +59,4 @@ func getPmsetOutput() (string, error) {
 		return "", err
 	}
 	return string(data), nil
-}
-
-func GetStatus() (Status, error) {
-	output, err := getPmsetOutput()
-	if err != nil {
-		return Status{}, err
-	}
-	return parsePmsetOutput(output)
 }

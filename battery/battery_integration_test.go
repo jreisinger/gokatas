@@ -23,7 +23,7 @@ func TestGetPmsetOutput_CapturesCmdOutput(t *testing.T) {
 	t.Parallel()
 	data, err := exec.Command("/usr/bin/pmset", "-g", "ps").CombinedOutput()
 	if err != nil {
-		t.Skipf("unable to run 'pmset' command: %v", err)
+		t.Skipf("failed to execute 'pmset' command: %v", err)
 	}
 	if !bytes.Contains(data, []byte("InternalBattery")) {
 		t.Skip("no battery fitted")
@@ -37,5 +37,5 @@ func TestGetPmsetOutput_CapturesCmdOutput(t *testing.T) {
 		t.Fatal(err)
 	}
 	// Will be printed only when test fails or -v is used.
-	t.Logf("Charge: %d%%", status.ChargePercent)
+	t.Logf("battery charge: %d%%", status.ChargePercent)
 }
