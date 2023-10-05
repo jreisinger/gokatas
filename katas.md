@@ -1,3 +1,4 @@
+* 2023-10-05: battery
 * 2023-09-29: battery
 * 2023-09-28: battery
 * 2023-09-22: count2, count3, count5

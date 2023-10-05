@@ -7,7 +7,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestParsePmsetOutput_ReturnsCorrectBatteryStatus(t *testing.T) {
+func Test_parsePmsetOutput(t *testing.T) {
 	t.Parallel()
 	want := Status{
 		ChargePercent: 94,
