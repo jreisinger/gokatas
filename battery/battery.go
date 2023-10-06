@@ -23,11 +23,7 @@ func GetStatus() (Status, error) {
 	if err != nil {
 		return Status{}, err
 	}
-	status, err := parsePmsetOutput(output)
-	if err != nil {
-		return Status{}, err
-	}
-	return status, nil
+	return parsePmsetOutput(output)
 }
 
 func runPmset() (string, error) {
@@ -43,11 +39,11 @@ var percentage = regexp.MustCompile(`(\d+)%`)
 func parsePmsetOutput(output string) (Status, error) {
 	matches := percentage.FindStringSubmatch(output)
 	if len(matches) != 2 {
-		return Status{}, fmt.Errorf("can't parse: %q", output)
+		return Status{}, fmt.Errorf("can't parse %q", output)
 	}
 	perc, err := strconv.Atoi(matches[1])
 	if err != nil {
-		return Status{}, fmt.Errorf("can't parse: %q: %v", output, err)
+		return Status{}, fmt.Errorf("can't parse %q: %v", output, err)
 	}
 	return Status{ChargePercent: perc}, nil
 }

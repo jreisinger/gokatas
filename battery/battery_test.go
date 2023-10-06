@@ -12,11 +12,11 @@ func Test_parsePmsetOutput(t *testing.T) {
 	want := Status{
 		ChargePercent: 94,
 	}
-	data, err := os.ReadFile("testdata/pmset.txt")
+	output, err := os.ReadFile("testdata/pmset.txt")
 	if err != nil {
 		t.Fatal(err)
 	}
-	got, err := parsePmsetOutput(string(data))
+	got, err := parsePmsetOutput(string(output))
 	if err != nil {
 		t.Fatal(err)
 	}
