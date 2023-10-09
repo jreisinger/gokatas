@@ -6,7 +6,7 @@
 // Adapted from https://github.com/0xfe/cryptopals.
 //
 // Level: intermediate
-// Topics: crypto, encoding, xor
+// Topics: encoding, xor
 package cryptopals
 
 import (
@@ -36,8 +36,7 @@ func FixedXOR(hex1, hex2 string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-
-	var out = make([]byte, len(h1))
+	out := make([]byte, len(h1))
 	for i := range h1 {
 		out[i] = h1[i] ^ h2[i]
 	}
