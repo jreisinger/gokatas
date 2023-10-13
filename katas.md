@@ -1,3 +1,4 @@
+* 2023-10-13: battery
 * 2023-10-09: cryptopals
 * 2023-10-07: cryptopals
 * 2023-10-06: battery

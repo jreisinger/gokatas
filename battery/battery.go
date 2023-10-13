@@ -13,7 +13,7 @@ import (
 )
 
 type Status struct {
-	ChargePercent int
+	ChargedPercent int
 }
 
 func GetStatus() (Status, error) {
@@ -23,9 +23,8 @@ func GetStatus() (Status, error) {
 	}
 	return parsePmsetOutput(output)
 }
-
 func runPmset() (string, error) {
-	data, err := exec.Command("pmset", "-g", "ps").CombinedOutput()
+	data, err := exec.Command("pmset", "-g", "ps").Output()
 	if err != nil {
 		return "", err
 	}
@@ -43,5 +42,5 @@ func parsePmsetOutput(output string) (Status, error) {
 	if err != nil {
 		return Status{}, fmt.Errorf("can't parse %q: %v", output, err)
 	}
-	return Status{ChargePercent: perc}, nil
+	return Status{ChargedPercent: perc}, nil
 }

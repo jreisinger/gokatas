@@ -7,10 +7,10 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func Test_parsePmsetOutput(t *testing.T) {
+func TestParsePmsetOutput(t *testing.T) {
 	t.Parallel()
 	want := Status{
-		ChargePercent: 94,
+		ChargedPercent: 94,
 	}
 	output, err := os.ReadFile("testdata/pmset.txt")
 	if err != nil {
