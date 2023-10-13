@@ -1,10 +1,8 @@
-/*
-Package battery gets the MacBook battery status. It shows how to run external
-commands and how to parse their output.
-
-Level: intermediate
-Topics: exec, regexp, tpg-tools
-*/
+// Package battery gets MacBook battery status. It shows how to run external
+// commands and how to parse their output.
+//
+// Level: intermediate
+// Topics: exec, regexp, tpg-tools
 package battery
 
 import (
