@@ -23,6 +23,7 @@ func GetStatus() (Status, error) {
 	}
 	return parsePmsetOutput(output)
 }
+
 func runPmset() (string, error) {
 	data, err := exec.Command("pmset", "-g", "ps").Output()
 	if err != nil {

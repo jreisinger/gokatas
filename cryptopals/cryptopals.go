@@ -17,28 +17,28 @@ import (
 // HexToBase64 decodes hex string h into bytes and then bytes into base64
 // string. (Set 1, challenge 1.)
 func HexToBase64(h string) (string, error) {
-	b, err := hex.DecodeString(h)
+	data, err := hex.DecodeString(h)
 	if err != nil {
 		return "", err
 	}
-	return base64.RawStdEncoding.EncodeToString(b), nil
+	return base64.RawStdEncoding.EncodeToString(data), nil
 }
 
-// FixedXOR takes the bytes represented by hex1 and hex2 and then does XOR
-// bitwise operation on these two byte slices, byte by byte. (Set 1, challenge
-// 2.)
-func FixedXOR(hex1, hex2 string) (string, error) {
-	h1, err := hex.DecodeString(hex1)
+// FixedXOR gets the bytes represented by h1 and h2 hex strings. Then it does
+// XOR bitwise operation on these two byte slices, byte by byte. H1 and h2 must
+// be of equal length. (Set 1, challenge 2.)
+func FixedXOR(h1, h2 string) (string, error) {
+	data1, err := hex.DecodeString(h1)
 	if err != nil {
 		return "", err
 	}
-	h2, err := hex.DecodeString(hex2)
+	data2, err := hex.DecodeString(h2)
 	if err != nil {
 		return "", err
 	}
-	out := make([]byte, len(h1))
-	for i := range h1 {
-		out[i] = h1[i] ^ h2[i]
+	out := make([]byte, len(data1))
+	for i := range data1 {
+		out[i] = data1[i] ^ data2[i]
 	}
 	return hex.EncodeToString(out), nil
 }
