@@ -25,11 +25,11 @@ func GetStatus() (Status, error) {
 }
 
 func runPmset() (string, error) {
-	data, err := exec.Command("pmset", "-g", "ps").Output()
+	output, err := exec.Command("pmset", "-g", "ps").Output()
 	if err != nil {
 		return "", err
 	}
-	return string(data), nil
+	return string(output), nil
 }
 
 var percentage = regexp.MustCompile(`(\d+)%`)
