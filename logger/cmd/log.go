@@ -8,6 +8,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"os/signal"
 	"time"
@@ -23,8 +24,7 @@ func (d *device) Write(p []byte) (int, error) {
 	for d.problem {
 		time.Sleep(time.Second)
 	}
-
-	return fmt.Print(string(p))
+	return fmt.Println(string(p))
 }
 
 func main() {
@@ -40,8 +40,8 @@ func main() {
 	for i := 0; i < grs; i++ {
 		go func(id int) {
 			for {
-				l.Write(fmt.Sprintf("log from gr %d\n", id))
-				time.Sleep(time.Millisecond * 100)
+				l.Write(fmt.Sprintf("log from gr %d", id))
+				time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 			}
 		}(i)
 	}
