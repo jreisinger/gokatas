@@ -1,3 +1,4 @@
+* 2023-12-01: areader
 * 2023-11-16: logger
 * 2023-10-20: battery
 * 2023-10-19: cryptopals
