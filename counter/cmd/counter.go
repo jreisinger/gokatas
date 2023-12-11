@@ -9,7 +9,7 @@ import (
 
 func main() {
 	c := new(counter.Counter)
-	c.Inc()
+	c.Increment()
 	fmt.Println(c.N())
 	c.Reset()
 }

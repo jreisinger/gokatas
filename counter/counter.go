@@ -13,7 +13,8 @@
 // Topics: oop, encapsulation
 package counter
 
-type Counter struct{ n int } // Counter encapsulates its field
-func (c *Counter) N() int    { return c.n } // getter
-func (c *Counter) Inc()      { c.n++ }      // setter
-func (c *Counter) Reset()    { c.n = 0 }    // resetter :-)
+type Counter struct{ n int } // counter encapsulates (hides) its field
+
+func (c *Counter) N() int     { return c.n } // getter
+func (c *Counter) Increment() { c.n++ }      // setter
+func (c *Counter) Reset()     { c.n = 0 }    // resetter :-)
