@@ -7,16 +7,27 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestParsePmsetOutput(t *testing.T) {
+func TestWeGetNonEmptyOutputWhenWeRunPmset(t *testing.T) {
 	t.Parallel()
-	want := Status{
-		ChargedPercent: 94,
-	}
-	data, err := os.ReadFile("testdata/pmset.txt")
+	output, err := runPmset()
 	if err != nil {
 		t.Fatal(err)
 	}
-	got, err := parsePmsetOutput(string(data))
+	if output == "" {
+		t.Errorf("we got no output from pmset")
+	}
+}
+
+func TestWeParseOutChargedPercentFromPmsetOutput(t *testing.T) {
+	t.Parallel()
+	output, err := os.ReadFile("./testdata/pmset.txt")
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := Status{
+		ChargedPercent: 94,
+	}
+	got, err := parsePmset(string(output))
 	if err != nil {
 		t.Fatal(err)
 	}

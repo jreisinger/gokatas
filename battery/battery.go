@@ -21,27 +21,31 @@ func GetStatus() (Status, error) {
 	if err != nil {
 		return Status{}, err
 	}
-	return parsePmsetOutput(output)
+	status, err := parsePmset(output)
+	if err != nil {
+		return Status{}, err
+	}
+	return status, nil
 }
 
 func runPmset() (string, error) {
-	output, err := exec.Command("pmset", "-g", "ps").Output()
+	output, err := exec.Command("/usr/bin/pmset", "-g", "ps").Output()
 	if err != nil {
 		return "", err
 	}
 	return string(output), nil
 }
 
-var percentage = regexp.MustCompile(`(\d+)%`)
+var percent = regexp.MustCompile(`(\d+)%`)
 
-func parsePmsetOutput(output string) (Status, error) {
-	matches := percentage.FindStringSubmatch(output)
-	if len(matches) != 2 {
-		return Status{}, fmt.Errorf("can't parse %q", output)
+func parsePmset(output string) (Status, error) {
+	matches := percent.FindStringSubmatch(output)
+	if len(matches) < 2 {
+		return Status{}, fmt.Errorf("no percent match in %q", output)
 	}
-	perc, err := strconv.Atoi(matches[1])
+	n, err := strconv.Atoi(matches[1])
 	if err != nil {
-		return Status{}, fmt.Errorf("can't parse %q: %v", output, err)
+		return Status{}, fmt.Errorf("can't convert %q to int", matches[1])
 	}
-	return Status{ChargedPercent: perc}, nil
+	return Status{ChargedPercent: n}, nil
 }

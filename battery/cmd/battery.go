@@ -13,5 +13,5 @@ func main() {
 		fmt.Fprintf(os.Stderr, "battery: getting status: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("charged %d%%\n", status.ChargedPercent)
+	fmt.Printf("charged to %d%%\n", status.ChargedPercent)
 }
