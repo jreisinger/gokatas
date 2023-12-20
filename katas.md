@@ -1,3 +1,4 @@
+* 2023-12-20: logger
 * 2023-12-18: counter
 * 2023-12-15: battery
 * 2023-12-14: areader, battery

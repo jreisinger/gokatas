@@ -24,7 +24,7 @@ func (d *device) Write(p []byte) (int, error) {
 	for d.problem {
 		time.Sleep(time.Second)
 	}
-	return fmt.Println(string(p))
+	return fmt.Print(string(p))
 }
 
 func main() {

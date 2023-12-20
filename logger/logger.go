@@ -8,6 +8,7 @@ package logger
 import (
 	"fmt"
 	"io"
+	"os"
 	"sync"
 )
 
@@ -28,7 +29,7 @@ func New(w io.Writer, buf int) *Logger {
 	go func() {
 		defer l.wg.Done()
 		for log := range l.logs {
-			fmt.Fprint(w, log)
+			fmt.Fprintln(w, log)
 		}
 	}()
 
@@ -46,6 +47,6 @@ func (l *Logger) Write(log string) {
 	select {
 	case l.logs <- log:
 	default:
-		fmt.Println("WARN: dropping logs")
+		fmt.Fprintln(os.Stderr, "WARN: dropping logs")
 	}
 }
