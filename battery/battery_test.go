@@ -11,7 +11,7 @@ func TestWeGetNonEmptyOutputWhenWeRunPmset(t *testing.T) {
 	t.Parallel()
 	output, err := runPmset()
 	if err != nil {
-		t.Fatal(err)
+		t.Skipf("unable to run 'pmset' command: %v", err)
 	}
 	if output == "" {
 		t.Errorf("we got no output from pmset")
