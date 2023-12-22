@@ -17,19 +17,20 @@ type Status struct {
 }
 
 func GetStatus() (Status, error) {
-	output, err := runPmset()
+	output, err := pmset()
 	if err != nil {
 		return Status{}, err
 	}
-	status, err := parsePmset(output)
+	n, err := parse(output)
 	if err != nil {
 		return Status{}, err
 	}
-	return status, nil
+	return Status{ChargedPercent: n}, nil
 }
 
-func runPmset() (string, error) {
-	output, err := exec.Command("/usr/bin/pmset", "-g", "ps").Output()
+// Run pmset command and return its output.
+func pmset() (string, error) {
+	output, err := exec.Command("pmset", "-g", "ps").Output()
 	if err != nil {
 		return "", err
 	}
@@ -38,14 +39,15 @@ func runPmset() (string, error) {
 
 var percent = regexp.MustCompile(`(\d+)%`)
 
-func parsePmset(output string) (Status, error) {
+// Parse ChargedPercent from the pmset command output.
+func parse(output string) (int, error) {
 	matches := percent.FindStringSubmatch(output)
 	if len(matches) < 2 {
-		return Status{}, fmt.Errorf("no percent match in %q", output)
+		return 0, fmt.Errorf("can't parse percent from %q", output)
 	}
 	n, err := strconv.Atoi(matches[1])
 	if err != nil {
-		return Status{}, fmt.Errorf("can't convert %q to int", matches[1])
+		return 0, fmt.Errorf("can't convert %v to int", matches[1])
 	}
-	return Status{ChargedPercent: n}, nil
+	return n, nil
 }
