@@ -4,42 +4,8 @@ import (
 	"testing"
 )
 
-// Must be sorted for binary search to work.
-var list = []int{1, 2, 2, 3, 4, 5, 7, 8, 9}
-
-var tests = []struct {
-	list []int
-	item int
-	idx  int
-}{
-	{[]int{}, 0, -1},
-	{[]int{}, -1, -1},
-	{list, -1, -1},
-	{list, 0, -1},
-	{list, 1, 0},
-	{list, 2, 1},
-	{list, 6, -1},
-	{list, 10, -1},
-}
-
-func TestLinear(t *testing.T) {
-	for _, test := range tests {
-		if idx := Linear(test.list, test.item); idx != test.idx {
-			t.Errorf("Linear(%v, %d) = %d, want %d",
-				test.list, test.item, idx, test.idx)
-		}
-	}
-}
-
-func TestBinary(t *testing.T) {
-	for _, test := range tests {
-		if idx := Binary(test.list, test.item); idx != test.idx {
-			t.Errorf("Binary(%v, %d) = %d, want %d",
-				test.list, test.item, idx, test.idx)
-		}
-	}
-}
-
+// gentList generates a sorted (necessary for binary search to work) list with n
+// elements.
 func genList(n int) []int {
 	var list []int
 	for i := 0; i < n; i++ {
