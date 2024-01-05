@@ -1,4 +1,5 @@
-* 2024-01-03: counter, logger
+* 2024-01-05: search
+* 2024-01-04: counter, logger
 * 2023-12-22: battery
 * 2023-12-20: logger, areader
 * 2023-12-18: counter
