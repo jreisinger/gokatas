@@ -1,6 +1,6 @@
 // Package search implements linear and binary search algorithms.
 //
-//	go test -bench=. search/*	# run tests and all benchmarks
+//	go test -bench=. ./search	# run all benchmarks
 //
 // See github.com/jreisinger/homepage/blob/master/notes/cs/big-o-notation.md for more.
 //
@@ -20,7 +20,9 @@ func Linear(list []int, item int) int {
 }
 
 // Binary returns the smallest index of item from a *sorted* list or -1 if not
-// found. Binary search is an O(log n) algorithm.
+// found. Binary search is an O(log n) algorithm - it has this property that
+// tells you how many times you have to divide n with 2 to get 1. For example
+// log 16 = 4 => 16 -> 8 -> 4 -> 2 -> 1.
 func Binary(list []int, item int) int {
 	low := 0
 	high := len(list) - 1
