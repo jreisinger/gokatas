@@ -1,8 +1,10 @@
 // Package search implements linear and binary search algorithms.
 //
-//	go test -bench=. ./search	# run all benchmarks
+//	go test -bench=. # run all tests (if any) and benchmarks
 //
-// See github.com/jreisinger/homepage/blob/master/notes/cs/big-o-notation.md for more.
+// For more see
+//   - dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go
+//   - github.com/jreisinger/homepage/blob/master/notes/cs/big-o-notation.md
 //
 // Level: intermediate
 // Topics: algorithms, testing, benchmarking

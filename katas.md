@@ -1,3 +1,4 @@
+* 2024-01-08: search
 * 2024-01-05: search
 * 2024-01-04: counter, logger
 * 2023-12-22: battery

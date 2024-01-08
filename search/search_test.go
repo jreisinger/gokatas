@@ -14,24 +14,27 @@ func genList(n int) []int {
 	return list
 }
 
+// benchmarkSearch benchmarks the speed of a search that searches for the
+// penultimate item in a list.
+func benchmarkSearch(
+	search func(list []int, item int) int,
+	list []int,
+	b *testing.B,
+) {
+	penultimate := list[len(list)-1]
+	for i := 0; i < b.N; i++ {
+		search(list, penultimate)
+	}
+}
+
 var list10 = genList(10)
 var list100 = genList(100)
 var list1000 = genList(1000)
 
-func benchmarkLinear(b *testing.B, list []int) {
-	for i := 0; i < b.N; i++ {
-		Linear(list, list[len(list)-1])
-	}
-}
-func BenchmarkLinear10(b *testing.B)   { benchmarkLinear(b, list10) }
-func BenchmarkLinear100(b *testing.B)  { benchmarkLinear(b, list100) }
-func BenchmarkLinear1000(b *testing.B) { benchmarkLinear(b, list1000) }
+func BenchmarkLinear10(b *testing.B)   { benchmarkSearch(Linear, list10, b) }
+func BenchmarkLinear100(b *testing.B)  { benchmarkSearch(Linear, list100, b) }
+func BenchmarkLinear1000(b *testing.B) { benchmarkSearch(Linear, list1000, b) }
 
-func benchmarkBinary(b *testing.B, list []int) {
-	for i := 0; i < b.N; i++ {
-		Binary(list, list[len(list)-1])
-	}
-}
-func BenchmarkBinary10(b *testing.B)   { benchmarkBinary(b, list10) }
-func BenchmarkBinary100(b *testing.B)  { benchmarkBinary(b, list100) }
-func BenchmarkBinary1000(b *testing.B) { benchmarkBinary(b, list1000) }
+func BenchmarkBinary10(b *testing.B)   { benchmarkSearch(Binary, list10, b) }
+func BenchmarkBinary100(b *testing.B)  { benchmarkSearch(Binary, list100, b) }
+func BenchmarkBinary1000(b *testing.B) { benchmarkSearch(Binary, list1000, b) }
