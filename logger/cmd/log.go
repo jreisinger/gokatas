@@ -8,7 +8,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"os"
 	"os/signal"
 	"time"
@@ -41,7 +40,7 @@ func main() {
 		go func(id int) {
 			for {
 				l.Write(fmt.Sprintf("log from gr %d", id))
-				time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
+				time.Sleep(200 * time.Millisecond)
 			}
 		}(i)
 	}
