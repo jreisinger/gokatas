@@ -10,7 +10,10 @@ import (
 	"io"
 	"os"
 	"sync"
+	"time"
 )
+
+const timeLayout = time.TimeOnly
 
 type Logger struct {
 	logs chan string
@@ -29,7 +32,7 @@ func New(w io.Writer, buf int) *Logger {
 	go func() {
 		defer l.wg.Done()
 		for log := range l.logs {
-			fmt.Fprintln(w, log)
+			fmt.Fprintf(w, "%s: %s\n", time.Now().Format(timeLayout), log)
 		}
 	}()
 
@@ -47,6 +50,6 @@ func (l *Logger) Write(log string) {
 	select {
 	case l.logs <- log:
 	default:
-		fmt.Fprintln(os.Stderr, "WARN: dropping logs")
+		fmt.Fprintf(os.Stderr, "%s: dropping logs\n", time.Now().Format(timeLayout))
 	}
 }

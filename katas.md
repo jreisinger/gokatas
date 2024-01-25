@@ -1,3 +1,4 @@
+* 2024-01-25: logger
 * 2024-01-23: search, counter, logger
 * 2024-01-17: counter
 * 2024-01-09: logger
