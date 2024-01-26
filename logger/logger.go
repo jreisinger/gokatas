@@ -13,8 +13,6 @@ import (
 	"time"
 )
 
-const timeLayout = time.TimeOnly
-
 type Logger struct {
 	logs chan string
 	wg   sync.WaitGroup
@@ -32,24 +30,17 @@ func New(w io.Writer, buf int) *Logger {
 	go func() {
 		defer l.wg.Done()
 		for log := range l.logs {
-			fmt.Fprintf(w, "%s: %s\n", time.Now().Format(timeLayout), log)
+			fmt.Fprintf(w, "%s: %s\n", time.Now().Format(time.TimeOnly), log)
 		}
 	}()
 
 	return &l
 }
 
-// Stop stops accepting logs and waits for logs buffer to be written.
-func (l *Logger) Stop() {
-	close(l.logs)
-	l.wg.Wait()
-}
-
-// Write writes the log. If the log buffer is full it prints a warning and exits.
 func (l *Logger) Write(log string) {
 	select {
 	case l.logs <- log:
 	default:
-		fmt.Fprintf(os.Stderr, "%s: dropping logs\n", time.Now().Format(timeLayout))
+		fmt.Fprintf(os.Stderr, "%s: dropping logs\n", time.Now().Format(time.TimeOnly))
 	}
 }
