@@ -6,7 +6,7 @@
 //   - If multiple can proceed, chooses (pseudo-)randomly.
 //   - A default case, if present, executes immediately if no channel is ready.
 //
-// Timeout the conversation when no one speaks for 800 ms.
+// Timeout the conversation when no one speaks for 600 ms.
 //
 // Level: intermediate
 // Topics: select, timeout, fan-in
@@ -24,8 +24,8 @@ func main() {
 		select {
 		case s := <-c:
 			fmt.Println(s)
-		case <-time.After(time.Millisecond * 800):
-			fmt.Println("timeout")
+		case <-time.After(time.Millisecond * 600):
+			fmt.Println("bye bye")
 			return
 		}
 	}
