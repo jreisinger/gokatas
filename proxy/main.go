@@ -1,5 +1,5 @@
-// Proxy is a simple proxy that mediates TCP traffic between client and
-// upstream. Adapted from youtu.be/J4J-A9tcjcA.
+// Proxy mediates TCP traffic between a client and an upstream server.
+// Adapted from youtu.be/J4J-A9tcjcA.
 //
 // Level: intermediate
 // Topics: net, security, concurrency
