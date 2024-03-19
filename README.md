@@ -1,12 +1,11 @@
-[![Go Reference](https://pkg.go.dev/badge/github.com/jreisinger/gokatas.svg)](https://pkg.go.dev/github.com/jreisinger/gokatas)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jreisinger/gokatas)](https://goreportcard.com/report/github.com/jreisinger/gokatas)
 [![test and scan](https://github.com/jreisinger/gokatas/actions/workflows/test-scan.yaml/badge.svg)](https://github.com/jreisinger/gokatas/actions/workflows/test-scan.yaml)
 
 # Go katas
 
-Katas (形) are practiced in martial arts as a way to internalize the movements
-and techniques so they can be executed and adapted under different
-circumstances, without thought or hesitation. Let's try the same with Go code.
+Katas (形) are practiced in martial arts as a way to internalize the techniques 
+so they can be executed and adapted under different circumstances, without 
+thought or hesitation. Let's try the same with Go code.
 
 ## Why
 
@@ -17,11 +16,9 @@ to achieve this.
 
 ## How
 
-The approach is pretty low-tech. Go katas is basically a
-[list](https://pkg.go.dev/github.com/jreisinger/gokatas#section-directories) of
-packages and commands (package main) that you should understand and then be
-rewriting from scratch or partially. There's a command to show katas and your
-progress:
+The approach is pretty low-tech. Go katas is basically a list of packages 
+(directories) that you should understand and then be rewriting from scratch 
+or partially. There's a command to show katas and your progress:
 
 ```
 $ go run cmd/gokatas.go -c 2
@@ -37,8 +34,8 @@ areader           3 days ago     2x  beginner  interfaces, io.Reader
 It's important to practice regularly because repetition creates habits, and
 habits are what enable mastery. Start by taking baby steps. Set a goal that you
 can meet, e.g. 15 minutes every day before work. At first it's fine even if you
-only read through one of the beginner level katas. Use documentation or a search
-engine if you don't understand something.
+only read through one of the beginner level katas. Use documentation, a search
+engine or an AI model if you don't understand something.
 
 After some time it will require much less will power to practice. Your
 programming moves will start looking simpler and smoother. If you feel
