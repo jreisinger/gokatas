@@ -8,9 +8,9 @@ techniques so they can be executed and adapted under different circumstances,
 without thought or hesitation. Let's try the same with Go code.
 
 The approach is pretty low-tech. Go katas is a list of directories containing
-brief, well written Go programs. You are supposed to try and understand them and
-be rewriting them from scratch or partially. There's a command to show katas and
-your progress:
+brief, well written Go programs. Select one of them, try and understand it
+and be rewriting it partially or from scratch. There's a command to show the 
+Go katas and your progress with them:
 
 ```
 $ go run ./cmd/gokatas -c 2
@@ -27,9 +27,11 @@ Initial setup:
 
 1) [Install Go](https://go.dev/doc/install).
 
-2) [Fork](https://github.com/jreisinger/gokatas/fork) and then clone the repo: `git clone git@github.com:<you>/gokatas.git`.
+2) [Fork](https://github.com/jreisinger/gokatas/fork) this repo so you have your own copy.
+  
+3) Clone the fork to your computer: `git clone git@github.com:<you>/gokatas.git`.
 
-3) Start practicing (remove contents from `katas.md` unless you are me :-).
+4) Clear contents of `katas.md` (unless you are me :-) and start practicing.
 
 It's important to practice regularly because repetition creates habits, and
 habits are what enable mastery. Start by taking baby steps. Set a goal that you
