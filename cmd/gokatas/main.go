@@ -5,8 +5,6 @@ import (
 	"flag"
 	"log"
 	"os"
-
-	"github.com/jreisinger/gokatas"
 )
 
 var sortByColumn = flag.Int("c", 1, "sort katas by `column`")
@@ -24,9 +22,9 @@ func main() {
 		}
 	}
 
-	katas, err := gokatas.Get()
+	katas, err := Get()
 	if err != nil {
 		log.Fatalf("getting katas: %v", err)
 	}
-	gokatas.Print(katas, *sortByColumn)
+	Print(katas, *sortByColumn)
 }

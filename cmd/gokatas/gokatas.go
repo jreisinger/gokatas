@@ -1,4 +1,4 @@
-package gokatas
+package main
 
 import (
 	"bufio"
