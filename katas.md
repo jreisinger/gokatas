@@ -1,3 +1,4 @@
+* 2024-03-19: shift
 * 2024-03-18: proxy
 * 2024-03-15: boring/boring, boring/channel, boring/lockstep, boring/multiplex, boring/select, boring/selectquit
 * 2024-03-11: logger
