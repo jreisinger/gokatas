@@ -8,9 +8,10 @@ techniques so they can be executed and adapted under different circumstances,
 without thought or hesitation. Let's try the same with Go code.
 
 The approach is pretty low-tech. Go katas is a list of directories containing
-brief, well written Go programs. Select one of them, try and understand it
-and be rewriting it partially or from scratch. There's a command to show the 
-Go katas and your progress with them:
+brief, well written Go programs. Select one of them and try to understand it.
+Then be rewriting it partially or from scratch until you feel comfortable with it.
+Use `git diff` to see how you are doing. There's a command to show the katas 
+with some info and your progress:
 
 ```
 $ go run ./cmd/gokatas -c 2
@@ -35,7 +36,7 @@ Initial setup:
 
 It's important to practice regularly because repetition creates habits, and
 habits are what enable mastery. Start by taking baby steps. Set a goal that you
-can meet, e.g. 15 minutes every day before work. At first it's fine even if you
+can meet, e.g. 10 minutes every day before work. At first it's fine even if you
 only read through one of the beginner level katas. Use documentation, a search
 engine or an AI model if you don't understand something. After some time it will
 require much less will power to practice. Your programming moves will start
