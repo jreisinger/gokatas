@@ -1,3 +1,7 @@
+**NOTE**: I started to work on a cleaned up and simpler version: https://github.com/gokatas
+
+---
+
 [![Go Report Card](https://goreportcard.com/badge/github.com/jreisinger/gokatas)](https://goreportcard.com/report/github.com/jreisinger/gokatas)
 [![test and scan](https://github.com/jreisinger/gokatas/actions/workflows/test-scan.yaml/badge.svg)](https://github.com/jreisinger/gokatas/actions/workflows/test-scan.yaml)
 
