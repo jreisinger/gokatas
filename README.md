@@ -1,4 +1,4 @@
-**NOTE**: I started to work on a cleaned up and simpler version: https://github.com/gokatas
+**NOTE**: there's a cleaner and simpler version: https://github.com/gokatas 👈
 
 ---
 
