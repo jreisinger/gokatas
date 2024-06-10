@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> There's a cleaner and simpler version of Go katas: https://github.com/gokatas 
+> There's a cleaner and simpler version of Go katas: https://github.com/gokatas. And it uses AI! :-) 
 
 # Go katas
 
